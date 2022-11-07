@@ -1,0 +1,773 @@
+{
+    "$id": "https://quantyca.it/dpds/1.0/schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$comment": "SPEC-BASE-URL#dpdsObject",
+    "description": "The description of Data Product Descriptor v1.0.x documents without schema validation, as defined by [Data Product Descriptor Specification v1.0](SPEC-BASE-URL)",
+    "type": "object",
+    "properties": {
+        "dataProductDescriptor": {
+            "description": "",
+            "type": "string",
+            "pattern": "^1\\.1\\.\\d+(-.+)?$"
+        },
+        "id": {
+            "description": "",
+            "type": "string",
+            "readOnly": true
+        },
+        "fullyQualifiedName": {
+            "description": "",
+            "type": "string"
+        },
+        "entityType": {
+            "description": "",
+            "type": "string",
+            "readOnly": true
+        },
+        "name": {
+            "description": "",
+            "type": "string"
+        },
+        "version": {
+            "description": "",
+            "type": "string"
+        },
+        "displayName": {
+            "description": "",
+            "type": "string"
+        },
+        "description": {
+            "description": "",
+            "type": "string"
+        },
+        "info": {
+            "$ref": "#/$defs/info"
+        },
+        "interfaceComponents": {
+            "$ref": "#/$defs/interfaceComponents"
+        },
+        "internalComponents": {
+            "$ref": "#/$defs/internalComponents"
+        },
+        "components": {
+            "$ref": "#/$defs/components"
+        },
+        "tags": {
+            "description": "",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "externalDocs": {
+            "$ref": "#/$defs/externalResource"
+        }
+    },
+    "required": [
+        "dataProductDescriptor",
+        "fullyQualifiedName",
+        "name",
+        "version",
+        "info"
+    ],
+    "$defs": {
+        "info": {
+            "$comment": "SPEC-BASE-URL#infoObject",
+            "title": "Info Object",
+            "description": "The [Info Object](SPEC-BASE-URL#infoObject) provides metadata about the data product. The metadata can be used by the platform or by cosumers if needed.",
+            "type": "object",
+            "properties": {
+                "domain": {
+                    "description": "",
+                    "type": "string"
+                },
+                "owner": {
+                    "$ref": "#/$defs/owner"
+                },
+                "contactPoints": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/contactPoint"
+                    }
+                }
+            },
+            "required": ["owner"],
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "owner": {
+            "$comment": "SPEC-BASE-URL#ownerObject",
+            "title": "Owner Object",
+            "description": "The [Owner Object](SPEC-BASE-URL#ownerObject) describes the data product's owner.",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "",
+                    "type": "string"
+                }
+            },
+            "required": ["id"],
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "contactPoint": {
+            "$comment": "SPEC-BASE-URL#contactPointObject",
+            "title": "Contact Point Object",
+            "description": "The [Contact Point Object](SPEC-BASE-URL#contactPointObject) describes a data product's contact point.",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "",
+                    "type": "string"
+                },
+                "channel": {
+                    "description": "",
+                    "type": "string"
+                },
+                "address": {
+                    "description": "",
+                    "type": "string"
+                }
+            },
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "interfaceComponents": {
+            "$comment": "SPEC-BASE-URL#interfaceComponentsObject",
+            "title": "Interface Components Object",
+            "description": "The [Interface Components Object](SPEC-BASE-URL#interfaceComponentsObject) it's a collection of all interface entities exposed by a data product.",
+            "type": "object",
+            "properties": {
+                "inputPorts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/inputPortOrReference"
+                    }
+                },
+                "outputPorts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/outputPortOrReference"
+                    }
+                },
+                "discoveryPorts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/discoveryPortOrReference"
+                    }
+                },
+                "observabilityPorts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/observabilityPortOrReference"
+                    }
+                },
+                "controlPorts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/controlPortOrReference"
+                    }
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "inputPortOrReference": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/inputPort"
+                }
+            ]
+        },
+        "inputPort": {
+            "$comment": "SPEC-BASE-URL#inputPortComponent",
+            "title": "Input Port Object",
+            "description": "The [Input Port Component](SPEC-BASE-URL#inputPortComponent) describes an [input port](#definitionsDataProductPorts) of a data product.",
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/entity"
+                },
+                {
+                    "$ref": "#/$defs/port"
+                }
+            ],
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "outputPortOrReference": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/outputPort"
+                }
+            ]
+        },
+        "outputPort": {
+            "$comment": "SPEC-BASE-URL#outputPortComponent",
+            "title": "Output Port Component",
+            "description": "The [Output Port Component](SPEC-BASE-URL#outputPortComponent) describes an [output port](#definitionsDataProductPorts) of a data product.",
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/entity"
+                },
+                {
+                    "$ref": "#/$defs/port"
+                }
+            ],
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "discoveryPortOrReference": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/discoveryPort"
+                }
+            ]
+        },
+        "discoveryPort": {
+            "$comment": "SPEC-BASE-URL#discoveryPortComponent",
+            "title": "The [Discovey Port Component](SPEC-BASE-URL#discoveryPortComponent) describes a [discovery port](#definitionsDataProductPorts) of a data product.t",
+            "description": "",
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/entity"
+                },
+                {
+                    "$ref": "#/$defs/port"
+                }
+            ],
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "observabilityPortOrReference": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/observabilityPort"
+                }
+            ]
+        },
+        "observabilityPort": {
+            "$comment": "SPEC-BASE-URL#observabilityPortComponent",
+            "title": "The [Observability Port Component](SPEC-BASE-URL#observabilityPortComponent) describes an [observability port](#definitionsDataProductPorts) of a data product.",
+            "description": "",
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/entity"
+                },
+                {
+                    "$ref": "#/$defs/port"
+                }
+            ],
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "controlPortOrReference": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/controlPort"
+                }
+            ]
+        },
+        "controlPort": {
+            "$comment": "SPEC-BASE-URL#controlPortComponent",
+            "title": "The [Control Port Component](SPEC-BASE-URL#controlPortComponent) describes a [control port](#definitionsDataProductPorts) of a data product.",
+            "description": "",
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/entity"
+                },
+                {
+                    "$ref": "#/$defs/port"
+                }
+            ],
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "port": {
+            "properties": {
+                "promises": {
+                    "$ref": "#/$defs/promises"
+                },
+                "expectatctions": {
+                    "$ref": "#/$defs/expectatctions"
+                },
+                "contracts": {
+                    "$ref": "#/$defs/contracts"
+                }
+            }
+        },
+        "promises": {
+            "$comment": "SPEC-BASE-URL#promisesObject",
+            "title": "The [Promises Object](SPEC-BASE-URL#promisesObject) describes the data product's [promises](#definitionsDataProductPortsPromises) declared over a given port.",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "platform": {
+                    "description": "",
+                    "type": "string"
+                },
+                "serviceTyoe": {
+                    "description": "",
+                    "type": "string"
+                },
+                "api": {
+                    "$ref": "#/$defs/standardDefinition"
+                },
+                "deprecationPolicy": {
+                    "$ref": "#/$defs/specificationExtensionPoint"
+                },
+                "slo": {
+                    "$ref": "#/$defs/specificationExtensionPoint"
+                }
+            },
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "standardDefinition": {
+            "$comment": "SPEC-BASE-URL#standardDefinitionObject",
+            "title": "Standard Definition Object",
+            "description": "The [Standard Definition Object](SPEC-BASE-URL#standardDefinitionObject) formally describes an object (ex. API object, provision template object, ecc ...) of interest following a given standard specification.",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "description": "",
+                    "type": "string"
+                },
+                "specification": {
+                    "description": "",
+                    "type": "string"
+                },
+                "version": {
+                    "description": "",
+                    "type": "string"
+                },
+                "definition": {
+                   "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                },
+                "externalDocs": {
+                    "$ref": "#/$defs/externalResource"
+                }
+            },
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+      
+        "expectatctions": {
+            "$comment": "SPEC-BASE-URL#expectationsObject",
+            "title": "Expectations Object",
+            "description": "The [Expectations Object](SPEC-BASE-URL#expectationsObject) describes the data product's [expectations](#definitionsDataProductPortsExpectations) declared over a given port.",
+            "type": "object",
+            "properties": {
+                "audience": {
+                    "$ref": "#/$defs/specificationExtensionPoint"
+                },
+                "usage": {
+                    "$ref": "#/$defs/specificationExtensionPoint"
+                }
+            },
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+       
+        "contracts": {
+            "$comment": "SPEC-BASE-URL#contractsObject",
+            "title": "Expectations Object",
+            "description": "The [Contracts Object](SPEC-BASE-URL#contractsObject) describes the data product's [contracts](#definitionsDataProductPortsContracts) declared over a given port.",
+            "type": "object",
+            "properties": {
+                "termsAndConditions": {
+                    "$ref": "#/$defs/specificationExtensionPoint"
+                },
+                "billingPolicy": {
+                    "$ref": "#/$defs/specificationExtensionPoint"
+                },
+                "sla": {
+                    "$ref": "#/$defs/specificationExtensionPoint"
+                }
+            },
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        
+        "internalComponents": {
+            "$comment": "SPEC-BASE-URL#internalComponentsObject",
+            "title": "Internal Components Object",
+            "description": "The [Internal Components Object](SPEC-BASE-URL#internalComponentsObject) it's a collection of all internal entities that compose a data product.",
+            "type": "object",
+            "properties": {
+                "applicationComponents": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/applicationComponent"
+                    }
+                },
+                "infrastructuralComponents": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/infrastructuralComponent"
+                    }
+                }
+            }
+        },
+        "applicationComponent": {
+            "$comment": "SPEC-BASE-URL#applicationComponent",
+            "title": "Application Component",
+            "description": "The [Application Component](SPEC-BASE-URL#applicationComponent) describes an internal application component used by the data product to provide services through its ports.",
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/entity"
+                },
+                {
+                    "title": "applicationComponent",
+                    "properties": {
+                        "platform": {
+                            "description": "",
+                            "type": "string"
+                        },
+                        "applicationType": {
+                            "description": "",
+                            "type": "string"
+                        },
+                        "buildService": {
+                            "$ref": "#/$defs/stringOrExternalResource"
+                        },
+                        "buildTemplate": {
+                            "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                        },
+                        "buildConfigurations": {
+                            "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                        },
+                        "deployService": {
+                            "$ref": "#/$defs/stringOrExternalResource"
+                        },
+                      
+                        "deployTemplate": {
+                            "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                        },
+                        "deployConfigurations": {
+                            "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                        },
+                        "consumesFrom": {
+                            "description": "",
+                            "type": "string"
+                        },
+                        "providesTo": {
+                            "description": "",
+                            "type": "string"
+                        },
+                        "dependsOn": {
+                            "description": "",
+                            "type": "string"
+                        }
+                    }
+                }
+            ],
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "infrastructuralComponent": {
+            "$comment": "SPEC-BASE-URL#infrastructuralComponent",
+            "title": "Infrastructural Component",
+            "description": "The [Infrastructural Component](SPEC-BASE-URL#infrastructuralComponent) describes an internal infrastructural component used by the data product to run its applications and store its data.",
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/entity"
+                },
+                {
+                    "title": "applicationComponent",
+                    "properties": {
+                        "platform": {
+                            "description": "",
+                            "type": "string"
+                        },
+                        "infrastructureType": {
+                            "description": "",
+                            "type": "string"
+                        },
+                        "provisioningService": {
+                            "$ref": "#/$defs/stringOrExternalResource"
+                        },
+                        "provisioningTemplate": {
+                            "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                        },
+                        "provisioningConfigurations": {
+                            "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                        },
+                        "dependsOn": {
+                            "description": "",
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        },
+        "components": {
+            "$comment": "SPEC-BASE-URL#componentsObject",
+            "title": "Components Object",
+            "description": "The [Components Object](SPEC-BASE-URL#componentsObject) holds a set of reusable objects for different aspects of the DPDS.",
+            "type": "object",
+            "properties": {
+                "inputPorts": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "outputPorts": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "discoveryPorts": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "observabilityPorts": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "controlPorts": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "applicationComponents": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "infrastructuralComponents": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                }
+            },
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "reference": {
+            "$comment": "SPEC-BASE-URL#referenceObject",
+            "title": "Reference Object",
+            "description": "The [Reference Object](SPEC-BASE-URL#referenceObject) allows referencing other components in the [Data Product Descriptor Document](#definitionsDpdsDocument), internally and externally.",
+            "type": "object",
+            "properties": {
+                "$ref": {
+                    "description": "",
+                    "type": "string",
+                    "format": "uri-reference"
+                },
+                "description": {
+                    "description": "",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "$ref"
+            ],
+            "unevaluatedProperties": false
+        },
+        "externalResource": {
+            "$comment": "SPEC-BASE-URL#externalResourceObject",
+            "title": "External Resource Object",
+            "description": "The [External Resource Object](SPEC-BASE-URL#externalResourceObject) allows referencing an external resource like a documentation page or a standard definition.",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "description": "",
+                    "type": "string"
+                },
+                "mediaType": {
+                    "description": "",
+                    "type": "string"
+                },
+                "$href": {
+                    "description": "",
+                    "type": "string",
+                    "format": "uri"
+                }
+            },
+            "required": [
+                "$href"
+            ],
+            "unevaluatedProperties": false
+        },
+
+        "stringOrExternalResource": {
+            "anyOf": [
+                {
+                    "title": "string",
+                    "description": "An inline String", 
+                    "type": "string"
+                },
+                {
+                    "$ref": "#/$defs/externalResource"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+
+
+        "objectOrReferenceOrExternalResource": {
+            "anyOf": [
+                {
+                    "title": "object",
+                    "description": "An inline JSON Object", 
+                    "type": "object"
+                },
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/externalResource"
+                }
+            ]
+        },
+
+        "specificationExtensionPoint": {
+            "$comment": "SPEC-BASE-URL#specificationExtensionPoint",
+            "title": "Specification Extension Point",
+            "description": "A [Specification Extension Point](SPEC-BASE-URL#specificationExtensionPoint) marks specific part of the [Data Product Descriptor Specification](#definitionsDpdsSpecification) that  are left open to extensions or futher evolution of the standard. ",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "description": "",
+                    "type": "string"
+                },
+                "externalDocs": {
+                    "$ref": "#/$defs/externalResource"
+                }
+            },
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+
+        "entity": {
+            "properties": {
+                "id": {
+                    "description": "",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "fullyQualifiedName": {
+                    "description": "",
+                    "type": "string"
+                },
+                "entityType": {
+                    "description": "",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "",
+                    "type": "string"
+                },
+                "version": {
+                    "description": "",
+                    "type": "string"
+                },
+                "displayName": {
+                    "description": "",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "",
+                    "type": "string"
+                },
+                "componentGroup": {
+                    "description": "",
+                    "type": "string"
+                },
+                "tags": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "externalDocs": {
+                    "description": "",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "fullyQualifiedName",
+                "name",
+                "version"
+            ]
+        }
+    }
+}

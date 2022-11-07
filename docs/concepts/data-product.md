@@ -1,0 +1,7 @@
+# Data Product
+
+It's the smallest unit that can be independently deployed and managed in a data architecture (i.e. architectural quantum). It is composed by all the structural components that it requires to do its function: the metadata, the data, the code, the policies that govern the data and its dependencies to infrastructure. Each data product has a clear identifier, a version number and an owner. 
+
+Aside these general informations a data product is composed by external interfaces (i.e. [interface components](#interfaceComponents)) and internal resources (i.e. [internal components](#internalComponents)). [Interface components](#interfaceComponents) are *public* and are used by external agents to access services exposed by the data product. [Internal components](#internalComponents) are *private* and are used by the underlyng [dataops platform](#dataopsPlatform) to deploy and operate the [data product container](#dataProductContainer). 
+
+Data product's general informations, [interface components](#interfaceComponents) and [internal components](#interfaceComponents) are all described in the [data product descriptor](#dataProductDescriptor) document whose structure and content is defined by the DPDS.

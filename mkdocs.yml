@@ -1,0 +1,85 @@
+site_name: Data Product Descriptor Specification
+site_description: An open standard that declaratively defines a data product in all its components using a JSON or YAML descriptor document. It is released under Apache 2.0 licence. Contributions from the data mesh community are welcomed!
+
+repo_url: https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor
+#edit_uri: src/master/docs
+dev_addr: '0.0.0.0:1234'
+nav:
+  - Home: './index.md'
+  - Overview: 
+    - 'Overview Intro': './overview/README.md'
+    - 'Charter': './overview/charter.md'
+    - 'Site Map': './overview/sitemap.md'
+  - Concepts: 
+    - 'Concepts Intro': './concepts/README.md'
+    - 'Data Product': './concepts/data-product.md'
+    - 'Data Product Descriptor': './concepts/data-product-descriptor.md'
+    - 'Data Contract': './concepts/data-contract.md'
+    - 'DataMeshOps Platform': './concepts/meshops-platform.md'
+  - Quickstart:
+    - 'Quickstart Intro': './quickstart/README.md'
+    - 'Descriptor Document Overview': './quickstart/overview.md'
+    - 'Minimal Descriptor Document': './quickstart/info.md'
+    - 'Interface Components': './quickstart/interface.md'
+    - 'Application Components': './quickstart/application.md'
+    - 'Infrastructural Components': './quickstart/infrastructure.md'
+    - 'Reusing Descriptions': './quickstart/components.md'
+  - HowTo(s): 
+    - 'HowTo(s) Intro': './howto/README.md'
+    - 'How to build site doc': './howto/build-site-doc.md'
+    - 'How to build schema doc': './howto/build-schema-doc.md'
+  - Community: './community/README.md'
+  - References: 
+    - 'Specifications': 
+      - 'Versions': './references/specifications/README.md'
+      - '1.0.0.': './references/specifications/1.0.0.md'
+    - 'JSON Schema': 
+      - 'Versions': './references/schemas/README.md'
+      - '1.0.0.': './references/schemas/2.0.0.md'
+    - 'External Tools': './references/tools.md'
+    - 'Related Standards': './references/standards.md'
+    - 'Data Mesh Resources': './references/resources.md'
+  # - Embedding: './embedding.md'
+
+
+##theme: readthedocs
+theme:
+  name: material
+  features:
+    - navigation.tabs  
+    #- navigation.tabs.sticky
+    - navigation.top
+    - toc.follow
+    #- toc.integrate
+  favicon: favicon.ico
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  logo: icon.png
+  icon:
+    repo: fontawesome/brands/github
+  custom_dir: docs/overrides
+    
+extra_css:
+  - stylesheets/extra.css
+  
+markdown_extensions:
+  - toc:
+      toc_depth: 4
+      permalink: ⚓︎
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg

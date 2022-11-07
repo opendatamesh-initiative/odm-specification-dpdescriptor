@@ -1,0 +1,773 @@
+{
+    "$id": "https://quantyca.it/dpds/1.0/schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#dpdsObject",
+    "description": "The description of Data Product Descriptor v1.0.x documents without schema validation, as defined by [Data Product Descriptor Specification v1.0](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md)",
+    "type": "object",
+    "properties": {
+        "dataProductDescriptor": {
+            "description": "",
+            "type": "string",
+            "pattern": "^1\\.1\\.\\d+(-.+)?$"
+        },
+        "id": {
+            "description": "",
+            "type": "string",
+            "readOnly": true
+        },
+        "fullyQualifiedName": {
+            "description": "",
+            "type": "string"
+        },
+        "entityType": {
+            "description": "",
+            "type": "string",
+            "readOnly": true
+        },
+        "name": {
+            "description": "",
+            "type": "string"
+        },
+        "version": {
+            "description": "",
+            "type": "string"
+        },
+        "displayName": {
+            "description": "",
+            "type": "string"
+        },
+        "description": {
+            "description": "",
+            "type": "string"
+        },
+        "info": {
+            "$ref": "#/$defs/info"
+        },
+        "interfaceComponents": {
+            "$ref": "#/$defs/interfaceComponents"
+        },
+        "internalComponents": {
+            "$ref": "#/$defs/internalComponents"
+        },
+        "components": {
+            "$ref": "#/$defs/components"
+        },
+        "tags": {
+            "description": "",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "externalDocs": {
+            "$ref": "#/$defs/externalResource"
+        }
+    },
+    "required": [
+        "dataProductDescriptor",
+        "fullyQualifiedName",
+        "name",
+        "version",
+        "info"
+    ],
+    "$defs": {
+        "info": {
+            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#infoObject",
+            "title": "Info Object",
+            "description": "The [Info Object](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#infoObject) provides metadata about the data product. The metadata can be used by the platform or by cosumers if needed.",
+            "type": "object",
+            "properties": {
+                "domain": {
+                    "description": "",
+                    "type": "string"
+                },
+                "owner": {
+                    "$ref": "#/$defs/owner"
+                },
+                "contactPoints": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/contactPoint"
+                    }
+                }
+            },
+            "required": ["owner"],
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "owner": {
+            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#ownerObject",
+            "title": "Owner Object",
+            "description": "The [Owner Object](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#ownerObject) describes the data product's owner.",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "",
+                    "type": "string"
+                }
+            },
+            "required": ["id"],
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "contactPoint": {
+            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#contactPointObject",
+            "title": "Contact Point Object",
+            "description": "The [Contact Point Object](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#contactPointObject) describes a data product's contact point.",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "",
+                    "type": "string"
+                },
+                "channel": {
+                    "description": "",
+                    "type": "string"
+                },
+                "address": {
+                    "description": "",
+                    "type": "string"
+                }
+            },
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "interfaceComponents": {
+            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#interfaceComponentsObject",
+            "title": "Interface Components Object",
+            "description": "The [Interface Components Object](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#interfaceComponentsObject) it's a collection of all interface entities exposed by a data product.",
+            "type": "object",
+            "properties": {
+                "inputPorts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/inputPortOrReference"
+                    }
+                },
+                "outputPorts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/outputPortOrReference"
+                    }
+                },
+                "discoveryPorts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/discoveryPortOrReference"
+                    }
+                },
+                "observabilityPorts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/observabilityPortOrReference"
+                    }
+                },
+                "controlPorts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/controlPortOrReference"
+                    }
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "inputPortOrReference": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/inputPort"
+                }
+            ]
+        },
+        "inputPort": {
+            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#inputPortComponent",
+            "title": "Input Port Object",
+            "description": "The [Input Port Component](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#inputPortComponent) describes an [input port](#definitionsDataProductPorts) of a data product.",
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/entity"
+                },
+                {
+                    "$ref": "#/$defs/port"
+                }
+            ],
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "outputPortOrReference": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/outputPort"
+                }
+            ]
+        },
+        "outputPort": {
+            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#outputPortComponent",
+            "title": "Output Port Component",
+            "description": "The [Output Port Component](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#outputPortComponent) describes an [output port](#definitionsDataProductPorts) of a data product.",
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/entity"
+                },
+                {
+                    "$ref": "#/$defs/port"
+                }
+            ],
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "discoveryPortOrReference": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/discoveryPort"
+                }
+            ]
+        },
+        "discoveryPort": {
+            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#discoveryPortComponent",
+            "title": "The [Discovey Port Component](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#discoveryPortComponent) describes a [discovery port](#definitionsDataProductPorts) of a data product.t",
+            "description": "",
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/entity"
+                },
+                {
+                    "$ref": "#/$defs/port"
+                }
+            ],
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "observabilityPortOrReference": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/observabilityPort"
+                }
+            ]
+        },
+        "observabilityPort": {
+            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#observabilityPortComponent",
+            "title": "The [Observability Port Component](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#observabilityPortComponent) describes an [observability port](#definitionsDataProductPorts) of a data product.",
+            "description": "",
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/entity"
+                },
+                {
+                    "$ref": "#/$defs/port"
+                }
+            ],
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "controlPortOrReference": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/controlPort"
+                }
+            ]
+        },
+        "controlPort": {
+            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#controlPortComponent",
+            "title": "The [Control Port Component](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#controlPortComponent) describes a [control port](#definitionsDataProductPorts) of a data product.",
+            "description": "",
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/entity"
+                },
+                {
+                    "$ref": "#/$defs/port"
+                }
+            ],
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "port": {
+            "properties": {
+                "promesis": {
+                    "$ref": "#/$defs/promesis"
+                },
+                "expectatctions": {
+                    "$ref": "#/$defs/expectatctions"
+                },
+                "contracts": {
+                    "$ref": "#/$defs/contracts"
+                }
+            }
+        },
+        "promesis": {
+            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#promesisObject",
+            "title": "The [Promesis Object](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#promesisObject) describes the data product's [promesis](#definitionsDataProductPortsPromesis) declared over a given port.",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "platform": {
+                    "description": "",
+                    "type": "string"
+                },
+                "serviceTyoe": {
+                    "description": "",
+                    "type": "string"
+                },
+                "api": {
+                    "$ref": "#/$defs/standardDefinition"
+                },
+                "deprecationPolicy": {
+                    "$ref": "#/$defs/specificationExtensionPoint"
+                },
+                "slo": {
+                    "$ref": "#/$defs/specificationExtensionPoint"
+                }
+            },
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "standardDefinition": {
+            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#standardDefinitionObject",
+            "title": "Standard Definition Object",
+            "description": "The [Standard Definition Object](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#standardDefinitionObject) formally describes an object (ex. API object, provision template object, ecc ...) of interest following a given standard specification.",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "description": "",
+                    "type": "string"
+                },
+                "specification": {
+                    "description": "",
+                    "type": "string"
+                },
+                "version": {
+                    "description": "",
+                    "type": "string"
+                },
+                "definition": {
+                   "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                },
+                "externalDocs": {
+                    "$ref": "#/$defs/externalResource"
+                }
+            },
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+      
+        "expectatctions": {
+            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#expectationsObject",
+            "title": "Expectations Object",
+            "description": "The [Expectations Object](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#expectationsObject) describes the data product's [expectations](#definitionsDataProductPortsExpectations) declared over a given port.",
+            "type": "object",
+            "properties": {
+                "audience": {
+                    "$ref": "#/$defs/specificationExtensionPoint"
+                },
+                "usage": {
+                    "$ref": "#/$defs/specificationExtensionPoint"
+                }
+            },
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+       
+        "contracts": {
+            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#contractsObject",
+            "title": "Expectations Object",
+            "description": "The [Contracts Object](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#contractsObject) describes the data product's [contracts](#definitionsDataProductPortsContracts) declared over a given port.",
+            "type": "object",
+            "properties": {
+                "termsAndConditions": {
+                    "$ref": "#/$defs/specificationExtensionPoint"
+                },
+                "billingPolicy": {
+                    "$ref": "#/$defs/specificationExtensionPoint"
+                },
+                "sla": {
+                    "$ref": "#/$defs/specificationExtensionPoint"
+                }
+            },
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        
+        "internalComponents": {
+            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#internalComponentsObject",
+            "title": "Internal Components Object",
+            "description": "The [Internal Components Object](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#internalComponentsObject) it's a collection of all internal entities that compose a data product.",
+            "type": "object",
+            "properties": {
+                "applicationComponents": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/applicationComponent"
+                    }
+                },
+                "infrastructuralComponents": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/infrastructuralComponent"
+                    }
+                }
+            }
+        },
+        "applicationComponent": {
+            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#applicationComponent",
+            "title": "Application Component",
+            "description": "The [Application Component](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#applicationComponent) describes an internal application component used by the data product to provide services through its ports.",
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/entity"
+                },
+                {
+                    "title": "applicationComponent",
+                    "properties": {
+                        "platform": {
+                            "description": "",
+                            "type": "string"
+                        },
+                        "applicationType": {
+                            "description": "",
+                            "type": "string"
+                        },
+                        "buildService": {
+                            "$ref": "#/$defs/stringOrrExternalResource"
+                        },
+                        "buildTemplate": {
+                            "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                        },
+                        "buildConfigurations": {
+                            "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                        },
+                        "deployService": {
+                            "$ref": "#/$defs/stringOrrExternalResource"
+                        },
+                      
+                        "deployTemplate": {
+                            "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                        },
+                        "deployConfigurations": {
+                            "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                        },
+                        "consumeFrom": {
+                            "description": "",
+                            "type": "string"
+                        },
+                        "provideTo": {
+                            "description": "",
+                            "type": "string"
+                        },
+                        "dependsOn": {
+                            "description": "",
+                            "type": "string"
+                        }
+                    }
+                }
+            ],
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "infrastructuralComponent": {
+            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#infrastructuralComponent",
+            "title": "Infrastructural Component",
+            "description": "The [Infrastructural Component](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#infrastructuralComponent) describes an internal infrastructural component used by the data product to run its applications and store its data.",
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/entity"
+                },
+                {
+                    "title": "applicationComponent",
+                    "properties": {
+                        "platform": {
+                            "description": "",
+                            "type": "string"
+                        },
+                        "infrastructureType": {
+                            "description": "",
+                            "type": "string"
+                        },
+                        "provisionService": {
+                            "$ref": "#/$defs/stringOrrExternalResource"
+                        },
+                        "provisionTemplate": {
+                            "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                        },
+                        "provisionConfigurations": {
+                            "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                        },
+                        "dependsOn": {
+                            "description": "",
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        },
+        "components": {
+            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#componentsObject",
+            "title": "Components Object",
+            "description": "The [Components Object](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#componentsObject) holds a set of reusable objects for different aspects of the DPDS.",
+            "type": "object",
+            "properties": {
+                "inputPorts": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "outputPorts": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "discoveryPorts": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "observabilityPorts": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "controlPorts": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "applicationComponents": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "infrastructuralComponents": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                }
+            },
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "reference": {
+            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#referenceObject",
+            "title": "Reference Object",
+            "description": "The [Reference Object](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#referenceObject) allows referencing other components in the [Data Product Descriptor Document](#definitionsDpdsDocument), internally and externally.",
+            "type": "object",
+            "properties": {
+                "$ref": {
+                    "description": "",
+                    "type": "string",
+                    "format": "uri-reference"
+                },
+                "description": {
+                    "description": "",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "$ref"
+            ],
+            "unevaluatedProperties": false
+        },
+        "externalResource": {
+            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#externalResourceObject",
+            "title": "External Resource Object",
+            "description": "The [External Resource Object](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#externalResourceObject) allows referencing an external resource like a documentation page or a standard definition.",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "description": "",
+                    "type": "string"
+                },
+                "mediaType": {
+                    "description": "",
+                    "type": "string"
+                },
+                "$href": {
+                    "description": "",
+                    "type": "string",
+                    "format": "uri"
+                }
+            },
+            "required": [
+                "$href"
+            ],
+            "unevaluatedProperties": false
+        },
+
+        "stringOrrExternalResource": {
+            "anyOf": [
+                {
+                    "title": "string",
+                    "description": "An inline String", 
+                    "type": "string"
+                },
+                {
+                    "$ref": "#/$defs/externalResource"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+
+
+        "objectOrReferenceOrExternalResource": {
+            "anyOf": [
+                {
+                    "title": "object",
+                    "description": "An inline JSON Object", 
+                    "type": "object"
+                },
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/externalResource"
+                }
+            ]
+        },
+
+        "specificationExtensionPoint": {
+            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#specificationExtensionPoint",
+            "title": "Specification Extension Point",
+            "description": "The [External Resource Object](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#exterspecificationExtensionPointnalResourceObject) ...",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "description": "",
+                    "type": "string"
+                },
+                "externalDocs": {
+                    "$ref": "#/$defs/externalResource"
+                }
+            },
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+
+        "entity": {
+            "properties": {
+                "id": {
+                    "description": "",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "fullyQualifiedName": {
+                    "description": "",
+                    "type": "string"
+                },
+                "entityType": {
+                    "description": "",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "",
+                    "type": "string"
+                },
+                "version": {
+                    "description": "",
+                    "type": "string"
+                },
+                "displayName": {
+                    "description": "",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "",
+                    "type": "string"
+                },
+                "componentGroup": {
+                    "description": "",
+                    "type": "string"
+                },
+                "tags": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "externalDocs": {
+                    "description": "",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "fullyQualifiedName",
+                "name",
+                "version"
+            ]
+        }
+    }
+}
