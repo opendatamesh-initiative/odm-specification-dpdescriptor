@@ -1,0 +1,1370 @@
+<!-- SPDX-License-Identifier: CC-BY-4.0 -->
+<!-- Copyright Contributors to the Egeria project. -->
+
+<!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An open standard that declaratively defines a data product in all its components using a JSON or YAML descriptor document. It is released under Apache 2.0 licence. Contributions from the data mesh community are welcomed!">
+      
+      
+      
+      <link rel="icon" href="favicon.ico">
+      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.6">
+    
+    
+      
+        <title>Home - Data Product Descriptor Specification</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Data Product Descriptor Specification" class="md-header__button md-logo" aria-label="Data Product Descriptor Specification" data-md-component="logo">
+      
+  <img src="icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Data Product Descriptor Specification
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="." class="md-tabs__link md-tabs__link--active">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="overview/" class="md-tabs__link">
+        Overview
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="concepts/" class="md-tabs__link">
+        Concepts
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="quickstart/" class="md-tabs__link">
+        Quickstart
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="howto/" class="md-tabs__link">
+        HowTo(s)
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="community/" class="md-tabs__link">
+      Community
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="references/specifications/" class="md-tabs__link">
+        References
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+<style>
+    .md-header {
+        position: initial;
+    }
+
+    .md-main__inner {
+        margin: 0;
+    }
+
+    .md-content {
+        display: none;
+    }
+
+    .tx-container {
+        padding-top: 1rem;
+        background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1123 258'><path d='M0,147L80,155.2C160,163,320,180,480,163.3C640,147,800,98,960,65.3C1120,33,1280,16,1440,57.2C1600,98,1760,196,1920,196C2080,196,2240,98,2400,49C2560,0,2720,0,2880,32.7C3040,65,3200,131,3360,138.8C3520,147,3680,98,3840,73.5C4000,49,4160,49,4320,89.8C4480,131,4640,212,4800,212.3C4960,212,5120,131,5280,122.5C5440,114,5600,180,5760,196C5920,212,6080,180,6240,212.3C6400,245,6560,343,6720,359.3C6880,376,7040,310,7200,294C7360,278,7520,310,7680,318.5C7840,327,8000,310,8160,261.3C8320,212,8480,131,8640,98C8800,65,8960,82,9120,106.2C9280,131,9440,163,9600,179.7C9760,196,9920,196,10080,163.3C10240,131,10400,65,10560,40.8C10720,16,10880,33,11040,57.2C11200,82,11360,114,11440,130.7L11520,147L11520,490L11440,490C11360,490,11200,490,11040,490C10880,490,10720,490,10560,490C10400,490,10240,490,10080,490C9920,490,9760,490,9600,490C9440,490,9280,490,9120,490C8960,490,8800,490,8640,490C8480,490,8320,490,8160,490C8000,490,7840,490,7680,490C7520,490,7360,490,7200,490C7040,490,6880,490,6720,490C6560,490,6400,490,6240,490C6080,490,5920,490,5760,490C5600,490,5440,490,5280,490C5120,490,4960,490,4800,490C4640,490,4480,490,4320,490C4160,490,4000,490,3840,490C3680,490,3520,490,3360,490C3200,490,3040,490,2880,490C2720,490,2560,490,2400,490C2240,490,2080,490,1920,490C1760,490,1600,490,1440,490C1280,490,1120,490,960,490C800,490,640,490,480,490C320,490,160,490,80,490L0,490Z' style='fill: white' /></svg>") no-repeat bottom, linear-gradient(to bottom, var(--md-primary-fg-color), var(--wave-darker-color) 99%, #fff 99%)
+    }
+
+    /*background fill color to fit the dark mode */
+    body[data-md-color-scheme="slate"] .tx-container {
+        padding-top: 1rem;
+        background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1123 258'><path d='M0,147L80,155.2C160,163,320,180,480,163.3C640,147,800,98,960,65.3C1120,33,1280,16,1440,57.2C1600,98,1760,196,1920,196C2080,196,2240,98,2400,49C2560,0,2720,0,2880,32.7C3040,65,3200,131,3360,138.8C3520,147,3680,98,3840,73.5C4000,49,4160,49,4320,89.8C4480,131,4640,212,4800,212.3C4960,212,5120,131,5280,122.5C5440,114,5600,180,5760,196C5920,212,6080,180,6240,212.3C6400,245,6560,343,6720,359.3C6880,376,7040,310,7200,294C7360,278,7520,310,7680,318.5C7840,327,8000,310,8160,261.3C8320,212,8480,131,8640,98C8800,65,8960,82,9120,106.2C9280,131,9440,163,9600,179.7C9760,196,9920,196,10080,163.3C10240,131,10400,65,10560,40.8C10720,16,10880,33,11040,57.2C11200,82,11360,114,11440,130.7L11520,147L11520,490L11440,490C11360,490,11200,490,11040,490C10880,490,10720,490,10560,490C10400,490,10240,490,10080,490C9920,490,9760,490,9600,490C9440,490,9280,490,9120,490C8960,490,8800,490,8640,490C8480,490,8320,490,8160,490C8000,490,7840,490,7680,490C7520,490,7360,490,7200,490C7040,490,6880,490,6720,490C6560,490,6400,490,6240,490C6080,490,5920,490,5760,490C5600,490,5440,490,5280,490C5120,490,4960,490,4800,490C4640,490,4480,490,4320,490C4160,490,4000,490,3840,490C3680,490,3520,490,3360,490C3200,490,3040,490,2880,490C2720,490,2560,490,2400,490C2240,490,2080,490,1920,490C1760,490,1600,490,1440,490C1280,490,1120,490,960,490C800,490,640,490,480,490C320,490,160,490,80,490L0,490Z' style='fill: rgb(46 48 62)' /></svg>") no-repeat bottom, linear-gradient(to bottom, var(--md-primary-fg-color), var(--wave-darker-color) 99%, #fff 99%)
+    }
+    .tx-hero {
+        margin: 0 .8rem;
+        color: var(--md-primary-bg-color)
+    }
+
+    .tx-hero h1 {
+        margin-bottom: 1rem;
+        color: currentColor;
+        font-weight: 700
+    }
+
+    .tx-hero__content {
+        padding-bottom: 6rem
+    }
+
+    .tx-hero .md-button {
+        margin-top: .5rem;
+        margin-right: .5rem;
+        color: var(--md-primary-bg-color)
+    }
+
+    .tx-hero .md-button--primary {
+        background-color: var(--md-primary-bg-color);
+        color: var(--goreleaser-primary-color);
+        border-color: var(--md-primary-bg-color)
+    }
+
+    .tx-hero .md-button:focus,
+    .tx-hero .md-button:hover {
+        background-color: var(--md-accent-fg-color);
+        color: var(--md-default-bg-color);
+        border-color: var(--md-accent-fg-color)
+    }
+
+    .feature-item h2 svg {
+        height: 30px;
+        float: left;
+        margin-right: 10px;
+        transform: translateY(10%);
+    }
+
+    .top-hr {
+        margin-top: 5px;
+    }
+
+    .topic-item {
+        font-family: 'Lato', sans-serif;
+        font-weight: 150;
+        box-sizing: border-box;
+        padding: 0 15px;
+        word-break: break-word
+
+    }
+    .feature-item {
+        font-family: 'Lato', sans-serif;
+        font-weight: 300;
+        box-sizing: border-box;
+        padding: 0 15px;
+        word-break: break-word
+    }
+
+    .feature-item h2 {
+        color: var(--md-typeset-color);
+        font-weight: 300;
+        font-size: 25px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: normal;
+        margin-bottom: 10px;
+        font-family: inherit;
+    }
+
+    .feature-item p {
+        font-size: 16px;
+        line-height: 1.8em;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        color: var(--md-typeset-color);
+        margin: 0 0 10px;
+        display: block;
+    }
+
+    .feature-item-link {
+        font-family: 'Lato', sans-serif;
+        font-weight: 300;
+        box-sizing: border-box;
+        padding: 0 15px;
+        word-break: break-word
+    }
+
+    .feature-item-link p {
+        font-size: 16px;
+        line-height: 1.8em;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        color: var(--md-typeset-color);
+        margin: 0 0 10px;
+        display: block;
+    }
+
+
+    @media screen and (max-width:70em) {
+        .tx-hero h1 {
+            font-size: 1.4rem
+        }
+        .tx-hero__image {
+            text-align: center;
+        }
+        .tx-hero__image img {
+            max-width: 10rem;
+        }
+    }
+
+    @media screen and (min-width:70em) {
+        .md-sidebar--secondary {
+            display: none
+        }
+        .tx-hero {
+            display: flex;
+            align-items: stretch
+        }
+        .tx-hero__content {
+            max-width: 30rem;
+            margin-top: 3.5rem;
+            padding-bottom: 14vw
+        }
+        .tx-hero__image {
+            order: 1;
+            margin-left: auto;
+            margin-top: 3.5rem;
+        }
+        .tx-hero__image img {
+            max-width: 15rem;
+        }
+    }
+
+    @media screen and (min-width:76.25em) {
+        .md-sidebar--primary {
+            display: none
+        }
+        .tx-hero__image {
+            margin-left: auto;
+        }
+        .tx-hero__image img {
+            max-width: 20rem;
+        }
+
+        .top-hr {
+            width: 100%;
+            display: flex;
+            max-width: 61rem;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 0 .2rem;
+        }
+
+        .bottom-hr {
+            margin-top: 10px;
+            width: 100%;
+            display: flex;
+            max-width: 61rem;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 0 .2rem;
+        }
+
+        .feature-item {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .feature-item-link {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .feature-item-link:hover {
+            background-color: #76b3f4;
+            border-radius: 3px;
+        }
+
+    }
+</style>
+
+<section class="tx-container">
+    <div class="md-grid md-typeset">
+        <div class="tx-hero">
+            <div class="tx-hero__image">
+                <img src="../images/logo-odm.png" style="width: 150px; height: auto;">
+            </div>
+            <div class="tx-hero__content">
+                <h1>Data Product Descriptor Specification</h1>
+                <h3>An open standard that declaratively defines a data product in all its components using a JSON or YAML descriptor document. It is released under Apache 2.0 licence. Contributions from the data mesh community are welcomed!</h3>
+                <a href="overview/" title="Overview Intro" class="md-button">
+                    Learn more
+                </a>
+                <a href="https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor" title="Go to repository" class="md-button">
+                    Star on GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="top-hr">
+    <div class="feature-item">
+        <h2>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70"><ellipse cx="32.9" cy="32.8" rx="32.9" ry="32.8" fill="var(--md-primary-fg-color)"/><g fill="#fff"><path d="M43.6 10.6c.7.2 1.4.6 1.9 1.1.5.6.7 1.3.7 2v18c0 9 0 .1 0 0-.3-.5-.7-1-1.1-1.5-.2-.2-.5-.4-.8-.5s-.4-.3-.4-.5V14c0-.9-.3-1.1-1.1-1.1H20.1c-.9 0-1.2.3-1.2 1.2v30.1c0 .9.3 1.2 1.2 1.2h6.1a1.69 1.69 0 0 1 1 .3 4.67 4.67 0 0 0 1 .5l-1.4 1.4c-.1.1-.2.1-.3.1h-6.8c-1.5 0-2.8-1.1-3-2.6 0-.1 0-.2-.1-.2V13.5c.2-.5.4-1.1.7-1.6.5-.7 1.2-1.1 2-1.3h24.3z"/><path d="M43 49.1l-1.8-.3c-.5-.1-.9.1-1.3.4l-1.2 1.3c-.4.6-1.2.6-1.8.2-.1-.1-.2-.1-.2-.2l-1.2-1.3c-.3-.4-.8-.5-1.3-.4l-1.6.3c-.7.2-1.4-.2-1.7-.9 0-.1-.1-.3-.1-.4l-.3-1.6c-.1-.4-.3-.8-.7-1l-1.5-.8c-.7-.2-1.1-1-.8-1.6 0-.1.1-.2.2-.4.2-.5.5-1 .7-1.4a1.36 1.36 0 0 0 0-1.5c-.3-.5-.5-.9-.7-1.4-.4-.6-.3-1.4.3-1.8.1-.1.2-.1.4-.2l1.4-.7c.5-.2.8-.6.8-1.1l.3-1.8c.1-.7.7-1.2 1.4-1.1h.1l1.7.3c.5.1 1-.1 1.4-.4l1.2-1.2c.4-.5 1.2-.6 1.8-.2l1.4 1.4c.3.4.9.6 1.4.4l1.7-.3c.7-.2 1.4.3 1.5 1v.1l.3 1.8c0 .5.4.9.8 1.1l1.6.8c.6.3 1 1 .7 1.6 0 .1-.1.1-.1.2-.3.5-.5 1-.8 1.5-.3.4-.3 1 0 1.4.3.5.5 1 .8 1.5.4.6.2 1.4-.4 1.7-.1 0-.1.1-.2.1-.5.3-1 .5-1.6.8-.5.2-.8.6-.8 1.1l-.3 1.8c-.1.8-.7 1.3-1.5 1.2zm-5.3-1.5a7.6 7.6 0 1 0 0-15.2 7.6 7.6 0 1 0 0 15.2zm-6.3-29.5h8.1c.2 0 .5 0 .7.1.5.2.7.7.7 1.2-.1.5-.6.9-1.2.9H23.1a1.11 1.11 0 0 1-1.1-1.1c0-.6.5-1.1 1-1.1h8.4zm0 7.7h-8.1c-.6.1-1.2-.2-1.3-.8s.2-1.2.8-1.3h16.7c.2 0 .4 0 .6.1.6.2.9.8.7 1.3-.1.5-.6.8-1.1.8l-8.3-.1zm14.1 21.1l1.9 1.8 1.6 1.6c.2.2.3.5.3.8s-.3.5-.7.5l-1.8.3c-.2 0-.4.2-.4.4l-.3 1.8c-.1.6-.7.9-1.2.4L40.4 50v-.1c.2-.4.6-.5 1-.4l1.6.3c1.1.2 2.2-.6 2.4-1.7 0-.3 0-.7.1-1.2zm-15.6.1c.1.4.1.8.2 1.1.2 1.1 1.2 1.9 2.4 1.7l1.6-.3c.4-.1.8 0 1 .4-.1.1-.2.2-.2.3l-4.2 4.2c-.2.3-.5.5-.9.3s-.5-.4-.5-.8l-.3-1.7c0-.2-.2-.3-.3-.3l-1.9-.3c-.4 0-.6-.4-.6-.7 0-.2.1-.3.2-.4l3.5-3.5c-.1 0-.1 0 0 0z"/></g></svg>
+            Open
+        </h2>
+        <p>
+            TODO
+        </p>
+    </div>
+    <div class="feature-item">
+        <h2>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70"><circle transform="matrix(1 -.003316 .003316 1 -.1074 .108)" cx="32.5" cy="32.5" r="32.5" fill="var(--md-primary-fg-color)"/><g fill="#fff"><path d="M27.7 14.2c.2.3.5.6.5.9 0 1.5 1 1.8 2.3 1.9 1 .2 2.1.4 3.1.8.8.2 1.5.2 2-.7s1.2-1 2-.3 1.5 1.1 2.3 1.6c.6.2.9.9.6 1.5-.1.2-.2.3-.3.4-.7.8-.5 1.4 0 2.1a34.47 34.47 0 0 1 2 3.2c.4.7.8 1.2 1.7.9 1.2-.3 1.7.3 1.8 1.4l.4 2.4c.2.9-.1 1.3-1.1 1.4-5 .4-8.8 3.6-9.8 8.3-.2 1.6-.2 3.1 0 4.7 0 .6.1 1-.5 1.2-.7.2-1 .9-.8 1.6v.1c.3 1.1-.3 1.7-1.3 1.8-.8.1-1.6.2-2.4.4-1 .3-1.7-.1-1.8-1.2s-.6-1.3-1.5-1.5c-1.2-.2-2.5-.5-3.7-.8-.9-.3-1.5-.3-2 .7s-1.1.9-1.9.4-1.6-1.1-2.4-1.7-1-1.2-.3-1.8c.8-.9.5-1.5-.1-2.3-.7-1-1.4-2-1.9-3.1-.4-.7-.9-1.1-1.7-.9-1.1.3-1.7-.2-1.8-1.3-.1-.8-.2-1.6-.4-2.4-.3-1 .1-1.7 1.2-1.8s1.3-.7 1.4-1.6c.2-1.2.5-2.4.8-3.6.3-.9.3-1.5-.6-2.1-.6-.2-.9-.9-.6-1.5.1-.2.2-.3.3-.4.6-.8 1.1-1.6 1.7-2.4.3-.6 1-.8 1.5-.5.1.1.3.2.4.3.8.7 1.4.5 2.1-.1 1-.7 2-1.4 3.1-1.9.8-.4 1.3-.9 1-1.9s.2-1.5 1.2-1.7 1.8-.4 2.7-.5h.8zM36.3 32c0-4.4-3.7-8-8.1-7.9-4.4 0-8 3.7-7.9 8.1 0 4.4 3.6 7.9 8 7.9s8-3.5 8-7.8V32zm8.1 19.1c-.4-.1-.7-.3-1.1-.4-4.6-1.3-7.2-6.1-5.9-10.7s6.1-7.2 10.7-5.9c2.8.8 4.9 2.9 5.8 5.7l.4 1.3v2.7c-.5 2.8-2.4 5.2-4.9 6.5l-2.3.9-2.7-.1zM42.9 47l7.8-4.5-7.8-4.5v9z"/><path d="M47.1 51.1c.8-.3 1.6-.5 2.3-.9 2.6-1.3 4.4-3.6 4.9-6.5V51l-7.2.1z"/></g></svg>
+            Flexible
+        </h2>
+        <p>
+            TODO
+        </p>
+    </div>
+    <div class="feature-item">
+        <h2>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70"><circle cx="32.3" cy="32.3" r="32.3" fill="var(--md-primary-fg-color)"/><path d="M9.7 40.1v-1.6c.4-.5.7-1.2 1.2-1.4a4.73 4.73 0 0 0 2-2.2l1-1.5c2.5-3.2 5.7-5.8 9.3-7.7.6-.3 1-.8 1.2-1.5.2-1.4 1.6-2.3 3-2.1.1 0 .2.1.4.1.3.1.7.1.9 0 3.3-2.7 7.1-3.9 11.2-4.8.3-.1.6-.3.8-.5.6-.7 1.3-1.4 1.9-2.1h1.3c1.2.4 2 1.6 2 2.9 0 .3.2.6.4.9 3.5 5.9 5.8 12.4 6.7 19.2.3 2.2 0 4.7 2 6.4v1.6c-.2.3-.4.5-.6.8-1.2 1.6-3.8 1.5-4.3-.3-.5-1.4-1.3-1.3-2.3-1.4-.8 0-1.5-.1-2.3-.1-4.4-.3-8.7.4-12.8 2-.4.2-.8.5-1.2.8-.7.7-1.2 1.4-1.9 2.1h-1.3c-1.8-.9-2.1-1.6-1.9-3.5 0-.3 0-.6-.2-.8-1.9-2.2-4.1-4-7-4.7-1.9-.4-3.8-1-5.5.8-1.2 1.1-2.8.4-4-1.4zm21.4-6.5c1 3.5.9 7.2-.4 10.7-.2.4 0 .8.4.9.2.1.4.1.6 0 3.6-1.5 7.4-2.2 11.2-2.1 2.1 0 4.3.2 6.4.3.8 0 1.5-.2 1-1-1-2.1-2.2-4.2-3.4-6.2 0-.2-.5-.2-.9-.2-.8-.1-1.9.1-2.3-.4-.8-.8-1.9-1.2-3-1.2-3-.3-6.2-.5-9.6-.8zm-1.4-9c6.1-.8 11 1.4 14.7 6.3.5-3.4.2-6.9-.8-10.3-.1-.2-.3-.4-.5-.5-.7-.4-1.4-.8-2.1-1.1h-.7c-3.7.8-7.3 1.8-10.3 4.2-.5.4-.9.8-.3 1.4zm-14.9 14c3.9-.4 7.7.9 10.5 3.6.7.6 1.3 1.3 2 1.9.5.4 1.3.4 1.7-.1.1-.1.1-.1.1-.2 1.2-3.2 1.3-6.6.3-9.9-5.1.1-11 2-14.6 4.7zm16.5-12.3h-1.9c-.7.1-1 .4-.6 1.1l1.8 4.1c.2.3.4.5.8.6 3.6.3 7.3.5 10.9.7.8 0 .9-.3.6-.9-.1-.3-.3-.5-.5-.7-3-3.5-6.8-4.7-11.1-4.9zm-6.6.4c-4.5 2.5-8.6 5.4-10.9 10.3 4.6-2.8 9.8-4.5 15.2-4.8-.7-1.6-1.3-2.9-2-4.3-.2-.2-.4-.4-.6-.5l-1.7-.7zm21-5.5c.2 2.8.3 5.9.5 9 0 .3.4.6.6.9.4.7 1.2 1.5 1.1 2.2-.1.8.3 1.7.8 2.3.3.4.6.8.9 1.3l.9 1.5c.3.5.5.9.7 1.4-.5-6.6-2.3-12.9-5.5-18.6z" fill="#fff"/></svg>
+            Composable
+        </h2>
+        <p>
+            TODO
+        </p>
+    </div>
+    <div class="feature-item">
+        <h2>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 65"><circle cx="30.1" cy="30.1" r="30.1" fill="var(--md-primary-fg-color)"/><path d="M14.7 31.4l-4.9-4.9 1.5-1.5h1.9v-1.9l7.7-7.7h9.9L18.1 28h-1.9v1.9l-1.5 1.5zM11 26.5l3.6 3.6.6-.6v-2.4h2.4l10.8-10.8h-7.3l-7.2 7.2v2.4h-2.4l-.5.6zm28.1 5c4.1 1.4 8.6-.9 9.9-5 .3-.8.4-1.5.4-2.3 0-.5 0-.9-.1-1.4l-.4-1.5-4.2 4.2c-.5.6-1.3.9-2.1.9s-1.6-.3-2.1-.9c-.6-.5-.9-1.3-.9-2.1s.3-1.6.9-2.1l4.2-4.2-1.7-.3c-.5-.1-.9-.1-1.4-.1-4.3 0-7.7 3.5-7.7 7.7 0 .9.1 1.7.4 2.5l-3.7 3.7-6.7-6.7-4 4 6.7 6.7-5.4 5.4a3.32 3.32 0 0 0 0 4.7c.6.6 1.4 1 2.3 1s1.7-.3 2.3-1l5.3-5.3 6.5 6.5 4-4-.5-.7-5.9-5.9 3.9-3.8zm-18-3.6l2.8-2.8 6.1 6.2-2.8 2.8-6.1-6.2zm19.5 14l-2.7 2.7-5.9-5.9 2.8-2.8 5.8 6zM38.4 31l-13 13a2.34 2.34 0 0 1-1.7.7c-.6 0-1.2-.3-1.7-.7-.9-1-.9-2.5 0-3.4l13.4-13.4-.2-.6c-.3-.7-.4-1.5-.4-2.2a6.74 6.74 0 0 1 6.8-6.8c.4 0 .8 0 1.2.1l-3 3c-1.5 1.5-1.5 4 0 5.5a3.8 3.8 0 0 0 5.4 0l3-3c.1.4.1.8.1 1.2 0 3.8-3 6.8-6.8 6.9-.8 0-1.5-.1-2.2-.4l-.4-.3-.5.4z" fill="#fff"/></svg>
+            Extensible
+        </h2>
+        <p>
+            TODO
+        </p>
+    </div>
+</div>
+
+
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Data Product Descriptor Specification" class="md-nav__button md-logo" aria-label="Data Product Descriptor Specification" data-md-component="logo">
+      
+  <img src="icon.png" alt="logo">
+
+    </a>
+    Data Product Descriptor Specification
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        Home
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Overview" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="overview/" class="md-nav__link">
+        Overview Intro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="overview/charter/" class="md-nav__link">
+        Charter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="overview/sitemap/" class="md-nav__link">
+        Site Map
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Concepts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Concepts" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Concepts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="concepts/" class="md-nav__link">
+        Concepts Intro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="concepts/data-product/" class="md-nav__link">
+        Data Product
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="concepts/data-product-descriptor/" class="md-nav__link">
+        Data Product Descriptor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="concepts/data-contract/" class="md-nav__link">
+        Data Contract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="concepts/meshops-platform/" class="md-nav__link">
+        DataMeshOps Platform
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Quickstart
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Quickstart" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Quickstart
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quickstart/" class="md-nav__link">
+        Quickstart Intro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quickstart/overview/" class="md-nav__link">
+        Descriptor Document Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quickstart/info/" class="md-nav__link">
+        Minimal Descriptor Document
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quickstart/interface/" class="md-nav__link">
+        Interface Components
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quickstart/application/" class="md-nav__link">
+        Application Components
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quickstart/infrastructure/" class="md-nav__link">
+        Infrastructural Components
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quickstart/components/" class="md-nav__link">
+        Reusing Descriptions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          HowTo(s)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="HowTo(s)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          HowTo(s)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="howto/" class="md-nav__link">
+        HowTo(s) Intro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="howto/build-site-doc/" class="md-nav__link">
+        How to build site doc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="howto/build-schema-doc/" class="md-nav__link">
+        How to build schema doc
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="community/" class="md-nav__link">
+        Community
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          References
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="References" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          References
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_1">
+          Specifications
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Specifications" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Specifications
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="references/specifications/" class="md-nav__link">
+        Versions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="references/specifications/1.0.0/" class="md-nav__link">
+        1.0.0.
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2">
+          JSON Schema
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JSON Schema" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          JSON Schema
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="references/schemas/" class="md-nav__link">
+        Versions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="references/schemas/2.0.0/" class="md-nav__link">
+        1.0.0.
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="references/tools/" class="md-nav__link">
+        External Tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="references/standards/" class="md-nav__link">
+        Related Standards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="references/resources/" class="md-nav__link">
+        Data Mesh Resources
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+  <h1>Home</h1>
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+      
+        
+        <a href="overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview Intro" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Overview Intro
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.top", "toc.follow"], "search": "assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.078830c0.min.js"></script>
+      
+    
+  </body>
+</html>
