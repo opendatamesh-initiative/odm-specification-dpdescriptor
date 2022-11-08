@@ -11,4 +11,4 @@ This is the *current working draft* of the specification:
 
 ## Documentation
 
-For a more detailed introduction to the specification chek out our [documention pages](https://dpds.opendatamesh.org/).
+For a more detailed introduction to the specification check out our [documention pages](https://dpds.opendatamesh.org/).
