@@ -32,8 +32,8 @@ nav:
     - 'How to build schema doc': './howto/build-schema-doc.md'
   - Community: 
     - './community/README.md'
-    - Quantyca: './community/Quantyca.md'
-    - Blindata: './community/Blindata.md'
+    - Quantyca: './community/quantyca.md'
+    - Blindata: './community/blindata.md'
   - Resources: 
     - 'Specifications': 
       - 'Versions': './references/specifications/README.md'

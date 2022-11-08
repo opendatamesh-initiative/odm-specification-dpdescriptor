@@ -1,6 +1,6 @@
 # Quantyca
 
-![Quantyca](../images/quantyca.png){: style="height:5em"}
+![Quantyca](../images/logos/quantyca.png){: style="height:5em"}
 
 <a href="https://www.quantyca.it/" target="_blank">Quantyca :octicons-link-external-24:</a> is a technology consulting company specialized in Data and Metadata Management.
 

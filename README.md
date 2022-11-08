@@ -1,6 +1,6 @@
 # Data Product Descriptor Specification
 
-![Open Data Mesh Initiative Logo](./docs/images/logo-odm.png)
+![Open Data Mesh Initiative Logo](./docs/images/logos/opendatamesh.png)
 
 The **Data Product Descriptor Specification (DPDS)** is a community-driven open specification that declaratively defines a data product in all its components using a JSON or YAML descriptor document. It is released under [Apache 2.0 licence](./LICENSE). Contributions from the data community are welcomed!
 

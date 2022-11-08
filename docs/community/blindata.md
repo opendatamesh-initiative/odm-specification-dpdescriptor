@@ -1,6 +1,6 @@
 # Blindata
 
-![Blindata](../images/blindata.jpg){: style="height:5em"}
+![Blindata](../images/logos/blindata.jpg){: style="height:5em"}
 
 <a href="https://blindata.io/" target="_blank">Blindata :octicons-link-external-24:</a> is a platform for the governance of data assets and enterprise processes.It provides a collaborative solution to address data governance issues in an integrated vision with the needs of regulatory compliance.
 
