@@ -27,8 +27,11 @@ nav:
     - './howto/README.md'
     - 'How to build site doc': './howto/build-site-doc.md'
     - 'How to build schema doc': './howto/build-schema-doc.md'
-  - Community: './community/README.md'
-  - References: 
+  - Community: 
+    - './community/README.md'
+    - Quantyca: './community/Quantyca.md'
+    - Blindata: './community/Blindata.md'
+  - Resources: 
     - 'Specifications': 
       - 'Versions': './references/specifications/README.md'
       - '1.0.0.': './references/specifications/1.0.0.md'
