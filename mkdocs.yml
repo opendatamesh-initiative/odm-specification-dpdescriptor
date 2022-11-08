@@ -2,7 +2,10 @@ site_name: Data Product Descriptor Specification
 site_description: An open standard that declaratively defines a data product in all its components using a JSON or YAML descriptor document. It is released under Apache 2.0 licence. Contributions from the data mesh community are welcomed!
 
 repo_url: https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor
+edit_uri: edit/main/docs/
+
 dev_addr: '0.0.0.0:1234'
+
 nav:
   - Home: './index.md'
   - Overview: 
