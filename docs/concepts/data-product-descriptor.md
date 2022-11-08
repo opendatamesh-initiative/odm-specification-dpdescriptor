@@ -21,12 +21,8 @@ The components of a [data product](#dataProduct) that implement the services exp
 
 In DPDS an application component is mainly described through parametrized templates that formally define how to build and deploy the specific application component (i.e. *pipeline as code*). In partircular there is one `template` and `configurations` attribute pair that describe the application build pipeline and one that describe the application deployment pipeline. These two pairs of attributes should respectvelly be passed by the [Data Product Experience Plane](#dataProductExperiencePlane) to the proper implementation of *build service* and *deploymet service* exposed by the [Infrastructure Utility Plane](#infrastructureUtilityPlane). The `template` attributes contain the definition of the pipeline that can be executed in order to build or deploy the application. The `configurations` attributes contain the parameters that should be passed at execution time to the build or deployment service. The form of template and configuration attributes depends on the target build or deployment service implementation exposed by the [Infrastructure Utility Plane](#infrastructureUtilityPlane) and referenced in the descriptor. The DPDS does not enforce any specific format.
 
-NOTE:
-TODO mettere immagine
 
 #### <a name="infrastructuralComponents"></a>Infrastructural Components
 The components of a [data product](#dataProduct) related to the infrastructural resources (i.e. storage, compute, etc..) used to run its application components.
 
 In DPDS an infrastructural component is mainly described through a parametrized template that formally define how to provision the specific infrastructural component (i.e. infrastructure as code). In partircular there is one `template` attribute that define how to provision the component and one `configurations` attribute that contains the parameters that should be passed at run time to the *provision service* exposed by the [Infrastructure Utility Plane](#infrastructureUtilityPlane) and referenced in the descriptor. The form of these attributes depends on the specific implementation of the provision service invoked. The DPDS does not enforce it.
-
-TODO mettere immagine

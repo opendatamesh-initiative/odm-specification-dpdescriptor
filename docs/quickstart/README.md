@@ -10,7 +10,8 @@ The following pages introduce the syntax and structure of a data product descrip
 - [Application Components](./application.md): `applicationComponents`, `buildService` and `deploymentService`
 - [Infrastructural Components](./infrastructure.md): `infrastructuralComponents` and  `provisioningService`
 - [Reusing Descriptions](./components.md): `components` and `$ref`.
-- [External Resources](./resources): todo
-- [Standard Definitions](./definitions): todo
-- [Extending the specification](./extensions): todo
+- [External Resources](./resources): *coming soon...*
+- [Standard Definitions](./definitions): *coming soon...*
+- [Extending the specification](./extensions): *coming soon...*
+- [Putting all together](./extensions): *coming soon...*
 
