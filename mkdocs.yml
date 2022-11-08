@@ -67,7 +67,14 @@ theme:
   icon:
     repo: fontawesome/brands/github
   custom_dir: docs/overrides
-    
+
+extra:
+  social:
+    - icon: octicons/mail-16
+      link: mailto:michele.launi@quantyca.it
+    - icon: fontawesome/brands/github
+      link: https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor
+
 extra_css:
   - stylesheets/extra.css
   
@@ -83,3 +90,5 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+      
+copyright: Copyright &copy; 2022 Quantyca s.r.l.
