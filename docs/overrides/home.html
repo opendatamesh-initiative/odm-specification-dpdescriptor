@@ -71,7 +71,7 @@
 
     .tx-hero .md-button--primary {
         background-color: var(--md-primary-bg-color);
-        color: var(--goreleaser-primary-color);
+        color: var(--md-accent-fg-color--dark);
         border-color: var(--md-primary-bg-color)
     }
 
@@ -242,7 +242,7 @@
             <div class="tx-hero__content">
                 <h1>{{ config.site_name }}</h1>
                 <h3>{{ config.site_description }}</h3>
-                <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | striptags }}" class="md-button">
+                <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | striptags }}" class="md-button md-button--primary">
                     Learn more
                 </a>
                 <a href="{{ config.repo_url }}" title="{{ lang.t('source.link.title') }}" class="md-button">
