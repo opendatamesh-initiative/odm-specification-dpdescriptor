@@ -2,22 +2,21 @@ site_name: Data Product Descriptor Specification
 site_description: An open standard that declaratively defines a data product in all its components using a JSON or YAML descriptor document. It is released under Apache 2.0 licence. Contributions from the data mesh community are welcomed!
 
 repo_url: https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor
-#edit_uri: src/master/docs
 dev_addr: '0.0.0.0:1234'
 nav:
   - Home: './index.md'
   - Overview: 
-    - 'Overview Intro': './overview/README.md'
+    - './overview/README.md'
     - 'Charter': './overview/charter.md'
     - 'Site Map': './overview/sitemap.md'
   - Concepts: 
-    - 'Concepts Intro': './concepts/README.md'
+    - './concepts/README.md'
     - 'Data Product': './concepts/data-product.md'
     - 'Data Product Descriptor': './concepts/data-product-descriptor.md'
     - 'Data Contract': './concepts/data-contract.md'
     - 'DataMeshOps Platform': './concepts/meshops-platform.md'
   - Quickstart:
-    - 'Quickstart Intro': './quickstart/README.md'
+    - './quickstart/README.md'
     - 'Descriptor Document Overview': './quickstart/overview.md'
     - 'Minimal Descriptor Document': './quickstart/info.md'
     - 'Interface Components': './quickstart/interface.md'
@@ -25,7 +24,7 @@ nav:
     - 'Infrastructural Components': './quickstart/infrastructure.md'
     - 'Reusing Descriptions': './quickstart/components.md'
   - HowTo(s): 
-    - 'HowTo(s) Intro': './howto/README.md'
+    - './howto/README.md'
     - 'How to build site doc': './howto/build-site-doc.md'
     - 'How to build schema doc': './howto/build-schema-doc.md'
   - Community: './community/README.md'
@@ -51,6 +50,10 @@ theme:
     - navigation.top
     - toc.follow
     #- toc.integrate
+    - navigation.instant
+    - navigation.tracking
+    - navigation.expand
+    - navigation.indexes
   favicon: favicon.ico
   palette:
     # Palette toggle for light mode
@@ -90,5 +93,9 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+
+plugins:
+  - git-revision-date-localized:
+      enable_creation_date: true
       
 copyright: Copyright &copy; 2022 Quantyca s.r.l.
