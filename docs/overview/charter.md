@@ -27,8 +27,6 @@ All DPDS versions also have an associated <a href="https://json-schema.org/" tar
 ## Context
 The first draft of the data product descriptor specification was created by <a href="https://www.quantyca.it/" target="_blank">Quantyca :octicons-link-external-24:</a>. Quantyca use it in its projects, togheter with a custom implementation of [data product experience plan](../concepts/meshops-platform.md#data-product-experience-plane) and [infrastructure utility plane](../concepts/meshops-platform.md#infrastructure-utility-plane) named [Open Data Mesh Platform](../references/tools.md#open-data-mesh-platform), to manage the [data product]() lifecycle from creation till its retirement. The Open Data Mesh Platform sandardizes and automates all the data product operational activities. It's a *DataOps* lightweight platform deisgned for data mesh or, if you prefer, a [DataMeshOps platform](../concepts/data-product.md). The image below shows the high level architecture of the Open Data Mesh Platform and how it uses the descriptor to orchestrate all the key activities related to data product lifecycle management.  
 
-![open-data-mesh logical architecture](../images/odm-logical-architecture.png)
-
 ## Goals
 
 Quantyca decided to publicly release the DPDS as an open standard under <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache 2.0 licecne :octicons-link-external-24:</a> for the following reasons:
