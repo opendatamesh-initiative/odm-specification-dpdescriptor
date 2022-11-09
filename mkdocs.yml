@@ -40,7 +40,7 @@ nav:
       - '1.0.0-DRAFT': './references/specifications/1.0.0-DRAFT.md'
     - 'JSON Schema': 
       - 'Versions': './references/schemas/README.md'
-      - '1.0.0-DRAFT': './embedding.md'
+      - '1.0.0-DRAFT': './references/schemas/1.0.0-DRAFT.md'
     - 'External Tools': './references/tools.md'
     - 'Related Standards': './references/standards.md'
     - 'Data Mesh Resources': './references/resources.md'
