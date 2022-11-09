@@ -7,7 +7,7 @@ This site contains all the available documentation related to the Data Product D
 - [Quikstart](./quickstart/README.md): This pages describe the key parts of the specification in an informal and incremental way to simplify the learning process.
 - [HowTo(s)](./howto/README.md): This pages contain guides that describe how to perform specific activites related to the DPDS lifecycle management.
 - [Contributions](./contributions/README.md): This page expalins the possible ways to contribute to the specification evolution.
-- [References](./references/README.md): These pages point to external resources related to the DPDS.
+- [Resources](./references/README.md): These pages point to external resources related to the DPDS.
     - [Specifications](./references/specifications/README.md): This page points to html version of the DPDS.
     - [Json Schema](./references/schemas/README.md): This page contains the documenation of the JSON Schema defied to validate data product descriptor definition compliant with the DPDS.
     - [Examples](./references/examples.md): This page contains some examples of valid data product descriptor definition together with their description.

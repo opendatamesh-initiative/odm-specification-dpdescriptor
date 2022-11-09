@@ -26,21 +26,21 @@ nav:
     - 'Application Components': './quickstart/application.md'
     - 'Infrastructural Components': './quickstart/infrastructure.md'
     - 'Reusing Descriptions': './quickstart/components.md'
-  - HowTo(s): 
-    - './howto/README.md'
-    - 'How to build site doc': './howto/build-site-doc.md'
-    - 'How to build schema doc': './howto/build-schema-doc.md'
+  #- HowTo(s): 
+  #  - './howto/README.md'
+   # - 'How to build site doc': './howto/build-site-doc.md'
+    #- 'How to build schema doc': './howto/build-schema-doc.md'
   - Community: 
     - './community/README.md'
-    - Quantyca: './community/Quantyca.md'
-    - Blindata: './community/Blindata.md'
+    - Quantyca: './community/quantyca.md'
+    - Blindata: './community/blindata.md'
   - Resources: 
     - 'Specifications': 
       - 'Versions': './references/specifications/README.md'
-      - '1.0.0.': './references/specifications/1.0.0.md'
+      - '1.0.0-DRAFT': './references/specifications/1.0.0-DRAFT.md'
     - 'JSON Schema': 
       - 'Versions': './references/schemas/README.md'
-      - '1.0.0.': './references/schemas/2.0.0.md'
+      - '1.0.0-DRAFT': './embedding.md'
     - 'External Tools': './references/tools.md'
     - 'Related Standards': './references/standards.md'
     - 'Data Mesh Resources': './references/resources.md'

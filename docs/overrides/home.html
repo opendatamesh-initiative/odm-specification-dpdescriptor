@@ -39,7 +39,8 @@
 
     .tx-container {
         padding-top: 1rem;
-        background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1123 258'><path d='M0,147L80,155.2C160,163,320,180,480,163.3C640,147,800,98,960,65.3C1120,33,1280,16,1440,57.2C1600,98,1760,196,1920,196C2080,196,2240,98,2400,49C2560,0,2720,0,2880,32.7C3040,65,3200,131,3360,138.8C3520,147,3680,98,3840,73.5C4000,49,4160,49,4320,89.8C4480,131,4640,212,4800,212.3C4960,212,5120,131,5280,122.5C5440,114,5600,180,5760,196C5920,212,6080,180,6240,212.3C6400,245,6560,343,6720,359.3C6880,376,7040,310,7200,294C7360,278,7520,310,7680,318.5C7840,327,8000,310,8160,261.3C8320,212,8480,131,8640,98C8800,65,8960,82,9120,106.2C9280,131,9440,163,9600,179.7C9760,196,9920,196,10080,163.3C10240,131,10400,65,10560,40.8C10720,16,10880,33,11040,57.2C11200,82,11360,114,11440,130.7L11520,147L11520,490L11440,490C11360,490,11200,490,11040,490C10880,490,10720,490,10560,490C10400,490,10240,490,10080,490C9920,490,9760,490,9600,490C9440,490,9280,490,9120,490C8960,490,8800,490,8640,490C8480,490,8320,490,8160,490C8000,490,7840,490,7680,490C7520,490,7360,490,7200,490C7040,490,6880,490,6720,490C6560,490,6400,490,6240,490C6080,490,5920,490,5760,490C5600,490,5440,490,5280,490C5120,490,4960,490,4800,490C4640,490,4480,490,4320,490C4160,490,4000,490,3840,490C3680,490,3520,490,3360,490C3200,490,3040,490,2880,490C2720,490,2560,490,2400,490C2240,490,2080,490,1920,490C1760,490,1600,490,1440,490C1280,490,1120,490,960,490C800,490,640,490,480,490C320,490,160,490,80,490L0,490Z' style='fill: white' /></svg>") no-repeat bottom, linear-gradient(to bottom, var(--md-primary-fg-color), var(--wave-darker-color) 99%, #fff 99%)
+        background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1123 258'><path d='M0,147L80,155.2C160,163,320,180,480,163.3C640,147,800,98,960,65.3C1120,33,1280,16,1440,57.2C1600,98,1760,196,1920,196C2080,196,2240,98,2400,49C2560,0,2720,0,2880,32.7C3040,65,3200,131,3360,138.8C3520,147,3680,98,3840,73.5C4000,49,4160,49,4320,89.8C4480,131,4640,212,4800,212.3C4960,212,5120,131,5280,122.5C5440,114,5600,180,5760,196C5920,212,6080,180,6240,212.3C6400,245,6560,343,6720,359.3C6880,376,7040,310,7200,294C7360,278,7520,310,7680,318.5C7840,327,8000,310,8160,261.3C8320,212,8480,131,8640,98C8800,65,8960,82,9120,106.2C9280,131,9440,163,9600,179.7C9760,196,9920,196,10080,163.3C10240,131,10400,65,10560,40.8C10720,16,10880,33,11040,57.2C11200,82,11360,114,11440,130.7L11520,147L11520,490L11440,490C11360,490,11200,490,11040,490C10880,490,10720,490,10560,490C10400,490,10240,490,10080,490C9920,490,9760,490,9600,490C9440,490,9280,490,9120,490C8960,490,8800,490,8640,490C8480,490,8320,490,8160,490C8000,490,7840,490,7680,490C7520,490,7360,490,7200,490C7040,490,6880,490,6720,490C6560,490,6400,490,6240,490C6080,490,5920,490,5760,490C5600,490,5440,490,5280,490C5120,490,4960,490,4800,490C4640,490,4480,490,4320,490C4160,490,4000,490,3840,490C3680,490,3520,490,3360,490C3200,490,3040,490,2880,490C2720,490,2560,490,2400,490C2240,490,2080,490,1920,490C1760,490,1600,490,1440,490C1280,490,1120,490,960,490C800,490,640,490,480,490C320,490,160,490,80,490L0,490Z' style='fill: white' /></svg>") no-repeat bottom, linear-gradient(to bottom, var(--md-primary-fg-color), var(--wave-darker-color) 99%, #fff 99%);
+        margin-left: -1px;
     }
 
     /*background fill color to fit the dark mode */
@@ -70,7 +71,7 @@
 
     .tx-hero .md-button--primary {
         background-color: var(--md-primary-bg-color);
-        color: var(--goreleaser-primary-color);
+        color: var(--md-accent-fg-color--dark);
         border-color: var(--md-primary-bg-color)
     }
 
@@ -236,12 +237,12 @@
     <div class="md-grid md-typeset">
         <div class="tx-hero">
             <div class="tx-hero__image">
-                <img src="../images/logo-odm.png" style="width: 150px; height: auto;">
+                <img src="./images/logos/opendatamesh.png" style="width: 150px; height: auto;">
             </div>
             <div class="tx-hero__content">
                 <h1>{{ config.site_name }}</h1>
                 <h3>{{ config.site_description }}</h3>
-                <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | striptags }}" class="md-button">
+                <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | striptags }}" class="md-button md-button--primary">
                     Learn more
                 </a>
                 <a href="{{ config.repo_url }}" title="{{ lang.t('source.link.title') }}" class="md-button">
@@ -258,7 +259,9 @@
             Open
         </h2>
         <p>
-            TODO
+            DPDS is realeased under Apache 2.0 licence. You can use the specification as it is or  
+            extend it according to your needs. You can also join our community 
+            and actively participate to its evolution providing feedbacks or even becoming a commiter.
         </p>
     </div>
     <div class="feature-item">
@@ -267,7 +270,9 @@
             Flexible
         </h2>
         <p>
-            TODO
+            DPDS is technology agnostic. You can bring your preferred tools for provisioning, CICD, 
+            policy enforcing, metadata management ecc... DPDS doesn't care. It adapts to your 
+            preferences in a flexible way, allowing you to leverage your previous investments. 
         </p>
     </div>
     <div class="feature-item">
@@ -276,7 +281,9 @@
             Composable
         </h2>
         <p>
-            TODO
+            DPDS collects the description of all the components used to build a data product, 
+            from infrastructure up to its iterfaces. These definitions can be saved as parametrized 
+            template and then reused to compose multiple data product descriptors. 
         </p>
     </div>
     <div class="feature-item">
@@ -285,7 +292,9 @@
             Extensible
         </h2>
         <p>
-            TODO
+            DPDS has been designed to be easy to extend. You can add custom properties to almost
+            all components of the descriptor documents. It is also possible use external standrads 
+            to like OpenAPI, AsyncAPI, Open SLO ecc.. to define some components.
         </p>
     </div>
 </div>
