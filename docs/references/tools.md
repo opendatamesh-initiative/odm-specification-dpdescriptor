@@ -7,8 +7,11 @@ Open Data Mesh Platform is a platform that manages the full lifecycle of a data 
 
 Open Data Mesh Platform use the specification to create, deploy and operate [data product containers](../concepts/meshops-platform.md#data-product-container) in a mesh architecture.
 
+![Open Data Mesh Platform](../images/odm-platform.png)
+
 In a [DataMeshOps platform](../concepts/meshops-platform.md), Open Data Mesh Platform offers key services to implement the [data product experience plane](../concepts/meshops-platform.md#data-product-experience-plane). Open Data Mesh Platform also come togheter with a set of adapters to implement the [infrastructure utility plane](../concepts/meshops-platform.md#infrastructure-utility-plane) of the [DataMeshOps platform](../concepts/meshops-platform.md) over the actual infrastructure.
 
+![Open Data Mesh Adapters](../images/odm-adapters.png)
 
 ## Blindata.io
 <a href="https://blindata.io/" target="_blank">Blindata :octicons-link-external-24:</a> is a 
@@ -19,3 +22,5 @@ Blindata.io uses the specification to collect and store in its *knowledge graph*
 In a [DataMeshOps platform](../concepts/meshops-platform.md), blindata.io offers key services to implement the [data mesh experience plane](../concepts/meshops-platform.md#data-mesh-experience-plane).  
 
 Blindata.io is integrated with [Open Data Mesh Platform](#open-data-mesh-platform) providing a control plane to its services. Through its UI the users can govern data product's lifecycle from a visual and unified environment.
+
+![Blindata.io](../images/odm-blindata.png)
