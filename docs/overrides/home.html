@@ -257,10 +257,11 @@
                 <h1>{{ config.site_name }}</h1>
                 <h3>{{ config.site_description }}</h3>
                 <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | striptags }}" class="md-button md-button--primary">
-                    Get started →
+                    Get started
                 </a>
-                <a href="{{ config.repo_url }}" title="{{ lang.t('source.link.title') }}" class="md-button">
-                    Star on GitHub
+                <!-- <a href="{{ config.repo_url }}" title="{{ lang.t('source.link.title') }}" class="md-button"> -->
+                <a href="./references/specifications/1.0.0-DRAFT.md" title="DPDS v1.0.0-DRAFT" class="md-button">    
+                    Review the Spec
                 </a>
             </div>
         </div>
