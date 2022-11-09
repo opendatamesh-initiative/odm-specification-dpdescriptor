@@ -1,12 +1,24 @@
 body {
   font: 16px/1.5em "Overpass", "Open Sans", Helvetica, sans-serif;
-  color: #333;
   font-weight: 300;
   padding: 40px;
 }
 
 .btn.btn-link {
     font-size: 18px;
+    color: #c56000
+}
+
+.btn.btn-link:hover {
+    color: #006064
+}
+
+a {
+    color: #c56000
+}
+
+a:hover {
+    color: #006064
 }
 
 .jsfh-animated-property {
@@ -28,6 +40,20 @@ body {
 
 .btn.btn-primary {
     margin: 10px;
+    background-color: #c56000;
+    border-color: #c56000;
+    box-shadow: none;
+}
+
+.btn.btn-primary:hover {
+    background-color: #006064;
+    border-color: #006064
+}
+
+.btn.btn-primary:active {
+    background-color: #006064 !important;
+    border-color: #006064 !important;
+    
 }
 
 .btn.example-show.collapsed:before {
@@ -106,6 +132,10 @@ body {
 .generated-by-footer {
     margin-top: 1em;
     text-align: right;
+}
+
+.handle {
+    font-size: 1.5rem
 }
 
 /* From https://github.com/richleland/pygments-css/blob/master/friendly.css, see https://github.com/trentm/python-markdown2/wiki/fenced-code-blocks */

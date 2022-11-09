@@ -1,44 +1,15 @@
 {
     "$id": "https://quantyca.it/dpds/1.0/schema.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#dpdsObject",
-    "description": "The description of Data Product Descriptor v1.0.x documents without schema validation, as defined by [Data Product Descriptor Specification v1.0](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md)",
+    "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#dpdsObject",
+    "title": "Data Product Descriptor",
+    "description": "The description of Data Product Descriptor v1.0.x documents without schema validation, as defined by [Data Product Descriptor Specification v1.0](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/)",
     "type": "object",
     "properties": {
         "dataProductDescriptor": {
             "description": "",
             "type": "string",
-            "pattern": "^1\\.1\\.\\d+(-.+)?$"
-        },
-        "id": {
-            "description": "",
-            "type": "string",
-            "readOnly": true
-        },
-        "fullyQualifiedName": {
-            "description": "",
-            "type": "string"
-        },
-        "entityType": {
-            "description": "",
-            "type": "string",
-            "readOnly": true
-        },
-        "name": {
-            "description": "",
-            "type": "string"
-        },
-        "version": {
-            "description": "",
-            "type": "string"
-        },
-        "displayName": {
-            "description": "",
-            "type": "string"
-        },
-        "description": {
-            "description": "",
-            "type": "string"
+            "format": "version"
         },
         "info": {
             "$ref": "#/$defs/info"
@@ -65,21 +36,55 @@
     },
     "required": [
         "dataProductDescriptor",
-        "fullyQualifiedName",
-        "name",
-        "version",
-        "info"
+        "info",
+        "interfaceComponents"
     ],
     "$defs": {
         "info": {
-            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#infoObject",
+            "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#infoObject",
             "title": "Info Object",
-            "description": "The [Info Object](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#infoObject) provides metadata about the data product. The metadata can be used by the platform or by cosumers if needed.",
+            "description": "The [Info Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#infoObject) provides metadata about the data product. The metadata can be used by the platform or by cosumers if needed.",
             "type": "object",
             "properties": {
-                "domain": {
+                "id": {
+                    "description": "",
+                    "type": "string",
+                    "readOnly": true,
+                    "format": "uuid"
+                },
+                "fullyQualifiedName": {
+                    "description": "",
+                    "type": "string",
+                    "format": "fqn"
+                },
+                "entityType": {
+                    "description": "",
+                    "type": "string",
+                    "readOnly": true,
+                    "format": "alphanumeric"
+                },
+                "name": {
+                    "description": "",
+                    "type": "string",
+                    "format": "name"
+                },
+                "version": {
+                    "description": "",
+                    "type": "string",
+                    "format": "version"
+                },
+                "displayName": {
                     "description": "",
                     "type": "string"
+                },
+                "description": {
+                    "description": "",
+                    "type": "string"
+                },
+                "domain": {
+                    "description": "",
+                    "type": "string",
+                    "format": "name"
                 },
                 "owner": {
                     "$ref": "#/$defs/owner"
@@ -91,16 +96,22 @@
                     }
                 }
             },
-            "required": ["owner"],
+            "required": [
+                "fullyQualifiedName",
+                "name",
+                "version",
+                "domain",
+                "owner"
+            ],
             "patternProperties": {
                 "^x-": true
             },
             "unevaluatedProperties": false
         },
         "owner": {
-            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#ownerObject",
+            "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#ownerObject",
             "title": "Owner Object",
-            "description": "The [Owner Object](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#ownerObject) describes the data product's owner.",
+            "description": "The [Owner Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#ownerObject) describes the data product's owner.",
             "type": "object",
             "properties": {
                 "id": {
@@ -119,14 +130,15 @@
             "unevaluatedProperties": false
         },
         "contactPoint": {
-            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#contactPointObject",
+            "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#contactPointObject",
             "title": "Contact Point Object",
-            "description": "The [Contact Point Object](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#contactPointObject) describes a data product's contact point.",
+            "description": "The [Contact Point Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#contactPointObject) describes a data product's contact point.",
             "type": "object",
             "properties": {
                 "name": {
                     "description": "",
-                    "type": "string"
+                    "type": "string",
+                    "format": "name"
                 },
                 "description": {
                     "description": "",
@@ -147,9 +159,9 @@
             "unevaluatedProperties": false
         },
         "interfaceComponents": {
-            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#interfaceComponentsObject",
+            "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#interfaceComponentsObject",
             "title": "Interface Components Object",
-            "description": "The [Interface Components Object](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#interfaceComponentsObject) it's a collection of all interface entities exposed by a data product.",
+            "description": "The [Interface Components Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#interfaceComponentsObject) it's a collection of all interface entities exposed by a data product.",
             "type": "object",
             "properties": {
                 "inputPorts": {
@@ -183,10 +195,11 @@
                     }
                 }
             },
+            "required": ["outputPorts"],
             "unevaluatedProperties": false
         },
         "inputPortOrReference": {
-            "anyOf": [
+            "oneOf": [
                 {
                     "$ref": "#/$defs/reference"
                 },
@@ -196,9 +209,9 @@
             ]
         },
         "inputPort": {
-            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#inputPortComponent",
+            "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#inputPortComponent",
             "title": "Input Port Object",
-            "description": "The [Input Port Component](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#inputPortComponent) describes an [input port](#definitionsDataProductPorts) of a data product.",
+            "description": "The [Input Port Component](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#inputPortComponent) describes an [input port](#definitionsDataProductPorts) of a data product.",
             "type": "object",
             "allOf": [
                 {
@@ -214,7 +227,7 @@
             "unevaluatedProperties": false
         },
         "outputPortOrReference": {
-            "anyOf": [
+            "oneOf": [
                 {
                     "$ref": "#/$defs/reference"
                 },
@@ -224,9 +237,9 @@
             ]
         },
         "outputPort": {
-            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#outputPortComponent",
+            "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#outputPortComponent",
             "title": "Output Port Component",
-            "description": "The [Output Port Component](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#outputPortComponent) describes an [output port](#definitionsDataProductPorts) of a data product.",
+            "description": "The [Output Port Component](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#outputPortComponent) describes an [output port](#definitionsDataProductPorts) of a data product.",
             "type": "object",
             "allOf": [
                 {
@@ -242,7 +255,7 @@
             "unevaluatedProperties": false
         },
         "discoveryPortOrReference": {
-            "anyOf": [
+            "oneOf": [
                 {
                     "$ref": "#/$defs/reference"
                 },
@@ -252,8 +265,8 @@
             ]
         },
         "discoveryPort": {
-            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#discoveryPortComponent",
-            "title": "The [Discovey Port Component](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#discoveryPortComponent) describes a [discovery port](#definitionsDataProductPorts) of a data product.t",
+            "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#discoveryPortComponent",
+            "title": "The [Discovey Port Component](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#discoveryPortComponent) describes a [discovery port](#definitionsDataProductPorts) of a data product.t",
             "description": "",
             "type": "object",
             "allOf": [
@@ -270,7 +283,7 @@
             "unevaluatedProperties": false
         },
         "observabilityPortOrReference": {
-            "anyOf": [
+            "oneOf": [
                 {
                     "$ref": "#/$defs/reference"
                 },
@@ -280,8 +293,8 @@
             ]
         },
         "observabilityPort": {
-            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#observabilityPortComponent",
-            "title": "The [Observability Port Component](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#observabilityPortComponent) describes an [observability port](#definitionsDataProductPorts) of a data product.",
+            "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#observabilityPortComponent",
+            "title": "The [Observability Port Component](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#observabilityPortComponent) describes an [observability port](#definitionsDataProductPorts) of a data product.",
             "description": "",
             "type": "object",
             "allOf": [
@@ -298,7 +311,7 @@
             "unevaluatedProperties": false
         },
         "controlPortOrReference": {
-            "anyOf": [
+            "oneOf": [
                 {
                     "$ref": "#/$defs/reference"
                 },
@@ -308,8 +321,8 @@
             ]
         },
         "controlPort": {
-            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#controlPortComponent",
-            "title": "The [Control Port Component](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#controlPortComponent) describes a [control port](#definitionsDataProductPorts) of a data product.",
+            "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#controlPortComponent",
+            "title": "The [Control Port Component](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#controlPortComponent) describes a [control port](#definitionsDataProductPorts) of a data product.",
             "description": "",
             "type": "object",
             "allOf": [
@@ -327,20 +340,30 @@
         },
         "port": {
             "properties": {
-                "promesis": {
-                    "$ref": "#/$defs/promesis"
+                "promises": {
+                    "$ref": "#/$defs/promisesOrReference"
                 },
                 "expectatctions": {
-                    "$ref": "#/$defs/expectatctions"
+                    "$ref": "#/$defs/expectatctionsOrReference"
                 },
                 "contracts": {
-                    "$ref": "#/$defs/contracts"
+                    "$ref": "#/$defs/contractsOrReference"
                 }
             }
         },
-        "promesis": {
-            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#promesisObject",
-            "title": "The [Promesis Object](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#promesisObject) describes the data product's [promesis](#definitionsDataProductPortsPromesis) declared over a given port.",
+        "promisesOrReference": {
+            "oneOf": [
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/promises"
+                }
+            ]
+        },
+        "promises": {
+            "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#promisesObject",
+            "title": "The [Promises Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#promisesObject) describes the data product's [promises](#definitionsDataProductPortsPromises) declared over a given port.",
             "description": "",
             "type": "object",
             "properties": {
@@ -348,7 +371,7 @@
                     "description": "",
                     "type": "string"
                 },
-                "serviceTyoe": {
+                "serviceType": {
                     "description": "",
                     "type": "string"
                 },
@@ -368,9 +391,9 @@
             "unevaluatedProperties": false
         },
         "standardDefinition": {
-            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#standardDefinitionObject",
+            "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#standardDefinitionObject",
             "title": "Standard Definition Object",
-            "description": "The [Standard Definition Object](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#standardDefinitionObject) formally describes an object (ex. API object, provision template object, ecc ...) of interest following a given standard specification.",
+            "description": "The [Standard Definition Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#standardDefinitionObject) formally describes an object (ex. API object, provision template object, ecc ...) of interest following a given standard specification.",
             "type": "object",
             "properties": {
                 "description": {
@@ -392,16 +415,26 @@
                     "$ref": "#/$defs/externalResource"
                 }
             },
+            "required": ["specification,definition"],
             "patternProperties": {
                 "^x-": true
             },
             "unevaluatedProperties": false
         },
-      
+        "expectatctionsOrReference": {
+            "oneOf": [
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/expectatctions"
+                }
+            ]
+        },      
         "expectatctions": {
-            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#expectationsObject",
+            "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#expectationsObject",
             "title": "Expectations Object",
-            "description": "The [Expectations Object](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#expectationsObject) describes the data product's [expectations](#definitionsDataProductPortsExpectations) declared over a given port.",
+            "description": "The [Expectations Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#expectationsObject) describes the data product's [expectations](#definitionsDataProductPortsExpectations) declared over a given port.",
             "type": "object",
             "properties": {
                 "audience": {
@@ -416,11 +449,20 @@
             },
             "unevaluatedProperties": false
         },
-       
+        "contractsOrReference": {
+            "oneOf": [
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/contracts"
+                }
+            ]
+        },
         "contracts": {
-            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#contractsObject",
+            "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#contractsObject",
             "title": "Expectations Object",
-            "description": "The [Contracts Object](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#contractsObject) describes the data product's [contracts](#definitionsDataProductPortsContracts) declared over a given port.",
+            "description": "The [Contracts Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#contractsObject) describes the data product's [contracts](#definitionsDataProductPortsContracts) declared over a given port.",
             "type": "object",
             "properties": {
                 "termsAndConditions": {
@@ -440,9 +482,9 @@
         },
         
         "internalComponents": {
-            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#internalComponentsObject",
+            "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#internalComponentsObject",
             "title": "Internal Components Object",
-            "description": "The [Internal Components Object](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#internalComponentsObject) it's a collection of all internal entities that compose a data product.",
+            "description": "The [Internal Components Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#internalComponentsObject) it's a collection of all internal entities that compose a data product.",
             "type": "object",
             "properties": {
                 "applicationComponents": {
@@ -462,9 +504,9 @@
             }
         },
         "applicationComponent": {
-            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#applicationComponent",
+            "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#applicationComponent",
             "title": "Application Component",
-            "description": "The [Application Component](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#applicationComponent) describes an internal application component used by the data product to provide services through its ports.",
+            "description": "The [Application Component](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#applicationComponent) describes an internal application component used by the data product to provide services through its ports.",
             "type": "object",
             "allOf": [
                 {
@@ -481,36 +523,32 @@
                             "description": "",
                             "type": "string"
                         },
-                        "buildService": {
-                            "$ref": "#/$defs/stringOrrExternalResource"
+                        "buildInfo":{
+
                         },
-                        "buildTemplate": {
-                            "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                        "deployInfo":{
+
                         },
-                        "buildConfigurations": {
-                            "$ref": "#/$defs/objectOrReferenceOrExternalResource"
-                        },
-                        "deployService": {
-                            "$ref": "#/$defs/stringOrrExternalResource"
-                        },
-                      
-                        "deployTemplate": {
-                            "$ref": "#/$defs/objectOrReferenceOrExternalResource"
-                        },
-                        "deployConfigurations": {
-                            "$ref": "#/$defs/objectOrReferenceOrExternalResource"
-                        },
-                        "consumeFrom": {
+                        "consumesFrom": {
                             "description": "",
-                            "type": "string"
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                              }
                         },
-                        "provideTo": {
+                        "providesTo": {
                             "description": "",
-                            "type": "string"
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                              }
                         },
                         "dependsOn": {
                             "description": "",
-                            "type": "string"
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                              }
                         }
                     }
                 }
@@ -520,17 +558,51 @@
             },
             "unevaluatedProperties": false
         },
+        "buildInfo": {
+            "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#buildInfoObject",
+            "title": "Build Info",
+            "description": "The [Build Info Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#buildInfoObject) contains all the informations required to build an [Application Component](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#applicationComponent)",
+            "type": "object",
+            "properties": {
+                "service": {
+                    "$ref": "#/$defs/stringOrExternalResource"
+                },
+                "template": {
+                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                },
+                "configurations": {
+                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                }
+            }
+        },
+        "deployInfo": {
+            "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#deployInfoObject",
+            "title": "Build Info",
+            "description": "The [Deploy Info Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#deployInfoObject) contains all the informations required to deploy an [Application Component](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#applicationComponent)",
+            "type": "object",
+            "properties": {
+                "service": {
+                    "$ref": "#/$defs/stringOrExternalResource"
+                },
+                "template": {
+                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                },
+                "configurations": {
+                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                }
+            }
+        },
         "infrastructuralComponent": {
-            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#infrastructuralComponent",
+            "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#infrastructuralComponent",
             "title": "Infrastructural Component",
-            "description": "The [Infrastructural Component](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#infrastructuralComponent) describes an internal infrastructural component used by the data product to run its applications and store its data.",
+            "description": "The [Infrastructural Component](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#infrastructuralComponent) describes an internal infrastructural component used by the data product to run its applications and store its data.",
             "type": "object",
             "allOf": [
                 {
                     "$ref": "#/$defs/entity"
                 },
                 {
-                    "title": "applicationComponent",
+                    "title": "infrastructuralComponent",
                     "properties": {
                         "platform": {
                             "description": "",
@@ -540,27 +612,47 @@
                             "description": "",
                             "type": "string"
                         },
-                        "provisionService": {
-                            "$ref": "#/$defs/stringOrrExternalResource"
+                        "provisioningService": {
+                            "$ref": "#/$defs/stringOrExternalResource"
                         },
-                        "provisionTemplate": {
+                        "provisioningTemplate": {
                             "$ref": "#/$defs/objectOrReferenceOrExternalResource"
                         },
-                        "provisionConfigurations": {
+                        "provisioningConfigurations": {
                             "$ref": "#/$defs/objectOrReferenceOrExternalResource"
                         },
                         "dependsOn": {
                             "description": "",
-                            "type": "string"
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                              }
                         }
                     }
                 }
             ]
         },
+        "provisionInfo": {
+            "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#provisionInfoObject",
+            "title": "Build Info",
+            "description": "The [Provision Info Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#provisionInfoObject) contains all the informations required to provision an [Infrastructural Component](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#infrastructuralComponent)",
+            "type": "object",
+            "properties": {
+                "service": {
+                    "$ref": "#/$defs/stringOrExternalResource"
+                },
+                "template": {
+                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                },
+                "configurations": {
+                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                }
+            }
+        },
         "components": {
-            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#componentsObject",
+            "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#componentsObject",
             "title": "Components Object",
-            "description": "The [Components Object](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#componentsObject) holds a set of reusable objects for different aspects of the DPDS.",
+            "description": "The [Components Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#componentsObject) holds a set of reusable objects for different aspects of the DPDS.",
             "type": "object",
             "properties": {
                 "inputPorts": {
@@ -619,9 +711,9 @@
             "unevaluatedProperties": false
         },
         "reference": {
-            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#referenceObject",
+            "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#referenceObject",
             "title": "Reference Object",
-            "description": "The [Reference Object](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#referenceObject) allows referencing other components in the [Data Product Descriptor Document](#definitionsDpdsDocument), internally and externally.",
+            "description": "The [Reference Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#referenceObject) allows referencing other components in the [Data Product Descriptor Document](#definitionsDpdsDocument), internally and externally.",
             "type": "object",
             "properties": {
                 "$ref": {
@@ -640,9 +732,9 @@
             "unevaluatedProperties": false
         },
         "externalResource": {
-            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#externalResourceObject",
+            "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#externalResourceObject",
             "title": "External Resource Object",
-            "description": "The [External Resource Object](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#externalResourceObject) allows referencing an external resource like a documentation page or a standard definition.",
+            "description": "The [External Resource Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#externalResourceObject) allows referencing an external resource like a documentation page or a standard definition.",
             "type": "object",
             "properties": {
                 "description": {
@@ -665,8 +757,8 @@
             "unevaluatedProperties": false
         },
 
-        "stringOrrExternalResource": {
-            "anyOf": [
+        "stringOrExternalResource": {
+            "oneOf": [
                 {
                     "title": "string",
                     "description": "An inline String", 
@@ -681,7 +773,7 @@
 
 
         "objectOrReferenceOrExternalResource": {
-            "anyOf": [
+            "oneOf": [
                 {
                     "title": "object",
                     "description": "An inline JSON Object", 
@@ -697,9 +789,9 @@
         },
 
         "specificationExtensionPoint": {
-            "$comment": "https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#specificationExtensionPoint",
+            "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#specificationExtensionPoint",
             "title": "Specification Extension Point",
-            "description": "The [External Resource Object](https://bitbucket.org/quantyca/odm-specification-dpdescriptor/src/f969d5683f8801da50347a8b0242772204497c7d/versions/1.0.0.md#exterspecificationExtensionPointnalResourceObject) ...",
+            "description": "A [Specification Extension Point](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#specificationExtensionPoint) marks specific part of the [Data Product Descriptor Specification](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/) that  are left open to extensions or futher evolution of the standard. ",
             "type": "object",
             "properties": {
                 "description": {
@@ -721,23 +813,28 @@
                 "id": {
                     "description": "",
                     "type": "string",
+                    "format": "uuid",
                     "readOnly": true
                 },
                 "fullyQualifiedName": {
                     "description": "",
-                    "type": "string"
+                    "type": "string",
+                    "format": "fqn"
                 },
                 "entityType": {
                     "description": "",
-                    "type": "string"
+                    "type": "string",
+                    "format": "alphanumeric"
                 },
                 "name": {
                     "description": "",
-                    "type": "string"
+                    "type": "string",
+                    "format": "name"
                 },
                 "version": {
                     "description": "",
-                    "type": "string"
+                    "type": "string",
+                    "format": "version"
                 },
                 "displayName": {
                     "description": "",
@@ -749,7 +846,8 @@
                 },
                 "componentGroup": {
                     "description": "",
-                    "type": "string"
+                    "type": "string",
+                    "format": "name"
                 },
                 "tags": {
                     "description": "",
@@ -759,8 +857,7 @@
                     }
                 },
                 "externalDocs": {
-                    "description": "",
-                    "type": "string"
+                    "$ref": "#/$defs/externalResource"
                 }
             },
             "required": [
