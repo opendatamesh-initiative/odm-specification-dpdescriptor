@@ -11,7 +11,7 @@
       
       
       <link rel="icon" href="../../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.6">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
     
     
       
@@ -2653,7 +2653,7 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 </table>
 <p>This object MAY be extended with <a href="#specificationExtensions">Specification Extensions</a>.</p>
 <h4 id="build-info-object"><a name="buildInfoObject"></a>Build Info Object<a class="headerlink" href="#build-info-object" title="Permanent link">⚓︎</a></h4>
-<p>The <code>Build Info Object</code> contains all the informations required to build an <a href="#todo">Application Component</a></p>
+<p>The <code>Build Info Object</code> contains all the informations required to build an <a href="#applicationComponent">Application Component</a></p>
 <h5 id="fixed-fields_15">Fixed Fields<a class="headerlink" href="#fixed-fields_15" title="Permanent link">⚓︎</a></h5>
 <table>
 <thead>
@@ -2666,16 +2666,16 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 <tbody>
 <tr>
 <td><a name="buildInfoService"></a>service</td>
-<td align="center"><code>string:name</code> | <a href="#externalResourceObject">External Resource Object</a></td>
+<td align="center"><code>string</code> | <a href="#externalResourceObject">External Resource Object</a></td>
 <td>The logical name or the actual endpoint of the service to call in order to <em>build</em> the application component. If the logical name is used as field value the actual endpoint value resulution is demanded to the <em>data product experience plane</em> of the underlyng platform.</td>
 </tr>
 <tr>
-<td><a name="buildInfoTemplate"></a>buildTemplate</td>
+<td><a name="buildInfoTemplate"></a>template</td>
 <td align="center">object | <a href="#referenceObject">Reference Object</a> | <a href="#externalResourceObject">External Resource Object</a></td>
 <td>Can be an inline JSON or a refernce to an external resource. It contains the definition of the pipeline to execute in order to build the application. It is passed as is to the build service specified using the <code>buildService</code> field.</td>
 </tr>
 <tr>
-<td><a name="buildInfoConfigurations"></a>buildConfigurations</td>
+<td><a name="buildInfoConfigurations"></a>configurations</td>
 <td align="center">object | <a href="#referenceObject">Reference Object</a> | <a href="#externalResourceObject">External Resource Object</a></td>
 <td>Can be an inline JSON or a refernce to an external resource. It contains the configuration properties that can be used by the build service at build time. It is passed as is to the build service specified using the <code>buildService</code> field.</td>
 </tr>
@@ -2683,7 +2683,7 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 </table>
 <p>This object MAY be extended with <a href="#specificationExtensions">Specification Extensions</a>.</p>
 <h4 id="deploy-info-object"><a name="deployInfoObject"></a>Deploy Info Object<a class="headerlink" href="#deploy-info-object" title="Permanent link">⚓︎</a></h4>
-<p>The <code>Deploy Info Object</code> contains all the informations required to deploy an <a href="#todo">Application Component</a></p>
+<p>The <code>Deploy Info Object</code> contains all the informations required to deploy an <a href="#applicationComponent">Application Component</a></p>
 <h5 id="fixed-fields_16">Fixed Fields<a class="headerlink" href="#fixed-fields_16" title="Permanent link">⚓︎</a></h5>
 <table>
 <thead>
@@ -2696,7 +2696,7 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 <tbody>
 <tr>
 <td><a name="deployInfoService"></a>service</td>
-<td align="center"><code>string:name</code> | <a href="#externalResourceObject">External Resource Object</a></td>
+<td align="center"><code>string</code> | <a href="#externalResourceObject">External Resource Object</a></td>
 <td>The logical name or the actual endpoint of the service to call in order to <em>deploy</em> the application component. If the logical name is used as field value the actual endpoint value resulution is demanded to the <em>data product experience plane</em> of the underlyng platform.</td>
 </tr>
 <tr>
