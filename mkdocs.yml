@@ -79,7 +79,7 @@ theme:
 extra:
   social:
     - icon: octicons/mail-16
-      link: mailto:michele.launi@quantyca.it
+      link: mailto:odm.info@quantyca.it
     - icon: fontawesome/brands/github
       link: https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor
 
