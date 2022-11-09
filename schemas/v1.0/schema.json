@@ -3,7 +3,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#dpdsObject",
     "title": "Data Product Descriptor",
-    "description": "The description of Data Product Descriptor v1.0.x documents without schema validation, as defined by [Data Product Descriptor Specification v1.0](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/)",
+    "description": "The description of Data Product Descriptor v1.0.x documents without schema validation, as defined by <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/\" target=\"_parent\">Data Product Descriptor Specification v1.0</a>",
     "type": "object",
     "properties": {
         "dataProductDescriptor": {
