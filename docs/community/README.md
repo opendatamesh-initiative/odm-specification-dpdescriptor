@@ -8,7 +8,7 @@ We love your input! That is afterall the  main reason why we decieded to relese 
 ## Contributing
 You can contribute to this project in the following ways:
 
-- send an informal feedback through our comunication channels ([slack :material-slack:](#todo) and [mail :octicons-mail-16:](mailto:odm.info@quantyca.it))
+- send an informal feedback through our comunication channels (<a href="https://join.slack.com/t/opendatamesh/shared_invite/zt-1jrqfghls-68AxK_QzypaOeNyOkOwuog" target="_blank">slack :material-slack:</a> and <a href="mailto:odm.info@quantyca.it" target="_blank">mail :octicons-mail-16:</a>)
 - open a formal request through <a href="https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/issues" target="_blank">github issues :material-github:</a>
 - propose to marge your modifications to our <a href="https://github.com/opendatamesh-initiative/odm-specification-dpdescriptors" target="_blank">github main repository :material-github:</a> through a <a href="https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/pulls" target="_blank">github pull request :material-github:</a>
 
