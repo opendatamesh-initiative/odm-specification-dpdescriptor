@@ -33,7 +33,7 @@ nav:
   - Community: 
     - './community/README.md'
     - Quantyca: './community/quantyca.md'
-    - Blindata: './community/blindata.md'
+    #- Blindata: './community/blindata.md'
   - Resources: 
     - 'Specifications': 
       - 'Versions': './references/specifications/README.md'
@@ -44,7 +44,6 @@ nav:
     - 'External Tools': './references/tools.md'
     - 'Related Standards': './references/standards.md'
     - 'Data Mesh Resources': './references/resources.md'
-  # - Embedding: './embedding.md'
 
 
 ##theme: readthedocs
