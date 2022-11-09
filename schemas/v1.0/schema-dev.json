@@ -8,37 +8,7 @@
         "dataProductDescriptor": {
             "description": "",
             "type": "string",
-            "pattern": "^1\\.1\\.\\d+(-.+)?$"
-        },
-        "id": {
-            "description": "",
-            "type": "string",
-            "readOnly": true
-        },
-        "fullyQualifiedName": {
-            "description": "",
-            "type": "string"
-        },
-        "entityType": {
-            "description": "",
-            "type": "string",
-            "readOnly": true
-        },
-        "name": {
-            "description": "",
-            "type": "string"
-        },
-        "version": {
-            "description": "",
-            "type": "string"
-        },
-        "displayName": {
-            "description": "",
-            "type": "string"
-        },
-        "description": {
-            "description": "",
-            "type": "string"
+            "format": "version"
         },
         "info": {
             "$ref": "#/$defs/info"
@@ -65,10 +35,8 @@
     },
     "required": [
         "dataProductDescriptor",
-        "fullyQualifiedName",
-        "name",
-        "version",
-        "info"
+        "info",
+        "interfaceComponents"
     ],
     "$defs": {
         "info": {
@@ -77,9 +45,45 @@
             "description": "The [Info Object](SPEC-BASE-URL#infoObject) provides metadata about the data product. The metadata can be used by the platform or by cosumers if needed.",
             "type": "object",
             "properties": {
-                "domain": {
+                "id": {
+                    "description": "",
+                    "type": "string",
+                    "readOnly": true,
+                    "format": "uuid"
+                },
+                "fullyQualifiedName": {
+                    "description": "",
+                    "type": "string",
+                    "format": "fqn"
+                },
+                "entityType": {
+                    "description": "",
+                    "type": "string",
+                    "readOnly": true,
+                    "format": "alphanumeric"
+                },
+                "name": {
+                    "description": "",
+                    "type": "string",
+                    "format": "name"
+                },
+                "version": {
+                    "description": "",
+                    "type": "string",
+                    "format": "version"
+                },
+                "displayName": {
                     "description": "",
                     "type": "string"
+                },
+                "description": {
+                    "description": "",
+                    "type": "string"
+                },
+                "domain": {
+                    "description": "",
+                    "type": "string",
+                    "format": "name"
                 },
                 "owner": {
                     "$ref": "#/$defs/owner"
@@ -91,7 +95,13 @@
                     }
                 }
             },
-            "required": ["owner"],
+            "required": [
+                "fullyQualifiedName",
+                "name",
+                "version",
+                "domain",
+                "owner"
+            ],
             "patternProperties": {
                 "^x-": true
             },
@@ -126,7 +136,8 @@
             "properties": {
                 "name": {
                     "description": "",
-                    "type": "string"
+                    "type": "string",
+                    "format": "name"
                 },
                 "description": {
                     "description": "",
@@ -183,10 +194,11 @@
                     }
                 }
             },
+            "required": ["outputPorts"],
             "unevaluatedProperties": false
         },
         "inputPortOrReference": {
-            "anyOf": [
+            "oneOf": [
                 {
                     "$ref": "#/$defs/reference"
                 },
@@ -214,7 +226,7 @@
             "unevaluatedProperties": false
         },
         "outputPortOrReference": {
-            "anyOf": [
+            "oneOf": [
                 {
                     "$ref": "#/$defs/reference"
                 },
@@ -242,7 +254,7 @@
             "unevaluatedProperties": false
         },
         "discoveryPortOrReference": {
-            "anyOf": [
+            "oneOf": [
                 {
                     "$ref": "#/$defs/reference"
                 },
@@ -270,7 +282,7 @@
             "unevaluatedProperties": false
         },
         "observabilityPortOrReference": {
-            "anyOf": [
+            "oneOf": [
                 {
                     "$ref": "#/$defs/reference"
                 },
@@ -298,7 +310,7 @@
             "unevaluatedProperties": false
         },
         "controlPortOrReference": {
-            "anyOf": [
+            "oneOf": [
                 {
                     "$ref": "#/$defs/reference"
                 },
@@ -328,15 +340,25 @@
         "port": {
             "properties": {
                 "promises": {
-                    "$ref": "#/$defs/promises"
+                    "$ref": "#/$defs/promisesOrReference"
                 },
                 "expectatctions": {
-                    "$ref": "#/$defs/expectatctions"
+                    "$ref": "#/$defs/expectatctionsOrReference"
                 },
                 "contracts": {
-                    "$ref": "#/$defs/contracts"
+                    "$ref": "#/$defs/contractsOrReference"
                 }
             }
+        },
+        "promisesOrReference": {
+            "oneOf": [
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/promises"
+                }
+            ]
         },
         "promises": {
             "$comment": "SPEC-BASE-URL#promisesObject",
@@ -348,7 +370,7 @@
                     "description": "",
                     "type": "string"
                 },
-                "serviceTyoe": {
+                "serviceType": {
                     "description": "",
                     "type": "string"
                 },
@@ -392,12 +414,22 @@
                     "$ref": "#/$defs/externalResource"
                 }
             },
+            "required": ["specification,definition"],
             "patternProperties": {
                 "^x-": true
             },
             "unevaluatedProperties": false
         },
-      
+        "expectatctionsOrReference": {
+            "oneOf": [
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/expectatctions"
+                }
+            ]
+        },      
         "expectatctions": {
             "$comment": "SPEC-BASE-URL#expectationsObject",
             "title": "Expectations Object",
@@ -416,7 +448,16 @@
             },
             "unevaluatedProperties": false
         },
-       
+        "contractsOrReference": {
+            "oneOf": [
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/contracts"
+                }
+            ]
+        },
         "contracts": {
             "$comment": "SPEC-BASE-URL#contractsObject",
             "title": "Expectations Object",
@@ -481,36 +522,32 @@
                             "description": "",
                             "type": "string"
                         },
-                        "buildService": {
-                            "$ref": "#/$defs/stringOrExternalResource"
+                        "buildInfo":{
+
                         },
-                        "buildTemplate": {
-                            "$ref": "#/$defs/objectOrReferenceOrExternalResource"
-                        },
-                        "buildConfigurations": {
-                            "$ref": "#/$defs/objectOrReferenceOrExternalResource"
-                        },
-                        "deployService": {
-                            "$ref": "#/$defs/stringOrExternalResource"
-                        },
-                      
-                        "deployTemplate": {
-                            "$ref": "#/$defs/objectOrReferenceOrExternalResource"
-                        },
-                        "deployConfigurations": {
-                            "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                        "deployInfo":{
+
                         },
                         "consumesFrom": {
                             "description": "",
-                            "type": "string"
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                              }
                         },
                         "providesTo": {
                             "description": "",
-                            "type": "string"
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                              }
                         },
                         "dependsOn": {
                             "description": "",
-                            "type": "string"
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                              }
                         }
                     }
                 }
@@ -519,6 +556,40 @@
                 "^x-": true
             },
             "unevaluatedProperties": false
+        },
+        "buildInfo": {
+            "$comment": "SPEC-BASE-URL#buildInfoObject",
+            "title": "Build Info",
+            "description": "The [Build Info Object](SPEC-BASE-URL#buildInfoObject) contains all the informations required to build an [Application Component](SPEC-BASE-URL#applicationComponent)",
+            "type": "object",
+            "properties": {
+                "service": {
+                    "$ref": "#/$defs/stringOrExternalResource"
+                },
+                "template": {
+                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                },
+                "configurations": {
+                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                }
+            }
+        },
+        "deployInfo": {
+            "$comment": "SPEC-BASE-URL#deployInfoObject",
+            "title": "Build Info",
+            "description": "The [Deploy Info Object](SPEC-BASE-URL#deployInfoObject) contains all the informations required to deploy an [Application Component](SPEC-BASE-URL#applicationComponent)",
+            "type": "object",
+            "properties": {
+                "service": {
+                    "$ref": "#/$defs/stringOrExternalResource"
+                },
+                "template": {
+                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                },
+                "configurations": {
+                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                }
+            }
         },
         "infrastructuralComponent": {
             "$comment": "SPEC-BASE-URL#infrastructuralComponent",
@@ -530,7 +601,7 @@
                     "$ref": "#/$defs/entity"
                 },
                 {
-                    "title": "applicationComponent",
+                    "title": "infrastructuralComponent",
                     "properties": {
                         "platform": {
                             "description": "",
@@ -551,11 +622,31 @@
                         },
                         "dependsOn": {
                             "description": "",
-                            "type": "string"
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                              }
                         }
                     }
                 }
             ]
+        },
+        "provisionInfo": {
+            "$comment": "SPEC-BASE-URL#provisionInfoObject",
+            "title": "Build Info",
+            "description": "The [Provision Info Object](SPEC-BASE-URL#provisionInfoObject) contains all the informations required to provision an [Infrastructural Component](SPEC-BASE-URL#infrastructuralComponent)",
+            "type": "object",
+            "properties": {
+                "service": {
+                    "$ref": "#/$defs/stringOrExternalResource"
+                },
+                "template": {
+                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                },
+                "configurations": {
+                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                }
+            }
         },
         "components": {
             "$comment": "SPEC-BASE-URL#componentsObject",
@@ -666,7 +757,7 @@
         },
 
         "stringOrExternalResource": {
-            "anyOf": [
+            "oneOf": [
                 {
                     "title": "string",
                     "description": "An inline String", 
@@ -681,7 +772,7 @@
 
 
         "objectOrReferenceOrExternalResource": {
-            "anyOf": [
+            "oneOf": [
                 {
                     "title": "object",
                     "description": "An inline JSON Object", 
@@ -699,7 +790,7 @@
         "specificationExtensionPoint": {
             "$comment": "SPEC-BASE-URL#specificationExtensionPoint",
             "title": "Specification Extension Point",
-            "description": "A [Specification Extension Point](SPEC-BASE-URL#specificationExtensionPoint) marks specific part of the [Data Product Descriptor Specification](#definitionsDpdsSpecification) that  are left open to extensions or futher evolution of the standard. ",
+            "description": "A [Specification Extension Point](SPEC-BASE-URL#specificationExtensionPoint) marks specific part of the [Data Product Descriptor Specification](SPEC-BASE-URL) that  are left open to extensions or futher evolution of the standard. ",
             "type": "object",
             "properties": {
                 "description": {
@@ -721,23 +812,28 @@
                 "id": {
                     "description": "",
                     "type": "string",
+                    "format": "uuid",
                     "readOnly": true
                 },
                 "fullyQualifiedName": {
                     "description": "",
-                    "type": "string"
+                    "type": "string",
+                    "format": "fqn"
                 },
                 "entityType": {
                     "description": "",
-                    "type": "string"
+                    "type": "string",
+                    "format": "alphanumeric"
                 },
                 "name": {
                     "description": "",
-                    "type": "string"
+                    "type": "string",
+                    "format": "name"
                 },
                 "version": {
                     "description": "",
-                    "type": "string"
+                    "type": "string",
+                    "format": "version"
                 },
                 "displayName": {
                     "description": "",
@@ -749,7 +845,8 @@
                 },
                 "componentGroup": {
                     "description": "",
-                    "type": "string"
+                    "type": "string",
+                    "format": "name"
                 },
                 "tags": {
                     "description": "",
@@ -759,8 +856,7 @@
                     }
                 },
                 "externalDocs": {
-                    "description": "",
-                    "type": "string"
+                    "$ref": "#/$defs/externalResource"
                 }
             },
             "required": [
