@@ -31,7 +31,7 @@ We would like to create an initiative around the specification to group all orga
 
 We use *Slack* to provide an ongoing dialogue between members. 
 
-[Join us on Slack :material-slack:](mailto:odm.info@quantyca.it){.md-button--primary .md-button}
+[Join us on Slack :material-slack:](https://join.slack.com/t/opendatamesh/shared_invite/zt-1jrqfghls-68AxK_QzypaOeNyOkOwuog){.md-button--primary .md-button}
 
 If you want to be updated on all the relevant news related to the specification subscribe to our mailing list.
 

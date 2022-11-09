@@ -80,8 +80,12 @@ extra:
   social:
     - icon: octicons/mail-16
       link: mailto:odm.info@quantyca.it
+    - icon: fontawesome/brands/mailchimp
+      link: mailto:odm.info@quantyca.it
     - icon: fontawesome/brands/github
       link: https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor
+    - icon: fontawesome/brands/slack
+      link: https://join.slack.com/t/opendatamesh/shared_invite/zt-1jrqfghls-68AxK_QzypaOeNyOkOwuog
 
 extra_css:
   - stylesheets/extra.css
