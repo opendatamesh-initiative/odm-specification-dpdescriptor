@@ -882,13 +882,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#table-of-contents" class="md-nav__link">
-    Table of Contents
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#definitions" class="md-nav__link">
     Definitions
   </a>
@@ -1216,7 +1209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../embedding/" class="md-nav__link">
+      <a href="../../schemas/1.0.0-DRAFT/" class="md-nav__link">
         1.0.0-DRAFT
       </a>
     </li>
@@ -1322,13 +1315,6 @@
         <li class="md-nav__item">
   <a href="#introduction" class="md-nav__link">
     Introduction
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#table-of-contents" class="md-nav__link">
-    Table of Contents
   </a>
   
 </li>
@@ -1643,62 +1629,6 @@
 <li>semantic tools (apply ontologies over mesh topology)</li>
 <li>domain specific language tools (create a collection af interconnected data products that implement together a specific value stream)</li>
 </ul>
-<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">⚓︎</a></h2>
-<!-- TOC depthFrom:1 depthTo:3 withLinks:1 updateOnSave:1 orderedList:0 -->
-<ul>
-<li><a href="#definitions">Definitions</a><ul>
-<li><a href="#definitionsStandard">Standard</a></li>
-<li><a href="#definitionsSpecification">Standard Specification</a></li>
-<li><a href="#definitionsDefinition">Standard Definition</a></li>
-<li><a href="#definitionsDataProduct">Data Product</a></li>
-<li><a href="#definitionsDataProductPorts">Data Product Ports</a></li>
-<li><a href="#definitionsDataProductAppComponents">Data Product Application Components</a></li>
-<li><a href="#definitionsDataProductInfraComponents">Data Product Infrastructural Components</a></li>
-<li><a href="#definitionsDpdsDocument">Data Product Descriptor Document</a></li>
-<li><a href="#definitionsDpdsSpecification">Data Product Descriptor Specification</a></li>
-</ul>
-</li>
-<li><a href="#specification">Specification</a><ul>
-<li><a href="#versions">Versions</a></li>
-<li><a href="#format">Format</a></li>
-<li><a href="#documentStructure">Document Structure</a></li>
-<li><a href="#dataTypes">Data Types</a></li>
-<li><a href="#richText">Rich Text Formatting</a></li>
-<li><a href="#relativeReferences">Relative References In URLs</a></li>
-<li><a href="#schema">Schema</a><ul>
-<li><a href="#dpdsObject">Data Product Descriptor Entity</a></li>
-<li><a href="#infoObject">Info Object</a></li>
-<li><a href="#ownerObject">Owner Object</a></li>
-<li><a href="#contactPointObject">Contact Point Object</a></li>
-<li><a href="#interfaceComponentsObject">Interface Components Object</a></li>
-<li><a href="#inputPortComponent">Input Port Component</a></li>
-<li><a href="#outputPortComponent">Output Port Component</a></li>
-<li><a href="#discoveryPortComponent">Discovery Port Component</a></li>
-<li><a href="#observabilityPortComponent">Observability Port Component</a></li>
-<li><a href="#controlPortComponent">Control Port Component</a></li>
-<li><a href="#promisesObject">Promises Object</a></li>
-<li><a href="#expectationsObject">Expectations Object</a></li>
-<li><a href="#contractsObject">Contracts Object</a></li>
-<li><a href="#internalComponentsObject">Internal Components Object</a></li>
-<li><a href="#applicationComponent">Application Component</a></li>
-<li><a href="#buildInfoObject">Build Info Object</a></li>
-<li><a href="#deployInfoObject">Deploy Info Object</a></li>
-<li><a href="#infrastructuralComponent">Infrastructural Component</a></li>
-<li><a href="#provisionInfoObject">Provision Info Object</a></li>
-<li><a href="#componentsObject">Components Object</a></li>
-<li><a href="#referenceObject">Reference Object</a></li>
-<li><a href="#externalResourceObject">External Resource Object</a>   </li>
-<li><a href="#standardDefinitionObject">Standard Definition Object</a></li>
-</ul>
-</li>
-<li><a href="#specificationExtensionPoint">Specification Extension Point</a></li>
-<li><a href="#specificationExtensions">Specification Extensions</a></li>
-</ul>
-</li>
-<li><a href="#revisionHistory">Appendix A: Revision History</a></li>
-</ul>
-<!-- /TOC -->
-
 <h2 id="definitions"><a name="definitions"></a>Definitions<a class="headerlink" href="#definitions" title="Permanent link">⚓︎</a></h2>
 <h5 id="standard"><a name="definitionsStandard"></a>Standard<a class="headerlink" href="#standard" title="Permanent link">⚓︎</a></h5>
 <p>The set of shared rules used by different agents to describe an entity or process of common interest. The agents that follow the standard limit their autonomy conforming to the set of shared rules in order to facilitate cooperation between them through interoperability.</p>
@@ -1971,7 +1901,7 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 <tr>
 <td><a name="infoOwner"></a>owner</td>
 <td align="center"><a href="#ownerObject">Owner Object</a></td>
-<td>A collection of information related to the data product's owner.</td>
+<td><strong>(REQUIRED)</strong> A collection of information related to the data product's owner.</td>
 </tr>
 <tr>
 <td><a name="infoContactPoints"></a>contactPoints</td>
@@ -2652,7 +2582,7 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 <tr>
 <td><a name="appName"></a>name</td>
 <td align="center"><code>string:name</code></td>
-<td>The name of the application component. MUST be unique within the other application components of the same data product. It's RECOMMENDED to use a camel case formatted string. Example <code>"name: "modelNormalizationJob"</code>.</td>
+<td><strong>(REQUIRED)</strong> The name of the application component. MUST be unique within the other application components of the same data product. It's RECOMMENDED to use a camel case formatted string. Example <code>"name: "modelNormalizationJob"</code>.</td>
 </tr>
 <tr>
 <td><a name="appVersion"></a>version</td>
@@ -2970,7 +2900,7 @@ All objects defined within the components object will have no effect on the Data
 </tr>
 <tr>
 <td><a name="referenceRef"></a>$ref</td>
-<td align="center"><code>string</code></td>
+<td align="center"><code>string:uri-reference</code></td>
 <td><strong>REQUIRED</strong>. The reference identifier. This MUST be in the form of a URI.</td>
 </tr>
 </tbody>
