@@ -1,6 +1,4 @@
 # Data Mesh Resources
-TODO
-
 
 ## Zhamak's Corner
 <a href="https://www.linkedin.com/in/zhamak-dehghani/" target="_blank">Zhamak Dehghani :fontawesome-brands-linkedin:</a> formalized the *data mesh approach* to data management in 2019 while working at *Thoughtworks* as the director of emerging technologies. Since then Zhamak has continued to work to disseminate and evolve the data mesh approach within the data and business community. Today she is the CEO and founder of a stealth startup and undoubtedly one of the most important reference in the data mesh world.
@@ -15,7 +13,6 @@ Resource | Date | Description
 <a href="https://learning.oreilly.com/library/view/software-architecture-the/9781492086888/" target="_blank">Software Architecture: The Hard Parts :octicons-link-external-24:</a> |  October 2021 | In this book Zhamak curates the parts related to data architectures.
 
 ## Communities
-TODO
 
 Resource | Description
 ---|---
@@ -23,7 +20,6 @@ Resource | Description
 
 
 ## Podcasts
-TODO
 
 Resource | Description
 ---|---
@@ -32,7 +28,6 @@ Resource | Description
 <a href="https://data.world/resources/podcasts/" target="_blank">Catalogue & Cocktails Podcast :octicons-link-external-24:</a> | This podcast hosted by <a href="https://www.linkedin.com/in/juansequeda/" target="_blank">Juan Sequeda :fontawesome-brands-linkedin:</a> and <a href="https://www.linkedin.com/in/timgasper/" target="_blank">Tim Gasper :fontawesome-brands-linkedin:</a> is an honest, no-bs, non-salesy conversation about enterprise data management and analytics. 
 
 ## Other data mesh resources
-Impossible to mention all. TODO ...
 
 Resource | Description
 ---|---
@@ -41,11 +36,11 @@ Resource | Description
 <a href="https://www.youtube.com/c/Bigdataldn" target="_blank">Big Data LDN 2022 :octicons-link-external-24:</a> | This is the youtube channel of Big Data LDN conference. It cpontains a lot of video filmed during 2022 edition of the conference. Lot of them are related to data mesh.
 
 ## Other data management resources
-TODO
 
 Resource | Description
 ---|---
-<a href="https://learning.oreilly.com/library/view/data-management-at/9781492054771/" target="_blank">Data Management at Scale :octicons-link-external-24:</a> | TODO also check <a href="https://learning.oreilly.com/library/view/data-management-at/9781098138851/" target="_blank">Data Management at Scale, 2nd Edition :octicons-link-external-24:</a>
+<a href="https://learning.oreilly.com/library/view/data-management-at/9781492054771/" target="_blank">Data Management at Scale :octicons-link-external-24:</a> | TODO
+<a href="https://learning.oreilly.com/library/view/data-management-at/9781098138851/" target="_blank">Data Management at Scale, 2nd Edition :octicons-link-external-24:</a> | TODO
 <a href="https://learning.oreilly.com/library/view/fundamentals-of-data/9781098108298/" target="_blank">Fundamentals of Data Engineering :octicons-link-external-24:</a> | TODO
 <a href="https://teamtopologies.com/" target="_blank">Team Topologies :octicons-link-external-24:</a> | TODO
 <a href="https://learning.oreilly.com/library/view/peopleware-productive-projects/9780133440706/" target="_blank">Peopleware: Productive Projects and Teams :octicons-link-external-24:</a> | TODO
@@ -59,11 +54,3 @@ Resource | Description
 <a href="https://learning.oreilly.com/library/view/implementing-domain-driven-design/9780133039900/" target="_blank">Implementing Domain-Driven Design :octicons-link-external-24:</a> | TODO
 <a href="https://www.amazon.com/Software-Wasteland-Application-Centric-Hobbling-Enterprises/dp/1634623169/" target="_blank">Software Wasteland: How the Application-Centric Mindset is Hobbling our Enterprises :octicons-link-external-24:</a> | TODO
 <a href="https://www.amazon.com/Data-Centric-Revolution-Restoring-Enterprise-Information/dp/1634625404" target="_blank">The Data-Centric Revolution: Restoring Sanity to Enterprise Information Systems :octicons-link-external-24:</a> | TODO
-
-
-
-
-
-
-
-

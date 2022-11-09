@@ -1,22 +1,15 @@
 # Related Standards 
 
-TODO
-
-
 ## API
-
-TODO
 
 Standard | Description
 ---|---
-<a href="https://www.openapis.org/" target="_blank">OpenAPI :octicons-link-external-24:</a> | TODO
-<a href="https://www.asyncapi.com/" target="_blank">AsyncAPI :octicons-link-external-24:</a> | TODO
-<a href="#" target="_blank">DatastoreAPI :octicons-link-external-24:</a> | TODO
+<a href="https://www.openapis.org/" target="_blank">OpenAPI :octicons-link-external-24:</a> | The OpenAPI Specification, previously known as the Swagger Specification, is a specification for machine-readable interface files for describing, producing, consuming and visualizing RESTful web services.<br/><br/>:bulb: *DPDS RECOMMEND to use this standard to define the [API](../quickstart/interface.md#fields) of ports that expose RESTful servics.*
+<a href="https://www.asyncapi.com/" target="_blank">AsyncAPI :octicons-link-external-24:</a> | The AsyncAPI Specification is a specification for describing, producing, consuming and visualizing asynchronous services.<br/><br/>:bulb: *DPDS RECOMMEND to use this standard to define the [API](../quickstart/interface.md#fields) of ports that expose streaming data.*
+<a href="#" target="_blank">DatastoreAPI :octicons-link-external-24:</a> | The DatastoreAPI Specification is a specification for describing, producing, consuming and visualizing connection based service that expose a tabular datastore.<br/><br/>:bulb: *DPDS RECOMMEND to use this standard to define the [API](../quickstart/interface.md#fields) of ports that expose tabular data stored in database accessible with a connection based protocol.*
 
 
 ## Schemas
-
-TODO
 
 Standard | Description
 ---|---
@@ -28,8 +21,6 @@ Standard | Description
 
 ## Observability
 
-TODO
-
 Standard | Description
 ---|---
 <a href="https://opentracing.io/" target="_blank">Open Tracing :octicons-link-external-24:</a> | TODO
@@ -39,8 +30,6 @@ Standard | Description
 
 ## Computational Governance
 
-TODO
-
 Standard | Description
 ---|---
 <a href="https://www.openpolicyagent.org/" target="_blank">Open Policy Agent :octicons-link-external-24:</a> | TODO
@@ -49,8 +38,6 @@ Standard | Description
 
 
 ## Misc
-
-TODO
 
 Standard | Description
 ---|---
