@@ -6,10 +6,11 @@ Would you like to add your tool to this list? <a href="mailto:odm.info@quantyca.
 TODO
 
 ## Blindata.io
-<a href="https://blindata.io/" target="_blank">Blindata :octicons-link-external-24:</a> is a platform for the governance of data assets and enterprise processes.It provides a collaborative solution to address data governance issues in an integrated vision with the needs of regulatory compliance.
+<a href="https://blindata.io/" target="_blank">Blindata :octicons-link-external-24:</a> is a 
+SAAS platform that leverages Data Governance and Compliance to empower Data Management projects
 
-Blindata covers all the functions of a Data Governance program: Business Glossary, Data Catalog, Data Lineage & Data Stewardship build an integrated and complete view on your Data. 
+Blindata.io uses the specification to collect and store in its *knowledge graph* all metadata related to deployed data products. Through its UI and API it is then possible to analyze the mesh topology (i.e. static and dynamic data lineage), discover and evaluate data products (i.e. search and collaboration),  monitor data quality SLA and SLO, ecc... 
 
-Data Classification module gives a semantic meaning to the data while the Data Quality module improves the reliability and trust on data. 
+In a [DataMeshOps platform](../concepts/meshops-platform.md), blindata.io offers all the key services to implement the [data mesh experience plane](../concepts/meshops-platform.md#data-mesh-experience-plane).  
 
-Moreover, privacy compliance can leverage specific features: registry of processing activities, centralized privacy note management, consent registry with Blockchain integrated notarization.
+Blindata.io is integrated with [Open Data Mesh Platform](#open-data-mesh-platform) providing a control plane to its services. Through its UI the users can govern data product's lifecycle from a visual and unified environment.
