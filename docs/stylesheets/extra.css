@@ -14,3 +14,13 @@
 .md-grid {
   max-width: 90%;
 }
+
+::selection {
+  background: var(--md-accent-fg-color--light); /* WebKit/Blink Browsers */
+  color: white
+}
+
+::-moz-selection {
+  background: var(--md-accent-fg-color--light); /* Gecko Browsers */
+  color: white
+}

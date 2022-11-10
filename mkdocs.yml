@@ -132,6 +132,10 @@ markdown_extensions:
 plugins:
   - git-revision-date-localized:
       enable_creation_date: true
+#  - social:
+#      cards_color:
+#        fill: "#ff8f00" 
+#        text: "#FFFFFF"
       
 copyright: >
   Copyright &copy; 2022 Quantyca s.r.l. - <a href="#__consent">Change cookie settings</a>
