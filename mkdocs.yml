@@ -80,6 +80,29 @@ extra:
   analytics:
     provider: google
     property: G-N7ZP6EW9XH
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+            <br><a href="https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor" target="_blank">⭐Star the project on GitHub⭐</a>
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback! 
+            <br><a href="https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/issues" target="_blank">Consider opening an issue on GitHub</a>
+  consent:
+    title: Cookie consent
+    description: >- 
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+
   social:
     - icon: octicons/mail-16
       link: mailto:odm.info@quantyca.it
@@ -110,4 +133,5 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
       
-copyright: Copyright &copy; 2022 Quantyca s.r.l.
+copyright: >
+  Copyright &copy; 2022 Quantyca s.r.l. - <a href="#__consent">Change cookie settings</a>
