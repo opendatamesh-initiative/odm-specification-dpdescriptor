@@ -35,7 +35,7 @@ We use *Slack* to provide an ongoing dialogue between members.
 
 If you want to be updated on all the relevant news related to the specification subscribe to our mailing list.
 
-[Keep me posted :fontawesome-brands-mailchimp:](mailto:odm.info@quantyca.it){.md-button--primary .md-button}
+[Keep me posted :fontawesome-brands-mailchimp:](https://mailchi.mp/936d787cac89/open-data-mesh-initiative){.md-button--primary .md-button}
 
 If you want to reach us feel free to send an email at the following address.
 
