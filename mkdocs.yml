@@ -77,6 +77,9 @@ theme:
   custom_dir: docs/overrides
 
 extra:
+  analytics:
+    provider: google
+    property: G-N7ZP6EW9XH
   social:
     - icon: octicons/mail-16
       link: mailto:odm.info@quantyca.it
