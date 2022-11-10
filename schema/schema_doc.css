@@ -138,6 +138,16 @@ a:hover {
     font-size: 1.5rem
 }
 
+::selection {
+    background: #428e92; /* WebKit/Blink Browsers */
+    color: white
+  }
+  
+::-moz-selection {
+background: #428e92; /* Gecko Browsers */
+color: white
+}
+
 /* From https://github.com/richleland/pygments-css/blob/master/friendly.css, see https://github.com/trentm/python-markdown2/wiki/fenced-code-blocks */
 .highlight  { background: #e9ecef; } /* Changed from #f0f0f0 in the original style to be the same as bootstrap's jumbotron */
 .highlight .hll { background-color: #ffffcc }
