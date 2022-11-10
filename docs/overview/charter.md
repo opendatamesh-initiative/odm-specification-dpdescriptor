@@ -1,6 +1,6 @@
 # Charter
 
-This page describes what the specification is about, its goals and scope. Start from here to understand if this specification feets with your needs or not before to deep dive in other parts of the documentation.
+This page describes what the specification is about, its goals and scope. Start from here to understand if this specification feets with your needs or not, before to deep dive in other parts of the documentation.
 
 ## Specification
 The [Data Product Descriptor Specification (DPDS)](../references/specifications/last.md) is a declarative and technology independent *open standard* that can be used to describe a [data product](../concepts/data-product.md) in all its components through a <a href="https://www.json.org/" target="_blank">JSON :octicons-link-external-24:</a> or <a href="https://yaml.org/" target="_blank">YAML :octicons-link-external-24:</a> document. It allows human agents (e.g. analysts, data scientists, etc..) and digital agents (e.g. other data products, BI tools, planes of the underlying mesh platform, etc..) to operate, discover and access a data product. When properly defined, external agents can understand and interact with the data product with a minimal amount of cognitive load and implementation logic.
