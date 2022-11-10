@@ -172,7 +172,15 @@
             text-align: center;
         }
         .tx-hero__image img {
+            margin-top: 1.5rem;
             max-width: 10rem;
+            width: 8rem;
+        }
+        .top-hr {
+        margin-top: 0;
+        }
+        .tx-hero__content {
+            margin-top: 1.5rem;
         }
     }
 
@@ -195,8 +203,13 @@
             margin-top: 3.5rem;
         }
         .tx-hero__image img {
-            max-width: 15rem;
+            width: 200px;
+            margin-right: 5rem;
         }
+
+        .tx-hero h1 {
+            width: 150%;
+    }
     }
 
     @media screen and (min-width:76.25em) {
@@ -207,13 +220,13 @@
             margin-left: auto;
         }
         .tx-hero__image img {
-            max-width: 20rem;
+            width: 200px;
         }
 
         .top-hr {
             width: 100%;
             display: flex;
-            max-width: 90%;
+            max-width: 88%;
             margin-right: auto;
             margin-left: auto;
             padding: 0 .2rem;
@@ -251,7 +264,7 @@
     <div class="md-grid md-typeset">
         <div class="tx-hero">
             <div class="tx-hero__image">
-                <img src="./images/logos/opendatamesh.png" style="width: 200px; height: auto;">
+                <img src="./images/logos/opendatamesh.png" style="height: auto;">
             </div>
             <div class="tx-hero__content">
                 <h1>{{ config.site_name }}</h1>
@@ -310,7 +323,7 @@
         <p>
             DPDS has been designed to be easy to extend. You can add custom properties to almost
             all components of the descriptor documents. It is also possible use external standrads 
-            to like OpenAPI, AsyncAPI, Open SLO ecc.. to define some components.
+            like OpenAPI, AsyncAPI, Open SLO ecc.. to define some components.
         </p>
     </div>
 </div>
