@@ -2,7 +2,7 @@
     "$id": "https://quantyca.it/dpds/1.0/schema.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#dpdsObject",
-    "title": "Data Product Descriptor",
+    "title": "dataProductDescriptor",
     "description": "The description of Data Product Descriptor v1.0.x documents without schema validation, as defined by <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/\" target=\"_parent\">Data Product Descriptor Specification v1.0</a>",
     "type": "object",
     "properties": {
@@ -43,7 +43,7 @@
         "info": {
             "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#infoObject",
             "title": "Info Object",
-            "description": "The [Info Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#infoObject) provides metadata about the data product. The metadata can be used by the platform or by cosumers if needed.",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#infoObject\" target=\"_parent\">Info Object</a> provides metadata about the data product. The metadata can be used by the platform or by cosumers if needed.",
             "type": "object",
             "properties": {
                 "id": {
@@ -111,7 +111,7 @@
         "owner": {
             "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#ownerObject",
             "title": "Owner Object",
-            "description": "The [Owner Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#ownerObject) describes the data product's owner.",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#ownerObject\" target=\"_parent\">Owner Object</a> describes the data product's owner.",
             "type": "object",
             "properties": {
                 "id": {
@@ -132,7 +132,7 @@
         "contactPoint": {
             "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#contactPointObject",
             "title": "Contact Point Object",
-            "description": "The [Contact Point Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#contactPointObject) describes a data product's contact point.",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#contactPointObject\" target=\"_parent\">Contact Point Object</a> describes a data product's contact point.",
             "type": "object",
             "properties": {
                 "name": {
@@ -161,7 +161,7 @@
         "interfaceComponents": {
             "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#interfaceComponentsObject",
             "title": "Interface Components Object",
-            "description": "The [Interface Components Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#interfaceComponentsObject) it's a collection of all interface entities exposed by a data product.",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#interfaceComponentsObject\" target=\"_parent\">Interface Components Object</a> it's a collection of all interface entities exposed by a data product.",
             "type": "object",
             "properties": {
                 "inputPorts": {
@@ -211,7 +211,7 @@
         "inputPort": {
             "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#inputPortComponent",
             "title": "Input Port Object",
-            "description": "The [Input Port Component](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#inputPortComponent) describes an [input port](#definitionsDataProductPorts) of a data product.",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#inputPortComponent\" target=\"_parent\">Input Port Component</a> describes an <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#definitionsDataProductPorts\" target=\"_parent\">input port</a> of a data product.",
             "type": "object",
             "allOf": [
                 {
@@ -239,7 +239,7 @@
         "outputPort": {
             "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#outputPortComponent",
             "title": "Output Port Component",
-            "description": "The [Output Port Component](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#outputPortComponent) describes an [output port](#definitionsDataProductPorts) of a data product.",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#outputPortComponent\" target=\"_parent\">Output Port Component</a> describes an <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#definitionsDataProductPorts\" target=\"_parent\">output port</a> of a data product.",
             "type": "object",
             "allOf": [
                 {
@@ -266,7 +266,7 @@
         },
         "discoveryPort": {
             "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#discoveryPortComponent",
-            "title": "The [Discovey Port Component](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#discoveryPortComponent) describes a [discovery port](#definitionsDataProductPorts) of a data product.t",
+            "title": "The <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#discoveryPortComponent\" target=\"_parent\">Discovey Port Component</a> describes a <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#definitionsDataProductPorts\" target=\"_parent\">discovery port</a> of a data product.t",
             "description": "",
             "type": "object",
             "allOf": [
@@ -294,7 +294,7 @@
         },
         "observabilityPort": {
             "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#observabilityPortComponent",
-            "title": "The [Observability Port Component](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#observabilityPortComponent) describes an [observability port](#definitionsDataProductPorts) of a data product.",
+            "title": "The <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#observabilityPortComponent\" target=\"_parent\">Observability Port Component</a> describes an <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#definitionsDataProductPorts\" target=\"_parent\">observability port</a> of a data product.",
             "description": "",
             "type": "object",
             "allOf": [
@@ -322,7 +322,7 @@
         },
         "controlPort": {
             "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#controlPortComponent",
-            "title": "The [Control Port Component](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#controlPortComponent) describes a [control port](#definitionsDataProductPorts) of a data product.",
+            "title": "The <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#controlPortComponent\" target=\"_parent\">Control Port Component</a> describes a <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#definitionsDataProductPorts\" target=\"_parent\">control port</a> of a data product.",
             "description": "",
             "type": "object",
             "allOf": [
@@ -363,7 +363,7 @@
         },
         "promises": {
             "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#promisesObject",
-            "title": "The [Promises Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#promisesObject) describes the data product's [promises](#definitionsDataProductPortsPromises) declared over a given port.",
+            "title": "The <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#promisesObject\" target=\"_parent\">Promises Object</a> describes the data product's <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#definitionsDataProductPortsPromises\" target=\"_parent\">promises</a> declared over a given port.",
             "description": "",
             "type": "object",
             "properties": {
@@ -393,7 +393,7 @@
         "standardDefinition": {
             "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#standardDefinitionObject",
             "title": "Standard Definition Object",
-            "description": "The [Standard Definition Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#standardDefinitionObject) formally describes an object (ex. API object, provision template object, ecc ...) of interest following a given standard specification.",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#standardDefinitionObject\" target=\"_parent\">Standard Definition Object</a> formally describes an object (ex. API object, provision template object, ecc ...) of interest following a given standard specification.",
             "type": "object",
             "properties": {
                 "description": {
@@ -434,7 +434,7 @@
         "expectatctions": {
             "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#expectationsObject",
             "title": "Expectations Object",
-            "description": "The [Expectations Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#expectationsObject) describes the data product's [expectations](#definitionsDataProductPortsExpectations) declared over a given port.",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#expectationsObject\" target=\"_parent\">Expectations Object</a> describes the data product's <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#definitionsDataProductPortsExpectations\" target=\"_parent\">expectations</a> declared over a given port.",
             "type": "object",
             "properties": {
                 "audience": {
@@ -462,7 +462,7 @@
         "contracts": {
             "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#contractsObject",
             "title": "Expectations Object",
-            "description": "The [Contracts Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#contractsObject) describes the data product's [contracts](#definitionsDataProductPortsContracts) declared over a given port.",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#contractsObject\" target=\"_parent\">Contracts Object</a> describes the data product's <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#definitionsDataProductPortsContracts\" target=\"_parent\">contracts</a> declared over a given port.",
             "type": "object",
             "properties": {
                 "termsAndConditions": {
@@ -484,7 +484,7 @@
         "internalComponents": {
             "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#internalComponentsObject",
             "title": "Internal Components Object",
-            "description": "The [Internal Components Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#internalComponentsObject) it's a collection of all internal entities that compose a data product.",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#internalComponentsObject\" target=\"_parent\">Internal Components Object</a> it's a collection of all internal entities that compose a data product.",
             "type": "object",
             "properties": {
                 "applicationComponents": {
@@ -506,7 +506,7 @@
         "applicationComponent": {
             "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#applicationComponent",
             "title": "Application Component",
-            "description": "The [Application Component](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#applicationComponent) describes an internal application component used by the data product to provide services through its ports.",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#applicationComponent\" target=\"_parent\">Application Component</a> describes an internal application component used by the data product to provide services through its ports.",
             "type": "object",
             "allOf": [
                 {
@@ -561,7 +561,7 @@
         "buildInfo": {
             "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#buildInfoObject",
             "title": "Build Info",
-            "description": "The [Build Info Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#buildInfoObject) contains all the informations required to build an [Application Component](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#applicationComponent)",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#buildInfoObject\" target=\"_parent\">Build Info Object</a> contains all the informations required to build an <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#applicationComponent\" target=\"_parent\">Application Component</a>",
             "type": "object",
             "properties": {
                 "service": {
@@ -578,7 +578,7 @@
         "deployInfo": {
             "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#deployInfoObject",
             "title": "Build Info",
-            "description": "The [Deploy Info Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#deployInfoObject) contains all the informations required to deploy an [Application Component](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#applicationComponent)",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#deployInfoObject\" target=\"_parent\">Deploy Info Object</a> contains all the informations required to deploy an <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#applicationComponent\" target=\"_parent\">Application Component</a>",
             "type": "object",
             "properties": {
                 "service": {
@@ -595,7 +595,7 @@
         "infrastructuralComponent": {
             "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#infrastructuralComponent",
             "title": "Infrastructural Component",
-            "description": "The [Infrastructural Component](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#infrastructuralComponent) describes an internal infrastructural component used by the data product to run its applications and store its data.",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#infrastructuralComponent\" target=\"_parent\">Infrastructural Component</a> describes an internal infrastructural component used by the data product to run its applications and store its data.",
             "type": "object",
             "allOf": [
                 {
@@ -635,7 +635,7 @@
         "provisionInfo": {
             "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#provisionInfoObject",
             "title": "Build Info",
-            "description": "The [Provision Info Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#provisionInfoObject) contains all the informations required to provision an [Infrastructural Component](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#infrastructuralComponent)",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#provisionInfoObject\" target=\"_parent\">Provision Info Object</a> contains all the informations required to provision an <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#infrastructuralComponent\" target=\"_parent\">Infrastructural Component</a>",
             "type": "object",
             "properties": {
                 "service": {
@@ -652,7 +652,7 @@
         "components": {
             "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#componentsObject",
             "title": "Components Object",
-            "description": "The [Components Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#componentsObject) holds a set of reusable objects for different aspects of the DPDS.",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#componentsObject\" target=\"_parent\">Components Object</a> holds a set of reusable objects for different aspects of the DPDS.",
             "type": "object",
             "properties": {
                 "inputPorts": {
@@ -713,7 +713,7 @@
         "reference": {
             "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#referenceObject",
             "title": "Reference Object",
-            "description": "The [Reference Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#referenceObject) allows referencing other components in the [Data Product Descriptor Document](#definitionsDpdsDocument), internally and externally.",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#referenceObject\" target=\"_parent\">Reference Object</a> allows referencing other components in the <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#definitionsDpdsDocument\" target=\"_parent\">Data Product Descriptor Document</a>, internally and externally.",
             "type": "object",
             "properties": {
                 "$ref": {
@@ -734,7 +734,7 @@
         "externalResource": {
             "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#externalResourceObject",
             "title": "External Resource Object",
-            "description": "The [External Resource Object](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#externalResourceObject) allows referencing an external resource like a documentation page or a standard definition.",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#externalResourceObject\" target=\"_parent\">External Resource Object</a> allows referencing an external resource like a documentation page or a standard definition.",
             "type": "object",
             "properties": {
                 "description": {
@@ -791,7 +791,7 @@
         "specificationExtensionPoint": {
             "$comment": "https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#specificationExtensionPoint",
             "title": "Specification Extension Point",
-            "description": "A [Specification Extension Point](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#specificationExtensionPoint) marks specific part of the [Data Product Descriptor Specification](https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/) that  are left open to extensions or futher evolution of the standard. ",
+            "description": "A <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/#specificationExtensionPoint\" target=\"_parent\">Specification Extension Point</a> marks specific part of the <a href=\"https://dpds.opendatamesh.org/references/specifications/1.0.0-DRAFT/\" target=\"_parent\">Data Product Descriptor Specification</a> that  are left open to extensions or futher evolution of the standard.",
             "type": "object",
             "properties": {
                 "description": {
