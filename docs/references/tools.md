@@ -3,7 +3,7 @@
 Would you like to add your tool to this list? <a href="mailto:odm.info@quantyca.it" target="_blank">Let us know! :octicons-mail-16:</a>
 
 ## Open Data Mesh Platform
-Open Data Mesh Platform is a platform that manages the full lifecycle of a data product from deployment to retirement. It has been designed and implemented by Quantyca to support the journey to mesh of its customers. The platform will be released in open source at the begin of 2023.
+Open Data Mesh Platform is a platform that manages the full lifecycle of a data product from deployment to retirement. It has been designed and implemented by [Quantyca](../community/quantyca.md) to support the journey to mesh of its customers. The platform will be released in open source at the begin of 2023.
 
 Open Data Mesh Platform use the specification to create, deploy and operate [data product containers](../concepts/meshops-platform.md#data-product-container) in a mesh architecture.
 
