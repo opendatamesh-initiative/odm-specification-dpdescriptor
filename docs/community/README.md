@@ -37,7 +37,7 @@ If you want to be updated on all the relevant news related to the specification 
 
 [Keep me posted :fontawesome-brands-mailchimp:](https://mailchi.mp/936d787cac89/open-data-mesh-initiative){.md-button--primary .md-button}
 
-If you want to reach us feel free to send an email at the following address.
+If you want to reach us feel free to send an email to following address.
 
 [Contact us :octicons-mail-16:](mailto:odm.info@quantyca.it){.md-button--primary .md-button}
 
