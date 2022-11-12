@@ -6,14 +6,14 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An open standard that declaratively defines a data product in all its components using a JSON or YAML descriptor document. It is released under Apache 2.0 licence. Contributions from the data mesh community are welcomed!">
+        <meta name="description" content="An open specification that declaratively defines a data product in all its components using a JSON or YAML descriptor document. It is released under Apache 2.0 license. Contributions from the data mesh community are welcomed!">
       
       
       
         <link rel="canonical" href="https://dpds.opendatamesh.org/concepts/data-contract/">
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.6">
     
     
       
@@ -998,13 +998,12 @@
 
 
 <h1 id="data-contract">Data Contract<a class="headerlink" href="#data-contract" title="Permanent link">⚓︎</a></h1>
-<p>It's a formal agreement between the data producer and the data consumers. There is not yet a clear definition of the form and scope of a data contract. Usually they cover the structure of the exchanged data (i.e. the schema) and it's meaning (i.e. the semantic). Check the <a href="./datamesh/README.md">Data Mesh Resources</a> page for more information on data contracts.</p>
-<p>In the DPDS the more general concept of <em>service agreements</em> is used in place of data contracts. Data cotracts are infact just a particular type of service agreements because on one side there are services that do not expose data and on the other there are agreements that are not contracts. </p>
-<p>In particular DPDS uses the following concepts of <em>promises theory</em> to formally describe the <a href="#interfaceComponents">interface components</a> of a <a href="#dataProduct">data product</a> (i.e. data product's ports):</p>
+<p>It's a formal agreement between the data producer and the data consumers. There is not yet a clear definition of the form and scope of a data contract. Usually, they cover the structure of the exchanged data (i.e. the schema) and its meaning (i.e. the semantics). Check the <a href="./datamesh/README.md">Data Mesh Resources</a> page for more information on data contracts.</p>
+<p>In the DPDS the more general concept of <em>service agreements</em> is used in place of data contracts. Data contracts are just a particular type of service agreement because on one side there are services that do not expose data and on the other, there are agreements that are not contracts. In particular, DPDS uses the following concepts of <em>promises theory</em> to formally describe the <a href="#interfaceComponents">interface components</a> of a <a href="#dataProduct">data product</a> (i.e. data product's ports):</p>
 <ul>
-<li><strong><a name="definitionsDataProductPortsPromises"></a>Promises:</strong> Through promises the data product declares the intent of the port. Promises are not a guarantee of the outcome but the data product will behave accordingly to them in order to realize its intent. The more a data product keeps its promises over time and the more trustworthy it is. Thus, the more trustworthy a data product is the more potential consumers are likely to use it. Trust is based on the verification of how good a data product was in the past in keeping its promises. This verification should be automated by the underlying platform and synthetized in a <em>trust score</em> shared with all potential consumers. Example of promises are: description of services' API, SLO, deprecation policy, etc..</li>
-<li><strong><a name="definitionsDataProductPortsExpectations"></a>Expectations:</strong> Through expectations the data product declares how it wants the port to be used by its consumers. Expectations are the inverse of promises. They are a way to explicitly state what promises the data product would like consumers to make regarding how they will use the port. Example of expectations are: intended usage, intended audience, etc..</li>
-<li><strong><a name="definitionsDataProductPortsContracts"></a>Contracts:</strong> Through contracts the data product declares promises and expectations that must be respected both by itself and its consumers respectively. A contract is an explicit agreement between the data product and its consumers. It is used to group all the promises and expectations that if not respected can generate penalties like monetary sanctions or interruption of service. Example of contracts are: terms of conditions, SLA, billing policy, etc..</li>
+<li><strong><a name="definitionsDataProductPortsPromises"></a>Promises</strong>: Through promises the data product declares the intent of the port. Promises are not a guarantee of the outcome but the data product will behave accordingly to them to realize its intent. The more a data product keeps its promises over time and the more trustworthy it is. Thus, the more trustworthy a data product is the more potential consumers are likely to use it. Trust is based on the verification of how good a data product was in the past in keeping its promises. This verification should be automated by the underlying platform and synthesized in a <em>trust score</em> shared with all potential consumers. Examples of promises are descriptions of services' API, SLO, deprecation policy, etc.</li>
+<li><strong><a name="definitionsDataProductPortsExpectations"></a>Expectations</strong>: Through expectations the data product declares how it wants the port to be used by its consumers. Expectations are the inverse of promises. They are a way to explicitly state what promises the data product would like consumers to make regarding how they will use the port. Examples of expectations are intended usage, intended audience, etc.</li>
+<li><strong><a name="definitionsDataProductPortsContracts"></a>Contracts</strong>: Through contracts the data product declares promises and expectations that must be respected both by itself and its consumers respectively. A contract is an explicit agreement between the data product and its consumers. It is used to group all the promises and expectations that if not respected can generate penalties like monetary sanctions or interruption of service. Examples of contracts are terms of conditions, SLA, billing policy, etc.</li>
 </ul>
 
   <hr>
@@ -1012,7 +1011,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 12, 2022</span>
       
         <br>
         Created:

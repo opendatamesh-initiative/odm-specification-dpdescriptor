@@ -6,14 +6,14 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An open standard that declaratively defines a data product in all its components using a JSON or YAML descriptor document. It is released under Apache 2.0 licence. Contributions from the data mesh community are welcomed!">
+        <meta name="description" content="An open specification that declaratively defines a data product in all its components using a JSON or YAML descriptor document. It is released under Apache 2.0 license. Contributions from the data mesh community are welcomed!">
       
       
       
         <link rel="canonical" href="https://dpds.opendatamesh.org/concepts/meshops-platform/">
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.6">
     
     
       
@@ -1086,35 +1086,35 @@
 
 
 <h1 id="datameshops-platform">DataMeshOps Platform<a class="headerlink" href="#datameshops-platform" title="Permanent link">⚓︎</a></h1>
-<p>It's the underlying self serve and domain agnostic platform that provides services to data product's teams and helps the federeted governance team to translate global policies into computational policies.</p>
-<p>In the DPDS it is referred as the <em>DataMeshOps platform</em> or also just the <em>platform</em>. It is usually devided in three main <em>planes</em> that group functionalites with the same overall intent. Each plane is briefly described in the following sessions because it is possible to find in the DPDS specific references to these planes. </p>
+<p>It's the underlying self-serve and domain-agnostic platform that provides services to data product teams and helps the federated governance team to translate global policies into computational policies.</p>
+<p>In the DPDS it is referred to as the <em>DataMeshOps</em> platform<em> or also just the </em>platform<em>. It is usually divided into three main </em>planes* that group functionalities with the same overall intent. Each plane is briefly described in the following sessions because it is possible to find in the DPDS specific references to these planes. </p>
 <details class="note" open="open">
 <summary>Note</summary>
-<p>The specification was originally created to formalize the structure and content of a <a href="#dataProductDescriptor">data product descriptor</a> documents passed into a DataOps platform implemented by <a href="../contributions/README.md#quantyca">Quantyca</a> for its internal projects.</p>
-<p>When the specification has been relased as an open standard it has been reviewd from inside out in order to remove any dependencies with the <a href="../contributions/README.md#quantyca">Quantyca</a>'s platform. Moreover the specification has been redesigned in order to allow the creation of <a href="#dataProductDescriptor">data product descriptor</a> documents that can be used as a standard way to exchange informations about <a href="#dataProduct">data products</a> beetween all the interested parties and not only between the data product's team and the platform.</p>
+<p>The specification was created to formalize the structure and content of <a href="#dataProductDescriptor">data product descriptor</a> documents passed into a DataOps platform implemented by <a href="../contributions/README.md#quantyca">Quantyca</a> for its internal projects.</p>
+<p>When the specification has been released as an open standard it has been reviewed from the inside out to remove any dependencies with the <a href="../contributions/README.md#quantyca">Quantyca</a>'s platform. Moreover, the specification has been redesigned to allow the creation of <a href="#dataProductDescriptor">data product descriptor</a> documents that can be used as a standard way to exchange information about <a href="#dataProduct">data products</a> between all the interested parties and not only between the data product's team and the platform.</p>
 </details>
 <h3 id="data-product-experience-plane">Data Product Experience Plane<a class="headerlink" href="#data-product-experience-plane" title="Permanent link">⚓︎</a></h3>
-<p>It's the platform plane that have the responsability to provide the services that using the <a href="#dataProductDescriptor">data product descriptor</a> as input are able to build, deploy and operate a <a href="#dataProductContainer">data product container</a>.</p>
+<p>It's the platform plane that has the responsibility to provide the services that use the <a href="#dataProductDescriptor">data product descriptor</a> as input and can build, deploy and operate a <a href="#dataProductContainer">data product container</a>.</p>
 <h3 id="infrastructure-utility-plane">Infrastructure Utility Plane<a class="headerlink" href="#infrastructure-utility-plane" title="Permanent link">⚓︎</a></h3>
-<p>It's the platform plane that have the responsability to provide the services to access the underlying infrastructural resources. The interface of the services exposed by the infrastructure utility plane should be standardized as much as possible in order to decouple their consumers (i.e. the services of the <a href="#dataProductExperiencePlane">data product experience plane</a> from the actual implementation. Thanks to this decoupling it is possible to:</p>
+<p>It's the platform plane that has the responsibility to provide the services to access the underlying infrastructural resources. The interface of the services exposed by the infrastructure utility plane should be standardized as much as possible to decouple their consumers (i.e. the services of the <a href="#dataProductExperiencePlane">data product experience plane</a> from the actual implementation. Thanks to this decoupling it is possible to:</p>
 <ol>
-<li>Keep other platform planes indipendent from the underlying technology and so making them reusable in different technological environments</li>
-<li>Design the standard API of the services exposed by the infrastructure utility plane hiding all the uneccessary uderlying tecnological complexity</li>
+<li>Keep other platform planes independent from the underlying technology and so making them reusable in different technological environments</li>
+<li>Design the standard API of the services exposed by the infrastructure utility plane hiding all the unnecessary underlying technological complexity</li>
 <li>change the implementation of the services exposed by the infrastructure utility plane without impacting the other planes</li>
 </ol>
 <h3 id="data-mesh-experience-plane">Data Mesh Experience Plane<a class="headerlink" href="#data-mesh-experience-plane" title="Permanent link">⚓︎</a></h3>
-<p>It's the platform plane that have the responsability to provide the services to search, evaluate and query available data products.</p>
+<p>It's the platform plane that has the responsibility to provide the services to search, evaluate and query available data products.</p>
 <h2 id="data-product-container">Data Product Container<a class="headerlink" href="#data-product-container" title="Permanent link">⚓︎</a></h2>
-<p>It's the boudle of all resources provisioned, deployed and operated in a specific runtime environment (ex. dev, qa, prod) associated to a specific <a href="#dataProduct">data product</a>. It can be viewed as a running instance of the <a href="#dataProduct">data product</a> described by the <a href="#dataProductDescriptor">data product descriptor</a>. </p>
-<p>For each descriptor multiple container insatnces can exist, usualy there could be one active instance for each runtime environments and data product's major version. In other word cannot exist multiple instance associated to a major version of a <a href="#dataProduct">data product</a> running in the same environment. It is possible anyway to have different version of the same <a href="#dataProduct">data product</a> running together in the same environment. </p>
-<p>It's a responsability of the underlyng DataMeshOps platform to interpret the <a href="#dataProductDescriptor">data product descriptor</a> and properly deploy and operate the related data product containers. The DPDS is designed to guarantee that all required information needed to deploy a data product container are available in the <a href="#dataProductDescriptor">data product descriptor</a>. It's not in the scope of the specification to define how the DataMeshOps platform should deploy and manage data product containers.</p>
+<p>It's the bundle of all resources provisioned, deployed and operated in a specific runtime environment (ex. DEV, QA, PROD) associated with a specific <a href="#dataProduct">data product</a>. It can be viewed as a running instance of the <a href="#dataProduct">data product</a> described by the <a href="#dataProductDescriptor">data product descriptor</a>. </p>
+<p>For each descriptor, multiple container instances can exist. Usually, there could be one active instance for each runtime environment and data product's major version. In other words, cannot exist multiple instances associated with a major version of a <a href="#dataProduct">data product</a> running in the same environment. It is possible anyway to have different versions of the same <a href="#dataProduct">data product</a> running together in the same environment. </p>
+<p>It's the responsibility of the underlying DataMeshOps platform to interpret the <a href="#dataProductDescriptor">data product descriptor</a> and properly deploy and operate the related data product containers. The DPDS is designed to guarantee that all required information needed to deploy a data product container is available in the <a href="#dataProductDescriptor">data product descriptor</a>. It's not in the scope of the specification to define how the DataMeshOps platform should deploy and manage data product containers.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 12, 2022</span>
       
         <br>
         Created:

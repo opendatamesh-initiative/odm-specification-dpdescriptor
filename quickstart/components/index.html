@@ -6,14 +6,14 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An open standard that declaratively defines a data product in all its components using a JSON or YAML descriptor document. It is released under Apache 2.0 licence. Contributions from the data mesh community are welcomed!">
+        <meta name="description" content="An open specification that declaratively defines a data product in all its components using a JSON or YAML descriptor document. It is released under Apache 2.0 license. Contributions from the data mesh community are welcomed!">
       
       
       
         <link rel="canonical" href="https://dpds.opendatamesh.org/quickstart/components/">
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.6">
     
     
       
@@ -1072,11 +1072,11 @@
 
 
 <h1 id="reusing-descriptions">Reusing Descriptions<a class="headerlink" href="#reusing-descriptions" title="Permanent link">⚓︎</a></h1>
-<p>As is often the case, the example built through the previous pages has grown too large to be easily manageable. This page introduces a mechanism to remove redundancy from an data product descriptor document by reusing portions of it.</p>
+<p>As is often the case, the example built through the previous pages has grown too large to be easily manageable. This page introduces a mechanism to remove redundancy from a data product descriptor document by reusing portions of it.</p>
 <h2 id="components-object">Components Object<a class="headerlink" href="#components-object" title="Permanent link">⚓︎</a></h2>
 <p>The <a href="../../references/specifications/last/#components-object">Components Object</a>, accessible through the <code>components</code> field in the root <a href="../../references/specifications/last/#data-product-descriptor-entity">Data Product Descriptor Entity</a>, contains definitions for objects to be reused in other parts of the document.</p>
 <p>TODO add image</p>
-<p>Most objects in an data product descriptor document can be replaced by a <strong>reference</strong> to a <strong>component</strong>, drastically reducing the document’s size and maintenance cost (just like methods do in programming languages).</p>
+<p>Most objects in a data product descriptor document can be replaced by a <strong>reference</strong> to a <strong>component</strong>, drastically reducing the document’s size and maintenance cost (just like methods do in programming languages).</p>
 <p>Not all objects can be referenced, though, only those listed as fields of the <a href="../../references/specifications/last/#components-object">Components Object</a> like <code>outputPorts</code>, <code>applicationComponents</code> and <code>infrastructuralComponents</code> to name a few.</p>
 <p>Each field in the <a href="../../references/specifications/last/#components-object">Components Object</a> is a map pairing component names with objects to be reused. The type of these objects must match the parent field, e.g. objects in the <code>outputPorts</code> map must be <a href="../../references/specifications/last/##output-port-component">Output Port Components</a>.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
@@ -1104,13 +1104,13 @@
 </code></pre></div>
 <p>The above example defines two components:</p>
 <ul>
-<li><code>cdcIngestion</code> is an application component, usable wherever a <a href="../../references/specifications/last/#applicationComponent">Application Component</a> is expected.</li>
-<li><code>eventStore</code> is an infrastructural component, usable wherever a <a href="../../references/specifications/last/#infrastructure-component">Infrastructural Component</a> is expected.</li>
+<li><code>cdcIngestion</code> is an application component, usable wherever an <a href="../../references/specifications/last/#applicationComponent">Application Component</a> is expected.</li>
+<li><code>eventStore</code> is an infrastructural component, usable wherever an <a href="../../references/specifications/last/#infrastructure-component">Infrastructural Component</a> is expected.</li>
 </ul>
 <p>The next section explains how to reference these components.</p>
 <h2 id="reference-object">Reference Object<a class="headerlink" href="#reference-object" title="Permanent link">⚓︎</a></h2>
-<p>Any data product descriptor object of the types supported by the <a href="../../references/specifications/last/#components-object">Components Object</a> can be replaced by a <a href="../../references/specifications/last/#reference-object">Reference Object</a> pointing to a component.</p>
-<p><a href="../../references/specifications/last/#reference-object">Reference Object</a> are actually <a href="https://datatracker.ietf.org/doc/html/draft-pbryan-zyp-json-ref-03">JSON References</a>: they contain a  field named <code>$ref</code> and its string value is a URI pointing to the referenced object:</p>
+<p>Any data product descriptor object of the types supported by the <a href="../../references/specifications/last/#components-object">Components Object</a> can be replaced by a <a href="../../references/specifications/last/#reference-object">Reference Object</a> pointing to a component.
+<a href="../../references/specifications/last/#reference-object">Reference Object</a> is  <a href="https://datatracker.ietf.org/doc/html/draft-pbryan-zyp-json-ref-03">JSON</a> References](https://datatracker.ietf.org/doc/html/draft-pbryan-zyp-json-ref-03): they contain a  field named <code>$ref</code> and its string value is a URI pointing to the referenced object:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;internalComponents&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="nt">&quot;applicationComponents&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1122,7 +1122,7 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p>Note how all references point to different fragments inside the same document (the one being processed). The <a href="../../references/specifications/last/#reference-object">Reference Object</a> can be used also to point to external documents or event to fragment inside external documents.</p>
+<p>Note how all references point to different fragments inside the same document (the one being processed). The <a href="../../references/specifications/last/#reference-object">Reference Object</a> can be used also to point to external documents or events to fragment inside external documents.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;interfaceComponents&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="nt">&quot;outputPorts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
@@ -1136,13 +1136,13 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">⚓︎</a></h2>
-<p>Whenever the same piece of JSON or YAML is repeated in an data product descriptor document, it is probably worth converting it into a component and referencing it everywhere else.</p>
-<p>Furthermore, <a href="../../references/specifications/last/#reference-object">Reference Object</a> allow splitting a document into several files to keep them organized and their individual size manageable.</p>
+<p>Whenever the same piece of JSON or YAML is repeated in a data product descriptor document, it is probably worth converting it into a component and referencing it everywhere else.</p>
+<p>Furthermore, <a href="../../references/specifications/last/#reference-object">Reference Object</a> allows splitting a document into several files to keep them organized and its size manageable.</p>
 <p>This page has shown that:</p>
 <ul>
-<li>Reusable <a href="../../references/specifications/last/#reference-object">Reference Object</a> can be defined by using the <code>components</code> field of the root <a href="../../references/specifications/last/#data-product-descriptor-entity">Data Product Descriptor Entity</a>.</li>
+<li>reusable <a href="../../references/specifications/last/#reference-object">Reference Object</a> can be defined by using the <code>components</code> field of the root <a href="../../references/specifications/last/#data-product-descriptor-entity">Data Product Descriptor Entity</a>.</li>
 <li>Components can be referenced from any place where an object of the same type is expected using <code>$ref</code>.</li>
-<li>References are actually URIs so they are very flexible.</li>
+<li>References are  URIs so they are very flexible.</li>
 </ul>
 <p><a href="./resources.md">The next page</a> explains how to include external resources in a data product descriptor document.</p>
 
@@ -1151,7 +1151,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 12, 2022</span>
       
         <br>
         Created:

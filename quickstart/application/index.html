@@ -6,14 +6,14 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An open standard that declaratively defines a data product in all its components using a JSON or YAML descriptor document. It is released under Apache 2.0 licence. Contributions from the data mesh community are welcomed!">
+        <meta name="description" content="An open specification that declaratively defines a data product in all its components using a JSON or YAML descriptor document. It is released under Apache 2.0 license. Contributions from the data mesh community are welcomed!">
       
       
       
         <link rel="canonical" href="https://dpds.opendatamesh.org/quickstart/application/">
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.6">
     
     
       
@@ -1208,21 +1208,21 @@
 <h1 id="application-components">Application Components<a class="headerlink" href="#application-components" title="Permanent link">⚓︎</a></h1>
 <p><a href="../interface/">The previous page</a> showed how to define the <a href="../../concepts/#interface-components">interface of services exposed</a> by a <a href="../../concepts/#data-product">data product</a>. This page explains how to define the <a href="../../concepts/#application-components">application components</a> that implement these services.</p>
 <h2 id="application-component">Application Component<a class="headerlink" href="#application-component" title="Permanent link">⚓︎</a></h2>
-<p>Appliction components are internal components of a data product. This mean that, while the interface components are publicly available on demand to all consumers, access to application components can be restricted. </p>
-<p>All internal components of a data product are contained in the <a href="../../references/specifications/last/#internalComponentsObject">Internal Components Object</a>, accessible through the <code>internalComponents</code> field in the root <a href="../../references/specifications/last/#data-product-descriptor-entity">Data Product Descriptor Entity</a>. Within this object the field <code>applicationComponents</code> contains the list of all <a href="../../references/specifications/last/#applicationComponent">Application Component</a> of the data product.</p>
+<p>Application components are internal components of a data product. This means that, while the interface components are publicly available on demand to all consumers, access to application components can be restricted. </p>
+<p>All internal components of a data product are contained in the <a href="../../references/specifications/last/#internalComponentsObject">Internal Components Object</a>, accessible through the <code>internalComponents</code> field in the root <a href="../../references/specifications/last/#data-product-descriptor-entity">Data Product Descriptor Entity</a>. Within this object, the field <code>applicationComponents</code> contains the list of all <a href="../../references/specifications/last/#applicationComponent">Application Components</a> of the data product.</p>
 <p><img alt="open-data-mesh descriptor components" src="../../images/dpds-application-components.svg" /></p>
 <h3 id="fields">Fields<a class="headerlink" href="#fields" title="Permanent link">⚓︎</a></h3>
 <p>An <a href="./references/specifications/last.md#applicationComponent">Application Component</a> has the following two mandatory fields:</p>
 <ul>
-<li><code>fullyQualifiedName</code> (string:fqn): This is the unique universal idetifier of the component. It MUST be a URN of the form <code>urn:dpds:{mesh-namespace}:dataproducts:{product-name}:{product-major-version}:applications:{app-name}</code></li>
-<li><code>version</code> (string:version): This is the <a href="https://semver.org/spec/v2.0.0.html" target="_blank">semantic version number</a> of the data product's application component. The  version of application components have no direct impact of the version of the data product they belong to. A change in the major version of an appication component can anyway impact the version of one interface components and  so indirectly the version of the data product.</li>
+<li><code>fullyQualifiedName</code> (string:fqn): This is the unique universal identifier of the component. It MUST be a URN of the form <code>urn:dpds:{mesh-namespace}:dataproducts:{product-name}:{product-major-version}:applications:{app-name}</code></li>
+<li><code>version</code> (string:version): This is the <a href="https://semver.org/spec/v2.0.0.html" target="_blank">semantic version number</a> of the data product's application component. The version of application components has no direct impact on the version of the data product they belong to. A change in the major version of an application component can anyway impact the version of one interface component and so indirectly the version of the data product.
+Other non-mandatory descriptive fields like <code>platform</code> and <code>applicationType</code> are also available. Moreover, the <a href="./references/specifications/last.md#applicationComponent">Application</a> Component](./references/specifications/last.md#applicationComponent) can be extended with other fields with <strong>"x-" prefix</strong> as needed.</li>
 </ul>
-<p>Other non mandatory descriptive fields like <code>platform</code> and <code>applicationType</code> are also available. Moreover the <a href="./references/specifications/last.md#applicationComponent">Application Component</a> can be extended with other fields  with <strong>"x-" prefix</strong> as needed.</p>
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">⚓︎</a></h3>
 <p>The following example shows three application components that respectively describe 
-1. an application that load data form a downstream legacy sistem (i.e. <em>TMS</em>)  in relatime through CDC technlogy (i.e. <em>Debezium</em>).
-1. a streaming application that trasform the techincal events loaded in the streaming platfrom (i.e. <em>Confluent platform</em>) by the previous application in domain events.
-1. a streaming appplication that use the domain events generated by the previous application to update the trip status in a downstream table stored in a postgres db.</p>
+1. an application that loads data from a downstream legacy system (i.e. <em>TMS</em>)  in real-time to CDC technology (i.e. <em>Debezium</em>).
+1. a streaming application that transforms the technical events loaded in the streaming platform (i.e. <em>Confluent platform</em>) by the previous application in domain events.
+a streaming application that uses the domain events generated by the previous application to update the trip status in a downstream table stored in a Postgres DB.</p>
 <p>All three applications are deployed in <code>eu-south-1</code> region of <em>AWS Cloud</em>.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;applicationComponents&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
@@ -1248,18 +1248,18 @@
 <span class="w">    </span><span class="p">]</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p>The information provided so far are useful to track the application assets related to a specific data product. There are not anyway sufficient informtion to allow an external agent to build and deploy the application autonomously. To this end in the <a href="./references/specifications/last.md#applicationComponent">Application Component</a> there are the <code>buildService</code> and <code>deploymentService</code> fileds that are described in much details in the next sections.</p>
+<p>The information provided so far are useful to track the application assets related to a specific data product. There is not anyway sufficient information to allow an external agent to build and deploy the application autonomously. To this end in the <a href="./references/specifications/last.md#applicationComponent">Application Component</a>, there are the <code>buildService</code> and <code>deploymentService</code> fields that are described in much detail in the next sections.</p>
 <h2 id="build-service-object">Build Service Object<a class="headerlink" href="#build-service-object" title="Permanent link">⚓︎</a></h2>
-<p>The <a href="todo">Build Info Object</a> contains the informations required to build an application component. DPDS uses <em>integration pipelines as code</em> to guarantee the possibility to automatize the build process in a riproducible way. Anyway to mantain technological indipendence the DPDS do not enforce the usage of any specific CICD tool.</p>
+<p>The <a href="todo">Build Info Object</a> contains the information required to build an application component. DPDS uses <em>integration pipelines as code</em> to guarantee the possibility to automatize the build process in a reproducible way. Anyway, to maintain technological independence the DPDS does not enforce the usage of any specific CICD tool.</p>
 <h3 id="fileds">Fileds<a class="headerlink" href="#fileds" title="Permanent link">⚓︎</a></h3>
 <p>A <a href="todo">Build Info Object</a> has the following three mandatory fields:</p>
 <ul>
-<li><code>service</code> ( <code>string:name</code>  or <a href="#externalResourceObject">External Resource Object</a>): This is the logical name or the actual endpoint of the service to call in order to build the application component. If the logical name (ex. <code>jenkins</code>, <code>aws-pipelines</code>, <code>azure-devops</code>, ecc...) is used as field value the actual endpoint value resulution is demanded to the <em>data product experience plane</em> of the underlyng platform.</li>
-<li><code>template</code> (<code>object</code> or <a href="#externalResourceObject">External Resource Object</a>):  This is the definition of the pipeline to execute in order to build the application. It is passed as is to the <em>build service</em> implementation specified in the <code>service</code> field.</li>
+<li><code>service</code> ( <code>string:name</code> or <a href="#externalResourceObject">External Resource Object</a>): This is the logical name or the actual endpoint of the service to call to build the application component. If the logical name (ex. <code>jenkins</code>, <code>aws-pipelines</code>, <code>azure-devops</code>, etc...) is used as field value the actual endpoint value resolution is demanded by the <em>data</em> product experience plane* of the underlying platform.</li>
+<li><code>template</code> (<code>object</code> or <a href="#externalResourceObject">External Resource Object</a>):  This is the definition of the pipeline to execute to build the application. It is passed as is to the <em>build service</em> implementation specified in the <code>service</code> field.</li>
 <li><code>configurations</code> (<code>object</code> or <a href="#externalResourceObject">External Resource Object</a>): This is the map of all configuration properties that must be used by the <em>build service</em> at build time. It is passed as is to the <em>build service</em> implementation specified in the <code>service</code> field.</li>
 </ul>
 <h3 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">⚓︎</a></h3>
-<p>The following example shows an appliction that could be built using a jankins backed <em>build service</em>. The <em>jenkinsfile</em> that contains the description of the pipeline is available on an external <em>bitbucket repository</em>. The only configuration parameter passed in to the <em>build service</em> at runtime is the target stage.</p>
+<p>The following example shows an application that could be built using a Jenkins-backed <em>build service</em><em>. The </em>jenkinsfile<em> that contains the description of the pipeline is available on an external </em>bitbucket repository<em>. The only configuration parameter passed into the </em>build service* at runtime is the target stage.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;jenkins&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;template&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1272,16 +1272,16 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h2 id="deployment-service-object">Deployment Service Object<a class="headerlink" href="#deployment-service-object" title="Permanent link">⚓︎</a></h2>
-<p>The <a href="todo">Deployment Info Object</a> contains the informations required to deploy an application component. DPDS uses <em>integration pipelines as code</em> to guarantee the possibility to automatize the deployment process in a riproducible way. Anyway to mantain technological indipendence the DPDS do not enforce the usage of any specific CICD tool.</p>
+<p>The <a href="todo">Deployment Info Object</a> contains the information required to deploy an application component. DPDS uses <em>integration pipelines as code</em> to guarantee the possibility to automatize the deployment process in a reproducible way. Anyway, to maintain technological independence the DPDS does not enforce the usage of any specific CICD tool.</p>
 <h3 id="fileds_1">Fileds<a class="headerlink" href="#fileds_1" title="Permanent link">⚓︎</a></h3>
 <p>A <a href="todo">Deployment Info Object</a> has the following three mandatory fields:</p>
 <ul>
-<li><code>service</code> ( <code>string:name</code>  or <a href="#externalResourceObject">External Resource Object</a>): This is the logical name or the actual endpoint of the service to call in order to deploy the application component. If the logical name (ex. <code>jenkins</code>, <code>aws-pipelines</code>, <code>azure-devops</code>, ecc...) is used as field value the actual endpoint value resulution is demanded to the <em>data product experience plane</em> of the underlyng platform.</li>
-<li><code>template</code> (<code>object</code> or <a href="#externalResourceObject">External Resource Object</a>):  This is the definition of the pipeline to execute in order to deploy the application. It is passed as is to the <em>deployment service</em> implementation specified in the <code>service</code> field.</li>
+<li><code>service</code> ( <code>string:name</code> or <a href="#externalResourceObject">External Resource Object</a>): This is the logical name or the actual endpoint of the service to call to deploy the application component. If the logical name (ex. <code>jenkins</code>, <code>aws-pipelines</code>, <code>azure-devops</code>, etc...) is used as field value the actual endpoint value resolution is demanded by the <em>data</em> product experience plane* of the underlying platform.</li>
+<li><code>template</code> (<code>object</code> or <a href="#externalResourceObject">External Resource Object</a>):  This is the definition of the pipeline to execute to deploy the application. It is passed as is to the <em>deployment service</em> implementation specified in the <code>service</code> field.</li>
 <li><code>configurations</code> (<code>object</code> or <a href="#externalResourceObject">External Resource Object</a>): This is the map of all configuration properties that must be used by the <em>build service</em> at deployment time. It is passed as is to the <em>deployment service</em> implementation specified in the <code>service</code> field.</li>
 </ul>
 <h3 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">⚓︎</a></h3>
-<p>The following example shows an appliction that could be deployed using a jankins backed <em>deployment service</em>. The <em>jenkinsfile</em> that contains the description of the pipeline is available on an external <em>bitbucket repository</em>. The only configuration parameters passed in to the <em>deployment service</em> at runtime are the initial stage stage and the end state that identify the portion of the pipeline that must be executed.</p>
+<p>The following example shows an application that could be deployed using a Jenkins-backed <em>deployment service</em>. The <em>jenkinsfile</em> that contains the description of the pipeline is available on an external <em>bitbucket repository</em>. The only configuration parameters passed into the <em>deployment</em> service* at runtime are the initial stage and the end state that identify the portion of the pipeline that must be executed.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="nt">&quot;mediaType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;application&quot;</span><span class="p">,</span><span class="w"></span>
@@ -1300,19 +1300,19 @@
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">⚓︎</a></h2>
 <p>This page has shown that:</p>
 <ul>
-<li>a data product is composed not only by its public interface but also by internal componnets</li>
-<li>applications that implement the exposed interfaces are internal components described through an <a href="./references/specifications/last.md#applicationComponent">Application Component</a>. </li>
+<li>a data product is composed not only of its public interface but also of internal components</li>
+<li>applications that implement the exposed interfaces are internal components described through an <a href="./references/specifications/last.md#applicationComponent">Application Component</a>.</li>
 <li><a href="./references/specifications/last.md#applicationComponent">Application Component</a> contains general information related to the specific application but also all the required information to build and deploy the application in an automatic and reproducible way.</li>
-<li>the DPDS uses <em>pipeline as code</em>  to define how to build and deploy an application but do not enforce the use of any particular CICD tool, preserving in this way its <a href="../../overview/README.md#principles">technology independence</a>.</li>
+<li>the DPDS uses <em>pipeline as code</em> to define how to build and deploy an application but does not enforce the use of any particular CICD tool, preserving in this way its <a href="../../overview/README.md#principles">technology independence</a>.</li>
 </ul>
-<p><a href="../infrastructure/">The next page</a> describes the contents of the <code>infrastructuralComponents</code> field used to provide all the required information to provision the infastructure required by application components that implement the services exposed by the product through its ports.</p>
+<p><a href="../infrastructure/">The next page</a> describes the contents of the <code>infrastructuralComponents</code> field used to provide all the required information to provision the infrastructure required by application components that implement the services exposed by the product through its ports.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 12, 2022</span>
       
         <br>
         Created:
