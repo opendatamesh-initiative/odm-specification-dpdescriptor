@@ -1,7 +1,7 @@
 # Data Mesh Resources
 
 ## Zhamak's Corner
-<a href="https://www.linkedin.com/in/zhamak-dehghani/" target="_blank">Zhamak Dehghani :fontawesome-brands-linkedin:</a> formalized the *data mesh approach* to data management in 2019 while working at *Thoughtworks* as the director of emerging technologies. Since then Zhamak has continued to work to disseminate and evolve the data mesh approach within the data and business community. Today she is the CEO and founder of a stealth startup and undoubtedly one of the most important reference in the data mesh world.
+<a href="https://www.linkedin.com/in/zhamak-dehghani/" target="_blank">Zhamak Dehghani :fontawesome-brands-linkedin:</a> formalized the *data mesh approach* to data management in 2019 while working at *Thoughtworks* as the director of emerging technologies. Since then Zhamak has continued to work to disseminate and evolve the data mesh approach within the data and business community. Today she is the CEO and founder of a stealth startup and undoubtedly one of the most important references in the data mesh world.
 
 Resource | Date | Description
 ---|---|---
