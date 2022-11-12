@@ -7,7 +7,7 @@ Open Data Mesh Platform is a platform that manages the full lifecycle of a data 
 
 Open Data Mesh Platform use the specification to create, deploy and operate [data product containers](../concepts/meshops-platform.md#data-product-container) in a mesh architecture.
 
-![Open Data Mesh Platform](../images/odm-platform.png)
+![Open Data Mesh Platform](../images/odm-platform.svg)
 
 In a [DataMeshOps platform](../concepts/meshops-platform.md), Open Data Mesh Platform offers key services to implement the [data product experience plane](../concepts/meshops-platform.md#data-product-experience-plane). Open Data Mesh Platform also come togheter with a set of adapters to implement the [infrastructure utility plane](../concepts/meshops-platform.md#infrastructure-utility-plane) of the [DataMeshOps platform](../concepts/meshops-platform.md) over the actual infrastructure.
 
