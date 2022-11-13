@@ -1,4 +1,4 @@
-# Descriptor Document Overview
+# Data Product Descriptor Document Overview
 A data product descriptor document describes a data product in one or more machine-readable files. This page describes the syntax of these files and the minimal structure they must contain.
 
 ## Document Syntax
