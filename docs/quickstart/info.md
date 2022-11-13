@@ -32,12 +32,11 @@ The following example shows a minimal data product descriptor document:
 		"owner": {
 			"id": "john.doe@company-xyz.com",
 			"name": "John Doe"
-		},
-		"interfaceComponents": {
+		}
+	},
+	"interfaceComponents": {
 			"outputPorts": []
 		}
-
-	}
 }
 ```
 

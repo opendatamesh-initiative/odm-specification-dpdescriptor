@@ -1,15 +1,16 @@
 {
   "dataProductDescriptor": "1.0.0",
   "info": {
-    "fullyQualifiedName": "pippo",
-    "version": "1.0.1",
-    "name": "pippo",
-    "domain": "TripExecution",
-    "owner": {
-        "id": "john.doe@company-xyz.com"
-    }
+      "name": "tripExecution",
+      "fullyQualifiedName": "urn:dpds:com.company-xyz:dataproducts:tripExecution:1",
+      "version": "1.2.3",
+      "domain": "Transport Management",
+      "owner": {
+          "id": "john.doe@company-xyz.com",
+          "name": "John Doe"
+      }
   },
   "interfaceComponents": {
     "outputPorts": []
-  }
+}
 }
