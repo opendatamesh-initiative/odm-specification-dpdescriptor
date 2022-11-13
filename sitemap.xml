@@ -91,6 +91,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://dpds.opendatamesh.org/quickstart/example/</loc>
+         <lastmod>2022-11-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://dpds.opendatamesh.org/quickstart/info/</loc>
          <lastmod>2022-11-13</lastmod>
          <changefreq>daily</changefreq>

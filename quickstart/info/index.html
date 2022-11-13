@@ -559,6 +559,8 @@
         
           
         
+          
+        
       
       
         
@@ -579,6 +581,20 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../example/" class="md-nav__link">
+        Trip Execution Data Product Overview
+      </a>
+    </li>
+  
+
             
           
             
@@ -1098,7 +1114,7 @@
 
 
 <h1 id="minimal-descriptor-document">Minimal Descriptor Document<a class="headerlink" href="#minimal-descriptor-document" title="Permanent link">⚓︎</a></h1>
-<p><a href="../overview/">The previous page</a> showed the overall syntax and structure of a data product descriptor document. The data product descriptor document structure is long and complex so this page just describes the minimal set of fields it must contain, while following pages give more details about specific objects. </p>
+<p><a href="../overview/">The previous page</a> showed the overall syntax and structure of a data product descriptor document. The data product descriptor document structure is long and complex so this page just describes the minimal set of fields it must contain while the following pages give more details about specific objects. </p>
 <h2 id="data-product-descriptor-entity">Data Product Descriptor Entity<a class="headerlink" href="#data-product-descriptor-entity" title="Permanent link">⚓︎</a></h2>
 <p>The root object in any data product descriptor document is the <a href="../../references/specifications/last/#data-product-descriptor-entity">Data Product Descriptor Entity</a>. The <a href="../../references/specifications/last/#info-object">Info Object</a> contains tha genarl info related to the data product while the <a href="../../references/specifications/last/#internal-components-object">Interface Components Object</a> contains all its public interfaces.</p>
 <p><img alt="dpds-info-object" src="../../images/dpds-info-object.svg" /></p>
@@ -1106,14 +1122,14 @@
 <p>Only three fields of the <a href="../../references/specifications/last/#data-product-descriptor-entity">Data Product Descriptor Entity</a> are mandatory: <code>dataProductDescriptor</code>, <code>info</code> and <code>interfaceComponents.outputPorts</code>. </p>
 <ul>
 <li><code>dataProductDescriptor</code> (<strong>string:version</strong>): This indicates the version of the DADS this document is using, e.g. “1.0.0”. Using this field tools can check that the document correctly adheres to the specification.</li>
-<li><code>info</code> (<a href="../../references/specifications/last/#info-object">Info Object</a>): this provides general information about the data product (like its description and contact information) but the only mandatory fields are <code>fullyQualifiedName</code>, <code>name</code>, <code>version</code>, <code>domain</code> and <code>owner</code>.<ul>
-<li><code>fullyQualifiedName</code> (<strong>string:fqn</strong>): This is the unique universal idetifier of the data product.  It MUST be a URN of the form <code>urn:dpds:{mesh-namespace}:dataproducts:{product-name}:{product-major-version}</code>. It's RECOMMENDED to use as <code>mesh-namespace</code> your company's domain name in reverse dot notation (ex. <code>com.mycompany</code>) in order to ensure that the <code>fullyQualifiedName</code> is unique universal idetifier as REQUIRED.</li>
-<li><code>version</code> (<strong>string:version</strong>): this is the  <a href="https://semver.org/spec/v2.0.0.html" target="_blank">semantic version number</a> of the data product (not to be confused with the <code>dataProductDescriptor</code> version above).</li>
-<li><code>domain</code> (<strong>string</strong>): This is the domain to which the data product belongs to.</li>
+<li><code>info</code> (<a href="../../references/specifications/last/#info-object">Info Object</a>): This provides general information about the data product (like its description and contact information) but the only mandatory fields are <code>fullyQualifiedName</code>, <code>name</code>, <code>version</code>, <code>domain</code> and <code>owner</code>.<ul>
+<li><code>fullyQualifiedName</code> (<strong>string:fqn</strong>): This is the unique universal identifier of the data product.  It MUST be a URN of the form <code>urn:dpds:{mesh-namespace}:dataproducts:{product-name}:{product-major-version}</code>. It's RECOMMENDED to use as <code>mesh-namespace</code> your company's domain name in reverse dot notation (ex. <code>com.company-xyz</code>) in order to ensure that the <code>fullyQualifiedName</code> is a unique universal idetifier as REQUIRED.</li>
+<li><code>version</code> (<strong>string:version</strong>): this is the <a href="https://semver.org/spec/v2.0.0.html" target="_blank">semantic version number</a> of the data product (not to be confused with the <code>dataProductDescriptor</code> version above).</li>
+<li><code>domain</code> (<strong>string</strong>): This is the domain to which the data product belongs.</li>
 <li><code>owner</code> (<a href="../../references/specifications/last/#owner-object">Owner Object</a>): This is a collection of information related to the data product's owner. The only mandatory field is the <code>id</code> of the owner, usually his or her corporate mail address.</li>
 </ul>
 </li>
-<li><code>interfaceComponents</code> (<a href="../../references/specifications/last/#interfaceComponentsObject">Interface Components Object</a>): This is a collection of all ports exposed by the data product (i.e. input, output, ecc...). The only mandatory field is <code>outputPorts</code> that contais the list of all output ports of the data product.<ul>
+<li><code>interfaceComponents</code> (<a href="../../references/specifications/last/#interfaceComponentsObject">Interface Components Object</a>): This is a collection of all ports exposed by the data product (i.e. input, output, etc). The only mandatory field is <code>outputPorts</code> which contains the list of all output ports of the data product.<ul>
 <li><code>outputPorts</code> (<strong>array of</strong> <a href="../../references/specifications/last/#outputPortComponent">Output Port Component</a>): These are the output ports exposed by the data product.</li>
 </ul>
 </li>
@@ -1142,7 +1158,7 @@
 <ul>
 <li>Every data product descriptor document must contain a root object with at least the fields <code>dataProductDescriptor</code>, <code>info</code> and <code>interfaceComponents.outputPorts</code>.</li>
 </ul>
-<p><a href="./">The next page</a> describes the contents of the <code>interfaceComponents</code> field so ports can be added to the above minimal snippet.</p>
+<p><a href="../interface/">The next page</a> describes the contents of the <code>interfaceComponents</code> field so ports can be added to the above minimal snippet.</p>
 
   <hr>
 <div class="md-source-file">
