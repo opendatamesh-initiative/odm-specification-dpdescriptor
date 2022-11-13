@@ -1,0 +1,15 @@
+{
+  "dataProductDescriptor": "1.0.0",
+  "info": {
+    "fullyQualifiedName": "pippo",
+    "version": "1.0.1",
+    "name": "pippo",
+    "domain": "TripExecution",
+    "owner": {
+        "id": "john.doe@company-xyz.com"
+    }
+  },
+  "interfaceComponents": {
+    "outputPorts": []
+  }
+}

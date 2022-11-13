@@ -1,8 +1,7 @@
 # Data Product Descriptor Specification
 
 #### Version 1.0.0 (DRAFT)
-
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [BCP 14](https://tools.ietf.org/html/bcp14) [RFC2119](https://tools.ietf.org/html/rfc2119) [RFC8174](https://tools.ietf.org/html/rfc8174) when, and only when, they appear in all capitals, as shown here.
+The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [BCP 14](https://tools.ietf.org/html/bcp14) [RFC2119](https://tools.ietf.org/html/rfc2119) [RFC8174](https://tools.ietf.org/html/rfc8174) when, and only when, they appear in all capitals, as shown here.
 
 This document is licensed under [The Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0.html).
 
@@ -12,17 +11,17 @@ Part of this content has been taken from the great work done by the folks at the
 
 - We think that the work made by OpenAPI Initiative and AsyncAPI Initiative is great  :)
 - We want to make the learning curve for the Data Product Descriptor Specification as smooth as possible, aligning its definition to the one of other two popular specifications in the software and data engineers community
-- We think that OpenAPI and AsyncAPI are natural specifications for defining the interface of data product's ports that expose an API endpoint. This specification do not impose to use any specific standard  for port's interface definition but these two are highly recommended.
+- We think that OpenAPI and AsyncAPI are natural specifications for defining the interface of data product's ports that expose an API endpoint. This specification does not impose the use of any specific standard for the port's interface definition but these two are highly recommended.
 
 
 ## Introduction
 
-The Data Product Descriptor Specification (DPDS) defines a declarative and technology independent standard to describe a data product in all its components. It allows human agents (e.g. analysts, data scientists, etc..) and digital agents (e.g. other data products, BI tools, planes of the underlying data mesh ops platform, etc..) to operate, discover and access a data product. When properly defined, an external agent can understand and interact with the data product with a minimal amount of cognitive load and implementation logic.
+The Data Product Descriptor Specification (DPDS) defines a declarative and technology-independent standard to describe a data product in all its components. It allows human agents (e.g. analysts, data scientists, etc..) and digital agents (e.g. other data products, BI tools, planes of the underlying data mesh ops platform, etc..) to operate, discover and access a data product. When properly defined, an external agent can understand and interact with the data product with a minimal amount of cognitive load and implementation logic.
 
-The formalization of a standard data product descriptor document through an open specification is useful to enable the implementation of an ecosystem of interoperable data mesh tools. The following is a non exhaustive list of tools that can benefit from the specification:
+The formalization of a standard data product descriptor document through an open specification is useful to enable the implementation of an ecosystem of interoperable data mesh tools. The following is a non-exhaustive list of tools that can benefit from the specification:
 
 - catalogs (search, document and collaborate) 
-- design tools (create new products by composition of reusable templates)
+- design tools (create new products by the composition of reusable templates)
 - lifecycle management tools (deploy and operate) 
 - access management tools (assign/track access grants and generate client code in different languages)
 - policies checking tools (enforce standard compliance and audit security)
@@ -30,7 +29,7 @@ The formalization of a standard data product descriptor document through an open
 - data lineage tools (trace data flows and perform forward/backward analysis)
 - mesh topology analysis tools (calculate value/trust scores and detect structural problems)
 - semantic tools (apply ontologies over mesh topology)
-- domain specific language tools (create a collection af interconnected data products that implement together a specific value stream)
+- domain-specific language tools (create a collection of interconnected data products that implement together a specific value stream)
 
 ## Table of Contents
 
@@ -86,31 +85,31 @@ The formalization of a standard data product descriptor document through an open
 ## <a name="definitions"></a>Definitions
 
 ##### <a name="definitionsStandard"></a>Standard
-The set of shared rules used by different agents to describe an entity or process of common interest. The agents that follow the standard limit their autonomy conforming to the set of shared rules in order to facilitate cooperation between them through interoperability.
+The set of shared rules used by different agents to describe an entity or process of common interest. The agents that follow the standard limit their autonomy by conforming to the set of shared rules to facilitate cooperation between them through interoperability.
 
 ##### <a name="definitionsSpecification"></a>Standard Specification
-The formal description of the rules that form a [standard](#definitionsStandard). A standard can have multiple specification versions associated to it. Sometime the words standard and specification are used as synonymous. 
+The formal description of the rules that form a [standard](#definitionsStandard). A standard can have multiple specification versions associated with it. Sometimes the words standard and specification are used as synonymous. 
 
 ##### <a name="definitionsDefinition"></a>Standard Definition
 The description of one specific entity or process created using and conforming to the set of rules formally described in the [standard specification](#definitionsSpecification)
 
 ##### <a name="definitionsDataProduct"></a>Data Product
-The smallest unit that can be independently deployed and managed in a data architecture (i.e. architectural quantum). It is composed by all the structural components that it requires to do its function: metadata, data, code, policies that govern the data and its dependencies to infrastructure. Each data product has a clear identifier, a version number and an owner.  
+The smallest unit that can be independently deployed and managed in a data architecture (i.e. architectural quantum). It is composed of all the structural components that it requires to do its function: metadata, data, code, policies that govern the data and its dependencies to infrastructure. Each data product has a clear identifier, a version number and an owner.  
 
 ##### <a name="definitionsDataProductPorts"></a>Data Product Ports
-The interfaces exposed to external agents by a [data product](#definitionsDataProduct). Each port expose a service or set of correlated services. These are the five types of port supported by a [data product](#definitionsDataProduct):
+The interfaces exposed to external agents by a [data product](#definitionsDataProduct). Each port exposes a service or set of correlated services. These are the five types of ports supported by a [data product](#definitionsDataProduct):
 
-- **<a name="definitionsDataProductPortsInput"></a>Input port(s):** an input port describes a set of services exposed by a data product to collect its source data and makes it available for further internal transformation. An input port can receive data from one ore more upstream sources in a push (i.e. asynchronous subscription) or pop mode (i.e. synchronous query). Each data product may have one or more input ports. 
+- **<a name="definitionsDataProductPortsInput"></a>Input port(s):** an input port describes a set of services exposed by a data product to collect its source data and makes it available for further internal transformation. An input port can receive data from one or more upstream sources in a push (i.e. asynchronous subscription) or pop mode (i.e. synchronous query). Each data product may have one or more input ports. 
 - **<a name="definitionsDataProductPortsOutput"></a>Output port(s):** an output port describes a set of services exposed by a data product to share the generated data in a way that can be understood and trusted. Each data product may have one or more output ports. 
-- **<a name="definitionsDataProductPortsDiscovery"></a>Discovery port(s):** a discovery port describes a set of services exposed by a data product to provide information about its static role in the overall architecture like purpose, structure, location, etc.. Each data product may have one or multiple discovery ports. 
-- **<a name="definitionsDataProductPortsObservability"></a>Observability port(s):** an observability port describes a set of services exposed by a data product to provide information about its dynamic behaviour in the overall architecture like logs, traces, audit trails, metrics, etc.. Each data product may have one or more observability ports. 
+- **<a name="definitionsDataProductPortsDiscovery"></a>Discovery port(s):** a discovery port describes a set of services exposed by a data product to provide information about its static role in the overall architecture like purpose, structure, location, etc. Each data product may have one or multiple discovery ports. 
+- **<a name="definitionsDataProductPortsObservability"></a>Observability port(s):** an observability port describes a set of services exposed by a data product to provide information about its dynamic behavior in the overall architecture like logs, traces, audit trails, metrics, etc. Each data product may have one or more observability ports. 
 - **<a name="definitionsDataProductPortsControl"></a>Control port(s):** a control port describes a set of services exposed by a data product to configure local policies or perform highly privileged governance operations. Each data product may have one or more control ports. 
 
 The [data product descriptor specification](definitionsDpdsSpecification) uses the following concepts of *promises theory* to formally describe the set of services exposed by each port regardless of the specific type:
 
-- **<a name="definitionsDataProductPortsPromises"></a>Promises:** Through promises the data product declares the intent of the port. Promises are not a guarantee of the outcome but the data product will behave accordingly to them in order to realize its intent. The more a data product keeps its promises over time and the more trustworthy it is. Thus, the more trustworthy a data product is the more potential consumers are likely to use it. Trust is based on the verification of how good a data product was in the past in keeping its promises. This verification should be automated by the underlying platform and synthetized in a *trust score* shared with all potential consumers. Example of promises are: description of services' API, SLO, deprecation policy, etc..
-- **<a name="definitionsDataProductPortsExpectations"></a>Expectations:** Through expectations the data product declares how it wants the port to be used by its consumers. Expectations are the inverse of promises. They are a way to explicitly state what promises the data product would like consumers to make regarding how they will use the port. Example of expectations are: intended usage, intended audience, etc..
-- **<a name="definitionsDataProductPortsContracts"></a>Contracts:** Through contracts the data product declares promises and expectations that must be respected by the data product and its consumers. A contract is an explicit agreement between the data product and its consumers. It is used to group all the promises and expectations that if not respected can generate penalties like monetary sanctions or interruption of service. Example of contracts are: terms of conditions, SLA, billing policy, etc..
+- **<a name="definitionsDataProductPortsPromises"></a>Promises**:** Through promises, the data product declares the intent of the port. Promises are not a guarantee of the outcome but the data product will behave accordingly to them to realize its intent. The more a data product keeps its promises over time and the more trustworthy it is. Thus, the more trustworthy a data product is the more potential consumers are likely to use it. Trust is based on the verification of how good a data product was in the past in keeping its promises. This verification should be automated by the underlying platform and synthesized in a *trust score* shared with all potential consumers. Examples of promises are descriptions of services, API, SLO, deprecation policy, etc.
+- **<a name="definitionsDataProductPortsExpectations"></a>Expectations**:** Through expectations, the data product declares how it wants the port to be used by its consumers. Expectations are the inverse of promises. They are a way to explicitly state what promises the data product would like consumers to make regarding how they will use the port. Examples of expectations are intended usage, intended audience, etc.
+- **<a name="definitionsDataProductPortsContracts"></a>Contracts**:** Through contracts, the data product declares promises and expectations that must be respected by the data product and its consumers. A contract is an explicit agreement between the data product and its consumers. It is used to group all the promises and expectations that if not respected can generate penalties like monetary sanctions or interruption of service. Examples of contracts are terms of conditions, SLA, billing policy, etc.
 
 The governance can use these concepts to standardize the definition of these interfaces across all data products, while the platform can use them to provide the mechanisms to implement the described services in a compliant way.
 
@@ -119,13 +118,13 @@ The governance can use these concepts to standardize the definition of these int
 The components of a [data product](#definitionsDataProduct) that implement the services exposed through its [ports](#definitionsDataProductPorts) (i.e. pipelines, microservices, etc..). 
 
 ##### <a name="definitionsDataProductInfraComponents"></a>Data Product Infrastructural Components
-The components of a [data product](#definitionsDataProduct) related to the infrastructural resources (i.e. storage, compute, etc..) used to run its [application components](definitionsDataProductAppComponents).
+The components of a [data product](#definitionsDataProduct) related to the infrastructural resources (i.e. storage, computing, etc..) used to run its [application components](definitionsDataProductAppComponents).
 
 ##### <a name="definitionsDpdsDocument"></a>Data Product Descriptor Document
 The document (or set of documents) that contains the standard definition of a [data product](#definitionsDataProduct) created using and conforming to the [Data Product Descriptor Specification](definitionsDpdsSpecification).
 
 ##### <a name="definitionsDpdsSpecification"></a>Data Product Descriptor Specification
-The formal description of the rules to follow in order to create a standard compliant [Data Product Descriptor Document](definitionsDpdsDocument). 
+The formal description of the rules to follow to create a standard-compliant [Data Product Descriptor Document](definitionsDpdsDocument).
 
 
 ## <a name="specification"></a>Specification
@@ -134,7 +133,7 @@ The formal description of the rules to follow in order to create a standard comp
 
 The Data Product Descriptor Specification is versioned using [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html) (semver) and follows the semver specification.
 
-The `major`.`minor` portion of the semver (for example `1.0`) SHALL designate the DPDS feature set. Typically, *`.patch`* versions address errors in this document, not the feature set. Tooling which supports DPDS 1.0 SHOULD be compatible with all DPDS 1.0.\* versions. The patch version SHOULD NOT be considered by tooling, making no distinction between `1.0.0` and `1.0.1` for example.
+The `major`.`minor` portion of the semver (for example `1.0`) SHALL designate the DPDS feature set. Typically, *`.patch`* versions address errors in this document, not the feature set. Tooling which supports DPDS 1.0 SHOULD be compatible with all DPDS 1.0.\* versions. The patch version SHOULD NOT be considered by tooling, making any distinction between `1.0.0` and `1.0.1` for example.
 
 Each new minor version of the Data Product Descriptor Specification SHALL allow any Product Descriptor document that is valid against any previous minor version of the Specification, within the same major version, to be updated to the new Specification version with equivalent semantics. Such an update MUST only require changing the `dataProductDescriptor` property to the new minor version.
 
@@ -152,14 +151,12 @@ For example, if a field has an array value, the JSON array representation will b
    "field": [ 1, 2, 3 ]
 }
 ```
-All field names in the specification are **case sensitive**.
-This includes all fields that are used as keys in a map, except where explicitly noted that keys are **case insensitive**.
+All field names in the specification are **case-sensitive**.
+This includes all fields that are used as keys in a map, except where explicitly noted that keys are **case-insensitive**.
 
 The schema exposes two types of fields: Fixed fields, which have a declared name, and Patterned fields, which declare a regex pattern for the field name.
 
-Patterned fields MUST have unique names within the containing object. 
-
-In order to preserve the ability to round-trip between YAML and JSON formats, YAML version [1.2](https://yaml.org/spec/1.2/spec.html) is RECOMMENDED along with some additional constraints:
+Patterned fields MUST have unique names within the containing object. To preserve the ability to round-trip between YAML and JSON formats, YAML version [1.2](https://yaml.org/spec/1.2/spec.html) is RECOMMENDED along with some additional constraints:
 
 - Tags MUST be limited to those allowed by the [JSON Schema ruleset](https://yaml.org/spec/1.2/spec.html#id2803231).
 - Keys used in YAML maps MUST be limited to a scalar string, as defined by the [YAML Failsafe schema ruleset](https://yaml.org/spec/1.2/spec.html#id2802346).
@@ -167,13 +164,13 @@ In order to preserve the ability to round-trip between YAML and JSON formats, YA
 
 ### <a name="documentStructure"></a>Document Structure
 
-A [Data Product Descriptor Document](#definitionsDpdsDocument) MAY be made up of a single document or be divided into multiple, connected parts at the discretion of the user. In the latter case a [`Reference Objects`](#referenceObject) is used.
+A [Data Product Descriptor Document](#definitionsDpdsDocument) MAY be made up of a single document or be divided into multiple, connected parts at the discretion of the user. In the latter case, a [`Reference Object`](#referenceObject) is used.
 
 It is RECOMMENDED that the root [Data Product Descriptor Document](#definitionsDpdsDocument) be named: `data-product-descriptor.json` or `data-product-descriptor.yaml`.
 
 ### <a name="objectTypes"></a>Object Types
 
-A [Data Product Descriptor Document](#definitionsDpdsDocument) have one and only one root object. The properties of an object are described by its fields. A field type can be another object or a [primitive type](#dataTypeFormat). An addressable and versioned object is called entity. The root object of the [Data Product Descriptor Document](#definitionsDpdsDocument) is an entity object. Other entities that exist only in the scope of the root entity are called components. 
+A [Data Product [Descriptor Document](#definitionsDpdsDocument) has one and only one root object. The properties of an object are described by its fields. A field type can be another object or a [primitive type](#dataTypeFormat). An addressable and versioned object is called entity. The root object of the [Data Product Descriptor Document](#definitionsDpdsDocument) is an entity object. Other entities that exist only in the scope of the root entity are called components. 
 
 ### <a name="dataTypes"></a>Data Types
 
@@ -182,9 +179,9 @@ Primitive data types in the DPDS are based on the types supported by the [JSON S
 
 <a name="dataTypeFormat"></a>Primitives have an optional modifier property: `format`.
 DPDS uses several known formats to define in fine detail the data type being used.
-However, to support documentation needs, the `format` property is an open `string`-valued property, and can have any value.
+However, to support documentation needs, the `format` property is an open `string`-valued property and can have any value.
 Formats such as `"email"`, `"uuid"`, and so on, MAY be used even though undefined by this specification.
-Types that are not accompanied by a `format` property follow the type definition in the JSON Schema. Tools that do not recognize a specific `format` MAY default back to the `type` alone, as if the `format` is not specified.
+Types that are not accompanied by a `format` property follow the type definition in the JSON Schema. Tools that do not recognize a specific `format` MAY default back to the `type` alone as if the `format` is not specified.
 
 The formats defined by the DPDS are:
 
@@ -209,12 +206,12 @@ The formats defined by the DPDS are:
 
 
 ### <a name="richText"></a>Rich Text Formatting
-Throughout the specification `description` fields are noted as supporting CommonMark markdown formatting.
+Throughout the specification, `description` fields are noted as supporting CommonMark markdown formatting.
 Where Data Product Descriptor tooling renders rich text it MUST support, at a minimum, markdown syntax as described by [CommonMark 0.27](https://spec.commonmark.org/0.27/). Tooling MAY choose to ignore some CommonMark features to address security concerns. 
 
 ### <a name="relativeReferences"></a>Relative References in URLs
 
-Unless specified otherwise, all properties that are URLs SHOULD be absolute references. If a property explicitly specify in its description that allows a relative reference its value MUST be compliant with [RFC3986](https://tools.ietf.org/html/rfc3986#section-4.2). Relative references MUST be resolved using the URLs defined in the property description as a Base URI.
+Unless specified otherwise, all properties that are URLs SHOULD be absolute references. If a property explicitly specifies in its description that allows a relative reference its value MUST be compliant with [RFC3986](https://tools.ietf.org/html/rfc3986#section-4.2). Relative references MUST be resolved using the URLs defined in the property description as a Base URI.
 
 Relative references used in `$ref` are processed as per [JSON Reference](https://tools.ietf.org/html/draft-pbryan-zyp-json-ref-03), using the URL of the current document as the base URI. See also the [Reference Object](#referenceObject).
 
@@ -708,7 +705,7 @@ This object cannot be extended with additional properties and any properties add
 
 #### <a name="standardDefinitionObject"></a>Standard Definition Object
 
-The `Standard Definition Object` formally describes an object (ex. API object, provision template object, ecc ...) of interest following a given standard specification.
+The `Standard Definition Object` formally describes an object (ex. API object, provision template object, etc ...) of interest following a given standard specification.
 
 ##### Fixed Fields
 
@@ -741,7 +738,7 @@ This object MAY be extended with [Specification Extensions](#specificationExtens
 ``` 
 
 ### <a name="specificationExtensionPoint"></a>Specification Extension Point
-A `Specification Extension Point` marks specific part of the [Data Product Descriptor Specification](#definitionsDpdsSpecification) that  are left open to extensions or futher evolution of the standard. While a [Standard Definition](#definitionsDefinition) it's a formal declaration that the description of a part of the [Data Product Descriptor Specification](#definitionsDpdsSpecification) will be demanded to an external standards in this verion of the specification and in the future ones, the same assumption it's not true for `Specification Extension Point`. Even if a `Specification Extension Point` can be extended at will it is RECOMMENDED to use for all added properties a field name prefixed by *"x-"* in order to avoid potetntial conflicts with future versions of the [Data Product Descriptor Specification](#definitionsDpdsSpecification).
+A `Specification Extension Point` marks specific parts of the [Data Product Descriptor Specification](#definitionsDpdsSpecification) that are left open to extensions or further evolution of the standard. While a [Standard Definition](#definitionsDefinition) it's a formal declaration that the description of a part of the [Data Product Descriptor Specification](#definitionsDpdsSpecification) will be demanded by an external standard in this version of the specification and future ones, the same assumption it's not true for `Specification Extension Points`. Even if a `Specification Extension Point` can be extended at will it is RECOMMENDED to use for all added properties a field name prefixed by *"x_-"_ to avoid potential conflicts with future versions of the [Data Product Descriptor Specification](#definitionsDpdsSpecification).
 
 ##### Fixed Fields
 
@@ -756,8 +753,7 @@ This object MAY be extended with [Specification Extensions](#specificationExtens
 ### <a name="specificationExtensions"></a>Specification Extensions
 
 While the [Data Product Descriptor Specification](#definitionsDpdsSpecification) tries to accommodate most use cases, additional data can be added to extend the specification at certain points.
-
-The extensions properties are implemented as patterned fields that are always prefixed by `"x-"`.
+The extension properties are implemented as patterned fields that are always prefixed by `"x-"`.
 
 Field Pattern | Type | Description
 ---|:---:|---
@@ -769,4 +765,4 @@ The extensions may or may not be supported by the available tooling, but those m
 
 Version   | Date       | Notes
 ---       | ---        | ---
-1.0.0     | 2022-11-01 | Release of the Data Product Descriptor Specification 1.0.0 
+1.0.0     | 2023-Q1	   | Release of the Data Product Descriptor Specification 1.0.0 
