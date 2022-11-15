@@ -1,5 +1,5 @@
-site_name: Data Product Descriptor Specification
-site_description: An open specification that declaratively defines a data product in all its components using a JSON or YAML descriptor document. It is released under Apache 2.0 license. Contributions from the data mesh community are welcomed!
+site_name: Open Data Mesh
+site_description: An open specification that declaratively defines a data product in all its components using a JSON or YAML descriptor document.
 site_url: https://dpds.opendatamesh.org
 
 repo_url: https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor
@@ -133,10 +133,10 @@ markdown_extensions:
 plugins:
   - git-revision-date-localized:
       enable_creation_date: true
-#  - social:
-#      cards_color:
-#        fill: "#ff8f00" 
-#        text: "#FFFFFF"
+  - social:
+      cards_color:
+        fill: "#ff8f00" 
+        text: "#FFFFFF"
       
 copyright: >
   Copyright &copy; 2022 Quantyca s.r.l. - <a href="#__consent">Change cookie settings</a>
