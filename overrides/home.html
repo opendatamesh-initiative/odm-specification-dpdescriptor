@@ -267,8 +267,8 @@
                 <img src="./images/logos/opendatamesh.png" style="height: auto;">
             </div>
             <div class="tx-hero__content">
-                <h1>{{ config.site_name }}</h1>
-                <h3>{{ config.site_description }}</h3>
+                <h1>Data Product Descriptor Specification</h1>
+                <h3>An open specification that declaratively defines a data product in all its components using a JSON or YAML descriptor document. It is released under Apache 2.0 license. Contributions from the data mesh community are welcomed!</h3>
                 <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | striptags }}" class="md-button md-button--primary">
                     Get started
                 </a>
@@ -328,20 +328,4 @@
     </div>
 </div>
 
-<meta property="og:title" content="Data Product Descriptor Specification">
-<meta property="og:type" content="article" />
-<meta property="og:description" content="An open standard that declaratively defines a data product in all its components using a JSON or YAML descriptor document.">
-<meta property="og:image" content="https://dpds.opendatamesh.org/images/social/index.png">
-<meta property="og:url" content="https://dpds.opendatamesh.org">
-<meta name="twitter:card" content="summary_large_image">
-
-{% endblock %}
-
-{% block extrahead %}
-<meta property="og:title" content="Data Product Descriptor Specification">
-<meta property="og:type" content="website" />
-<meta property="og:description" content="An open standard that declaratively defines a data product in all its components using a JSON or YAML descriptor document.">
-<meta property="og:image" content="https://dpds.opendatamesh.org/images/social_cards/index.png">
-<meta property="og:url" content="https://dpds.opendatamesh.org">
-<meta name="twitter:card" content="summary_large_image">
 {% endblock %}
