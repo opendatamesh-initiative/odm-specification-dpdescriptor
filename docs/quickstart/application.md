@@ -5,16 +5,16 @@
 ## Application Component
 Application components are internal components of a data product. This means that, while the interface components are publicly available on demand to all consumers, access to application components can be restricted. 
 
-All internal components of a data product are contained in the [Internal Components Object](../references/specifications/last.md#internalComponentsObject), accessible through the `internalComponents` field in the root [Data Product Descriptor Entity](../references/specifications/last.md#data-product-descriptor-entity). Within this object, the field `applicationComponents` contains the list of all [Application Components](../references/specifications/last.md#applicationComponent) of the data product.
+All internal components of a data product are contained in the [Internal Components Object](../resources/specifications/1.0.0-DRAFT.md#internalComponentsObject), accessible through the `internalComponents` field in the root [Data Product Descriptor Entity](../resources/specifications/1.0.0-DRAFT.md#data-product-descriptor-entity). Within this object, the field `applicationComponents` contains the list of all [Application Components](../resources/specifications/1.0.0-DRAFT.md#applicationComponent) of the data product.
 
 ![open-data-mesh descriptor components](../images/dpds-application-components.svg)
 
 ### Fields
-An [Application Component](./references/specifications/last.md#applicationComponent) has the following two mandatory fields:
+An [Application Component](../resources/specifications/1.0.0-DRAFT.md#applicationComponent) has the following two mandatory fields:
 
 - `fullyQualifiedName` (string:fqn): This is the unique universal identifier of the component. It MUST be a URN of the form `urn:dpds:{mesh-namespace}:dataproducts:{product-name}:{product-major-version}:applications:{app-name}`
 - `version` (string:version): This is the <a href="https://semver.org/spec/v2.0.0.html" target="_blank">semantic version number</a> of the data product's application component. The version of application components has no direct impact on the version of the data product they belong to. A change in the major version of an application component can anyway impact the version of one interface component and so indirectly the version of the data product.
-Other non-mandatory descriptive fields like `platform` and `applicationType` are also available. Moreover, the [Application](./references/specifications/last.md#applicationComponent) Component](./references/specifications/last.md#applicationComponent) can be extended with other fields with **"x-" prefix** as needed.
+Other non-mandatory descriptive fields like `platform` and `applicationType` are also available. Moreover, the [Application](../resources/specifications/1.0.0-DRAFT.md#applicationComponent) Component](../resources/specifications/1.0.0-DRAFT.md#applicationComponent) can be extended with other fields with **"x-" prefix** as needed.
 
 ### Example
 The following example shows three application components that respectively describe 
@@ -50,7 +50,7 @@ All three applications are deployed in `eu-south-1` region of *AWS Cloud*.
 }
 ```
 
-The information provided so far are useful to track the application assets related to a specific data product. There is not anyway sufficient information to allow an external agent to build and deploy the application autonomously. To this end in the [Application Component](./references/specifications/last.md#applicationComponent), there are the `buildService` and `deploymentService` fields that are described in much detail in the next sections.
+The information provided so far are useful to track the application assets related to a specific data product. There is not anyway sufficient information to allow an external agent to build and deploy the application autonomously. To this end in the [Application Component](../resources/specifications/1.0.0-DRAFT.md#applicationComponent), there are the `buildService` and `deploymentService` fields that are described in much detail in the next sections.
 
 ## Build Service Object
 
@@ -113,8 +113,8 @@ The following example shows an application that could be deployed using a Jenkin
 This page has shown that:
 
 - a data product is composed not only of its public interface but also of internal components
-- applications that implement the exposed interfaces are internal components described through an [Application Component](./references/specifications/last.md#applicationComponent).
-- [Application Component](./references/specifications/last.md#applicationComponent) contains general information related to the specific application but also all the required information to build and deploy the application in an automatic and reproducible way.
-- the DPDS uses *pipeline as code* to define how to build and deploy an application but does not enforce the use of any particular CICD tool, preserving in this way its [technology independence](../../overview/README.md#principles).
+- applications that implement the exposed interfaces are internal components described through an [Application Component](../resources/specifications/1.0.0-DRAFT.md#applicationComponent).
+- [Application Component](../resources/specifications/1.0.0-DRAFT.md#applicationComponent) contains general information related to the specific application but also all the required information to build and deploy the application in an automatic and reproducible way.
+- the DPDS uses *pipeline as code* to define how to build and deploy an application but does not enforce the use of any particular CICD tool, preserving in this way its [technology independence](../overview/README.md#principles).
 
 [The next page](./infrastructure.md) describes the contents of the `infrastructuralComponents` field used to provide all the required information to provision the infrastructure required by application components that implement the services exposed by the product through its ports.

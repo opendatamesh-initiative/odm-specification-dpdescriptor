@@ -5,9 +5,9 @@ It's the underlying self-serve and domain-agnostic platform that provides servic
 In the DPDS it is referred to as the _DataMeshOps_ platform* or also just the *platform*. It is usually divided into three main *planes* that group functionalities with the same overall intent. Each plane is briefly described in the following sessions because it is possible to find in the DPDS specific references to these planes. 
 
 ???+ note
-    The specification was created to formalize the structure and content of [data product descriptor](#dataProductDescriptor) documents passed into a DataOps platform implemented by [Quantyca](../contributions/README.md#quantyca) for its internal projects.
+    The specification was created to formalize the structure and content of [data product descriptor](#dataProductDescriptor) documents passed into a DataOps platform implemented by [Quantyca](../community/quantyca.md) for its internal projects.
     
-    When the specification has been released as an open standard it has been reviewed from the inside out to remove any dependencies with the [Quantyca](../contributions/README.md#quantyca)'s platform. Moreover, the specification has been redesigned to allow the creation of [data product descriptor](#dataProductDescriptor) documents that can be used as a standard way to exchange information about [data products](#dataProduct) between all the interested parties and not only between the data product's team and the platform.
+    When the specification has been released as an open standard it has been reviewed from the inside out to remove any dependencies with the [Quantyca](../community/quantyca.md)'s platform. Moreover, the specification has been redesigned to allow the creation of [data product descriptor](#dataProductDescriptor) documents that can be used as a standard way to exchange information about [data products](#dataProduct) between all the interested parties and not only between the data product's team and the platform.
 
 
 ### Data Product Experience Plane

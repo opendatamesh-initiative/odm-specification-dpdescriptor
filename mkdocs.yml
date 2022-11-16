@@ -5,7 +5,7 @@ site_url: https://dpds.opendatamesh.org
 repo_url: https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor
 edit_uri: edit/main/docs/
 
-dev_addr: '0.0.0.0:1234'
+dev_addr: '127.0.0.1:1234'
 
 nav:
   - Home: './index.md'
@@ -36,15 +36,16 @@ nav:
     - Quantyca: './community/quantyca.md'
     #- Blindata: './community/blindata.md'
   - Resources: 
+    - './resources/README.md'
     - 'Specifications': 
-      - 'Versions': './references/specifications/README.md'
-      - '1.0.0-DRAFT': './references/specifications/1.0.0-DRAFT.md'
+      - 'Versions': './resources/specifications/README.md'
+      - '1.0.0-DRAFT': './resources/specifications/1.0.0-DRAFT.md'
     - 'JSON Schema': 
-      - 'Versions': './references/schemas/README.md'
-      - '1.0.0-DRAFT': './references/schemas/1.0.0-DRAFT.md'
-    - 'External Tools': './references/tools.md'
-    - 'Related Standards': './references/standards.md'
-    - 'Data Mesh Resources': './references/resources.md'
+      - 'Versions': './resources/schemas/README.md'
+      - '1.0.0-DRAFT': './resources/schemas/1.0.0-DRAFT.md'
+    - 'External Tools': './resources/tools.md'
+    - 'Related Standards': './resources/standards.md'
+    - 'Data Mesh Resources': './resources/resources.md'
 
 
 ##theme: readthedocs

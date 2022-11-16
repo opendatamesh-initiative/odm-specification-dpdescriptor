@@ -59,7 +59,7 @@ Finally, object field names are case-sensitive: `dataproductdescriptor` is not t
 
 
 ## Document Structure
-To be entirely precise, a data product descriptor document is a single JSON object containing fields adhering to the structure defined in the [Data Product Descriptor Specification (DPDS)](../references/specifications/README.md).
+To be entirely precise, a data product descriptor document is a single JSON object containing fields adhering to the structure defined in the [Data Product Descriptor Specification (DPDS)](../resources/specifications/README.md).
 
 The DPDS devides the structure of a data product descriptor document in the following three main parts:
 
@@ -75,6 +75,6 @@ The content of *general info* part and interface *components* part are shared wi
 This page has shown that:
 
 - The syntax (language) used to write data product descriptor documents can be **JSON**, **YAML** or **both**.
-- A data product descriptor document is a JSON (or YAML) object including the fields described in the [Data Product Descriptor Specification (DPDS)](../references/specifications/README.md).
+- A data product descriptor document is a JSON (or YAML) object including the fields described in the [Data Product Descriptor Specification (DPDS)](../resources/specifications/README.md).
 
 [The next page](./info.md) describes the minimal set of fields required to create a valid data product descriptor document.

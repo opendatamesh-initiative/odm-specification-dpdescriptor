@@ -1,6 +1,6 @@
 # Data Contract
 
-It's a formal agreement between the data producer and the data consumers. There is not yet a clear definition of the form and scope of a data contract. Usually, they cover the structure of the exchanged data (i.e. the schema) and its meaning (i.e. the semantics). Check the [Data Mesh Resources](./datamesh/README.md) page for more information on data contracts.
+It's a formal agreement between the data producer and the data consumers. There is not yet a clear definition of the form and scope of a data contract. Usually, they cover the structure of the exchanged data (i.e. the schema) and its meaning (i.e. the semantics). Check the [Data Mesh Resources](../resources/resources.md) page for more information on data contracts.
 
 In the DPDS the more general concept of *service agreements* is used in place of data contracts. Data contracts are just a particular type of service agreement because on one side there are services that do not expose data and on the other, there are agreements that are not contracts. In particular, DPDS uses the following concepts of *promises theory* to formally describe the [interface components](#interfaceComponents) of a [data product](#dataProduct) (i.e. data product's ports):
 
