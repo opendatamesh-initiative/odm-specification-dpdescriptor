@@ -6,17 +6,17 @@
 
 Infrastructural components are internal components of a data product. This mean that, while the interface components are publicly available on demand to all consumers, access to infrastructural components can be restricted.
 
-All internal components of a data product are contained in the [Internal Components Object](../references/specifications/last.md#internalComponentsObject), accessible through the `internalComponents` field in the root [Data Product Descriptor Entity](../references/specifications/last.md#data-product-descriptor-entity). Within this object the field `infrastructuralComponents` contains the list of all [Infrastructural Component](../references/specifications/last.md#infrastructure-component) of the data product.
+All internal components of a data product are contained in the [Internal Components Object](../resources/specifications/1.0.0-DRAFT.md#internalComponentsObject), accessible through the `internalComponents` field in the root [Data Product Descriptor Entity](../resources/specifications/1.0.0-DRAFT.md#data-product-descriptor-entity). Within this object the field `infrastructuralComponents` contains the list of all [Infrastructural Component](../resources/specifications/1.0.0-DRAFT.md#infrastructure-component) of the data product.
 
 ![open-data-mesh descriptor components](../images/dpds-infrastructural-components.svg)
 
 ### Fields
-An [Infrastructural Component](../references/specifications/last.md#infrastructure-component) has the following two mandatory fields:
+An [Infrastructural Component](../resources/specifications/1.0.0-DRAFT.md#infrastructure-component) has the following two mandatory fields:
 
 - `fullyQualifiedName` (string:fqn): This is the unique universal idetifier of the component. It MUST be a URN of the form `urn:dpds:{mesh-namespace}:dataproducts:{product-name}:{product-major-version}:infrastructure:{infra-name}.`
 - `version` (string:version): This is the <a href="https://semver.org/spec/v2.0.0.html" target="_blank">semantic version number</a> of the data product's infrastructural component. The  version of infrastructural components have no direct impact of the version of the data product they belong to. A change in the major version of an infrastructural component can anyway impact the version of one interface components and so indirectly the version of the data product.
 
-Other non mandatory descriptive fields like `platform` and `infrastructureType` are also available. Moreover the [Infrastructural Component](../references/specifications/last.md#infrastructure-component) can be extended with other fields  with **"x-" prefix** as needed.
+Other non mandatory descriptive fields like `platform` and `infrastructureType` are also available. Moreover the [Infrastructural Component](../resources/specifications/1.0.0-DRAFT.md#infrastructure-component) can be extended with other fields  with **"x-" prefix** as needed.
 
 
 ### Example
@@ -48,7 +48,7 @@ The following example shows two infrastructural components that respectively des
 }
 ```
 
-The information provided so far are useful to track the infrastructural assets related to a specific data product. There are not anyway sufficient informtion to allow an external agent to provision the infrastructure autonomously. To this end in the [Infrastructural Component](../references/specifications/last.md#infrastructure-component) there is the `provisioningService` filed that is described in much details in the next sections.
+The information provided so far are useful to track the infrastructural assets related to a specific data product. There are not anyway sufficient informtion to allow an external agent to provision the infrastructure autonomously. To this end in the [Infrastructural Component](../resources/specifications/1.0.0-DRAFT.md#infrastructure-component) there is the `provisioningService` filed that is described in much details in the next sections.
 
 ## Provisioning Service Object
 
@@ -81,9 +81,9 @@ The following example shows an appliction that could be built using a terraform 
 This page has shown that:
 
 - a data product is composed not only by its public interface but also by internal componnets
-- infrastructural components required by application components that implement services exposed by a data product through its ports are internal components described through an [Infrastructural Component](./references/specifications/last.md#infrastructuralComponent). 
-- [Infrastructural Component](./references/specifications/last.md#infrastructuralComponent) contains general information related to the specific infrastructure component but also all the required information to provision the onfrastructure in an automatic and reproducible way.
-- the DPDS uses *infrastructure as code (IaC)*  to define how to provision infrastructure but do not enforce the use of any particular IaC tool, preserving in this way its [technology independence](../../overview/README.md#principles).
+- infrastructural components required by application components that implement services exposed by a data product through its ports are internal components described through an [Infrastructural Component](../resources/specifications/1.0.0-DRAFT.md#infrastructuralComponent). 
+- [Infrastructural Component](../resources/specifications/1.0.0-DRAFT.md#infrastructuralComponent) contains general information related to the specific infrastructure component but also all the required information to provision the onfrastructure in an automatic and reproducible way.
+- the DPDS uses *infrastructure as code (IaC)*  to define how to provision infrastructure but do not enforce the use of any particular IaC tool, preserving in this way its [technology independence](../overview/README.md#principles).
 
 
 [The next page](./components.md) describes how to reuse portions of an data product descriptor document to make it more readable and less redundant, reducing file size and maintenance cost.

@@ -1,11 +1,11 @@
-site_name: Data Product Descriptor Specification
-site_description: An open specification that declaratively defines a data product in all its components using a JSON or YAML descriptor document. It is released under Apache 2.0 license. Contributions from the data mesh community are welcomed!
+site_name: Open Data Mesh
+site_description: An open specification that declaratively defines a data product in all its components using a JSON or YAML descriptor document.
 site_url: https://dpds.opendatamesh.org
 
 repo_url: https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor
 edit_uri: edit/main/docs/
 
-dev_addr: '0.0.0.0:1234'
+dev_addr: '127.0.0.1:1234'
 
 nav:
   - Home: './index.md'
@@ -37,15 +37,18 @@ nav:
     - Quantyca: './community/quantyca.md'
     #- Blindata: './community/blindata.md'
   - Resources: 
+    - './resources/README.md'
     - 'Specifications': 
-      - 'Versions': './references/specifications/README.md'
-      - '1.0.0-DRAFT': './references/specifications/1.0.0-DRAFT.md'
+      - 'Versions': './resources/specifications/README.md'
+      - '1.0.0-DRAFT': './resources/specifications/1.0.0-DRAFT.md'
     - 'JSON Schema': 
-      - 'Versions': './references/schemas/README.md'
-      - '1.0.0-DRAFT': './references/schemas/1.0.0-DRAFT.md'
-    - 'External Tools': './references/tools.md'
-    - 'Related Standards': './references/standards.md'
-    - 'Data Mesh Resources': './references/resources.md'
+      - 'Versions': './resources/schemas/README.md'
+      - '1.0.0-DRAFT': './resources/schemas/1.0.0-DRAFT.md'
+    - 'External Tools': './resources/tools.md'
+    - 'Related Standards': './resources/standards.md'
+    - 'Data Mesh Resources': './resources/resources.md'
+    - 'How to': 
+      - 'build this site': './resources/howto/build-site-doc.md'
 
 
 ##theme: readthedocs
@@ -126,7 +129,14 @@ markdown_extensions:
   - md_in_html
   - admonition
   - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      auto_title: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
@@ -134,10 +144,10 @@ markdown_extensions:
 plugins:
   - git-revision-date-localized:
       enable_creation_date: true
-#  - social:
-#      cards_color:
-#        fill: "#ff8f00" 
-#        text: "#FFFFFF"
+  - social:
+      cards_color:
+        fill: "#ff8f00" 
+        text: "#FFFFFF"
       
 copyright: >
   Copyright &copy; 2022 Quantyca s.r.l. - <a href="#__consent">Change cookie settings</a>

@@ -1,15 +1,15 @@
 # Data Product Descriptor Specification
 
 #### Version 1.0.0 (DRAFT)
-The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [BCP 14](https://tools.ietf.org/html/bcp14) [RFC2119](https://tools.ietf.org/html/rfc2119) [RFC8174](https://tools.ietf.org/html/rfc8174) when, and only when, they appear in all capitals, as shown here.
+The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in <a href="https://tools.ietf.org/html/bcp14" target="_blank">BCP 14:octicons-link-external-24:</a> <a href="https://tools.ietf.org/html/rfc2119" target="_blank">RFC2119:octicons-link-external-24:</a> <a href="https://tools.ietf.org/html/rfc8174" target="_blank">RFC8174:octicons-link-external-24:</a> when, and only when, they appear in all capitals, as shown here.
 
-This document is licensed under [The Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0.html).
+This document is licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0.html" target="_blank">The Apache License, Version 2.0:octicons-link-external-24:</a>.
 
 #### Disclaimer
 
-Part of this content has been taken from the great work done by the folks at the [OpenAPI Initiative](https://openapis.org) and [AsyncAPI Initiative](https://www.asyncapi.com/). We have decided to not reinvent the wheel and inspire our work to these two specifications mainly for the following reasons:
+Part of this content has been taken from the great work done by the folks at the<a href="https://openapis.org" target="_blank">OpenAPI Initiative:octicons-link-external-24:</a> and <a href="https://www.asyncapi.com/" target="_blank">AsyncAPI Initiative:octicons-link-external-24:</a>. We have decided to not reinvent the wheel and inspire our work to these two specifications mainly for the following reasons:
 
-- We think that the work made by OpenAPI Initiative and AsyncAPI Initiative is great  :)
+- We think that the work made by OpenAPI Initiative and AsyncAPI Initiative is great :)
 - We want to make the learning curve for the Data Product Descriptor Specification as smooth as possible, aligning its definition to the one of other two popular specifications in the software and data engineers community
 - We think that OpenAPI and AsyncAPI are natural specifications for defining the interface of data product's ports that expose an API endpoint. This specification does not impose the use of any specific standard for the port's interface definition but these two are highly recommended.
 
@@ -29,58 +29,7 @@ The formalization of a standard data product descriptor document through an open
 - data lineage tools (trace data flows and perform forward/backward analysis)
 - mesh topology analysis tools (calculate value/trust scores and detect structural problems)
 - semantic tools (apply ontologies over mesh topology)
-- domain-specific language tools (create a collection of interconnected data products that implement together a specific value stream)
-
-## Table of Contents
-
-<!-- TOC depthFrom:1 depthTo:3 withLinks:1 updateOnSave:1 orderedList:0 -->
-- [Definitions](#definitions)
-	- [Standard](#definitionsStandard)
-	- [Standard Specification](#definitionsSpecification)
-	- [Standard Definition](#definitionsDefinition)
-	- [Data Product](#definitionsDataProduct)
-	- [Data Product Ports](#definitionsDataProductPorts)
-	- [Data Product Application Components](#definitionsDataProductAppComponents)
-	- [Data Product Infrastructural Components](#definitionsDataProductInfraComponents)
-	- [Data Product Descriptor Document](#definitionsDpdsDocument)
-	- [Data Product Descriptor Specification](#definitionsDpdsSpecification)
-- [Specification](#specification)
-	- [Versions](#versions)
-	- [Format](#format)
-	- [Document Structure](#documentStructure)
-	- [Data Types](#dataTypes)
-	- [Rich Text Formatting](#richText)
-	- [Relative References In URLs](#relativeReferences)
-	- [Schema](#schema)
-		- [Data Product Descriptor Entity](#dpdsObject)
-		- [Info Object](#infoObject)
-		- [Owner Object](#ownerObject)
-		- [Contact Point Object](#contactPointObject)
-		- [Interface Components Object](#interfaceComponentsObject)
-        - [Input Port Component](#inputPortComponent)
-		- [Output Port Component](#outputPortComponent)
-        - [Discovery Port Component](#discoveryPortComponent)
-        - [Observability Port Component](#observabilityPortComponent)
-        - [Control Port Component](#controlPortComponent)
-		- [Promises Object](#promisesObject)
-        - [Expectations Object](#expectationsObject)
-		- [Contracts Object](#contractsObject)
-		- [Internal Components Object](#internalComponentsObject)
-		- [Application Component](#applicationComponent)
-		- [Build Info Object](#buildInfoObject)
-		- [Deploy Info Object](#deployInfoObject)
-		- [Infrastructural Component](#infrastructuralComponent)
-		- [Provision Info Object](#provisionInfoObject)
-		- [Components Object](#componentsObject)
-		- [Reference Object](#referenceObject)
-		- [External Resource Object](#externalResourceObject)	
-		- [Standard Definition Object](#standardDefinitionObject)
-	- [Specification Extension Point](#specificationExtensionPoint)
-	- [Specification Extensions](#specificationExtensions)
-- [Appendix A: Revision History](#revisionHistory)
-	
-
-<!-- /TOC -->
+- domain specific language tools (create a collection af interconnected data products that implement together a specific value stream)
 
 ## <a name="definitions"></a>Definitions
 
@@ -131,7 +80,7 @@ The formal description of the rules to follow to create a standard-compliant [Da
 
 ### <a name="versions"></a> Versions
 
-The Data Product Descriptor Specification is versioned using [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html) (semver) and follows the semver specification.
+The Data Product Descriptor Specification is versioned using <a href="https://semver.org/spec/v2.0.0.html)" target="_blank">Semantic Versioning 2.0.0:octicons-link-external-24:</a> (semver) and follows the semver specification.
 
 The `major`.`minor` portion of the semver (for example `1.0`) SHALL designate the DPDS feature set. Typically, *`.patch`* versions address errors in this document, not the feature set. Tooling which supports DPDS 1.0 SHOULD be compatible with all DPDS 1.0.\* versions. The patch version SHOULD NOT be considered by tooling, making any distinction between `1.0.0` and `1.0.1` for example.
 
@@ -156,10 +105,10 @@ This includes all fields that are used as keys in a map, except where explicitly
 
 The schema exposes two types of fields: Fixed fields, which have a declared name, and Patterned fields, which declare a regex pattern for the field name.
 
-Patterned fields MUST have unique names within the containing object. To preserve the ability to round-trip between YAML and JSON formats, YAML version [1.2](https://yaml.org/spec/1.2/spec.html) is RECOMMENDED along with some additional constraints:
+Patterned fields MUST have unique names within the containing object. To preserve the ability to round-trip between YAML and JSON formats, YAML version <a href="https://yaml.org/spec/1.2/spec.html" target="_blank">1.2:octicons-link-external-24:</a> is RECOMMENDED along with some additional constraints:
 
-- Tags MUST be limited to those allowed by the [JSON Schema ruleset](https://yaml.org/spec/1.2/spec.html#id2803231).
-- Keys used in YAML maps MUST be limited to a scalar string, as defined by the [YAML Failsafe schema ruleset](https://yaml.org/spec/1.2/spec.html#id2802346).
+- Tags MUST be limited to those allowed by the <a href="https://yaml.org/spec/1.2/spec.html#id2803231" target="_blank">JSON Schema ruleset:octicons-link-external-24:</a>.
+- Keys used in YAML maps MUST be limited to a scalar string, as defined by the <a href="https://yaml.org/spec/1.2/spec.html#id2802346" target="_blank">YAML Failsafe schema ruleset:octicons-link-external-24:</a>.
 
 
 ### <a name="documentStructure"></a>Document Structure
@@ -174,7 +123,7 @@ A [Data Product [Descriptor Document](#definitionsDpdsDocument) has one and only
 
 ### <a name="dataTypes"></a>Data Types
 
-Primitive data types in the DPDS are based on the types supported by the [JSON Schema Specification Wright Draft 00](https://tools.ietf.org/html/draft-wright-json-schema-00#section-4.2). 
+Primitive data types in the DPDS are based on the types supported by the <a href="https://json-schema.org/draft/2020-12/json-schema-core.html#name-instance" target="_blank">JSON Schema Specification:octicons-link-external-24:</a>. 
 
 
 <a name="dataTypeFormat"></a>Primitives have an optional modifier property: `format`.
@@ -198,22 +147,22 @@ The formats defined by the DPDS are:
 `string` | `version` | a string that match the following regex `^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$`
 `string` | `byte` | base64 encoded characters
 `string` | `binary` | any sequence of octets
-`string` | `uuid` | a sequence of 16 octets as defined by [RFC4122](https://www.rfc-editor.org/rfc/rfc4122.html)
+`string` | `uuid` | a sequence of 16 octets as defined by <a href="https://www.rfc-editor.org/rfc/rfc4122.html" target="_blank">RFC4122:octicons-link-external-24:</a>
 `boolean` | | |
-`string` | `date` | As defined by `full-date` - [RFC3339](https://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14)
-`string` | `date-time` | As defined by `date-time` - [RFC3339](https://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14)
+`string` | `date` | As defined by `full-date` - <a href="https://www.rfc-editor.org/rfc/rfc3339" target="_blank">RFC3339:octicons-link-external-24:</a>
+`string` | `date-time` | As defined by `date-time` - <a href="https://www.rfc-editor.org/rfc/rfc3339" target="_blank">RFC3339:octicons-link-external-24:</a>
 `string` | `password` | A hint to UIs to obscure input.
 
 
 ### <a name="richText"></a>Rich Text Formatting
-Throughout the specification, `description` fields are noted as supporting CommonMark markdown formatting.
-Where Data Product Descriptor tooling renders rich text it MUST support, at a minimum, markdown syntax as described by [CommonMark 0.27](https://spec.commonmark.org/0.27/). Tooling MAY choose to ignore some CommonMark features to address security concerns. 
+Throughout the specification `description` fields are noted as supporting CommonMark markdown formatting.
+Where Data Product Descriptor tooling renders rich text it MUST support, at a minimum, markdown syntax as described by <a href="https://spec.commonmark.org/0.27/" target="_blank">CommonMark 0.27:octicons-link-external-24:</a>. Tooling MAY choose to ignore some CommonMark features to address security concerns. 
 
 ### <a name="relativeReferences"></a>Relative References in URLs
 
-Unless specified otherwise, all properties that are URLs SHOULD be absolute references. If a property explicitly specifies in its description that allows a relative reference its value MUST be compliant with [RFC3986](https://tools.ietf.org/html/rfc3986#section-4.2). Relative references MUST be resolved using the URLs defined in the property description as a Base URI.
+Unless specified otherwise, all properties that are URLs SHOULD be absolute references. If a property explicitly specifies in its description that allows a relative reference its value MUST be compliant with <a href="https://tools.ietf.org/html/rfc3986#section-4.2" target="_blank">RFC3986:octicons-link-external-24:</a>. Relative references MUST be resolved using the URLs defined in the property description as a Base URI.
 
-Relative references used in `$ref` are processed as per [JSON Reference](https://tools.ietf.org/html/draft-pbryan-zyp-json-ref-03), using the URL of the current document as the base URI. See also the [Reference Object](#referenceObject).
+Relative references used in `$ref` are processed as per <a href="https://tools.ietf.org/html/draft-pbryan-zyp-json-ref-03" target="_blank">JSON Reference:octicons-link-external-24:</a>, using the URL of the current document as the base URI. See also the [Reference Object](#referenceObject).
 
 
 ### <a name="schema"></a>Schema
@@ -257,7 +206,7 @@ Field Name | Type | Description
 <a name="infoDisplayName"></a>displayName | `string` | The human readable name of the data product. It SHOULD be used by frontend tool to visualize data product's name in place of the [`name`](#dpdsName) property. It's RECOMMENDED to not use the same `displayName` for different data products belonging to the same `mesh-namespace`.
 <a name="infoDescription"></a>description | `string` | The data product description. [CommonMark syntax](https://spec.commonmark.org/) MAY be used for rich text representation.
 <a name="infoDomain"></a>domain | `string:name` | **(REQUIRED)** The domain to which the data product belongs to.
-<a name="infoOwner"></a>owner | [Owner Object](#ownerObject) | A collection of information related to the data product's owner.
+<a name="infoOwner"></a>owner | [Owner Object](#ownerObject) | **(REQUIRED)** A collection of information related to the data product's owner.
 <a name="infoContactPoints"></a>contactPoints | \[[Contact Point Object](#contactPointObject)\] | A collection of contact information for the given data product.
 
 This object MAY be extended with [Specification Extensions](#specificationExtensions).
@@ -532,7 +481,7 @@ Field Name | Type | Description
 <a name="appId"></a>id | `string:uuid` | **(READONLY)** It's an UUID version 3 (see [RFC-4122](https://www.rfc-editor.org/rfc/rfc4122.html#section-4.3)) generated server side during data product creation as SHA-1 hash of the component's `fullyQualifiedName`. It MAY be used  when calling the API exposed by the *data product experience plane* to address the component. Because the `fullyQualifiedName` is globally unique also the `id` is globally unique, anyway to address the component when calling API different from the ones exposed by the *data product experience plane* the component's `fullyQualifiedName` MUST be always used. Examples: `"id: "3235744b-8d2e-57b5-afba-f66862cc6a21"`
 <a name="appFullyQualifiedName"></a>fullyQualifiedName | `string:fqn` | **(REQUIRED)**. The unique universal idetifier of the component. It MUST be a URN of the form `urn:dpds:{mesh-namespace}:dataproducts:{product-name}:{product-major-version}:applications:{app-name}`. Example `"fullyQualifiedName: "urn:dpds:it.quantyca:dataproducts:tripExecution:1:applications:modelNormalizationJob"`.
 <a name="appEntityType"></a>entityType | `string:alphanumeric` | **(READONLY)** The type of the entity. It is a constant value equals to `application`.
-<a name="appName"></a>name | `string:name` | The name of the application component. MUST be unique within the other application components of the same data product. It's RECOMMENDED to use a camel case formatted string. Example `"name: "modelNormalizationJob"`.
+<a name="appName"></a>name | `string:name` | **(REQUIRED)** The name of the application component. MUST be unique within the other application components of the same data product. It's RECOMMENDED to use a camel case formatted string. Example `"name: "modelNormalizationJob"`.
 <a name="appVersion"></a>version | `string:version` | **(REQUIRED)** The [semantic version number](https://semver.org/spec/v2.0.0.html) of the data product's application component. 
 <a name="appDisplayName"></a>displayName | `string` | The human readable name of the component. It SHOULD be used by frontend tool to visualize application component's name in place of the `name` property. It's RECOMMENDED to not use the same `displayName` for different application component belonging to the same data product.
 <a name="appDescription"></a>description | `string` | The application component description. [CommonMark syntax](https://spec.commonmark.org/) MAY be used for rich text representation.
@@ -552,27 +501,27 @@ This object MAY be extended with [Specification Extensions](#specificationExtens
 
 #### <a name="buildInfoObject"></a>Build Info Object
 
-The `Build Info Object` contains all the informations required to build an [Application Component](#todo)
+The `Build Info Object` contains all the informations required to build an [Application Component](#applicationComponent)
 
 ##### Fixed Fields
 
 Field Name | Type | Description
 ---|:---:|---
-<a name="buildInfoService"></a>service | `string:name` \| [External Resource Object](#externalResourceObject) | The logical name or the actual endpoint of the service to call in order to *build* the application component. If the logical name is used as field value the actual endpoint value resulution is demanded to the *data product experience plane* of the underlyng platform.
-<a name="buildInfoTemplate"></a>buildTemplate | object \| [Reference Object](#referenceObject) \| [External Resource Object](#externalResourceObject) | Can be an inline JSON or a refernce to an external resource. It contains the definition of the pipeline to execute in order to build the application. It is passed as is to the build service specified using the `buildService` field.
-<a name="buildInfoConfigurations"></a>buildConfigurations | object \| [Reference Object](#referenceObject) \| [External Resource Object](#externalResourceObject) | Can be an inline JSON or a refernce to an external resource. It contains the configuration properties that can be used by the build service at build time. It is passed as is to the build service specified using the `buildService` field.
+<a name="buildInfoService"></a>service | `string` \| [External Resource Object](#externalResourceObject) | The logical name or the actual endpoint of the service to call in order to *build* the application component. If the logical name is used as field value the actual endpoint value resulution is demanded to the *data product experience plane* of the underlyng platform.
+<a name="buildInfoTemplate"></a>template | object \| [Reference Object](#referenceObject) \| [External Resource Object](#externalResourceObject) | Can be an inline JSON or a refernce to an external resource. It contains the definition of the pipeline to execute in order to build the application. It is passed as is to the build service specified using the `buildService` field.
+<a name="buildInfoConfigurations"></a>configurations | object \| [Reference Object](#referenceObject) \| [External Resource Object](#externalResourceObject) | Can be an inline JSON or a refernce to an external resource. It contains the configuration properties that can be used by the build service at build time. It is passed as is to the build service specified using the `buildService` field.
 
 This object MAY be extended with [Specification Extensions](#specificationExtensions).
 
 #### <a name="deployInfoObject"></a>Deploy Info Object
 
-The `Deploy Info Object` contains all the informations required to deploy an [Application Component](#todo)
+The `Deploy Info Object` contains all the informations required to deploy an [Application Component](#applicationComponent)
 
 ##### Fixed Fields
 
 Field Name | Type | Description
 ---|:---:|---
-<a name="deployInfoService"></a>service | `string:name` \| [External Resource Object](#externalResourceObject) | The logical name or the actual endpoint of the service to call in order to *deploy* the application component. If the logical name is used as field value the actual endpoint value resulution is demanded to the *data product experience plane* of the underlyng platform.
+<a name="deployInfoService"></a>service | `string` \| [External Resource Object](#externalResourceObject) | The logical name or the actual endpoint of the service to call in order to *deploy* the application component. If the logical name is used as field value the actual endpoint value resulution is demanded to the *data product experience plane* of the underlyng platform.
 <a name="deployInfoTemplate"></a>template | object \| [Reference Object](#referenceObject) \| [External Resource Object](#externalResourceObject) | Can be an inline JSON or a refernce to an external resource. It contains the definition of the pipeline to execute in order to deploy the application. It is passed as is to the deployment service specified using the `deploymentService` field.     
 <a name="deployInfoConfigurations"></a>configurations | object \| [Reference Object](#referenceObject) \| [External Resource Object](#externalResourceObject) | Can be an inline JSON or a refernce to an external resource. It contains the configuration properties that can be used by the deployment service at deploy time. It is passed as is to the deployment service specified using the `deploymentService` field.
 
@@ -653,7 +602,7 @@ See the rules for resolving [Relative References](#relativeReferencesURI).
 Field Name | Type | Description
 ---|:---:|---
 <a name="referenceDescription"></a>description | `string` | A description which by default SHOULD override that of the referenced component. [CommonMark syntax](https://spec.commonmark.org/) MAY be used for rich text representation. If the referenced object-type does not allow a `description` field, then this field has no effect.
-<a name="referenceRef"></a>$ref | `string` | **REQUIRED**. The reference identifier. This MUST be in the form of a URI.
+<a name="referenceRef"></a>$ref | `string:uri-reference` | **REQUIRED**. The reference identifier. This MUST be in the form of a URI.
 
 This object cannot be extended with additional properties and any properties added SHALL be ignored.
 
