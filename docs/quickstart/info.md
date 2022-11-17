@@ -42,9 +42,12 @@ The following example shows a minimal data product descriptor document:
 
 This data product is not very useful because it defines no output ports (it does not expose any data). [The next page](./interface.md) remedies that.
 
+## Trip Execution Data Product Descriptor
+This is the <a href="https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/minimal.dpd.json" target="_blank">minimal descriptor document :fontawesome-brands-github:</a> of the [Trip Execution Data Product](./example.md). You can read it on GitHub or cut and paste the content of the JSON file to <a href="https://jsoncrack.com/editor" target="_blank">JSON Crack :octicons-link-external-24:</a> for more interactive visualization.
+
 ## Summary
 This page has shown that:
 
 - Every data product descriptor document must contain a root object with at least the fields `dataProductDescriptor`, `info` and `interfaceComponents.outputPorts`.
 
-[The next page](./info.md) describes the contents of the `interfaceComponents` field so ports can be added to the above minimal snippet.
+[The next page](./interface.md) describes the contents of the `interfaceComponents` field so ports can be added to the above minimal snippet.

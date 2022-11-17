@@ -1,0 +1,26 @@
+{
+    "dataProductDescriptor": "1.0.0",
+    "info": {
+        "name": "tripExecution",
+        "fullyQualifiedName": "urn:dpds:com.company-xyz:dataproducts:tripExecution:1",
+        "version": "1.2.3",
+        "domain": "Transport Management",
+        "owner": {
+            "id": "john.doe@company-xyz.com",
+            "name": "John Doe"
+        }
+    },
+    "interfaceComponents": {
+        "inputPorts": [],
+        "outputPorts": [
+            {
+                "description": "This port exposes the last known status of each trip operated in the last 12 months",
+                "$ref": "trip-status-oport.json"
+            },
+            {
+                "description": "This port expose all modifications in the status of each trip as events",
+                "$ref": "trip-events-oport.json"
+            }
+        ]
+    }
+}

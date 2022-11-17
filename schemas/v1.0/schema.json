@@ -415,7 +415,7 @@
                     "$ref": "#/$defs/externalResource"
                 }
             },
-            "required": ["specification,definition"],
+            "required": ["specification","definition"],
             "patternProperties": {
                 "^x-": true
             },

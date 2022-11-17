@@ -25,15 +25,15 @@ Here a first example snippet of a port definition. More details on how to valori
 	"fullyQualifiedName": "urn:dpds:com.company-xyz:dataproducts:tripExecution:1:outputports:tripStatus",
 	"name": "tripStatus",
 	"displayName": "Trip Status",
-	"description" "The last known status of each trip operated in the last 12 months"
+	"description" "The last known status of each trip operated in the last 12 months",
 	"version": "1.2.0",
 	"promises": {...},
-	"expectations": {...},
+	"expectatctions": {...},
 	"contracts": {...}
 }
 ```
 ## Promises Object
-Through promises the data product declares the intent of the port. It's a set of implicit agreements between the data product and its consumers. 
+Through promises, the data product declares the intent of the port. It's a set of implicit agreements between the data product and its consumers. 
 
 ### Fields
 A [Promises Object](../references/specifications/last.md#promises-object) is composed by the following fields:
@@ -54,12 +54,12 @@ A [Promises Object](../references/specifications/last.md#promises-object) is com
 The [Promises Object](../references/specifications/last.md#promises-object) can be extended with other fields  with **"x-" prefix** as needed.
 
 ### Example
-The promises of the following example describe a datastore service that expose one table (i.e. `trip_status`) composed by two columns (i.e. `id` and `status`) stored on a *postgress db* hostend in *aws cloud*. The description of the API is provided using a custom standard that is a simplified version of the *DataStore API Specification*. Both `depreceationPolicy` and `slo` fields use custom properties to provide more info respectivelly on the deprecation period duration (i.e. `x-deprecation-period`) and on the service level indicators supported (i.e. `x-operationalSlo`  and `x-qualitySlo`)
+The promises of the following example describe a datastore service that exposes one table (i.e. `trip_status`) composed of two columns (i.e. `id` and `status`) stored on a *postgress db* hostend in *aws cloud*. The description of the API is provided using a custom standard that is a simplified version of the *DataStore API Specification*. Both `depreceationPolicy` and `slo` fields use custom properties to provide more info respectivelly on the deprecation period duration (i.e. `x-deprecation-period`) and on the service level indicators supported (i.e. `x-operationalSlo`  and `x-qualitySlo`)
 
 ```json
 {
 	"platform": "aws:eu-south-1:postgres",
-	"servicesType": "datastore-services",
+	"serviceType": "datastore-services",
 	"api": {
 		"specification": "custom-datastore-api",
 		"definition": {
@@ -97,7 +97,7 @@ The promises of the following example describe a datastore service that expose o
 			}
 		}
 	},
-	"depreceationPolicy": {
+	"deprecationPolicy": {
 		"description": "When a new major version become available the previous one is kept online for 3 months",
 		"x-deprecation-period": "3M",
 		"externalDocs": {
@@ -168,33 +168,35 @@ The expectations of the following example describe a datastore service that has 
 ```
 
 ## Contracts Object
-Through contracts the data product declares promises and expectations that must be respected by the data product and its consumers. A contract is an explicit agreement between the data product and its consumers. It is used to group all the promises and expectations that if not respected can generate penalties like monetary sanctions or interruption of service.
+Through contracts, the data product declares promises and expectations that must be respected by the data product and its consumers. A contract is an explicit agreement between the data product and its consumers. It is used to group all the promises and expectations that if not respected can generate penalties like monetary sanctions or interruption of service.
 
 ### Fields
-A [Contracts Object](../references/specifications/last.md#contracts-object) is composed by the following fields:
+A [Contracts Object](../references/specifications/last.md#contracts-object) is composed of the following fields:
 
-- `termsAndConditions` ([Specification Extension Point](../references/specifications/last.md#specificationExtensionPoint)): These are the terms and conditions defined on the port on which consumers must agree on in order to use it. A short description of terms and conditions together with a pointer to a more detailed external documentation can be provided. Moreover other fields with **"x-" prefix** can be added to provide futher informations as needed.
+- `termsAndConditions` ([Specification Extension Point](../references/specifications/last.md#specificationExtensionPoint)): These are the terms and conditions defined on the port on which consumers must agree to use it. A short description of terms and conditions together with a pointer to more detailed external documentation can be provided. Moreover, other fields with **"x-" prefix** can be added to provide further information as needed.
     - `description` (**string**): This is a short description of applied terms and conditions.
-	- `externalDocs` ([External Resource Object](../references/specifications/last.md#externalResourceObject)): This is a pointer to a more detaild external documentation on applied terms and conditions.
-- `billingPolicy` ([Specification Extension Point](../references/specifications/last.md#specificationExtensionPoint)): This is the billing policy defined on the port on which consumers must agree onin order to use it. A short description of billing policy together with a pointer to a more detailed external documentation can be provided. Moreover other fields with **"x-" prefix** can be added to provide futher informations as needed.
+	- `externalDocs` ([External Resource Object](../references/specifications/last.md#externalResourceObject)): This is a pointer to more detailed external documentation on applied terms and conditions.
+- `billingPolicy` ([Specification Extension Point](../references/specifications/last.md#specificationExtensionPoint)): This is the billing policy defined on the port on which consumers must agree to use it. A short description of the billing policy together with a pointer to more detailed external documentation can be provided. Moreover, other fields with **"x-" prefix** can be added to provide further information as needed.
     - `description` (**string**): This is a short description of applied terms and conditions.
-	- `externalDocs` ([External Resource Object](../references/specifications/last.md#externalResourceObject)): This is a pointer to a more detaild external documentation on applied terms and conditions.
-- `sla`	([Specification Extension Point](../references/specifications/last.md#specificationExtensionPoint)): These are the *service level agreements (SLA)* supported by the port. A short description of supported SLA together with a pointer to a more detailed external documentation can be provided. Moreover other fields with **"x-" prefix** can be added to provide futher informations as needed.
-    - `description` (**string**): This is a short description of supported SLA.
-	- `externalDocs` ([External Resource Object](../references/specifications/last.md#externalResourceObject)): This is a pointer to a more detaild external documentation of supported SLA.
+	- `externalDocs` ([External Resource Object](../references/specifications/last.md#externalResourceObject)): This is a pointer to more detailed external documentation on applied terms and conditions.
+- `sla`	([Specification Extension Point](../references/specifications/last.md#specificationExtensionPoint)): These are the *service level agreements (SLA)* supported by the port. A short description of the supported SLA together with a pointer to more detailed external documentation can be provided. Moreover, other fields with **"x-" prefix** can be added to provide further information as needed.
+    - `description` (**string**): This is a short description of the supported SLA.
+	- `externalDocs` ([External Resource Object](../references/specifications/last.md#externalResourceObject)): This is a pointer to a more detailed external documentation of supported SLA.
 
-The [Contracts Object](../references/specifications/last.md#contracts-object) can be extended with other fields  with **"x-" prefix** as needed.
+The [Contracts Object](../references/specifications/last.md#contracts-object) can be extended with other fields with **"x-" prefix** as needed.
 
 ### Example
-The contracts of the following example describe a datastore service billed monthly 0.001$ for each milion of executed queries. Terms and conditions of service are described in the internal wiki. A link to the specific session is provided, Finally the values of supported SLA are reported togheter with a link to the wiki page that describes the base service level indicators that each data product must support.
+The contracts of the following example describe a datastore service billed monthly 0.001$ for each million executed queries. Terms and conditions of service are described in the internal wiki. A link to the specific session is provided, Finally, the values of supported SLA are reported together with a link to the wiki page that describes the base service level indicators that each data product must support.
 
 ```json
 {
     
     "termsAndConditions": {
         "description": "A detailed description of the data product, that include also the target audience",
-        "mediaType": "text/html",
-        "$href": "https://wiki.example-xyz.com/corporate-mesh/dp/trip-execution.html#terms-and-conditions"
+        "externalDocs": {
+        	"mediaType": "text/html",
+            "$href": "https://wiki.example-xyz.com/corporate-mesh/dp/trip-execution.html#terms-and-conditions"
+                        }
     },
     "billingPolicy": {
         "description": "This port is billed by number of monthly queries",
@@ -225,14 +227,25 @@ The contracts of the following example describe a datastore service billed month
 }
 ```
 
+## Trip Execution Data Product Descriptor
+The [Trip Execution Data Product](./example.md) has one input port and two output ports.
+
+You can find the complete definition of these ports in the following files:
+
+- <a href="" target="_blank">xxxx :fontawesome-brands-github:</a>
+- <a href="" target="_blank">yyy :fontawesome-brands-github:</a>
+- <a href="" target="_blank">zzz :fontawesome-brands-github:</a>
+
+You can read them on GitHub or cut and paste the content of the JSON files to <a href="https://jsoncrack.com/editor" target="_blank">JSON Crack :octicons-link-external-24:</a> for more interactive visualization.
+
 ## Summary
 This page has shown that:
 
 - DPDS groups services exposed by a data product in ports. 
-- Five types of port are supported by DPDS: input port, output port, discovery port, observability port and control port.
+- Five types of ports are supported by DPDS: input port, output port, discovery port, observability port and control port.
 - The description of the interface of all ports exposed by a data product is contained in the [Interface Components Object](../references/specifications/last.md#interfaceComponentsObject).
 - each data product can have multiple ports of the same type.
-- the interface of each port, independently by the specific type, is described through `promises`, `expectations` and `crontracts` fields.
+- the interface of each port, independent of the specific type, is described through `promises`, `expectations` and `contracts` fields.
 
 [The next page](./application.md) describes the contents of the `applicationComponents` field used to provide all the required information to build and deploy applications that implement the services exposed by the product through its ports.
 

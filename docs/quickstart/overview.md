@@ -6,7 +6,7 @@ A data product descriptor document is a text file, commonly called `data-product
 
 This section very briefly describes these two formats and compares them.
 
-JSON can represent **Numbers**, **Strings**, **Booleans**, `null` **values**, **Arrays** and **Objects**. An array is an ordered list of values which can have different types. An object (also called a Map) is a collection of name-value pairs where the names (also called Keys or Fields) are unique within the object and the values can have any of the supported types (including other objects or arrays).
+JSON can represent **Numbers**, **Strings**, **Booleans**, `null` **values**, **Arrays** and **Objects**. An array is an ordered list of values that can have different types. An object (also called a Map) is a collection of name-value pairs where the names (also called Keys or Fields) are unique within the object and the values can have any of the supported types (including other objects or arrays).
 
 Here’s a comparison showing the different syntaxes.
 
@@ -67,7 +67,12 @@ The DPDS devides the structure of a data product descriptor document in the foll
 1. **interface components**
 1. **internal components**
 
-The content of *general info* part and interface *components* part are shared with other data products and the platform to enable products discoverbility and self service usage. *Internal component* insted are accessible only to the product team and to the platform.
+The content of *general info* part and *interface components* part is shared with other data products and the platform to enable products discoverability and self-service usage. *Internal components* instead are accessible only to the product team and to the platform.
+
+![open-data-mesh descriptor components](../images/dpds-structure.svg)
+
+## Trip Execution Data Product Descriptor
+The following image shows the descriptor structure of the [Trip Execution Data Product](./example.md).
 
 ![open-data-mesh descriptor components](../images/dpds-structure.svg)
 

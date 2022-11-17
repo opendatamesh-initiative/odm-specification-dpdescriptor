@@ -1,16 +1,15 @@
 {
-  "dataProductDescriptor": "1.0.0",
-  "info": {
-      "name": "tripExecution",
-      "fullyQualifiedName": "urn:dpds:com.company-xyz:dataproducts:tripExecution:1",
-      "version": "1.2.3",
-      "domain": "Transport Management",
-      "owner": {
-          "id": "john.doe@company-xyz.com",
-          "name": "John Doe"
-      }
-  },
-  "interfaceComponents": {
-    "outputPorts": []
-}
+    "dataProductDescriptor": "1.0.0",
+    "info": {
+        "fullyQualifiedName": "urn:dpds:com.company-xyz:dataproducts:tripExecution:1",
+        "version": "1.2.3",
+        "domain": "Transport Management",
+        "owner": {
+            "id": "john.doe@company-xyz.com",
+            "name": "John Doe"
+        }
+    },
+    "interfaceComponents": {
+        "outputPorts": []
+    }
 }

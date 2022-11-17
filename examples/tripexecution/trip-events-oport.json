@@ -1,0 +1,115 @@
+{
+    "fullyQualifiedName": "urn:dpds:com.company-xyz:dataproducts:tripExecution:1:outputports:tripStatus",
+    "name": "tripStatus",
+    "displayName": "Trip Status",
+    "description": "The last known status of each trip operated in the last 12 months",
+    "version": "1.2.0",
+    "promises": {
+        "platform": "aws:eu-south-1:postgres",
+        "serviceType": "datastore-services",
+        "api": {
+            "description": "The API exposed by the Observability Port that exposes data product logs",
+            "specification": "datastoreaapi",
+            "version": "1.0.0",
+            "definition": {
+                "mediaType": "text/json",
+                "$href": "https://mycompany.com/api/v1/planes/utility/logging-services/openapi.json"
+            },
+            "externalDocs": {
+                "mediaType": "text/html",
+                "$href": "https://spec.openapis.org/oas/v3.1.0"
+            }
+        },
+        "deprecationPolicy": {
+            "description": "When a new major version become available the previous one is kept online for 3 months",
+            "x-deprecation-period": "3M",
+            "externalDocs": {
+                "description": "A detailed description of the deprecation process",
+                "mediaType": "text/html",
+                "$href": "https://wiki.example-xyz.com/corporate-mesh/dp-deprecation-workflow.html"
+            }
+        },
+        "slo": {
+            "description": "The slo are hight for all base service indicators because this service is business critical",
+            "x-operationalSlo": {
+                "availability": "0.99999",
+                "responsetime": "1s"
+            },
+            "x-qualitySlo": {
+                "freshness": "5m"
+            },
+            "externalDocs": {
+                "description": "A detailed description of the base service indicators that all data products must support",
+                "mediaType": "text/html",
+                "$href": "https://wiki.example-xyz.com/corporate-mesh/dp-base-service-indicators.html"
+            }
+        }
+    },
+    "expectatctions": {
+        "audience": {
+            "description": "This port is designed to help operations departments. It is not for customer care and finance departments",
+            "x-includes": [
+                "operations"
+            ],
+            "x-excludes": [
+                "customer-care",
+                "finance"
+            ],
+            "externalDocs": {
+                "description": "A detailed description of the data product, that include also the target audience",
+                "mediaType": "text/html",
+                "$href": "https://wiki.example-xyz.com/corporate-mesh/dp/trip-execution.html"
+            }
+        },
+        "usage": {
+            "description": "This port is designed to operational access not for analysis",
+            "x-filterOn": [
+                "id"
+            ],
+            "x-forbiddenOperations": [
+                "group-by",
+                "unfiltered-selections"
+            ],
+            "externalDocs": {
+                "description": "A detailed description of the data product, that include also the expected way to use it",
+                "mediaType": "text/html",
+                "$href": "https://wiki.example-xyz.com/corporate-mesh/dp/trip-execution.html"
+            }
+        }
+    },
+    "contracts": {
+        "termsAndConditions": {
+            "description": "A detailed description of the data product, that include also the target audience",
+            "externalDocs": {
+                "mediaType": "text/html",
+                "$href": "https://wiki.example-xyz.com/corporate-mesh/dp/trip-execution.html#terms-and-conditions"
+            }
+        },
+        "billingPolicy": {
+            "description": "This port is billed by number of monthly queries",
+            "x-billingUnit": "milion queries",
+            "x-pricePerUnit": 0.01,
+            "x-billingPeriod": "month",
+            "externalDocs": {
+                "description": "A detailed description of the data product, that include also the billing policy",
+                "mediaType": "text/html",
+                "$href": "https://wiki.example-xyz.com/corporate-mesh/dp/trip-execution.html#billing"
+            }
+        },
+        "sla": {
+            "description": "The sla are hight for all base service indicators because this service is business critical",
+            "x-operationalSla": {
+                "availability": "0.999",
+                "responsetime": "5s"
+            },
+            "x-qualitySla": {
+                "freshness": "10m"
+            },
+            "externalDocs": {
+                "description": "A detailed description of the base service indicators that all data products must support",
+                "mediaType": "text/html",
+                "$href": "https://wiki.example-xyz.com/corporate-mesh/dp-base-service-indicators.html"
+            }
+        }
+    }
+}

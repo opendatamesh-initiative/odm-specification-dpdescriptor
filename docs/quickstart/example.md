@@ -52,4 +52,4 @@ In a more realistic business scenario, there would be more source system that co
 ## Summary
 This page has shown the purpose and architecture of the Trip Execution Data product used throughout this quickstart to explain the different parts of the specification.
 
-[The next page](./info.md) describes the syntax and structure of a data product descriptor document in all its main building blocks.
+[The next page](./overview.md) describes the syntax and structure of a data product descriptor document in all its main building blocks.

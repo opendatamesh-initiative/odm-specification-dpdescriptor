@@ -21,6 +21,7 @@ nav:
     - 'DataMeshOps Platform': './concepts/meshops-platform.md'
   - Quickstart:
     - './quickstart/README.md'
+    - 'Trip Execution Data Product Overview': './quickstart/example.md'
     - 'Descriptor Document Overview': './quickstart/overview.md'
     - 'Minimal Descriptor Document': './quickstart/info.md'
     - 'Interface Components': './quickstart/interface.md'
