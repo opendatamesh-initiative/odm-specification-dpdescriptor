@@ -580,6 +580,8 @@
         
           
         
+          
+        
       
       
         
@@ -600,6 +602,20 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../example/" class="md-nav__link">
+        Trip Execution Data Product Overview
+      </a>
+    </li>
+  
+
             
           
             
@@ -774,6 +790,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trip-execution-data-product-descriptor" class="md-nav__link">
+    Trip Execution Data Product Descriptor
+  </a>
   
 </li>
       
@@ -1319,6 +1342,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#trip-execution-data-product-descriptor" class="md-nav__link">
+    Trip Execution Data Product Descriptor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     Summary
   </a>
@@ -1351,57 +1381,57 @@
 <p>Data product interface components are called <strong>ports</strong> in the DPDS. The <a href="../../resources/specifications/last/#interfaceComponentsObject">Interface Components Object</a>, accessible through the <code>interfaceComponents</code> field in the root <a href="../../resources/specifications/last/#data-product-descriptor-entity">Data Product Descriptor Entity</a>, is the container for all ports exposed by the data product.  </p>
 <p><img alt="open-data-mesh descriptor components" src="../../images/dpds-interface-components.svg" /></p>
 <h3 id="fileds">Fileds<a class="headerlink" href="#fileds" title="Permanent link">⚓︎</a></h3>
-<p>The <a href="../../resources/specifications/last/#interfaceComponentsObject">Interface Components Object</a> has five fields, one for each port type: <code>inputPorts</code>, <code>outputPorts</code>, <code>discoveryPorts</code>, <code>observabilityPorts</code> and <code>controlPorts</code>. Because a data product can expose multiple ports of the same type all these fields are <strong>Array of Objects</strong>. The type of these objects depends on the specific port type: <a href="../../resources/specifications/last/#input-port-component">Input Port Component</a>, <a href="../../resources/specifications/last/#output-port-component">Output Port Component</a>, <a href="../../resources/specifications/last/#discovery-port-component">Discovery Port Component</a>, <a href="../../resources/specifications/last/#observability-port-component">Observability Port Component</a> and <a href="../../resources/specifications/last/#control-port-component">Control Port Component</a>. Anyway all these objects share a common subset of fields, no metter what it is the type of the port to which they are associated with. The most important of these shared fields are:</p>
+<p>The <a href="../../resources/specifications/last/#interfaceComponentsObject">Interface Components Object</a> has five fields, one for each port type: <code>inputPorts</code>, <code>outputPorts</code>, <code>discoveryPorts</code>, <code>observabilityPorts</code> and <code>controlPorts</code>. Because a data product can expose multiple ports of the same type all these fields are an  <strong>Array of Objects</strong>. The type of these objects depends on the specific port type: <a href="../../resources/specifications/last/#input-port-component">Input Port Component</a>, <a href="../../resources/specifications/last/#output-port-component">Output Port Component</a>, <a href="../../resources/specifications/last/#discovery-port-component">Discovery Port Component</a>, <a href="../../resources/specifications/last/#observability-port-component">Observability Port Component</a> and <a href="../../resources/specifications/last/#control-port-component">Control Port Component</a>. Anyway, all these objects share a common subset of fields, no matAnyway,ter what it is the type of port to which they are associated with. The most important of these shared fields are:</p>
 <ul>
-<li><code>fullyQualifiedName</code> (<strong>string:fqn</strong>): The unique universal idetifier of the port. It MUST be a URN of the form <code>urn:dpds:{mesh-namespace}:dataproducts:{product-name}:{product-major-version}:{port-type}:{port-name}</code></li>
-<li><code>version</code>: (<strong>string:version</strong>): This is the <a href="https://semver.org/spec/v2.0.0.html" target="_blank">semantic version number</a> of the data product's port. Everytime the <em>major version</em> of port changes also the <em>major version</em> of the product MUST be incremented.</li>
-<li><code>promises</code> (<a href="../../resources/specifications/last/#promises-object">Promises Object</a>): This are the data product's <a href="../concepts/#data-contract">promises</a> declared over the port.</li>
-<li><code>expectations</code> (<a href="../../resources/specifications/last/#expectations-object">Expectations Object</a>): This are the data product's <a href="../concepts/#data-contract">expectations</a> declared over the port.</li>
-<li><code>contracts</code> (<a href="../../resources/specifications/last/#contracts-object">Contracts Object</a>): This are  the data product's <a href="../concepts/#data-contract">contracts</a> declared over the port.</li>
+<li><code>fullyQualifiedName</code> (<strong>string:fqn</strong>): The unique universal identifier of the port. It MUST be a URN of the form <code>urn:dpds:{mesh-namespace}:dataproducts:{product-name}:{product-major-version}:{port-type}:{port-name}</code></li>
+<li><code>version</code>: (<strong>string:version</strong>): This is the <a href="https://semver.org/spec/v2.0.0.html" target="_blank">semantic version number</a> of the data product's port. Every time the <em>major</em> version<em> of port changes also the </em>major version* of the product MUST be incremented.</li>
+<li><code>promises</code> ([Promises Object): These are the data product's <a href="../concepts/#data-contract">promises</a> declared over the port.</li>
+<li><code>expectations</code> ([Expectations Object): These are the data product's <a href="../concepts/#data-contract">expectations</a> declared over the port.</li>
+<li><code>contracts</code> ([Contracts Object): These are the data product's <a href="../concepts/#data-contract">contracts</a> declared over the port.</li>
 </ul>
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">⚓︎</a></h3>
-<p>Here a first example snippet of a port definition. More details on how to valorize <code>promises</code>, <code>expectations</code> and <code>contracts</code> fields are provided in the next subsections.</p>
+<p>Here is a first example snippet of a port definition. More details on how to valorize <code>promises</code>, <code>expectations</code> and <code>contracts</code> fields are provided in the next subsections.</p>
 <div class="highlight"><span class="filename">JSON</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span><span class="w"></span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;fullyQualifiedName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;urn:dpds:com.company-xyz:dataproducts:tripExecution:1:outputports:tripStatus&quot;</span><span class="p">,</span><span class="w"></span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tripStatus&quot;</span><span class="p">,</span><span class="w"></span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&quot;displayName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Trip Status&quot;</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="w"> </span><span class="nt">&quot;The last known status of each trip operated in the last 12 months&quot;</span><span class="w"></span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="s2">&quot;description&quot;</span><span class="w"> </span><span class="s2">&quot;The last known status of each trip operated in the last 12 months&quot;</span><span class="p">,</span><span class="w"></span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.2.0&quot;</span><span class="p">,</span><span class="w"></span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">&quot;promises&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">&quot;expectations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">&quot;expectatctions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w"></span>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">&quot;contracts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w"></span>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h2 id="promises-object">Promises Object<a class="headerlink" href="#promises-object" title="Permanent link">⚓︎</a></h2>
-<p>Through promises the data product declares the intent of the port. It's a set of implicit agreements between the data product and its consumers. </p>
+<p>Through promises, the data product declares the intent of the port. It's a set of implicit agreements between the data product and its consumers. </p>
 <h3 id="fields">Fields<a class="headerlink" href="#fields" title="Permanent link">⚓︎</a></h3>
 <p>A <a href="../../resources/specifications/last/#promises-object">Promises Object</a> is composed by the following fields:</p>
 <ul>
 <li><code>platform</code> (<strong>string</strong>): This is the target technological platform in which the services associated with the given port operate. Examples: <code>onprem:milan-1</code>, <code>aws:eu-south-1</code>, <code>aws:eu-south-1:redshift</code>.</li>
-<li><code>servicesType</code> (<strong>string</strong>): This is the type of services associated with the given port. Examples: <code>soap-services</code>, <code>rest-services</code>, <code>odata-services</code>,<code>streaming-services</code>, <code>datastore-services</code>.</li>
+<li><code>servicesType</code> (<strong>string</strong>): This is the type of service associated with the given port. Examples: <code>soap-services</code>, <code>rest-services</code>, <code>odata-services</code>,<code>streaming-services</code>, <code>datastore-services</code>.</li>
 <li><code>api</code> (<a href="../../resources/specifications/last/#standardDefinitionObject">Standard Definition Object</a>): this is the formal description of services API. A good API standard specification should describe how to define the following elements of the service interface: addressable endpoints, available authentication methods and schema of data object exchanged.<ul>
-<li><code>specification</code> (<strong>string</strong>): This is the name of the specification used to define the service API. It is RECOMMENDED to use <a href="https://github.com/OAI/OpenAPI-Specification">Open API Specification</a> for restfull services, <a href="https://github.com/asyncapi/spec">Async API Specification</a> for streaming services and <em>DataStore API Specification</em> for data store connection based services. Other specifications MAY be used as required.</li>
+<li><code>specification</code> (<strong>string</strong>): This is the name of the specification used to define the service API. It is RECOMMENDED to use <a href="https://github.com/OAI/OpenAPI-Specification">Open API Specification</a> for restful services, <a href="https://github.com/asyncapi/spec">Async API Specification</a> for streaming services and <em>DataStore API Specification</em> for data store connection-based services. Other specifications MAY be used as required.</li>
 <li><code>version</code> (<strong>string</strong>): This is the version of the specification used to define the service API.</li>
 <li><code>definition</code> (<strong>Object</strong>): This is the definition of the service API built using the specification reported in the fields above</li>
 </ul>
 </li>
-<li><code>depreceationPolicy</code> (<a href="../../resources/specifications/last/#specificationExtensionPoint">Specification Extension Point</a>): This is the deprecation policy adopted for the given set of services. A policy description and a pointer to external documentation can be provided. Moreover other fields with <strong>"x-" prefix</strong> can be added to provide futher informations as needed (ex. <code>x-deprecation-period</code>).<ul>
+<li><code>depreceationPolicy</code> (<a href="../../resources/specifications/last/#specificationExtensionPoint">Specification Extension Point</a>): This is the deprecation policy adopted for the given set of services. A policy description and a pointer to external documentation can be provided. Moreover, other fields with <strong>"x-" prefix</strong> can be added to provide further informations as needed (ex. <code>x-deprecation-period</code>).<ul>
 <li><code>description</code> (<strong>string</strong>): This is a general description of the deprecation policy.</li>
-<li><code>externalDocs</code> (<a href="../../resources/specifications/last/#externalResourceObject">External Resource Object</a>): This is a pointer to external documentation that describe in more details the deprecation policy.</li>
+<li><code>externalDocs</code> (<a href="../../resources/specifications/last/#externalResourceObject">External Resource Object</a>): This is a pointer to external documentation that describe in more detail the deprecation policy.</li>
 </ul>
 </li>
-<li><code>slo</code>: (<a href="../../resources/specifications/last/#specificationExtensionPoint">Specification Extension Point</a>): This are the <em>service level objectives (SLO)</em> supported by the given set of services. A SLO description and a pointer to external documentation can be provided. Moreover other fields with <strong>"x-" prefix</strong> can be added to provide futher informations as needed (ex. <code>x-availability</code>, <code>x-responsetime</code>, ecc...).<ul>
+<li><code>slo</code>: ([Specification Extension Point): These are the <em>service</em> level objectives (SLO)<em> supported by the given set of services. An SLO description and a pointer to external documentation can be provided. Moreover, other fields with </em><em>"x-" prefix</em>* can be added to provide further informations as needed (ex. <code>x-availability</code>, <code>x-responsetime</code>, etc...).<ul>
 <li><code>description</code> (<strong>string</strong>): This is a general description of the supported SLO</li>
-<li><code>externalDocs</code> (<a href="../../resources/specifications/last/#externalResourceObject">External Resource Object</a>): This is a pointer to external documentation that describe in more details the supported SLO.</li>
+<li><code>externalDocs</code> (<a href="../../resources/specifications/last/#externalResourceObject">External Resource Object</a>): This is a pointer to external documentation that describe in more detail the supported SLO.</li>
 </ul>
 </li>
 </ul>
-<p>The <a href="../../resources/specifications/last/#promises-object">Promises Object</a> can be extended with other fields  with <strong>"x-" prefix</strong> as needed.</p>
+<p>The <a href="../../resources/specifications/last/#promises-object">Promises Object</a> can be extended with other fields with <strong>"x</strong>-" prefix** as needed.</p>
 <h3 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">⚓︎</a></h3>
-<p>The promises of the following example describe a datastore service that expose one table (i.e. <code>trip_status</code>) composed by two columns (i.e. <code>id</code> and <code>status</code>) stored on a <em>postgress db</em> hostend in <em>aws cloud</em>. The description of the API is provided using a custom standard that is a simplified version of the <em>DataStore API Specification</em>. Both <code>depreceationPolicy</code> and <code>slo</code> fields use custom properties to provide more info respectivelly on the deprecation period duration (i.e. <code>x-deprecation-period</code>) and on the service level indicators supported (i.e. <code>x-operationalSlo</code>  and <code>x-qualitySlo</code>)</p>
+<p>The promises of the following example describe a datastore service that exposes one table (i.e. <code>trip_status</code>) composed of two columns (i.e. <code>id</code> and <code>status</code>) stored on a <em>Postgress DB</em> hosted in <em>AWS Cloud</em>. The description of the API is provided using a custom standard that is a simplified version of the <em>DataStore API Specification</em>. Both <code>depreceationPolicy</code> and <code>slo</code> fields use custom properties to provide more info respectively on the deprecation period duration (i.e. <code>x-deprecation-period</code>) and the service level indicators supported (i.e. <code>x-operationalSlo</code>  and <code>x-qualitySlo</code>)</p>
 <div class="highlight"><span class="filename">JSON</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span><span class="w"></span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;platform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aws:eu-south-1:postgres&quot;</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;servicesType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;datastore-services&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;serviceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;datastore-services&quot;</span><span class="p">,</span><span class="w"></span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;api&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="nt">&quot;specification&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;custom-datastore-api&quot;</span><span class="p">,</span><span class="w"></span>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="nt">&quot;definition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1439,7 +1469,7 @@
 <a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="w">            </span><span class="p">}</span><span class="w"></span>
 <a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="w">        </span><span class="p">}</span><span class="w"></span>
 <a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="w">    </span><span class="nt">&quot;depreceationPolicy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="w">    </span><span class="nt">&quot;deprecationPolicy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;When a new major version become available the previous one is kept online for 3 months&quot;</span><span class="p">,</span><span class="w"></span>
 <a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="w">        </span><span class="nt">&quot;x-deprecation-period&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3M&quot;</span><span class="p">,</span><span class="w"></span>
 <a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="w">        </span><span class="nt">&quot;externalDocs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1466,24 +1496,24 @@
 <a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h2 id="expectations-object">Expectations Object<a class="headerlink" href="#expectations-object" title="Permanent link">⚓︎</a></h2>
-<p>Through expectations the data product declares how it wants the port to be used by its consumers. Expectations are the inverse of promises. They are a way to explicitly state what promises the data product would like consumers to make regarding how they will use the port. </p>
+<p>Through expectations, the data product declares how it wants the port to be used by its consumers. Expectations are the inverse of promises. They are a way to explicitly state what promises the data product would like consumers to make regarding how they will use the port. </p>
 <h3 id="fields_1">Fields<a class="headerlink" href="#fields_1" title="Permanent link">⚓︎</a></h3>
-<p>An <a href="../../resources/specifications/last/#expectations-object">Expectations Object</a> is composed by the following fields:</p>
+<p>An <a href="../../resources/specifications/last/#expectations-object">Expectations Object</a> is composed of the following fields:</p>
 <ul>
-<li><code>audience</code> (<a href="../../resources/specifications/last/#specificationExtensionPoint">Specification Extension Point</a>): This is the audience of consumers for whom the the port has been designed. An audience description and a pointer to external documentation can be provided. Moreover other fields with <strong>"x-" prefix</strong> can be added to provide futher informations as needed (ex. <code>x-includes</code>, <code>x-exclude</code>, ecc...).<ul>
+<li><code>audience</code> (<a href="../../resources/specifications/last/#specificationExtensionPoint">Specification Extension Point</a>): This is the audience of consumers for whom the port has been designed. An audience description and a pointer to external documentation can be provided. Moreover, other fields with <strong>"x-" prefix</strong> can be added to provide further informations as needed (ex. <code>x-includes</code>, <code>x-exclude</code>, etc...).<ul>
 <li><code>description</code> (<strong>string</strong>): This is a general description of the target service audience.</li>
-<li><code>externalDocs</code> (<a href="../../resources/specifications/last/#externalResourceObject">External Resource Object</a>): This is a pointer to external documentation that describe in more details the target service audience</li>
+<li><code>externalDocs</code> (<a href="../../resources/specifications/last/#externalResourceObject">External Resource Object</a>): This is a pointer to external documentation that describe in more detail the target service audience</li>
 </ul>
 </li>
-<li><code>usage</code> (<a href="../../resources/specifications/last/#specificationExtensionPoint">Specification Extension Point</a>): These are the usage patterns for which the port has been designed. A usage patterns description and a pointer to external documentation can be provided. Moreover other fields with <strong>"x-" prefix</strong> can be added to provide futher informations as needed (ex. <code>x-filterOn</code>, <code>x-forbiddenOperations</code>, ecc...).<ul>
+<li><code>usage</code> (<a href="../../resources/specifications/last/#specificationExtensionPoint">Specification Extension Point</a>): These are the usage patterns for which the port has been designed. A usage patterns description and a pointer to external documentation can be provided. Moreover, other fields with <strong>"x-" prefix</strong> can be added to provide further information as needed (ex. <code>x-filterOn</code>, <code>x-forbiddenOperations</code>, etc...).<ul>
 <li><code>description</code> (<strong>string</strong>): This is a general description of the intended usage patterns.</li>
 <li><code>externalDocs</code> (<a href="../../resources/specifications/last/#externalResourceObject">External Resource Object</a>): This is a pointer to external documentation that describe in more details the intended usage patterns.</li>
 </ul>
 </li>
 </ul>
-<p>The <a href="../../resources/specifications/last/#expectations-object">Expectations Object</a> can be extended with other fields  with <strong>"x-" prefix</strong> as needed.</p>
+<p>The <a href="../../resources/specifications/last/#expectations-object">Expectations Object</a> can be extended with other fields with <strong>"x</strong>-" prefix** as needed.</p>
 <h3 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">⚓︎</a></h3>
-<p>The expectations of the following example describe a datastore service that has been designed to serve operations department and not customer service and finance department. It is also expected that the service is consumed for operational and not analytical workloads. Queries must be filtered on the <em>id</em> of the <em>trip</em>. Unfiltered selctions and queries with <em>group-by clause</em> are not expected to occure.</p>
+<p>The expectations of the following example describe a data store service that has been designed to serve the operations department and not the customer service and finance department. It is also expected that the service is consumed for operational and not analytical workloads. Queries must be filtered on the <em>id</em> of the <em>trip</em>. Unfiltered selections and queries with <em>group-by clauses</em> are not expected to occur.</p>
 <div class="highlight"><span class="filename">JSON</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span><span class="w"></span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&quot;audience&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This port is designed to help operations departments. It is not for customer care and finance departments&quot;</span><span class="p">,</span><span class="w"></span>
@@ -1508,72 +1538,113 @@
 <a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h2 id="contracts-object">Contracts Object<a class="headerlink" href="#contracts-object" title="Permanent link">⚓︎</a></h2>
-<p>Through contracts the data product declares promises and expectations that must be respected by the data product and its consumers. A contract is an explicit agreement between the data product and its consumers. It is used to group all the promises and expectations that if not respected can generate penalties like monetary sanctions or interruption of service.</p>
+<p>Through contracts, the data product declares promises and expectations that must be respected by the data product and its consumers. A contract is an explicit agreement between the data product and its consumers. It is used to group all the promises and expectations that if not respected can generate penalties like monetary sanctions or interruption of service.</p>
 <h3 id="fields_2">Fields<a class="headerlink" href="#fields_2" title="Permanent link">⚓︎</a></h3>
 <p>A <a href="../../resources/specifications/last/#contracts-object">Contracts Object</a> is composed by the following fields:</p>
 <ul>
-<li><code>termsAndConditions</code> (<a href="../../resources/specifications/last/#specificationExtensionPoint">Specification Extension Point</a>): These are the terms and conditions defined on the port on which consumers must agree on in order to use it. A short description of terms and conditions together with a pointer to a more detailed external documentation can be provided. Moreover other fields with <strong>"x-" prefix</strong> can be added to provide futher informations as needed.<ul>
+<li><code>termsAndConditions</code> (<a href="../../resources/specifications/last/#specificationExtensionPoint">Specification Extension Point</a>): These are the terms and conditions defined on the port on which consumers must agree in order to use it. A short description of terms and conditions together with a pointer to a more detailed external documentation can be provided. Moreover, other fields with <strong>"x-" prefix</strong> can be added to provide further information as needed.<ul>
 <li><code>description</code> (<strong>string</strong>): This is a short description of applied terms and conditions.</li>
-<li><code>externalDocs</code> (<a href="../../resources/specifications/last/#externalResourceObject">External Resource Object</a>): This is a pointer to a more detaild external documentation on applied terms and conditions.</li>
+<li><code>externalDocs</code> (<a href="../../resources/specifications/last/#externalResourceObject">External Resource Object</a>): This is a pointer to more detailed external documentation on applied terms and conditions.</li>
 </ul>
 </li>
-<li><code>billingPolicy</code> (<a href="../../resources/specifications/last/#specificationExtensionPoint">Specification Extension Point</a>): This is the billing policy defined on the port on which consumers must agree onin order to use it. A short description of billing policy together with a pointer to a more detailed external documentation can be provided. Moreover other fields with <strong>"x-" prefix</strong> can be added to provide futher informations as needed.<ul>
+<li><code>billingPolicy</code> (<a href="../../resources/specifications/last/#specificationExtensionPoint">Specification Extension Point</a>): This is the billing policy defined on the port on which consumers must agree to use it. A short description of the billing policy together with a pointer to more detailed external documentation can be provided. Moreover, other fields with <strong>"x-" prefix</strong> can be added to provide further information as needed.<ul>
 <li><code>description</code> (<strong>string</strong>): This is a short description of applied terms and conditions.</li>
-<li><code>externalDocs</code> (<a href="../../resources/specifications/last/#externalResourceObject">External Resource Object</a>): This is a pointer to a more detaild external documentation on applied terms and conditions.</li>
+<li><code>externalDocs</code> (<a href="../../resources/specifications/last/#externalResourceObject">External Resource Object</a>): This is a pointer to more detailed external documentation on applied terms and conditions.</li>
 </ul>
 </li>
-<li><code>sla</code> (<a href="../../resources/specifications/last/#specificationExtensionPoint">Specification Extension Point</a>): These are the <em>service level agreements (SLA)</em> supported by the port. A short description of supported SLA together with a pointer to a more detailed external documentation can be provided. Moreover other fields with <strong>"x-" prefix</strong> can be added to provide futher informations as needed.<ul>
-<li><code>description</code> (<strong>string</strong>): This is a short description of supported SLA.</li>
-<li><code>externalDocs</code> (<a href="../../resources/specifications/last/#externalResourceObject">External Resource Object</a>): This is a pointer to a more detaild external documentation of supported SLA.</li>
+<li><code>sla</code> (<a href="../../resources/specifications/last/#specificationExtensionPoint">Specification Extension Point</a>): These are the <em>service level agreements (SLA)</em> supported by the port. A short description of the supported SLA together with a pointer to more detailed external documentation can be provided. Moreover, other fields with <strong>"x-" prefix</strong> can be added to provide further information as needed.<ul>
+<li><code>description</code> (<strong>string</strong>): This is a short description of the supported SLA.</li>
+<li><code>externalDocs</code> (<a href="../../resources/specifications/last/#externalResourceObject">External Resource Object</a>): This is a pointer to a more detailed external documentation of supported SLA.</li>
 </ul>
 </li>
 </ul>
-<p>The <a href="../../resources/specifications/last/#contracts-object">Contracts Object</a> can be extended with other fields  with <strong>"x-" prefix</strong> as needed.</p>
+<p>The <a href="../../resources/specifications/last/#contracts-object">Contracts Object</a> can be extended with other fields with <strong>"x</strong>-" prefix** as needed.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>de89097af42a7ab87fc449c35550acfe46485026</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <h3 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">⚓︎</a></h3>
-<p>The contracts of the following example describe a datastore service billed monthly 0.001$ for each milion of executed queries. Terms and conditions of service are described in the internal wiki. A link to the specific session is provided, Finally the values of supported SLA are reported togheter with a link to the wiki page that describes the base service level indicators that each data product must support.</p>
+<p>The contracts of the following example describe a datastore service billed monthly 0.001$ for each million executed queries. Terms and conditions of service are described in the internal wiki. A link to the specific session is provided, Finally, the values of supported SLA are reported together with a link to the wiki page that describes the base service level indicators that each data product must support.</p>
 <div class="highlight"><span class="filename">JSON</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span><span class="w"></span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&quot;termsAndConditions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A detailed description of the data product, that include also the target audience&quot;</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span><span class="nt">&quot;mediaType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text/html&quot;</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="nt">&quot;$href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://wiki.example-xyz.com/corporate-mesh/dp/trip-execution.html#terms-and-conditions&quot;</span><span class="w"></span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nt">&quot;billingPolicy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This port is billed by number of monthly queries&quot;</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">        </span><span class="nt">&quot;x-billingUnit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;milion queries&quot;</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">        </span><span class="nt">&quot;x-pricePerUnit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">        </span><span class="nt">&quot;x-billingPeriod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;month&quot;</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">        </span><span class="nt">&quot;externalDocs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A detailed description of the data product, that include also the billing policy&quot;</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">            </span><span class="nt">&quot;mediaType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text/html&quot;</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">            </span><span class="nt">&quot;$href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://wiki.example-xyz.com/corporate-mesh/dp/trip-execution.html#billing&quot;</span><span class="w"></span>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">        </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">    </span><span class="nt">&quot;sla&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The sla are hight for all base service indicators because this service is business critical&quot;</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">        </span><span class="nt">&quot;x-operationalSla&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">            </span><span class="nt">&quot;availability&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.999&quot;</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">            </span><span class="nt">&quot;responsetime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5s&quot;</span><span class="w"></span>
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">        </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">        </span><span class="nt">&quot;x-qualitySla&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">            </span><span class="nt">&quot;freshness&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10m&quot;</span><span class="w"></span>
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">        </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">        </span><span class="nt">&quot;externalDocs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A detailed description of the base service indicators that all data products must support&quot;</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="w">            </span><span class="nt">&quot;mediaType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text/html&quot;</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="w">            </span><span class="nt">&quot;$href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://wiki.example-xyz.com/corporate-mesh/dp-base-service-indicators.html&quot;</span><span class="w"></span>
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="w">        </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span><span class="nt">&quot;externalDocs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">            </span><span class="nt">&quot;mediaType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text/html&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">            </span><span class="nt">&quot;$href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://wiki.example-xyz.com/corporate-mesh/dp/trip-execution.html#terms-and-conditions&quot;</span><span class="w"></span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">                        </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="nt">&quot;billingPolicy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This port is billed by number of monthly queries&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">        </span><span class="nt">&quot;x-billingUnit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;milion queries&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">        </span><span class="nt">&quot;x-pricePerUnit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">        </span><span class="nt">&quot;x-billingPeriod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;month&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">        </span><span class="nt">&quot;externalDocs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A detailed description of the data product, that include also the billing policy&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">            </span><span class="nt">&quot;mediaType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text/html&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">            </span><span class="nt">&quot;$href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://wiki.example-xyz.com/corporate-mesh/dp/trip-execution.html#billing&quot;</span><span class="w"></span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">        </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">    </span><span class="nt">&quot;sla&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The sla are hight for all base service indicators because this service is business critical&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">        </span><span class="nt">&quot;x-operationalSla&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">            </span><span class="nt">&quot;availability&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.999&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">            </span><span class="nt">&quot;responsetime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5s&quot;</span><span class="w"></span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">        </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">        </span><span class="nt">&quot;x-qualitySla&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">            </span><span class="nt">&quot;freshness&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10m&quot;</span><span class="w"></span>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">        </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="w">        </span><span class="nt">&quot;externalDocs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A detailed description of the base service indicators that all data products must support&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="w">            </span><span class="nt">&quot;mediaType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text/html&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="w">            </span><span class="nt">&quot;$href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://wiki.example-xyz.com/corporate-mesh/dp-base-service-indicators.html&quot;</span><span class="w"></span>
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="w">        </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
+<h2 id="trip-execution-data-product-descriptor">Trip Execution Data Product Descriptor<a class="headerlink" href="#trip-execution-data-product-descriptor" title="Permanent link">⚓︎</a></h2>
+<p>The <a href="../example/">Trip Execution Data Product</a> has one input port and two output ports.</p>
+<p>You can find the complete definition of these ports in the following files:</p>
+<ul>
+<li><a href="" target="_blank">xxxx <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span></a></li>
+<li><a href="" target="_blank">yyy <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span></a></li>
+<li><a href="" target="_blank">zzz <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span></a></li>
+</ul>
+<p>You can read them on GitHub or cut and paste the content of the JSON files to <a href="https://jsoncrack.com/editor" target="_blank">JSON Crack <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25z"/></svg></span></a> for more interactive visualization.</p>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">⚓︎</a></h2>
 <p>This page has shown that:</p>
 <ul>
 <li>DPDS groups services exposed by a data product in ports. </li>
-<li>Five types of port are supported by DPDS: input port, output port, discovery port, observability port and control port.</li>
-<li>The description of the interface of all ports exposed by a data product is contained in the <a href="../../resources/specifications/last/#interfaceComponentsObject">Interface Components Object</a>.</li>
+<li>Five types of ports are supported by DPDS: input port, output port, discovery port, observability port and control port.</li>
+<li>The description of the interface of all ports exposed by a data product is contained in the <a href="../../resources/specifications/last/#interfaceComponentsObject">Interface Components Object</a>.<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>de89097af42a7ab87fc449c35550acfe46485026</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
 <li>each data product can have multiple ports of the same type.</li>
-<li>the interface of each port, independently by the specific type, is described through <code>promises</code>, <code>expectations</code> and <code>crontracts</code> fields.</li>
+<li>the interface of each port, independent of the specific type, is described through <code>promises</code>, <code>expectations</code> and <code>contracts</code> fields.</li>
 </ul>
 <p><a href="../application/">The next page</a> describes the contents of the <code>applicationComponents</code> field used to provide all the required information to build and deploy applications that implement the services exposed by the product through its ports.</p>
 
@@ -1582,7 +1653,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 17, 2022</span>
       
         <br>
         Created:
