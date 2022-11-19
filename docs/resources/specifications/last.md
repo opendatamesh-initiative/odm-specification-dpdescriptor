@@ -29,7 +29,58 @@ The formalization of a standard data product descriptor document through an open
 - data lineage tools (trace data flows and perform forward/backward analysis)
 - mesh topology analysis tools (calculate value/trust scores and detect structural problems)
 - semantic tools (apply ontologies over mesh topology)
-- domain specific language tools (create a collection af interconnected data products that implement together a specific value stream)
+- domain specific language tools (create a collection of interconnected data products that implement together a specific value stream)
+
+## Table of Contents
+
+<!-- TOC depthFrom:1 depthTo:3 withLinks:1 updateOnSave:1 orderedList:0 -->
+- [Definitions](#definitions)
+	- [Standard](#definitionsStandard)
+	- [Standard Specification](#definitionsSpecification)
+	- [Standard Definition](#definitionsDefinition)
+	- [Data Product](#definitionsDataProduct)
+	- [Data Product Ports](#definitionsDataProductPorts)
+	- [Data Product Application Components](#definitionsDataProductAppComponents)
+	- [Data Product Infrastructural Components](#definitionsDataProductInfraComponents)
+	- [Data Product Descriptor Document](#definitionsDpdsDocument)
+	- [Data Product Descriptor Specification](#definitionsDpdsSpecification)
+- [Specification](#specification)
+	- [Versions](#versions)
+	- [Format](#format)
+	- [Document Structure](#documentStructure)
+	- [Data Types](#dataTypes)
+	- [Rich Text Formatting](#richText)
+	- [Relative References In URLs](#relativeReferences)
+	- [Schema](#schema)
+		- [Data Product Descriptor Entity](#dpdsObject)
+		- [Info Object](#infoObject)
+		- [Owner Object](#ownerObject)
+		- [Contact Point Object](#contactPointObject)
+		- [Interface Components Object](#interfaceComponentsObject)
+        - [Input Port Component](#inputPortComponent)
+		- [Output Port Component](#outputPortComponent)
+        - [Discovery Port Component](#discoveryPortComponent)
+        - [Observability Port Component](#observabilityPortComponent)
+        - [Control Port Component](#controlPortComponent)
+		- [Promises Object](#promisesObject)
+        - [Expectations Object](#expectationsObject)
+		- [Contracts Object](#contractsObject)
+		- [Internal Components Object](#internalComponentsObject)
+		- [Application Component](#applicationComponent)
+		- [Build Info Object](#buildInfoObject)
+		- [Deploy Info Object](#deployInfoObject)
+		- [Infrastructural Component](#infrastructuralComponent)
+		- [Provision Info Object](#provisionInfoObject)
+		- [Components Object](#componentsObject)
+		- [Reference Object](#referenceObject)
+		- [External Resource Object](#externalResourceObject)	
+		- [Standard Definition Object](#standardDefinitionObject)
+	- [Specification Extension Point](#specificationExtensionPoint)
+	- [Specification Extensions](#specificationExtensions)
+- [Appendix A: Revision History](#revisionHistory)
+
+
+<!-- /TOC -->
 
 ## <a name="definitions"></a>Definitions
 
@@ -320,7 +371,7 @@ The `Output Port Component` describes an [output port](#definitionsDataProductPo
 Field Name | Type | Description
 ---|:---:|---
 <a name="outputPortId"></a>id | `string:uuid` | **(READONLY)** It's an UUID version 3 (see [RFC-4122](https://www.rfc-editor.org/rfc/rfc4122.html#section-4.3)) generated server side during data product creation as SHA-1 hash of the port's `fullyQualifiedName`. It MAY be used  when calling the API exposed by the `data product experience plane` to referentiate the port. Because the `fullyQualifiedName` is globally unique also the `id` is globally unique, anyway to referentiate the data product when calling API different from the ones exposed by the `data product experience plane` the port's `fullyQualifiedName` MUST be always used. Example: `"id": "3235744b-8d2e-57b5-afba-f66862cc6a21"`
-<a name="outputPortFullyQualifiedName"></a>fullyQualifiedName | `string:fqn` | **(REQUIRED)** The unique universal idetifier of the port. It MUST be a URN of the form `urn:dpds:{mesh-namespace}:dataproducts:{product-name}:{product-major-version}:inputports:{port-name}`. Example `"fullyQualifiedName: "urn:dpds:it.quantyca:dataproducts:tripExecution:1:inputports:tmsTripCDC"`.
+<a name="outputPortFullyQualifiedName"></a>fullyQualifiedName | `string:fqn` | **(REQUIRED)** The unique universal idetifier of the port. It MUST be a URN of the form `urn:dpds:{mesh-namespace}:dataproducts:{product-name}:{product-major-version}:outputports:{port-name}`. Example `"fullyQualifiedName: "urn:dpds:it.quantyca:dataproducts:tripExecution:1:outputports:tmsTripCDC"`.
 <a name="outputPortEntityType"></a>entityType | `string:alphanumeric` | The type of the entity. It MUST be a constant value equals to `outputport`. 
 <a name="outputPortName"></a>name | `string:name` | **(REQUIRED)** The name of the port. MUST be unique within the other input ports of the same data product. It's RECOMMENDED to use a cammel case formatted string. Example `"name: "tmsTripCDC"`.
 <a name="outputPortVersion"></a>version | `string:version` |  **(REQUIRED)** The [semantic version number](https://semver.org/spec/v2.0.0.html) of the data product's port. Everytime the *major version* of port changes also the *major version* of the product MUST be incremented.
