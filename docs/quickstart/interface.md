@@ -25,7 +25,7 @@ Here is a first example snippet of a port definition. More details on how to val
 	"fullyQualifiedName": "urn:dpds:com.company-xyz:dataproducts:tripExecution:1:outputports:tripStatus",
 	"name": "tripStatus",
 	"displayName": "Trip Status",
-	"description" "The last known status of each trip operated in the last 12 months",
+	"description": "The last known status of each trip operated in the last 12 months",
 	"version": "1.2.0",
 	"promises": {...},
 	"expectatctions": {...},
@@ -184,7 +184,6 @@ A [Contracts Object](../resources/specifications/last.md#contracts-object) is co
 	- `externalDocs` ([External Resource Object](../resources/specifications/last.md#externalResourceObject)): This is a pointer to a more detailed external documentation of supported SLA.
 
 The [Contracts Object](../resources/specifications/last.md#contracts-object) can be extended with other fields with **"x**-" prefix** as needed.
->>>>>>> de89097af42a7ab87fc449c35550acfe46485026
 
 ### Example
 The contracts of the following example describe a datastore service billed monthly 0.001$ for each million executed queries. Terms and conditions of service are described in the internal wiki. A link to the specific session is provided, Finally, the values of supported SLA are reported together with a link to the wiki page that describes the base service level indicators that each data product must support.
@@ -231,11 +230,11 @@ The contracts of the following example describe a datastore service billed month
 ## Trip Execution Data Product Descriptor
 The [Trip Execution Data Product](./example.md) has one input port and two output ports.
 
-You can find the complete definition of these ports in the following files:
+The following files contain the complete definition of these ports:
 
-- <a href="" target="_blank">xxxx :fontawesome-brands-github:</a>
-- <a href="" target="_blank">yyy :fontawesome-brands-github:</a>
-- <a href="" target="_blank">zzz :fontawesome-brands-github:</a>
+- <a href="#">tmsTripAggregate.json (coming soon) :fontawesome-brands-github:</a>
+- <a href="#">tripEvents.json (coming soon) :fontawesome-brands-github:</a>
+- <a href="#">tripStatus.json (coming soon) :fontawesome-brands-github:</a>
 
 You can read them on GitHub or cut and paste the content of the JSON files to <a href="https://jsoncrack.com/editor" target="_blank">JSON Crack :octicons-link-external-24:</a> for more interactive visualization.
 
@@ -245,7 +244,6 @@ This page has shown that:
 - DPDS groups services exposed by a data product in ports. 
 - Five types of ports are supported by DPDS: input port, output port, discovery port, observability port and control port.
 - The description of the interface of all ports exposed by a data product is contained in the [Interface Components Object](../resources/specifications/last.md#interfaceComponentsObject).
->>>>>>> de89097af42a7ab87fc449c35550acfe46485026
 - each data product can have multiple ports of the same type.
 - the interface of each port, independent of the specific type, is described through `promises`, `expectations` and `contracts` fields.
 

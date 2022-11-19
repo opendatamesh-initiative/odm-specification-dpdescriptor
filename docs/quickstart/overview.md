@@ -74,7 +74,7 @@ The content of *general info* part and *interface components* part is shared wit
 ## Trip Execution Data Product Descriptor
 The following image shows the descriptor structure of the [Trip Execution Data Product](./example.md).
 
-![open-data-mesh descriptor components](../images/dpds-structure.svg)
+![trip-execution descriptor components](../images/dpds-structure-ex.svg)
 
 ## Summary
 This page has shown that:

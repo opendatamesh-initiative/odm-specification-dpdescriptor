@@ -108,6 +108,12 @@ The following example shows an application that could be deployed using a Jenkin
     }
 }
 ```
+## Trip Execution Data Product Descriptor
+The [Trip Execution Data Product](./example.md) is composed of three application components.
+
+The file <a href="#">apps.json (coming soon) :fontawesome-brands-github:</a> contains the definition of these components.
+
+You can read it on GitHub or cut and paste its content to <a href="https://jsoncrack.com/editor" target="_blank">JSON Crack :octicons-link-external-24:</a> for more interactive visualization.
 
 ## Summary
 This page has shown that:

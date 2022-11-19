@@ -76,14 +76,20 @@ The following example shows an appliction that could be built using a terraform 
     }
 }
 ```
+## Trip Execution Data Product Descriptor
+The [Trip Execution Data Product](./example.md) is composed of two infrastructural components.
+
+The file <a href="#">infra.json (coming soon) :fontawesome-brands-github:</a> contains the definition of these components.
+
+You can read it on GitHub or cut and paste its content to <a href="https://jsoncrack.com/editor" target="_blank">JSON Crack :octicons-link-external-24:</a> for more interactive visualization.
 
 ## Summary
 This page has shown that:
 
-- a data product is composed not only by its public interface but also by internal componnets
-- infrastructural components required by application components that implement services exposed by a data product through its ports are internal components described through an [Infrastructural Component](../resources/specifications/1.0.0-DRAFT.md#infrastructuralComponent). 
+- a data product is composed not only of its public interface but also of internal components
+- infrastructural components required by application components that implement services exposed by a data product through its ports are internal components described through an [Infrastructural Component](../resources/specifications/1.0.0-DRAFT.md#infrastructuralComponent).
 - [Infrastructural Component](../resources/specifications/1.0.0-DRAFT.md#infrastructuralComponent) contains general information related to the specific infrastructure component but also all the required information to provision the onfrastructure in an automatic and reproducible way.
-- the DPDS uses *infrastructure as code (IaC)*  to define how to provision infrastructure but do not enforce the use of any particular IaC tool, preserving in this way its [technology independence](../overview/README.md#principles).
+- the DPDS uses *infrastructure as code (IaC)*  to define how to provision infrastructure but does not enforce the use of any particular IaC tool, preserving in this way its [technology independence](../overview/README.md#principles).
 
 
-[The next page](./components.md) describes how to reuse portions of an data product descriptor document to make it more readable and less redundant, reducing file size and maintenance cost.
+[The next page](./components.md) describes how to reuse portions of a data product descriptor document to make it more readable and less redundant, reducing file size and maintenance cost.
