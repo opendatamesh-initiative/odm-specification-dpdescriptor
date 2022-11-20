@@ -11,7 +11,12 @@
         }
     },
     "interfaceComponents": {
-        "inputPorts": [],
+        "inputPorts": [
+            {
+                "description": "Through this port trip data is ingested from TMS",
+                "$ref": "tms-trip-iport.json"
+            }
+        ],
         "outputPorts": [
             {
                 "description": "This port exposes the last known status of each trip operated in the last 12 months",

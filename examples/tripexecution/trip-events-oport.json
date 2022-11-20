@@ -1,23 +1,23 @@
 {
-    "fullyQualifiedName": "urn:dpds:com.company-xyz:dataproducts:tripExecution:1:outputports:tripStatus",
-    "name": "tripStatus",
-    "displayName": "Trip Status",
-    "description": "The last known status of each trip operated in the last 12 months",
+    "fullyQualifiedName": "urn:dpds:com.company-xyz:dataproducts:tripExecution:1:outputports:tripEvents",
+    "name": "tripEvents",
+    "displayName": "Trip Events",
+    "description": "This port exposes a *stream of events* related to the `Trip` entity",
     "version": "1.2.0",
     "promises": {
-        "platform": "aws:eu-south-1:postgres",
-        "serviceType": "datastore-services",
+        "platform": "westeurope.azure:confluent",
+        "serviceType": "streaming-services",
         "api": {
-            "description": "The API exposed by the Observability Port that exposes data product logs",
-            "specification": "datastoreaapi",
-            "version": "1.0.0",
+            "specification": "asyncapi",
+            "version": "2.5.0",
             "definition": {
                 "mediaType": "text/json",
-                "$href": "https://mycompany.com/api/v1/planes/utility/logging-services/openapi.json"
+                "$href": "https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/trip-events-oport-api.json"
             },
             "externalDocs": {
+                "description": "The AsyncAPI v2.5.0 specification used to define the API of this port",
                 "mediaType": "text/html",
-                "$href": "https://spec.openapis.org/oas/v3.1.0"
+                "$href": "https://www.asyncapi.com/docs/reference/specification/v2.5.0"
             }
         },
         "deprecationPolicy": {
@@ -30,7 +30,7 @@
             }
         },
         "slo": {
-            "description": "The slo are hight for all base service indicators because this service is business critical",
+            "description": "The SLO are hight for all base service indicators because this service is business critical",
             "x-operationalSlo": {
                 "availability": "0.99999",
                 "responsetime": "1s"
@@ -58,7 +58,7 @@
             "externalDocs": {
                 "description": "A detailed description of the data product, that include also the target audience",
                 "mediaType": "text/html",
-                "$href": "https://wiki.example-xyz.com/corporate-mesh/dp/trip-execution.html"
+                "$href": "https://wiki.example-xyz.com/corporate-mesh/dp/trip-execution.html#audience"
             }
         },
         "usage": {
@@ -73,7 +73,7 @@
             "externalDocs": {
                 "description": "A detailed description of the data product, that include also the expected way to use it",
                 "mediaType": "text/html",
-                "$href": "https://wiki.example-xyz.com/corporate-mesh/dp/trip-execution.html"
+                "$href": "https://wiki.example-xyz.com/corporate-mesh/dp/trip-execution.html#usage"
             }
         }
     },
@@ -86,9 +86,9 @@
             }
         },
         "billingPolicy": {
-            "description": "This port is billed by number of monthly queries",
-            "x-billingUnit": "milion queries",
-            "x-pricePerUnit": 0.01,
+            "description": "This port is billed by outbound throughput",
+            "x-billingUnit": "MB",
+            "x-pricePerUnit": 0.005,
             "x-billingPeriod": "month",
             "externalDocs": {
                 "description": "A detailed description of the data product, that include also the billing policy",

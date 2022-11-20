@@ -1,3 +1,56 @@
 {
-    
+    "asyncapi": "2.5.0",
+    "info": {
+        "title": "tripEventsTopic",
+        "version": "1.0.0",
+        "description": "This API exposes all events related to Trip entity"
+    },
+    "servers": {
+        "test": {
+            "url": "pkc-lq8gm.westeurope.azure.confluent.cloud:9092",
+            "description": "Test Confluent Cloud bootstrap server",
+            "protocol": "kafka",
+            "protocolVersion": "latest"
+        },
+        "production": {
+            "url": "pkc-9z0wm.westeurope.azure.confluent.cloud:9092",
+            "description": "Production Confluent Cloud bootstrap server",
+            "protocol": "kafka",
+            "protocolVersion": "latest"
+        }
+    },
+    "defaultContentType": "avro/binary",
+    "channels": {
+        "trip.domain-events": {
+            "description": "This topic contains all the domain events related to Trip entity",
+            "subscribe": {
+                "operationId": "readTripsDomainEvents",
+                "security": [
+                    "apiKey"
+                ],
+                "message": {
+                    "messageId": "trip.domain-event.trip-value",
+                    "contentType": "avro/binary",
+                    "schemaFormat": "application/vnd.apache.avro",
+                    "payload": {
+                        "$ref": "todo"
+                    },
+                    "bindings": {
+                        "key": {
+                            "type": "string",
+                            "schemaIdPayloadEncoding": "confluent"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "apiKey": {
+                "type": "apiKey",
+                "in": "user"
+            }
+        }
+    }
 }
