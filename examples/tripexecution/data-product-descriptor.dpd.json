@@ -14,17 +14,17 @@
         "inputPorts": [
             {
                 "description": "Through this port trip data is ingested from TMS",
-                "$ref": "tms-trip-iport.json"
+                "$ref": "https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/tms-trip-iport.json"
             }
         ],
         "outputPorts": [
             {
                 "description": "This port exposes the last known status of each trip operated in the last 12 months",
-                "$ref": "trip-status-oport.json"
+                "$ref": "https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/trip-status-oport.json"
             },
             {
                 "description": "This port expose all modifications in the status of each trip as events",
-                "$ref": "trip-events-oport.json"
+                "$ref": "https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/trip-events-oport.json"
             }
         ]
     }

@@ -5,29 +5,24 @@
     "description": "The last known status of each trip operated in the last 12 months",
     "version": "1.2.0",
     "promises": {
-        "platform": "aws:eu-south-1:postgres",
+        "platform": "westeurope.azure::postgres",
         "serviceType": "datastore-services",
         "api": {
-            "description": "-",
             "specification": "datastoreapi",
             "version": "1.0.0",
             "definition": {
                 "mediaType": "text/json",
-                "$href": "trip-status-oport-api.json"
+                "$href": "https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/trip-status-oport-api.json"
             },
             "externalDocs": {
+                "description": "The OpenAPI v3.1.0 specification used to define the API of this port",
                 "mediaType": "text/html",
                 "$href": "https://spec.openapis.org/oas/v3.1.0"
             }
         },
         "deprecationPolicy": {
             "description": "When a new major version become available the previous one is kept online for 3 months",
-            "x-deprecation-period": "3M",
-            "externalDocs": {
-                "description": "A detailed description of the deprecation process",
-                "mediaType": "text/html",
-                "$href": "https://wiki.example-xyz.com/corporate-mesh/dp-deprecation-workflow.html"
-            }
+            "x-deprecation-period": "3M"
         },
         "slo": {
             "description": "The slo are hight for all base service indicators because this service is business critical",
@@ -37,11 +32,6 @@
             },
             "x-qualitySlo": {
                 "freshness": "5m"
-            },
-            "externalDocs": {
-                "description": "A detailed description of the base service indicators that all data products must support",
-                "mediaType": "text/html",
-                "$href": "https://wiki.example-xyz.com/corporate-mesh/dp-base-service-indicators.html"
             }
         }
     },
@@ -54,12 +44,7 @@
             "x-excludes": [
                 "customer-care",
                 "finance"
-            ],
-            "externalDocs": {
-                "description": "A detailed description of the data product, that include also the target audience",
-                "mediaType": "text/html",
-                "$href": "https://wiki.example-xyz.com/corporate-mesh/dp/trip-execution.html"
-            }
+            ]
         },
         "usage": {
             "description": "This port is designed to operational access not for analysis",
@@ -69,12 +54,7 @@
             "x-forbiddenOperations": [
                 "group-by",
                 "unfiltered-selections"
-            ],
-            "externalDocs": {
-                "description": "A detailed description of the data product, that include also the expected way to use it",
-                "mediaType": "text/html",
-                "$href": "https://wiki.example-xyz.com/corporate-mesh/dp/trip-execution.html"
-            }
+            ]
         }
     },
     "contracts": {
@@ -104,11 +84,6 @@
             },
             "x-qualitySla": {
                 "freshness": "10m"
-            },
-            "externalDocs": {
-                "description": "A detailed description of the base service indicators that all data products must support",
-                "mediaType": "text/html",
-                "$href": "https://wiki.example-xyz.com/corporate-mesh/dp-base-service-indicators.html"
             }
         }
     }
