@@ -1,0 +1,5 @@
+expand_buttons: true
+show_breadcrumbs: false
+link_to_reused_ref: false
+footer_show_time: false
+copy_css: false
