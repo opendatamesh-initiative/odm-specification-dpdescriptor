@@ -28,14 +28,9 @@ nav:
     - 'Application Components': './quickstart/application.md'
     - 'Infrastructural Components': './quickstart/infrastructure.md'
     - 'Reusing Descriptions': './quickstart/components.md'
-  #- HowTo(s): 
-  #  - './howto/README.md'
-   # - 'How to build site doc': './howto/build-site-doc.md'
-    #- 'How to build schema doc': './howto/build-schema-doc.md'
   - Community: 
     - './community/README.md'
     - Quantyca: './community/quantyca.md'
-    #- Blindata: './community/blindata.md'
   - Resources: 
     - './resources/README.md'
     - 'Specifications': 
@@ -49,6 +44,7 @@ nav:
     - 'Data Mesh Resources': './resources/resources.md'
     - 'How to': 
       - 'build this site': './resources/howto/build-site-doc.md'
+      - 'build JSON schema documentation': './resources/howto/build-schema-doc.md'
 
 
 ##theme: readthedocs

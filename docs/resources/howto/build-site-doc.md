@@ -8,7 +8,7 @@ They provide many amazing features, perfectly documented in their websites, with
 
 However, we would like to explain here all the prerequisites needed to build this very site and an overview of the principal customizations implemented.
 
-## Prerequisites
+## Setup
 
 The first thing to do in order to be able to build this site is to install <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank">Material for MkDocs:octicons-link-external-24:</a>, it will also install all dependencies: <a href="https://www.mkdocs.org/" target="_blank">MkDocs:octicons-link-external-24:</a>, <a href="https://python-markdown.github.io/" target="_blank">Markdown:octicons-link-external-24:</a>, <a href="https://pygments.org/" target="_blank">Pygments:octicons-link-external-24:</a> and <a href="https://facelessuser.github.io/pymdown-extensions/" target="_blank">Python Markdown Extensions:octicons-link-external-24:</a>.:
 
