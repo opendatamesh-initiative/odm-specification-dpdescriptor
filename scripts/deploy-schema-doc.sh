@@ -16,7 +16,7 @@ Version=""
 Latest=false
 StartingFile="schema-dev.json"
 
-while getopts ":hv:l" option; do
+while getopts ":hv:lf:c:" option; do
     case $option in
         h) # display Help
             Help
@@ -25,6 +25,10 @@ while getopts ":hv:l" option; do
             Version=$OPTARG;;
         l) #Latest
             Latest=true;;
+        f) # not used
+            ;;
+        c) # not used
+            ;;
         \?) # Invalid option
             echo "Error: Invalid option"
             echo "Use -h to see all available options"

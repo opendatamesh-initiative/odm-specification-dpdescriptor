@@ -17,7 +17,7 @@ Version=""
 Latest=false
 StartingFile="schema-dev.json"
 
-while getopts ":hv:lf:" option; do
+while getopts ":hv:lf:c:" option; do
     case $option in
         h) # display Help
             Help
@@ -26,19 +26,21 @@ while getopts ":hv:lf:" option; do
             Version=$OPTARG;;
         l) #Latest
             Latest=true;;
-        f) #Customize file name
+        f) # Customize file name
             StartingFile=$OPTARG;;
+        c) # not used
+            ;;
         \?) # Invalid option
             echo "Error: Invalid option"
             echo "Use -h to see all available options"
-            exit;;
+            exit 1;;
    esac
 done
 
 if [ -z $Version ];
 then
     echo "Error: A version must be specified using option -v"
-    exit;
+    exit 1;
 fi
 
 echo "Version: $Version"
@@ -47,13 +49,13 @@ echo "Latest: $Latest"
 if [ ! -d ../schemas/v$Version ];
 then
     echo "Error: Folder /schemas/v$Version does not exist"
-    exit;
+    exit 1;
 fi
 
 if [ ! -f ../schemas/v$Version/$StartingFile ];
 then
     echo "Error: File $StartingFile not found in /schemas/v$Version"
-    exit;
+    exit 1;
 fi
 
 cd ../schemas/v$Version

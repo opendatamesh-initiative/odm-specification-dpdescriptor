@@ -18,7 +18,7 @@ Latest=false
 StartingFile="schema-dev.json"
 ConfigFilepath="./jsfh-config.yaml"
 
-while getopts ":hv:lc:" option; do
+while getopts ":hv:lf:c:" option; do
     case $option in
         h) # display Help
             Help
@@ -27,6 +27,8 @@ while getopts ":hv:lc:" option; do
             Version=$OPTARG;;
         l) #Latest
             Latest=true;;
+        f) # not used
+            ;;
         c) #Config file name
             ConfigFilepath=$OPTARG;;
         \?) # Invalid option
@@ -65,7 +67,7 @@ fi
 
 if [ ! -d ../schemas/v$Version/docs/html ];
 then
-    mkdir ../schemas/v$Version/docs/html;
+    mkdir -p ../schemas/v$Version/docs/html;
 fi
 
 generate-schema-doc --config-file $ConfigFilepath ../schemas/v$Version/schema.json ../schemas/v$Version/docs/html/schema.html
