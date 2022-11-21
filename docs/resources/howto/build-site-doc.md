@@ -76,6 +76,12 @@ Install the other dependencies depending on your system:
   [GTK+]: https://www.gtk.org/docs/installations/windows/
   [GTK runtime]: https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases
 
+!!! tip 
+
+    If you are on Ubuntu you can directly launch the `setup.sh` script located in `script` folder!
+
+    It contains all the previously described steps.
+
 ## Building
 
 In order to build the site, the following command must be launched in the root directory:
