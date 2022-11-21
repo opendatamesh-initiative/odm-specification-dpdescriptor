@@ -1,0 +1,57 @@
+{
+    "tripStatus": {
+        "name": "trip_status",
+        "version": "1.0.0",
+        "fullyQualifiedName": "urn:dsas:com.company-xyz:tables:tripdb.traking.trip_status",
+        "displayName": "Trips Status Table",
+        "description": "The table that store the updated status of each trip",
+        "tableType": "LOCAL",
+        "columns": [
+            {
+                "name": "id",
+                "fullyQualifiedName": "urn:dsas:com.company-xyz:tables:tables:tripdb.traking.trip_status.id",
+                "displayName": "Trip ID",
+                "dataType": "INTEGER",
+                "columnConstraint": "PRIMARY_KEY",
+                "ordinalPosition": 1
+            },{
+                "name": "status",
+                "fullyQualifiedName": "urn:dsas:com.company-xyz:tables:tables:tripdb.traking.trip_status.id",
+                "displayName": "Status",
+                "dataType": "VARCHAR",
+                "dataLength": "50",
+                "columnConstraint": "NOT_NULL",
+                "ordinalPosition": 2
+            },{
+                "name": "position",
+                "fullyQualifiedName": "urn:dsas:com.company-xyz:tables:tables:tripdb.traking.trip_status.position",
+                "displayName": "Position",
+                "dataType": "VARCHAR",
+                "dataLength": "50",
+                "columnConstraint": "NOT_NULL",
+                "ordinalPosition": 3
+            }, {
+                "name": "last_status_update",
+                "fullyQualifiedName": "urn:dsas:com.company-xyz:tables:tables:tripdb.traking.trip_status.last_status_update",
+                "displayName": "Last Status Update",
+                "dataType": "TIMESTAMP",
+                "columnConstraint": "NOT_NULL",
+                "ordinalPosition": 4
+            }, {
+                "name": "last_position_update",
+                "fullyQualifiedName": "urn:dsas:com.company-xyz:tables:tables:tripdb.traking.trip_status.last_position_update",
+                "displayName": "Last Position Update",
+                "dataType": "TIMESTAMP",
+                "columnConstraint": "NOT_NULL",
+                "ordinalPosition": 5
+            }, {
+                "name": "planning_date",
+                "fullyQualifiedName": "urn:dsas:com.company-xyz:tables:tables:tripdb.traking.trip_status.planning_date",
+                "displayName": "Planning Timestamp",
+                "dataType": "DATE",
+                "columnConstraint": "NOT_NULL",
+                "ordinalPosition": 6
+            }                    
+        ]
+    }
+}

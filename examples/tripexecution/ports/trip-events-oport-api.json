@@ -6,9 +6,9 @@
         "description": "This API exposes all events related to `Trip` entity"
     },
     "servers": {
-        "test": {
+        "development": {
             "url": "https://company-xyz.com/platform/dev/confluent-cloud",
-            "description": "Confluent Cloud TEST bootstrap server",
+            "description": "Confluent Cloud DEV bootstrap server",
             "protocol": "kafka",
             "protocolVersion": "latest",
             "bindings": {

@@ -45,16 +45,6 @@
                 "customer-care",
                 "finance"
             ]
-        },
-        "usage": {
-            "description": "This port is designed to operational access not for analysis",
-            "x-filterOn": [
-                "id"
-            ],
-            "x-forbiddenOperations": [
-                "group-by",
-                "unfiltered-selections"
-            ]
         }
     },
     "contracts": {

@@ -2,26 +2,24 @@
     "datastoreapi": "1.0.0",
     "info": {
         "title": "Trip Status",
-        "summary": "A read view of Trip entities",
-        "description": "This table stores the updated status of all trips",
+        "summary": "This API exposes the current state of each `Trip` entity",
         "version": "1.1.1"
     },
-
     "services": {
         "development": {
             "serverInfo": {
-                "$ref": "#components.serverInfo.tripServerInfo"
+                "$ref": "#components.serverInfo.tripStatusStoreServerInfo"
             },
             "serverVariables": {
-                "host": "ip-10-24-32-0.ec2.internal"
+                "host": "ip-10-24-32-0.pgs.internal"
             }
         },
         "production": {
             "serverInfo": {
-                "$ref": "#components.serverInfo.tripServerInfo"
+                "$ref": "#components.serverInfo.tripStatusStoreServerInfo"
             },
             "serverVariables": {
-                "host": "ip-10-24-34-0.ec2.internal"
+                "host": "ip-10-24-34-0.pgs.internal"
             }
         }
     },
@@ -30,21 +28,15 @@
         "schemaName": "tracking",
         "tables": [
             {
-                "$ref": "#components.tables.sales"
-            },
-            {
-                "$ref": "#components.services.customers"
-            },
-            {
-                "$ref": "#components.services.products"
+                "$ref": "https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/trip-status-oport-api.json#tripStatus"
             }
         ]
     },
     "components": {
         "serverInfo": {
-            "foodmartServerInfo": {
-                "name:": "SALES Datastore Service",
-                "description": "The service that host the `SALES` datastore in the given environment",
+            "tripStatusStoreServerInfo": {
+                "name:": "Trip Status Datastore Service",
+                "description": "The service that host the `TRIPS` datastore in the given environment",
                 "host:": "{host}",
                 "port:": "5432",
                 "serviceType:": "Postgres",
@@ -68,335 +60,6 @@
                         }
                     }
                 }
-            }
-        },
-        "tables": {
-            "sales": {
-                "name": "sales_fact_dec_1998",
-                "version": "1.0.0",
-                "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.sales_fact_dec_1998.1",
-                "displayName": "Foodmart Sales Fact Table",
-                "description": "The fact table that store all sales of 1998",
-                "tableType": "LOCAL",
-                "constraints": [
-                    {
-                        "constraintType": "PRIMARY_KEY",
-                        "columns": [
-                            "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.sales_fact_dec_1998.customer_id",
-                            "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.sales_fact_dec_1998.product_id"
-                        ]
-                    }, {
-                        "constraintType": "FOREIGN_KEY",
-                        "columns": [
-                            "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.sales_fact_dec_1998.customer_id",
-                            "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.customer.customer_id"
-                        ]
-                    }, {
-                        "constraintType": "FOREIGN_KEY",
-                        "columns": [
-                           "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.sales_fact_dec_1998.customer_id",
-                           "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.product.product_id"
-                        ]
-                    }
-                ],
-                "columns": [
-                    {
-                        "name": "customer_id",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.sales_fact_dec_1998.customer_id",
-                        "displayName": "Customer ID",
-                        "dataType": "INTEGER",
-                        "columnConstraint": "PRIMARY_KEY",
-                        "ordinalPosition": 1
-
-                    }, {
-                        "name": "product_id",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.sales_fact_dec_1998.product_id",
-                        "displayName": "Product ID",
-                        "dataType": "INTEGER",
-                        "columnConstraint": "PRIMARY_KEY",
-                        "ordinalPosition": 2
-
-                    }, {
-                        "name": "store_sales",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.sales_fact_dec_1998.store_sales",
-                        "displayName": "Store Sales",
-                        "dataType": "DECIMAL",
-                        "precision": "10",
-                        "scale": "4",
-                        "columnConstraint": "NOT NULL",
-                        "ordinalPosition": 3
-                    }, {
-                        "name": "store_cost",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.sales_fact_dec_1998.store_cost",
-                        "displayName": "Store Cost",
-                        "dataType": "DECIMAL",
-                        "precision": "10",
-                        "scale": "4",
-                        "columnConstraint": "NOT NULL",
-                        "ordinalPosition": 4
-                    }, {
-                        "name": "unit_sales",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.sales_fact_dec_1998.unit_sales",
-                        "displayName": "Store Cost",
-                        "dataType": "DECIMAL",
-                        "precision": "10",
-                        "scale": "4",
-                        "columnConstraint": "NOT NULL",
-                        "ordinalPosition": 5
-                    }
-                ]
-            },
-            "customer": {
-                "name": "customer",
-                "version": "1.0.0",
-                "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.customer.1",
-                "displayName": "Foodmart Customer Dimension Table",
-                "description": "The dimesnion table that store all customers",
-                "tableType": "LOCAL",
-                "columns": [
-                    {
-                        "name": "customer_id",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.customer.customer_id",
-                        "displayName": "Customer ID",
-                        "dataType": "INTEGER",
-                        "columnConstraint": "PRIMARY_KEY",
-                        "ordinalPosition": 1
-
-                    }, {
-                        "name": "account_num",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.customer.account_num",
-                        "displayName": "Account Number",
-                        "dataType": "BIGINT",
-                        "columnConstraint": "NOT_NULL",
-                        "ordinalPosition": 2
-
-                    }, {
-                        "name": "lname",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.customer.lname",
-                        "displayName": "Last Name",
-                        "dataType": "VARCHAR",
-                        "dataLength": "30",
-                        "columnConstraint": "NOT_NULL",
-                        "ordinalPosition": 3
-                    }, {
-                        "name": "fname",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.customer.fname",
-                        "displayName": "First Name",
-                        "dataType": "VARCHAR",
-                        "dataLength": "30",
-                        "columnConstraint": "NOT_NULL",
-                        "ordinalPosition": 4
-
-                    }, {
-                        "name": "address",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.customer.address",
-                        "displayName": "Address",
-                        "dataType": "VARCHAR",
-                        "dataLength": "200",
-                        "ordinalPosition": 5
-
-                    }, {
-                        "name": "phone",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.customer.phone",
-                        "displayName": "Phone",
-                        "dataType": "VARCHAR",
-                        "dataLength": "30",
-                        "ordinalPosition": 6
-
-                    }, {
-                        "name": "birthdate",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.customer.birthdate",
-                        "displayName": "Birthdate",
-                        "dataType": "DATE",
-                        "columnConstraint": "NOT_NULL",
-                        "ordinalPosition": 7
-                    }, {
-                        "name": "marital_status",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.customer.marital_status",
-                        "displayName": "Marital Status",
-                        "dataType": "VARCHAR",
-                        "dataLength": "30",
-                        "columnConstraint": "NOT_NULL",
-                        "ordinalPosition": 8
-                    }, {
-                        "name": "yearly_income",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.customer.yearly_income",
-                        "displayName": "Yearly Income",
-                        "dataType": "VARCHAR",
-                        "dataLength": "30",
-                        "columnConstraint": "NOT_NULL",
-                        "ordinalPosition": 9
-                    }, {
-                        "name": "gender",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.customer.gender",
-                        "displayName": "Gender",
-                        "dataType": "VARCHAR",
-                        "dataLength": "30",
-                        "columnConstraint": "NOT_NULL",
-                        "ordinalPosition": 10
-                    }, {
-                        "name": "total_children",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.customer.total_children",
-                        "displayName": "Total Children",
-                        "dataType": "SMALLINT",
-                        "columnConstraint": "NOT_NULL",
-                        "ordinalPosition": 11
-                    }, {
-                        "name": "num_children_at_home",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.customer.num_children_at_home",
-                        "displayName": "Number Children At Home",
-                        "dataType": "SMALLINT",
-                        "columnConstraint": "NOT_NULL",
-                        "ordinalPosition": 12
-                    }, {
-                        "name": "education",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.customer.education",
-                        "displayName": "Education",
-                        "dataType": "VARCHAR",
-                        "dataLength": "30",
-                        "columnConstraint": "NOT_NULL",
-                        "ordinalPosition": 13
-                    }, {
-                        "name": "member_card",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.customer.member_card",
-                        "displayName": "Member Card",
-                        "dataType": "VARCHAR",
-                        "dataLength": "30",
-                        "ordinalPosition": 14
-                    }, {
-                        "name": "occupation",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.customer.occupation",
-                        "displayName": "Occupation",
-                        "dataType": "VARCHAR",
-                        "dataLength": "30",
-                        "ordinalPosition": 15
-                    }, {
-                        "name": "houseowner",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.customer.houseowner",
-                        "displayName": "Houseowner",
-                        "dataType": "VARCHAR",
-                        "dataLength": "30",
-                        "ordinalPosition": 16
-                    }, {
-                        "name": "num_cars_owned",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.customer.num_cars_owned",
-                        "displayName": "Num Cars Owned",
-                        "dataType": "INTEGER",
-                        "ordinalPosition": 17
-                    }
-                ]
-            },
-            "product": {
-                "name": "product",
-                "version": "1.0.0",
-                "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.product.1",
-                "displayName": "Foodmart Product Dimension Table",
-                "description": "The dimesnion table that store all products",
-                "tableType": "LOCAL",
-                "columns": [
-                    {
-                        "name": "product_id",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.product.product_id",
-                        "displayName": "Product ID",
-                        "dataType": "INTEGER",
-                        "columnConstraint": "PRIMARY_KEY",
-                        "ordinalPosition": 1
-
-                    }, {
-                        "name": "brand_name",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.product.brand_name",
-                        "displayName": "Product ID",
-                        "dataType": "VARCHAR",
-                        "dataLength": "60",
-                        "columnConstraint": "NOT NULL",
-                        "ordinalPosition": 2
-
-                    }, {
-                        "name": "product_name",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.product.product_name",
-                        "displayName": "Product ID",
-                        "dataType": "VARCHAR",
-                        "dataLength": "60",
-                        "columnConstraint": "NOT NULL",
-                        "ordinalPosition": 3
-                    }, {
-                        "name": "SKU",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.product.SKU",
-                        "displayName": "SKU",
-                        "dataType": "BIGINT",
-                        "columnConstraint": "NOT NULL",
-                        "ordinalPosition": 4
-                    }, {
-                        "name": "SRP",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.product.SRP",
-                        "displayName": "SKU",
-                        "dataType": "BIGINT",
-                        "precision": "10",
-                        "scale": "4",
-                        "ordinalPosition": 5
-                    }, {
-                        "name": "gross_weight",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.product.gross_weight",
-                        "displayName": "Gross Weight",
-                        "dataType": "REAL",
-                        "ordinalPosition": 6
-                    }, {
-                        "name": "net_weight",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.product.net_weight",
-                        "displayName": "Net Weight",
-                        "dataType": "REAL",
-                       
-                        "ordinalPosition": 7
-                    }, {
-                        "name": "net_recyclable_packageweight",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.product.recyclable_package",
-                        "displayName": "Net Recyclable Package Weight",
-                        "dataType": "REAL",
-                        "ordinalPosition": 8
-                    }, {
-                        "name": "low_fat",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.product.low_fat",
-                        "displayName": "Low Fat",
-                        "dataType": "SMALLINT",
-                        "ordinalPosition": 9
-                    }, {
-                        "name": "units_per_case",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.product.units_per_case",
-                        "displayName": "Units Per Case",
-                        "dataType": "SMALLINT",
-                        "ordinalPosition": 10
-                    }, {
-                        "name": "cases_per_pallet",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.product.cases_per_pallet",
-                        "displayName": "Cases Per Pallet",
-                        "dataType": "SMALLINT",
-                        "ordinalPosition": 11
-                    }, {
-                        "name": "cases_per_pallet",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.product.cases_per_pallet",
-                        "displayName": "Cases Per Pallet",
-                        "dataType": "REAL",
-                        "ordinalPosition": 12
-                    }, {
-                        "name": "shelf_width",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.product.shelf_width",
-                        "displayName": "Shelf Width",
-                        "dataType": "REAL",
-                        "ordinalPosition": 13
-                    }, {
-                        "name": "shelf_height",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.product.shelf_height",
-                        "displayName": "Shelf Height",
-                        "dataType": "REAL",
-                        "ordinalPosition": 14
-                    }, {
-                        "name": "shelf_depth",
-                        "fullyQualifiedName": "urn:dsas:it.quantyca:tables:foodmart.foodmartdb.dwh.product.shelf_depth",
-                        "displayName": "Shelf Depth",
-                        "dataType": "REAL",
-                        "ordinalPosition": 15
-                    }
-                ]
             }
         }
     }
