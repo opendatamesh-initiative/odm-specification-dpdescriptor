@@ -1,0 +1,52 @@
+{
+    "type": "record",
+    "name": "TripStatusChange",
+    "namespace": "com.company-xyz.transportmng.tripexecution",
+    "fields": [
+        {
+            "name": "id",
+            "type": {
+                "avro.java.string": "String",
+                "type": "string"
+            }
+        },
+        {
+            "name": "event-type",
+            "type": {
+                "name": "tripEvent",
+                "symbols": [
+                    "planned",
+                    "booking-started",
+                    "booking-ended",
+                    "loading-started",
+                    "loading-ended",
+                    "departed-from-origin",
+                    "unloading-at-stop-started",
+                    "unloading-at-stop-ended",
+                    "loading-at-stop-started",
+                    "loading-at-stop-ended",
+                    "departed-from-stop",
+                    "arrived-at-destination",
+                    "unloading-started",
+                    "unloading-ended",
+                    "completed"
+                ],
+                "type": "enum"
+            }
+        },
+        {
+            "name": "event-timestamp",
+            "type": {
+                "avro.java.string": "String",
+                "type": "string"
+            }
+        }, {
+            "name": "source-system",
+            "default": "TMS",
+            "type": {
+                "avro.java.string": "String",
+                "type": "string"
+            }
+        }
+    ]
+}
