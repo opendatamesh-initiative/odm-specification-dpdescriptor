@@ -1,0 +1,28 @@
+{
+    "type": "record",
+    "name": "TripPositionNotification",
+    "namespace": "com.company-xyz.transportmng.tripexecution",
+    "fields": [
+        {
+            "name": "id",
+            "type": {
+                "avro.java.string": "String",
+                "type": "string"
+            }
+        },
+        {
+            "name": "position",
+            "type": {
+                "avro.java.string": "String",
+                "type": "string"
+            }
+        },
+        {
+            "name": "event-timestamp",
+            "type": {
+                "avro.java.string": "String",
+                "type": "string"
+            }
+        }
+    ]
+}

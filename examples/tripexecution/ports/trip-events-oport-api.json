@@ -1,49 +1,108 @@
 {
     "asyncapi": "2.5.0",
     "info": {
-        "title": "tripEventsTopic",
+        "title": "Trip Status Streaming API",
         "version": "1.0.0",
-        "description": "This API exposes all events related to Trip entity"
+        "description": "This API exposes all events related to `Trip` entity"
     },
     "servers": {
         "test": {
-            "url": "pkc-lq8gm.westeurope.azure.confluent.cloud:9092",
-            "description": "Test Confluent Cloud bootstrap server",
+            "url": "https://company-xyz.com/platform/dev/confluent-cloud",
+            "description": "Confluent Cloud TEST bootstrap server",
             "protocol": "kafka",
-            "protocolVersion": "latest"
+            "protocolVersion": "latest",
+            "bindings": {
+                "kafka": {
+                    "schemaRegistryUrl": "https://company-xyz.com/platform/dev/confluent-schema-registry",
+                    "schemaRegistryVendor": "confluent"
+                }
+            }
         },
         "production": {
-            "url": "pkc-9z0wm.westeurope.azure.confluent.cloud:9092",
-            "description": "Production Confluent Cloud bootstrap server",
+            "url": "https://company-xyz.com/platform/prod/confluent-cloud",
+            "description": "Confluent Cloud PRODUCTION bootstrap server",
             "protocol": "kafka",
-            "protocolVersion": "latest"
+            "protocolVersion": "latest",
+            "bindings": {
+                "kafka": {
+                    "schemaRegistryUrl": "https://company-xyz.com/platform/prod/confluent-schema-registry",
+                    "schemaRegistryVendor": "confluent"
+                }
+            }
         }
     },
     "defaultContentType": "avro/binary",
     "channels": {
-        "trip.domain-events": {
-            "description": "This topic contains all the domain events related to Trip entity",
+        "transportmng.tripexecution.devents.status": {
+            "description": "This topic contains all the *domain events* related to `Trip` entity",
             "subscribe": {
-                "operationId": "readTripsDomainEvents",
+                "operationId": "readTripStatusEvents",
                 "security": [
-                    "apiKey"
+                    {
+                        "apiKey": []
+                    }
                 ],
                 "message": {
-                    "messageId": "trip.domain-event.trip-value",
+                    "messageId": "tripStatusEvent",
                     "contentType": "avro/binary",
                     "schemaFormat": "application/vnd.apache.avro",
                     "payload": {
-                        "$ref": "todo"
+                        "$ref": "https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/ports/trip-events-oport-status-change-schema.avsc"
                     },
                     "bindings": {
-                        "key": {
-                            "type": "string",
-                            "schemaIdPayloadEncoding": "confluent"
+                        "kafka": {
+                            "schemaIdPayloadEncoding": "confluent",
+                            "schemaLookupStrategy": "TopicIdStrategy",
+                            "key": {
+                                "type": "string",
+                                "enum": ["id"]
+                            }
                         }
                     }
                 }
+            }, 
+            "bindings": {
+                "kafka": {
+                    "partitions": 20,
+                    "replicas": 3
+                }
+            }
+        }, "transportmng.tripexecution.devents.position": {
+            "description": "This topic contains all the *domain events* related position tracking of `Trip` entity",
+            "subscribe": {
+                "operationId": "readTripPositionEvents",
+                "security": [
+                    {
+                        "apiKey": []
+                    }
+                ],
+                "message": {
+                    "messageId": "tripPositionEvent",
+                    "contentType": "avro/binary",
+                    "schemaFormat": "application/vnd.apache.avro",
+                    "payload": {
+                        "$ref": "https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/ports/trip-events-oport-position-notification-schema.avsc"
+                    },
+                    "bindings": {
+                        "kafka": {
+                            "schemaIdPayloadEncoding": "confluent",
+                            "schemaLookupStrategy": "TopicIdStrategy",
+                            "key": {
+                                "type": "string",
+                                "enum": ["id"]
+                            }
+                        }
+                    }
+                }
+            }, 
+            "bindings": {
+                "kafka": {
+                    "partitions": 20,
+                    "replicas": 3
+                }
             }
         }
+        
     },
     "components": {
         "securitySchemes": {
