@@ -1,15 +1,16 @@
 {
     "datastoreapi": "1.0.0",
     "info": {
-        "title": "Foodmart Sales Datastore",
-        "summary": "The sales datamart",
-        "description": "This fact table store all the sales of last five years together with key analysis dimensions (ex. stores, products, promotions, ecc...)",
+        "title": "Trip Status",
+        "summary": "A read view of Trip entities",
+        "description": "This table stores the updated status of all trips",
         "version": "1.1.1"
     },
+
     "services": {
         "development": {
             "serverInfo": {
-                "$ref": "#components.serverInfo.foodmartServerInfo"
+                "$ref": "#components.serverInfo.tripServerInfo"
             },
             "serverVariables": {
                 "host": "ip-10-24-32-0.ec2.internal"
@@ -17,7 +18,7 @@
         },
         "production": {
             "serverInfo": {
-                "$ref": "#components.serverInfo.foodmartServerInfo"
+                "$ref": "#components.serverInfo.tripServerInfo"
             },
             "serverVariables": {
                 "host": "ip-10-24-34-0.ec2.internal"
@@ -25,8 +26,8 @@
         }
     },
     "schema": {
-        "databaseName": "foodmartdb",
-        "schemaName": "dwh",
+        "databaseName": "tripdb",
+        "schemaName": "tracking",
         "tables": [
             {
                 "$ref": "#components.tables.sales"

@@ -22,12 +22,7 @@
         },
         "deprecationPolicy": {
             "description": "When a new major version become available the previous one is kept online for 3 months",
-            "x-deprecation-period": "3M",
-            "externalDocs": {
-                "description": "A detailed description of the deprecation process",
-                "mediaType": "text/html",
-                "$href": "https://wiki.example-xyz.com/corporate-mesh/dp-deprecation-workflow.html"
-            }
+            "x-deprecation-period": "3M"
         },
         "slo": {
             "description": "The SLO are hight for all base service indicators because this service is business critical",
@@ -37,11 +32,6 @@
             },
             "x-qualitySlo": {
                 "freshness": "5m"
-            },
-            "externalDocs": {
-                "description": "A detailed description of the base service indicators that all data products must support",
-                "mediaType": "text/html",
-                "$href": "https://wiki.example-xyz.com/corporate-mesh/dp-base-service-indicators.html"
             }
         }
     },
@@ -54,12 +44,7 @@
             "x-excludes": [
                 "customer-care",
                 "finance"
-            ],
-            "externalDocs": {
-                "description": "A detailed description of the data product, that include also the target audience",
-                "mediaType": "text/html",
-                "$href": "https://wiki.example-xyz.com/corporate-mesh/dp/trip-execution.html#audience"
-            }
+            ]
         },
         "usage": {
             "description": "This port is designed to operational access not for analysis",
@@ -69,12 +54,7 @@
             "x-forbiddenOperations": [
                 "group-by",
                 "unfiltered-selections"
-            ],
-            "externalDocs": {
-                "description": "A detailed description of the data product, that include also the expected way to use it",
-                "mediaType": "text/html",
-                "$href": "https://wiki.example-xyz.com/corporate-mesh/dp/trip-execution.html#usage"
-            }
+            ]
         }
     },
     "contracts": {
@@ -89,12 +69,7 @@
             "description": "This port is billed by outbound throughput",
             "x-billingUnit": "MB",
             "x-pricePerUnit": 0.005,
-            "x-billingPeriod": "month",
-            "externalDocs": {
-                "description": "A detailed description of the data product, that include also the billing policy",
-                "mediaType": "text/html",
-                "$href": "https://wiki.example-xyz.com/corporate-mesh/dp/trip-execution.html#billing"
-            }
+            "x-billingPeriod": "month"
         },
         "sla": {
             "description": "The sla are hight for all base service indicators because this service is business critical",
@@ -104,11 +79,6 @@
             },
             "x-qualitySla": {
                 "freshness": "10m"
-            },
-            "externalDocs": {
-                "description": "A detailed description of the base service indicators that all data products must support",
-                "mediaType": "text/html",
-                "$href": "https://wiki.example-xyz.com/corporate-mesh/dp-base-service-indicators.html"
             }
         }
     }
