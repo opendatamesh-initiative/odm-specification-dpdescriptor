@@ -9,9 +9,8 @@ Help()
    echo "options:"
    echo "v     Specify the version to be updated."
    echo "l     Specify if the version is the latest."
-   #echo "v     Verbose mode."
-   #echo "V     Print software version and exit."
-   #echo
+   echo "f     Specify alternate source file name. (Default: schema-dev.json)"
+   echo
 }
 
 Version=""

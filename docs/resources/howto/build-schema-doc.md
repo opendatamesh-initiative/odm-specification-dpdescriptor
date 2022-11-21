@@ -16,7 +16,7 @@ pip install json-schema-for-humans
 
 ## Editing
 
-We suggest to use a working copy of the schema instead of editing the principal version itself.
+We suggest using a working copy of the schema instead of editing the principal version itself.
 
 The working copy we use is named `schema-dev.json` and it is located under the respective `schemas/<version>` folder but any other file can serve the same purpose.
 
