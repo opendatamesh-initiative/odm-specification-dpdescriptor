@@ -44,7 +44,7 @@ nav:
     - 'Data Mesh Resources': './resources/resources.md'
     - 'How to': 
       - 'build this site': './resources/howto/build-site-doc.md'
-      - 'build JSON schema documentation': './resources/howto/build-schema-doc.md'
+      - 'manage JSON schemas': './resources/howto/build-schema-doc.md'
 
 
 ##theme: readthedocs
