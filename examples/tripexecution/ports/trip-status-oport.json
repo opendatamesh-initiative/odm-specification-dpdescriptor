@@ -70,11 +70,7 @@
             "x-billingUnit": "milion queries",
             "x-pricePerUnit": 0.01,
             "x-billingPeriod": "month",
-            "externalDocs": {
-                "description": "A detailed description of the data product, that include also the billing policy",
-                "mediaType": "text/html",
-                "$href": "https://wiki.example-xyz.com/corporate-mesh/dp/trip-execution.html#billing"
-            }
+
         },
         "sla": {
             "description": "The sla are hight for all base service indicators because this service is business critical",
