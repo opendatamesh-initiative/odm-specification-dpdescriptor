@@ -1,14 +1,14 @@
 {
-    "fullyQualifiedName": "urn:dpds:com.company-xyz:dataproducts:tripExecution:1:applications:cdcIngestion",
-    "version": "1.0.1",
-    "description": "The app that offload the Trip aggregate from  TMS using CDC",
-    "platform": "westeurope.azure:debezium",
-    "applicationType":"stream-sourcing",
+    "fullyQualifiedName": "urn:dpds:com.company-xyz:dataproducts:tripExecution:1:applications:dbSinkConnector",
+    "version": "1.1.3",
+    "description": "The app that store the updated state of a Trip in the target postgres db",
+    "platform": "westeurope.azure:confluent",
+    "applicationType": "stream-transformation",
     "buildInfo": {
         "service": "jenkins",
         "template": {
             "mediaType": "text/jenkinsfile",
-            "$href": "https://github.com/opendatamesh-initiative/cd-ingestion-app/blob/main/jenkinsfile"
+            "$href": "https://github.com/opendatamesh-initiative/db-sink-connector-app/blob/main/jenkinsfile"
         },
         "configurations": {
             "TARGET_STAGE": "BUILD"
@@ -21,7 +21,7 @@
         },
         "template": {
             "mediaType": "text/jenkinsfile",
-            "$href": "https://github.com/opendatamesh-initiative/cd-ingestion-app/blob/main/jenkinsfile"
+            "$href": "https://github.com/opendatamesh-initiative/db-sink-connector-app/blob/main/jenkinsfile"
         },
         "configurations": {
             "START_STAGE": "BUILD",
