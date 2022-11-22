@@ -4,6 +4,12 @@
   <img src ="./docs/images/logos/opendatamesh-small.png" />
 </p>
 
+<p align="center">
+<img alt="GitHub" src="https://img.shields.io/github/license/opendatamesh-initiative/odm-specification-dpdescriptor">
+<img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/w/opendatamesh-initiative/odm-specification-dpdescriptor">
+<img alt="Website" src="https://img.shields.io/website?url=https%3A%2F%2Fdpds.opendatamesh.org%2F">
+</p>
+
 The **Data Product Descriptor Specification (DPDS)** is a community-driven open specification that declaratively defines a data product in all its components using a JSON or YAML descriptor document. It is released under [Apache 2.0 license](./LICENSE). Contributions from the data community are welcomed!
 
 ## Status
