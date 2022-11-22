@@ -1,0 +1,31 @@
+{
+    "fullyQualifiedName": "urn:dpds:com.company-xyz:dataproducts:tripExecution:1:applications:eventProcessor",
+    "version": "1.1.0",
+    "description": "The app that transform tecnical events in domain events",
+    "platform": "westeurope.azure:confluent",
+    "applicationType": "stream-transformation",
+    "buildInfo": {
+        "service": "jenkins",
+        "template": {
+            "mediaType": "text/jenkinsfile",
+            "$href": "https://github.com/opendatamesh-initiative/event-processorn-app/blob/main/jenkinsfile"
+        },
+        "configurations": {
+            "TARGET_STAGE": "BUILD"
+        }
+    },
+    "deployInfo": {
+        "service": {
+            "mediaType": "application",
+            "$href": "https://jenkins.company-xyz.com/api/v1/planes/utility/integration-services/builds"
+        },
+        "template": {
+            "mediaType": "text/jenkinsfile",
+            "$href": "https://github.com/opendatamesh-initiative/event-processor-app/blob/main/jenkinsfile"
+        },
+        "configurations": {
+            "START_STAGE": "BUILD",
+            "TARGET_STAGE": "DEPLOY"
+        }
+    }
+}

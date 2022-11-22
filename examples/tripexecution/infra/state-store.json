@@ -1,0 +1,17 @@
+{
+    "fullyQualifiedName": "urn:dpds:com.company-xyz:dataproducts:tripExecution:1:infrastructure:stateStore",
+    "version": "1.0.0",
+    "description": "The database used by dbSinkConnector application to store the Trip updated state",
+    "platform": "westeurope.azure:postgress",
+    "infrastructureType":"storage-resource",
+    "provisionInfo": {
+        "service": "terraform",
+        "template": {
+            "mediaType": "text/terraformfile",
+            "$href": "https://github.com/opendatamesh-initiative/state-store/blob/main/main.tf"
+       },
+        "configurations": {
+            "SCHEMA": "tracking"
+        }
+    }
+}

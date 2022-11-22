@@ -14,18 +14,41 @@
         "inputPorts": [
             {
                 "description": "Through this port trip data is ingested from TMS",
-                "$ref": "https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/tms-trip-iport.json"
+                "$ref": "https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/ports/tms-trip-iport.json"
             }
         ],
         "outputPorts": [
             {
                 "description": "This port exposes the last known status of each trip operated in the last 12 months",
-                "$ref": "https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/trip-status-oport.json"
+                "$ref": "https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/ports/trip-status-oport.json"
             },
             {
                 "description": "This port expose all modifications in the status of each trip as events",
-                "$ref": "https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/trip-events-oport.json"
+                "$ref": "https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/ports/trip-events-oport.json"
             }
         ]
+    },
+    "internalComponents": {
+        "applicationComponents": [
+            {
+                "description": "TODO",
+                "$ref": "https://github.com/opendatamesh-initiative/cd-ingestion-app/blob/main/examples/tripexecution/apps/cdc-ingestion-app.json"
+            }, {
+                "description": "TODO",
+                "$ref": "https://github.com/opendatamesh-initiative/cd-ingestion-app/blob/main/examples/tripexecution/apps/event-processor-app.json" 
+            }, {
+                "description": "TODO",
+                "$ref": "https://github.com/opendatamesh-initiative/cd-ingestion-app/blob/main/examples/tripexecution/apps/db-sink-connector--app.json" 
+            }
+        ],
+        "infrastructuralComponents": [{
+            {
+                "description": "TODO",
+                "$ref": "https://github.com/opendatamesh-initiative/cd-ingestion-app/blob/main/examples/tripexecution/infra/event-store.json"
+            }, {
+                "description": "TODO",
+                "$ref": "https://github.com/opendatamesh-initiative/cd-ingestion-app/blob/main/examples/tripexecution/infra/state-store.json" 
+            }
+        }]
     }
 }
