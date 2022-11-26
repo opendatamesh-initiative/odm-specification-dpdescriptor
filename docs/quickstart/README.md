@@ -11,9 +11,9 @@ The following pages introduce the syntax and structure of a data product descrip
 - [Interface Components](./interface.md): `interfaceComponents`, `promises`, `expectations` and `contracts`
 - [Application Components](./application.md): `applicationComponents`, `buildService` and `deploymentService`
 - [Infrastructural Components](./infrastructure.md): `infrastructuralComponents` and  `provisioningService`
-- [Reusing Descriptions](./components.md): `components` and `$ref`.
-- [External Resources](./resources): *coming soon...*
-- [Standard Definitions](./definitions): *coming soon...*
-- [Extending the specification](./extensions): *coming soon...*
-- [Putting all together](./extensions): *coming soon...*
+- [Reusing descriptions](./components.md): `components` and `$ref`.
+- [External Resources](./resources.md): fields of type [External Resource Object](../resources/specifications/last.md#applicationComponent)
+- [Providing documentation](./definitions.md): `summary`, `description` and `externalDocs`
+- [Extending the specification](./extensions.md): *coming soon...*
+- [Putting all together](./summary.md): *coming soon...*
 

@@ -12,9 +12,10 @@ All internal components of a data product are contained in the [Internal Compone
 ### Fields
 An [Application Component](../resources/specifications/1.0.0-DRAFT.md#applicationComponent) has the following two mandatory fields:
 
-- `fullyQualifiedName` (string:fqn): This is the unique universal identifier of the component. It MUST be a URN of the form `urn:dpds:{mesh-namespace}:dataproducts:{product-name}:{product-major-version}:applications:{app-name}`
-- `version` (string:version): This is the <a href="https://semver.org/spec/v2.0.0.html" target="_blank">semantic version number</a> of the data product's application component. The version of application components has no direct impact on the version of the data product they belong to. A change in the major version of an application component can anyway impact the version of one interface component and so indirectly the version of the data product.
-Other non-mandatory descriptive fields like `platform` and `applicationType` are also available. Moreover, the [Application](../resources/specifications/1.0.0-DRAFT.md#applicationComponent) Component](../resources/specifications/1.0.0-DRAFT.md#applicationComponent) can be extended with other fields with **"x-" prefix** as needed.
+- `fullyQualifiedName` (**string:fqn**): This is the unique universal identifier of the component. It MUST be a URN of the form `urn:dpds:{mesh-namespace}:dataproducts:{product-name}:{product-major-version}:applications:{app-name}`
+- `version` (**string:version**): This is the <a href="https://semver.org/spec/v2.0.0.html" target="_blank">semantic version number</a> of the data product's application component. The version of application components has no direct impact on the version of the data product they belong to. A change in the major version of an application component can anyway impact the version of one interface component and so indirectly the version of the data product.
+
+Other non-mandatory descriptive fields like `platform` and `applicationType` are also available. Moreover, the [Application Component](../resources/specifications/1.0.0-DRAFT.md#applicationComponent) can be extended with other fields with **"x-" prefix** as needed.
 
 ### Example
 The following example shows three application components that respectively describe 
@@ -54,14 +55,14 @@ The information provided so far are useful to track the application assets relat
 
 ## Build Service Object
 
-The [Build Info Object](todo) contains the information required to build an application component. DPDS uses *integration pipelines as code* to guarantee the possibility to automatize the build process in a reproducible way. Anyway, to maintain technological independence the DPDS does not enforce the usage of any specific CICD tool.
+The [Build Info Object](../resources/specifications/last.md#build-info-object) contains the information required to build an application component. DPDS uses *integration pipelines as code* to guarantee the possibility to automatize the build process in a reproducible way. Anyway, to maintain technological independence the DPDS does not enforce the usage of any specific CICD tool.
 
 ### Fileds
-A [Build Info Object](todo) has the following three mandatory fields:
+A [Build Info Object](../resources/specifications/last.md#build-info-object) has the following three mandatory fields:
 
-- `service` ( `string:name` or [External Resource Object](#externalResourceObject)): This is the logical name or the actual endpoint of the service to call to build the application component. If the logical name (ex. `jenkins`, `aws-pipelines`, `azure-devops`, etc...) is used as field value the actual endpoint value resolution is demanded by the _data_ product experience plane* of the underlying platform.
-- `template` (`object` or [External Resource Object](#externalResourceObject)):  This is the definition of the pipeline to execute to build the application. It is passed as is to the *build service* implementation specified in the `service` field.
-- `configurations` (`object` or [External Resource Object](#externalResourceObject)): This is the map of all configuration properties that must be used by the *build service* at build time. It is passed as is to the *build service* implementation specified in the `service` field.
+- `service` ( **string:name** or [External Resource Object](../resources/specifications/last.md#external-resource-object)): This is the logical name or the actual endpoint of the service to call to build the application component. If the logical name (ex. `jenkins`, `aws-pipelines`, `azure-devops`, etc...) is used as field value the actual endpoint value resolution is demanded by the _data_ product experience plane* of the underlying platform.
+- `template` (**object** or [External Resource Object](../resources/specifications/last.md#external-resource-object)):  This is the definition of the pipeline to execute to build the application. It is passed as is to the *build service* implementation specified in the `service` field.
+- `configurations` (**object** or [External Resource Object](../resources/specifications/last.md#external-resource-object)): This is the map of all configuration properties that must be used by the *build service* at build time. It is passed as is to the *build service* implementation specified in the `service` field.
 
 ### Example
 The following example shows an application that could be built using a Jenkins-backed _build service_*. The *jenkinsfile* that contains the description of the pipeline is available on an external *bitbucket repository*. The only configuration parameter passed into the *build service* at runtime is the target stage.
@@ -80,14 +81,14 @@ The following example shows an application that could be built using a Jenkins-b
 ```
 
 ## Deployment Service Object
-The [Deployment Info Object](todo) contains the information required to deploy an application component. DPDS uses *integration pipelines as code* to guarantee the possibility to automatize the deployment process in a reproducible way. Anyway, to maintain technological independence the DPDS does not enforce the usage of any specific CICD tool.
+The [Deployment Info Object](../resources/specifications/last.md#deploy-info-object) contains the information required to deploy an application component. DPDS uses *integration pipelines as code* to guarantee the possibility to automatize the deployment process in a reproducible way. Anyway, to maintain technological independence the DPDS does not enforce the usage of any specific CICD tool.
 
 ### Fileds
-A [Deployment Info Object](todo) has the following three mandatory fields:
+A [Deployment Info Object](../resources/specifications/last.md#deploy-info-object) has the following three mandatory fields:
 
-- `service` ( `string:name` or [External Resource Object](#externalResourceObject)): This is the logical name or the actual endpoint of the service to call to deploy the application component. If the logical name (ex. `jenkins`, `aws-pipelines`, `azure-devops`, etc...) is used as field value the actual endpoint value resolution is demanded by the _data_ product experience plane* of the underlying platform.
-- `template` (`object` or [External Resource Object](#externalResourceObject)):  This is the definition of the pipeline to execute to deploy the application. It is passed as is to the *deployment service* implementation specified in the `service` field.
-- `configurations` (`object` or [External Resource Object](#externalResourceObject)): This is the map of all configuration properties that must be used by the *build service* at deployment time. It is passed as is to the *deployment service* implementation specified in the `service` field.
+- `service` ( **string:name** or [External Resource Object](../resources/specifications/last.md#external-resource-object)): This is the logical name or the actual endpoint of the service to call to deploy the application component. If the logical name (ex. `jenkins`, `aws-pipelines`, `azure-devops`, etc...) is used as field value the actual endpoint value resolution is demanded by the _data_ product experience plane* of the underlying platform.
+- `template` (**object** or [External Resource Object](../resources/specifications/last.md#external-resource-object)):  This is the definition of the pipeline to execute to deploy the application. It is passed as is to the *deployment service* implementation specified in the `service` field.
+- `configurations` (**object** or [External Resource Object](../resources/specifications/last.md#external-resource-object)): This is the map of all configuration properties that must be used by the *build service* at deployment time. It is passed as is to the *deployment service* implementation specified in the `service` field.
 
 ### Example
 The following example shows an application that could be deployed using a Jenkins-backed *deployment service*. The *jenkinsfile* that contains the description of the pipeline is available on an external *bitbucket repository*. The only configuration parameters passed into the _deployment_ service* at runtime are the initial stage and the end state that identify the portion of the pipeline that must be executed.

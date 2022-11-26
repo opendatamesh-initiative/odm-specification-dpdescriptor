@@ -1,7 +1,7 @@
 {
     "fullyQualifiedName": "urn:dpds:com.company-xyz:dataproducts:tripExecution:1:applications:cdcIngestion",
     "version": "1.0.1",
-    "description": "The app that offload the Trip aggregate from  TMS using CDC",
+    "description": "The app that offloads the Trip aggregate from  TMS using CDC",
     "platform": "westeurope.azure:debezium",
     "applicationType":"stream-sourcing",
     "buildInfo": {

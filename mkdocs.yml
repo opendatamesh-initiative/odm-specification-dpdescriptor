@@ -28,6 +28,10 @@ nav:
     - 'Application Components': './quickstart/application.md'
     - 'Infrastructural Components': './quickstart/infrastructure.md'
     - 'Reusing Descriptions': './quickstart/components.md'
+    - 'External Resources': './quickstart/resources.md'
+    - 'Providing documentation': './quickstart/docs.md'
+    - 'Extending the specification': './quickstart/extensions.md'
+    - 'Putting all together': './quickstart/summary.md'
   - Community: 
     - './community/README.md'
     - Quantyca: './community/quantyca.md'

@@ -10,7 +10,6 @@ This site contains all the available documentation related to the Data Product D
 - [Resources](../resources/README.md): These pages point to external resources related to the DPDS.
     - [Specifications](../resources/specifications/README.md): This page points to the HTML version of the DPDS.
     - [JSON Schema](../resources/schemas/README.md): This page contains the documentation of the JSON Schema defied to validate data product descriptor definition compliant with the DPDS.
-<!---    - [Examples](../resources/examples.md): This page contains some examples of valid data product descriptor definitions together with their description.-->
     - [External Tools](../resources/tools.md): This page contains a list of tools that use the standard divided by category.
     - [Related Standards](../resources/standards.md): This page contains the list of other standards that are related to the DPDS divided by category.
     - [Data Mesh Resources](../resources/resources.md): This page contains a list of resources useful to start learning about the data mesh paradigm.
