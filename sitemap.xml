@@ -71,7 +71,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://dpds.opendatamesh.org/quickstart/docs/</loc>
+         <lastmod>2022-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://dpds.opendatamesh.org/quickstart/example/</loc>
+         <lastmod>2022-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dpds.opendatamesh.org/quickstart/extensions/</loc>
          <lastmod>2022-11-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -92,6 +102,16 @@
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/quickstart/overview/</loc>
+         <lastmod>2022-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dpds.opendatamesh.org/quickstart/resources/</loc>
+         <lastmod>2022-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dpds.opendatamesh.org/quickstart/summary/</loc>
          <lastmod>2022-11-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
