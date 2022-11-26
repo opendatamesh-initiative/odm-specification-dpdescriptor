@@ -50,6 +50,6 @@ In the scenario described above, there is a single data product that reads from 
 In a more realistic business scenario, there would be more source system that contains trip information, let's say one for each type of vector (ex. road freight, air, sea, etc ...) and maybe also more than one for some vector type depending on the country branch of the company. At the same time, there would be some consumer-aligned data products that enrich the events coming from the upstream systems to add value for the consumer interested in tracking the status of transport orders.
 
 ## Summary
-This page has shown the purpose and architecture of the Trip Execution Data product used throughout this quickstart to explain the different parts of the specification.
+This page has shown the purpose and architecture of the Trip Execution Data product used throughout this quickstart to explain the different parts of the specification. The <a href="https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/tree/main/examples/tripexecution" target="_blank">full descriptor file :fontawesome-brands-github:</a> of this data product is available, like all other examples, on GitHub.
 
 [The next page](./overview.md) describes the syntax and structure of a data product descriptor document in all its main building blocks.

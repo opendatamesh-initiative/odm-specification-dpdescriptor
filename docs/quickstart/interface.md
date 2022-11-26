@@ -232,9 +232,9 @@ The [Trip Execution Data Product](./example.md) has one input port and two outpu
 
 The following files contain the complete definition of these ports:
 
-- <a href="https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/ports/trip-tms-iport.json">trip-tms-iport.json (coming soon) :fontawesome-brands-github:</a>
-- <a href="https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/ports/trip-events-oport.json">trip-events-oport.json :fontawesome-brands-github:</a>
-- <a href="https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/ports/trip-status-oport.json">trip-status-oport.json :fontawesome-brands-github:</a>
+- <a href="https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/ports/trip-tms-iport.json" target="_blank">trip-tms-iport.json (coming soon) :fontawesome-brands-github:</a>
+- <a href="https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/ports/trip-events-oport.json" target="_blank">trip-events-oport.json :fontawesome-brands-github:</a>
+- <a href="https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/ports/trip-status-oport.json" target="_blank">trip-status-oport.json :fontawesome-brands-github:</a>
 
 You can read them on GitHub or cut and paste the content of the JSON files to <a href="https://jsoncrack.com/editor" target="_blank">JSON Crack :octicons-link-external-24:</a> for more interactive visualization.
 

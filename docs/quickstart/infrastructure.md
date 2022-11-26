@@ -81,8 +81,8 @@ The [Trip Execution Data Product](./example.md) is composed of two infrastructur
 
 The following files contain the complete definition of these infrastructural components:
 
-- <a href="https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/infra/event-store.json">event-store.json :fontawesome-brands-github:</a>
-- <a href="https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/infra/state-store.json">state-store.json :fontawesome-brands-github:</a>
+- <a href="https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/infra/event-store.json" target="_blank">event-store.json :fontawesome-brands-github:</a>
+- <a href="https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/infra/state-store.json" target="_blank">state-store.json :fontawesome-brands-github:</a>
 
 
 You can read it on GitHub or cut and paste its content to <a href="https://jsoncrack.com/editor" target="_blank">JSON Crack :octicons-link-external-24:</a> for more interactive visualization.
