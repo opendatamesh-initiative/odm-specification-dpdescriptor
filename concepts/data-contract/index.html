@@ -1117,7 +1117,7 @@
 
 <h1 id="data-contract">Data Contract<a class="headerlink" href="#data-contract" title="Permanent link">⚓︎</a></h1>
 <p>It's a formal agreement between the data producer and the data consumers. There is not yet a clear definition of the form and scope of a data contract. Usually, they cover the structure of the exchanged data (i.e. the schema) and its meaning (i.e. the semantics). Check the <a href="../../resources/resources/">Data Mesh Resources</a> page for more information on data contracts.</p>
-<p>In the DPDS the more general concept of <em>service agreements</em> is used in place of data contracts. Data contracts are just a particular type of service agreement because on one side there are services that do not expose data and on the other, there are agreements that are not contracts. In particular, DPDS uses the following concepts of <em>promises theory</em> to formally describe the <a href="#interfaceComponents">interface components</a> of a <a href="#dataProduct">data product</a> (i.e. data product's ports):</p>
+<p>In the <a href="../../resources/specifications/">Data Product Descriptor Specification (DPDS)</a> the more general concept of <strong><em>service agreements</em></strong> is used in place of data contracts. Data contracts are just a particular type of service agreement because on one side there are services that do not expose data and on the other, there are agreements that are not contracts. In particular, DPDS uses the following concepts of <em>promises theory</em> to formally describe the <a href="../data-product-descriptor/#interface-components">interface components</a> of a <a href="../data-product/">data product</a> (i.e. data product's ports):</p>
 <ul>
 <li><strong><a name="definitionsDataProductPortsPromises"></a>Promises</strong>: Through promises the data product declares the intent of the port. Promises are not a guarantee of the outcome but the data product will behave accordingly to them to realize its intent. The more a data product keeps its promises over time and the more trustworthy it is. Thus, the more trustworthy a data product is the more potential consumers are likely to use it. Trust is based on the verification of how good a data product was in the past in keeping its promises. This verification should be automated by the underlying platform and synthesized in a <em>trust score</em> shared with all potential consumers. Examples of promises are descriptions of services' API, SLO, deprecation policy, etc.</li>
 <li><strong><a name="definitionsDataProductPortsExpectations"></a>Expectations</strong>: Through expectations the data product declares how it wants the port to be used by its consumers. Expectations are the inverse of promises. They are a way to explicitly state what promises the data product would like consumers to make regarding how they will use the port. Examples of expectations are intended usage, intended audience, etc.</li>
@@ -1129,7 +1129,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 26, 2022</span>
       
         <br>
         Created:
