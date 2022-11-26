@@ -1,6 +1,6 @@
 # Specification Versions
 
-This page contains pointers to all specification versions. 
+This page contains pointers to all [specification](../../overview/README.md) versions. 
 
 ## Current Version
 There is not yet a general available (GA) version of the specification. Version 1.0.0 is in DRAFT state. We plan to collect community feadbacks and contributions over the following months in order to finalize and release it in GA state. 
