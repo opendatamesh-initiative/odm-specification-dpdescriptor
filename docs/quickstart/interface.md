@@ -9,13 +9,13 @@ Data product interface components are called **ports** in the DPDS. The [Interfa
 ![open-data-mesh descriptor components](../images/dpds-interface-components.svg)
 
 ### Fileds
-The [Interface Components Object](../resources/specifications/last.md#interfaceComponentsObject) has five fields, one for each port type: `inputPorts`, `outputPorts`, `discoveryPorts`, `observabilityPorts` and `controlPorts`. Because a data product can expose multiple ports of the same type all these fields are an  **Array of Objects**. The type of these objects depends on the specific port type: [Input Port Component](../resources/specifications/last.md#input-port-component), [Output Port Component](../resources/specifications/last.md#output-port-component), [Discovery Port Component](../resources/specifications/last.md#discovery-port-component), [Observability Port Component](../resources/specifications/last.md#observability-port-component) and [Control Port Component](../resources/specifications/last.md#control-port-component). Anyway, all these objects share a common subset of fields, no matAnyway,ter what it is the type of port to which they are associated with. The most important of these shared fields are:
+The [Interface Components Object](../resources/specifications/last.md#interfaceComponentsObject) has five fields, one for each port type: `inputPorts`, `outputPorts`, `discoveryPorts`, `observabilityPorts` and `controlPorts`. Because a data product can expose multiple ports of the same type all these fields are an  **Array of Objects**. The type of these objects depends on the specific port type: [Input Port Component](../resources/specifications/last.md#input-port-component), [Output Port Component](../resources/specifications/last.md#output-port-component), [Discovery Port Component](../resources/specifications/last.md#discovery-port-component), [Observability Port Component](../resources/specifications/last.md#observability-port-component) and [Control Port Component](../resources/specifications/last.md#control-port-component). Anyway, all these objects share a common subset of fields, no matter what it is the type of port to which they are associated with. The most important of these shared fields are:
 
 - `fullyQualifiedName` (**string:fqn**): The unique universal identifier of the port. It MUST be a URN of the form `urn:dpds:{mesh-namespace}:dataproducts:{product-name}:{product-major-version}:{port-type}:{port-name}`
-- `version`: (**string:version**): This is the <a href="https://semver.org/spec/v2.0.0.html" target="_blank">semantic version number</a> of the data product's port. Every time the _major_ version* of port changes also the *major version* of the product MUST be incremented.
-- `promises` ([Promises Object): These are the data product's [promises](../concepts/#data-contract) declared over the port.
-- `expectations` ([Expectations Object): These are the data product's [expectations](../concepts/#data-contract) declared over the port.
-- `contracts` ([Contracts Object): These are the data product's [contracts](../concepts/#data-contract) declared over the port.
+- `version`: (**string:version**): This is the <a href="https://semver.org/spec/v2.0.0.html" target="_blank">semantic version number</a> of the data product's port. Every time the *major version* of port changes also the *major version* of the product MUST be incremented.
+- `promises` ([Promises Object](../resources/specifications/last.md#promises-object)): These are the data product's [promises](../concepts/data-contract.md) declared over the port.
+- `expectations` ([Expectations Object](../resources/specifications/last.md#expectations-object)): These are the data product's [expectations](../concepts/data-contract.md) declared over the port.
+- `contracts` ([Contracts Object](../resources/specifications/last.md#contracts-object)): These are the data product's [contracts](../concepts/data-contract.md) declared over the port.
 
 ### Example
 Here is a first example snippet of a port definition. More details on how to valorize `promises`, `expectations` and `contracts` fields are provided in the next subsections.
@@ -47,11 +47,11 @@ A [Promises Object](../resources/specifications/last.md#promises-object) is comp
 - `depreceationPolicy` ([Specification Extension Point](../resources/specifications/last.md#specificationExtensionPoint)): This is the deprecation policy adopted for the given set of services. A policy description and a pointer to external documentation can be provided. Moreover, other fields with **"x-" prefix** can be added to provide further informations as needed (ex. `x-deprecation-period`).
 	- `description` (**string**): This is a general description of the deprecation policy.
 	- `externalDocs` ([External Resource Object](../resources/specifications/last.md#externalResourceObject)): This is a pointer to external documentation that describe in more detail the deprecation policy.
-- `slo`: ([Specification Extension Point): These are the _service_ level objectives (SLO)* supported by the given set of services. An SLO description and a pointer to external documentation can be provided. Moreover, other fields with **"x-" prefix** can be added to provide further informations as needed (ex. `x-availability`, `x-responsetime`, etc...).
+- `slo`: ([Specification Extension Point](../resources/specifications/last.md#specificationExtensionPoint)): These are the _service_ level objectives (SLO)* supported by the given set of services. An SLO description and a pointer to external documentation can be provided. Moreover, other fields with **"x-" prefix** can be added to provide further information as needed (ex. `x-availability`, `x-responsetime`, etc...).
 	- `description` (**string**): This is a general description of the supported SLO
-	- `externalDocs` ([External Resource Object](../resources/specifications/last.md#externalResourceObject)): This is a pointer to external documentation that describe in more detail the supported SLO.
+	- `externalDocs` ([External Resource Object](../resources/specifications/last.md#externalResourceObject)): This is a pointer to external documentation that describes in more detail the supported SLO.
 
-The [Promises Object](../resources/specifications/last.md#promises-object) can be extended with other fields with **"x**-" prefix** as needed.
+The [Promises Object](../resources/specifications/last.md#promises-object) can be extended with other fields with **"x-" prefix** as needed.
 
 ### Example
 The promises of the following example describe a datastore service that exposes one table (i.e. `trip_status`) composed of two columns (i.e. `id` and `status`) stored on a *Postgress DB* hosted in *AWS Cloud*. The description of the API is provided using a custom standard that is a simplified version of the *DataStore API Specification*. Both `depreceationPolicy` and `slo` fields use custom properties to provide more info respectively on the deprecation period duration (i.e. `x-deprecation-period`) and the service level indicators supported (i.e. `x-operationalSlo`  and `x-qualitySlo`)
@@ -183,7 +183,7 @@ A [Contracts Object](../resources/specifications/last.md#contracts-object) is co
     - `description` (**string**): This is a short description of the supported SLA.
 	- `externalDocs` ([External Resource Object](../resources/specifications/last.md#externalResourceObject)): This is a pointer to a more detailed external documentation of supported SLA.
 
-The [Contracts Object](../resources/specifications/last.md#contracts-object) can be extended with other fields with **"x**-" prefix** as needed.
+The [Contracts Object](../resources/specifications/last.md#contracts-object) can be extended with other fields with **"x-" prefix** as needed.
 
 ### Example
 The contracts of the following example describe a datastore service billed monthly 0.001$ for each million executed queries. Terms and conditions of service are described in the internal wiki. A link to the specific session is provided, Finally, the values of supported SLA are reported together with a link to the wiki page that describes the base service level indicators that each data product must support.
@@ -232,9 +232,9 @@ The [Trip Execution Data Product](./example.md) has one input port and two outpu
 
 The following files contain the complete definition of these ports:
 
-- <a href="#">tmsTripAggregate.json (coming soon) :fontawesome-brands-github:</a>
-- <a href="#">tripEvents.json (coming soon) :fontawesome-brands-github:</a>
-- <a href="#">tripStatus.json (coming soon) :fontawesome-brands-github:</a>
+- <a href="https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/ports/trip-tms-iport.json">trip-tms-iport.json (coming soon) :fontawesome-brands-github:</a>
+- <a href="https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/ports/trip-events-oport.json">trip-events-oport.json :fontawesome-brands-github:</a>
+- <a href="https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/ports/trip-status-oport.json">trip-status-oport.json :fontawesome-brands-github:</a>
 
 You can read them on GitHub or cut and paste the content of the JSON files to <a href="https://jsoncrack.com/editor" target="_blank">JSON Crack :octicons-link-external-24:</a> for more interactive visualization.
 
