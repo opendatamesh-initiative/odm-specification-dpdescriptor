@@ -3,7 +3,7 @@
 This site contains all the available documentation related to the Data Product Descriptor Specification (DPDS). The site is organized as follows:
 
 - [Overview](../overview/README.md): This page describes what the specification is about, its goals and its scope. Start from here to understand if this specification fits your needs or not before deep diving into other parts of the documentation.
-[Concepts](../concepts/README.md)This page describes the key concepts used in the specification and throughout all the documentation. Most of them are related to the *data mesh paradigm*. This page anyway is not a data mesh guide. It just positions some data mesh concepts in the scope of this specification to avoid possible sources of ambiguity. 
+- [Concepts](../concepts/README.md)This page describes the key concepts used in the specification and throughout all the documentation. Most of them are related to the *data mesh paradigm*. This page anyway is not a data mesh guide. It just positions some data mesh concepts in the scope of this specification to avoid possible sources of ambiguity. 
 - [Quikstart](../quickstart/README.md): This pages describe the key parts of the specification informally and incrementally to simplify the learning process.
 - [HowTo(s)](../howto/README.md) These pages contain guides that describe how to perform specific activities related to the DPDS lifecycle management.
 - [Community](../community/README.md): This page explains the possible ways to contribute to the specification evolution.
