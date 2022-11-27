@@ -2706,7 +2706,7 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 <tr>
 <td><a name="promisesApi"></a>api</td>
 <td align="center"><a href="#standardDefinitionObject">Standard Definition Object</a></td>
-<td>The formal description of port's services API. It is RECOMMENDED to use <a href="https://github.com/OAI/OpenAPI-Specification">Open API Specification</a> for restfull services, <a href="https://github.com/asyncapi/spec">Async API Specification</a> for streaming services and <em>DataStore API Specification</em> for data store connection based services. Other specifications MAY be used as required.</td>
+<td>The formal description of port's services API. It is RECOMMENDED to use <a href="https://github.com/OAI/OpenAPI-Specification">Open API Specification</a> for restfull services, <a href="https://github.com/asyncapi/spec">Async API Specification</a> for streaming services and <a href="https://github.com/opendatamesh-initiative/odm-specification-datastoreapi/blob/main/versions/1.0.0-DRAFT.md">DataStore API Specification</a> for data store connection based services. Other specifications MAY be used as required.</td>
 </tr>
 <tr>
 <td><a name="promisesDeprecationPolicy"></a>depreceationPolicy</td>
@@ -3263,7 +3263,7 @@ All objects defined within the components object will have no effect on the Data
 <a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h3 id="specification-extension-point"><a name="specificationExtensionPoint"></a>Specification Extension Point<a class="headerlink" href="#specification-extension-point" title="Permanent link">⚓︎</a></h3>
-<p>A <code>Specification Extension Point</code> marks specific parts of the <a href="#definitionsDpdsSpecification">Data Product Descriptor Specification</a> that are left open to extensions or further evolution of the standard. While a <a href="#definitionsDefinition">Standard Definition</a> it's a formal declaration that the description of a part of the <a href="#definitionsDpdsSpecification">Data Product Descriptor Specification</a> will be demanded by an external standard in this version of the specification and future ones, the same assumption it's not true for <code>Specification Extension Points</code>. Even if a <code>Specification Extension Point</code> can be extended at will it is RECOMMENDED to use for all added properties a field name prefixed by *"x_-"_ to avoid potential conflicts with future versions of the <a href="#definitionsDpdsSpecification">Data Product Descriptor Specification</a>.</p>
+<p>A <code>Specification Extension Point</code> marks specific parts of the <a href="#definitionsDpdsSpecification">Data Product Descriptor Specification</a> that are left open to extensions or further evolution of the standard. While a <a href="#definitionsDefinition">Standard Definition</a> it's a formal declaration that the description of a part of the <a href="#definitionsDpdsSpecification">Data Product Descriptor Specification</a> will be demanded by an external standard in this version of the specification and future ones, the same assumption it's not true for <code>Specification Extension Points</code>. Even if a <code>Specification Extension Point</code> can be extended at will it is RECOMMENDED to use for all added properties a field name prefixed by <em>"x-"</em> to avoid potential conflicts with future versions of the <a href="#definitionsDpdsSpecification">Data Product Descriptor Specification</a>.</p>
 <h5 id="fixed-fields_23">Fixed Fields<a class="headerlink" href="#fixed-fields_23" title="Permanent link">⚓︎</a></h5>
 <table>
 <thead>
@@ -3330,7 +3330,7 @@ The extension properties are implemented as patterned fields that are always pre
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 19, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 27, 2022</span>
       
         <br>
         Created:
