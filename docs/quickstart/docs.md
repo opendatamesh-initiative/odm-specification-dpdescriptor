@@ -65,6 +65,6 @@ Far more features than listed below are available (including HTML tags), but giv
 This page has shown the features provided by DPDS to aid in the documentation process. More specifically:
 
 - Documentation can be added almost everywhere using a `description` field. Some objects also allow a `summary`.
-- Text can use rich formatting using **CommonMark** syntax, quickly summarized in this page.
+- Text can use rich formatting using **CommonMark** syntax, quickly summarized on this page.
 
-The [next page]() ...
+The [next page](./extensions.md) describes how to adapt the specification to your own needs.

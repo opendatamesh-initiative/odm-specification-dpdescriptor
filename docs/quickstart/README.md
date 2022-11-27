@@ -5,15 +5,15 @@ The [Data Product Descriptor Specification (DPDS)](../resources/specifications/R
 The first page of the quickstart describe the architecture and purpose of the *Trip Execution Data Product* used in the other pages to explain the specification.
 The following pages introduce the syntax and structure of a data product descriptor document, its main building blocks and a minimal data product descriptor document. Afterwards, the different blocks are detailed, starting from the most common and progressing towards advanced ones. 
 
-- [Trip Execution Data Product Overview](./example.md): Architecture and purpose of the example data product
+- [Trip Execution Data Product Overview](./example.md): architecture and purpose of the example data product
 - [Data Product Descriptor Document Overview](./overview.md): JSON, YAML
 - [Minimal Descriptor Document](./overview.md): `dataProductDescriptor` and `info`
 - [Interface Components](./interface.md): `interfaceComponents`, `promises`, `expectations` and `contracts`
 - [Application Components](./application.md): `applicationComponents`, `buildService` and `deploymentService`
 - [Infrastructural Components](./infrastructure.md): `infrastructuralComponents` and  `provisioningService`
 - [Reusing descriptions](./components.md): `components` and `$ref`.
-- [External Resources](./resources.md): fields of type [External Resource Object](../resources/specifications/last.md#applicationComponent)
+- [External Resources](./resources.md): `$href` and `mediaType`.
 - [Providing documentation](./definitions.md): `summary`, `description` and `externalDocs`
 - [Extending the specification](./extensions.md): custom fields, extension points and esternal standards
-- [Putting all together](./summary.md): *coming soon...*
+- [Putting all together](./summary.md): files structure of the Trip Execution descriptor document
 

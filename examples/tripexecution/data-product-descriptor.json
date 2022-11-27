@@ -31,24 +31,24 @@
     "internalComponents": {
         "applicationComponents": [
             {
-                "description": "TODO",
+                "description": "The app that ingest data from TMS using a debezium CDC connector",
                 "$ref": "https://github.com/opendatamesh-initiative/cd-ingestion-app/blob/main/examples/tripexecution/apps/cdc-ingestion-app.json"
             }, {
-                "description": "TODO",
+                "description": "The streaming app that process incoming events and transform them into domain events usable downstream",
                 "$ref": "https://github.com/opendatamesh-initiative/cd-ingestion-app/blob/main/examples/tripexecution/apps/event-processor-app.json" 
             }, {
-                "description": "TODO",
+                "description": "The app that materialize the status of a Trip from related events and store it on the state store",
                 "$ref": "https://github.com/opendatamesh-initiative/cd-ingestion-app/blob/main/examples/tripexecution/apps/db-sink-connector--app.json" 
             }
         ],
-        "infrastructuralComponents": [{
+        "infrastructuralComponents": [
             {
-                "description": "TODO",
+                "description": "The streaming topology used to store incoming technical events and generated domain events",
                 "$ref": "https://github.com/opendatamesh-initiative/cd-ingestion-app/blob/main/examples/tripexecution/infra/event-store.json"
             }, {
-                "description": "TODO",
+                "description": "The database schema used to store the updated status of each Trip",
                 "$ref": "https://github.com/opendatamesh-initiative/cd-ingestion-app/blob/main/examples/tripexecution/infra/state-store.json" 
             }
-        }]
+        ]
     }
 }

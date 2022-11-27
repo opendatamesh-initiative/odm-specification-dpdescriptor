@@ -89,7 +89,7 @@ This page has shown that:
 - Components can be referenced from any place where an object of the same type is expected using `$ref`.
 - References are  URIs so they are very flexible.
 
-<!--[The next page](./resources.md) explains how to include external resources in a data product descriptor document. #TODO -->
+[The next page](./resources.md) explains how to include external resources in a data product descriptor document. 
 
 
 
