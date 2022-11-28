@@ -1,5 +1,5 @@
 {
-    "$id": "https://opendatamehs.org/dsapi/1.0.0-DRAFT/schema.json",
+    "$id": "https://dsapi.opendatamesh.org/resources/schemas/1.0.0-DRAFT.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$comment": "https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#dsapiObject",
     "title": "dataStoreAPI",
