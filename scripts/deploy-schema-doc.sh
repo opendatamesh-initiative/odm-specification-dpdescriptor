@@ -4,8 +4,6 @@ Help()
    # Display Help
    echo "Script usage:"
    echo
-   #echo "Introduction"
-   #echo
    echo "options:"
    echo "v     Specify the version to be updated."
    echo "l     Specify if the version is the latest."
@@ -51,14 +49,22 @@ then
     exit;
 fi
 
+if [ ! -f ../schemas/v$Version/schema.json ];
+then
+    echo "Error: File schema.json not found in ../schemas/v$Version/"
+    exit;
+fi
+
 if [ ! -f ../docs/resources/schemas/html/$Version.html ];
 then
     echo "IMPORTANT: This seems to be the first pubblication of this version, remember to edit docs/resources/schemas/README.md and to create a specific md for this version!"
 fi
 
 cp ../schemas/v$Version/docs/html/schema.html ../docs/resources/schemas/html/$Version.html
+cp ../schemas/v$Version/schema.json ../docs/resources/schemas/$Version.json
 
 if $Latest;
 then
     cp ../schemas/latest/docs/html/schema.html ../docs/resources/schemas/html/latest.html;
+    cp ../schemas/latest/schema.json ../docs/resources/schemas/latest.json
 fi
