@@ -13,7 +13,7 @@ The following pages introduce the syntax and structure of a data product descrip
 - [Infrastructural Components](./infrastructure.md): `infrastructuralComponents` and  `provisioningService`
 - [Reusing descriptions](./components.md): `components` and `$ref`.
 - [External Resources](./resources.md): `$href` and `mediaType`.
-- [Providing documentation](./definitions.md): `summary`, `description` and `externalDocs`
+- [Providing documentation](./docs.md): `summary`, `description` and `externalDocs`
 - [Extending the specification](./extensions.md): custom fields, extension points and esternal standards
 - [Putting all together](./summary.md): files structure of the Trip Execution descriptor document
 

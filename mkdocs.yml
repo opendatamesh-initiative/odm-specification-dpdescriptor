@@ -44,7 +44,10 @@ nav:
       - 'Versions': './resources/schemas/README.md'
       - '1.0.0-DRAFT': './resources/schemas/1.0.0-DRAFT.md'
     - 'External Tools': './resources/tools.md'
-    - 'Related Standards': './resources/standards.md'
+    - 'Related Standards': 
+      - 'Related Standards': './resources/standards/README.md'
+      - 'Data Store API Specification': './resources/standards/dsapi-spec.md'
+      - 'Data Store API Schema': './resources/standards/dsapi-schema.md'
     - 'Data Mesh Resources': './resources/resources.md'
     - 'How to': 
       - 'build this site': './resources/howto/build-site-doc.md'
