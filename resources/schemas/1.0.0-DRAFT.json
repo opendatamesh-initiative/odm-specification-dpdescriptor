@@ -1,0 +1,870 @@
+{
+    "$id": "https://quantyca.it/dpds/1.0/schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#dpdsObject",
+    "title": "dataProductDescriptor",
+    "description": "The description of Data Product Descriptor v1.0.x documents without schema validation, as defined by <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/\" target=\"_parent\">Data Product Descriptor Specification v1.0</a>",
+    "type": "object",
+    "properties": {
+        "dataProductDescriptor": {
+            "description": "",
+            "type": "string",
+            "format": "version"
+        },
+        "info": {
+            "$ref": "#/$defs/info"
+        },
+        "interfaceComponents": {
+            "$ref": "#/$defs/interfaceComponents"
+        },
+        "internalComponents": {
+            "$ref": "#/$defs/internalComponents"
+        },
+        "components": {
+            "$ref": "#/$defs/components"
+        },
+        "tags": {
+            "description": "",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "externalDocs": {
+            "$ref": "#/$defs/externalResource"
+        }
+    },
+    "required": [
+        "dataProductDescriptor",
+        "info",
+        "interfaceComponents"
+    ],
+    "$defs": {
+        "info": {
+            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#infoObject",
+            "title": "Info Object",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#infoObject\" target=\"_parent\">Info Object</a> provides metadata about the data product. The metadata can be used by the platform or by cosumers if needed.",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "",
+                    "type": "string",
+                    "readOnly": true,
+                    "format": "uuid"
+                },
+                "fullyQualifiedName": {
+                    "description": "",
+                    "type": "string",
+                    "format": "fqn"
+                },
+                "entityType": {
+                    "description": "",
+                    "type": "string",
+                    "readOnly": true,
+                    "format": "alphanumeric"
+                },
+                "name": {
+                    "description": "",
+                    "type": "string",
+                    "format": "name"
+                },
+                "version": {
+                    "description": "",
+                    "type": "string",
+                    "format": "version"
+                },
+                "displayName": {
+                    "description": "",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "",
+                    "type": "string"
+                },
+                "domain": {
+                    "description": "",
+                    "type": "string",
+                    "format": "name"
+                },
+                "owner": {
+                    "$ref": "#/$defs/owner"
+                },
+                "contactPoints": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/contactPoint"
+                    }
+                }
+            },
+            "required": [
+                "fullyQualifiedName",
+                "name",
+                "version",
+                "domain",
+                "owner"
+            ],
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "owner": {
+            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#ownerObject",
+            "title": "Owner Object",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#ownerObject\" target=\"_parent\">Owner Object</a> describes the data product's owner.",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "",
+                    "type": "string"
+                }
+            },
+            "required": ["id"],
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "contactPoint": {
+            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#contactPointObject",
+            "title": "Contact Point Object",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#contactPointObject\" target=\"_parent\">Contact Point Object</a> describes a data product's contact point.",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "",
+                    "type": "string",
+                    "format": "name"
+                },
+                "description": {
+                    "description": "",
+                    "type": "string"
+                },
+                "channel": {
+                    "description": "",
+                    "type": "string"
+                },
+                "address": {
+                    "description": "",
+                    "type": "string"
+                }
+            },
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "interfaceComponents": {
+            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#interfaceComponentsObject",
+            "title": "Interface Components Object",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#interfaceComponentsObject\" target=\"_parent\">Interface Components Object</a> it's a collection of all interface entities exposed by a data product.",
+            "type": "object",
+            "properties": {
+                "inputPorts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/inputPortOrReference"
+                    }
+                },
+                "outputPorts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/outputPortOrReference"
+                    }
+                },
+                "discoveryPorts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/discoveryPortOrReference"
+                    }
+                },
+                "observabilityPorts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/observabilityPortOrReference"
+                    }
+                },
+                "controlPorts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/controlPortOrReference"
+                    }
+                }
+            },
+            "required": ["outputPorts"],
+            "unevaluatedProperties": false
+        },
+        "inputPortOrReference": {
+            "oneOf": [
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/inputPort"
+                }
+            ]
+        },
+        "inputPort": {
+            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#inputPortComponent",
+            "title": "Input Port Object",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#inputPortComponent\" target=\"_parent\">Input Port Component</a> describes an <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#definitionsDataProductPorts\" target=\"_parent\">input port</a> of a data product.",
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/entity"
+                },
+                {
+                    "$ref": "#/$defs/port"
+                }
+            ],
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "outputPortOrReference": {
+            "oneOf": [
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/outputPort"
+                }
+            ]
+        },
+        "outputPort": {
+            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#outputPortComponent",
+            "title": "Output Port Component",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#outputPortComponent\" target=\"_parent\">Output Port Component</a> describes an <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#definitionsDataProductPorts\" target=\"_parent\">output port</a> of a data product.",
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/entity"
+                },
+                {
+                    "$ref": "#/$defs/port"
+                }
+            ],
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "discoveryPortOrReference": {
+            "oneOf": [
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/discoveryPort"
+                }
+            ]
+        },
+        "discoveryPort": {
+            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#discoveryPortComponent",
+            "title": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#discoveryPortComponent\" target=\"_parent\">Discovey Port Component</a> describes a <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#definitionsDataProductPorts\" target=\"_parent\">discovery port</a> of a data product.t",
+            "description": "",
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/entity"
+                },
+                {
+                    "$ref": "#/$defs/port"
+                }
+            ],
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "observabilityPortOrReference": {
+            "oneOf": [
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/observabilityPort"
+                }
+            ]
+        },
+        "observabilityPort": {
+            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#observabilityPortComponent",
+            "title": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#observabilityPortComponent\" target=\"_parent\">Observability Port Component</a> describes an <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#definitionsDataProductPorts\" target=\"_parent\">observability port</a> of a data product.",
+            "description": "",
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/entity"
+                },
+                {
+                    "$ref": "#/$defs/port"
+                }
+            ],
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "controlPortOrReference": {
+            "oneOf": [
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/controlPort"
+                }
+            ]
+        },
+        "controlPort": {
+            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#controlPortComponent",
+            "title": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#controlPortComponent\" target=\"_parent\">Control Port Component</a> describes a <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#definitionsDataProductPorts\" target=\"_parent\">control port</a> of a data product.",
+            "description": "",
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/entity"
+                },
+                {
+                    "$ref": "#/$defs/port"
+                }
+            ],
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "port": {
+            "properties": {
+                "promises": {
+                    "$ref": "#/$defs/promisesOrReference"
+                },
+                "expectatctions": {
+                    "$ref": "#/$defs/expectatctionsOrReference"
+                },
+                "contracts": {
+                    "$ref": "#/$defs/contractsOrReference"
+                }
+            }
+        },
+        "promisesOrReference": {
+            "oneOf": [
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/promises"
+                }
+            ]
+        },
+        "promises": {
+            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#promisesObject",
+            "title": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#promisesObject\" target=\"_parent\">Promises Object</a> describes the data product's <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#definitionsDataProductPortsPromises\" target=\"_parent\">promises</a> declared over a given port.",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "platform": {
+                    "description": "",
+                    "type": "string"
+                },
+                "serviceType": {
+                    "description": "",
+                    "type": "string"
+                },
+                "api": {
+                    "$ref": "#/$defs/standardDefinition"
+                },
+                "deprecationPolicy": {
+                    "$ref": "#/$defs/specificationExtensionPoint"
+                },
+                "slo": {
+                    "$ref": "#/$defs/specificationExtensionPoint"
+                }
+            },
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "standardDefinition": {
+            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#standardDefinitionObject",
+            "title": "Standard Definition Object",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#standardDefinitionObject\" target=\"_parent\">Standard Definition Object</a> formally describes an object (ex. API object, provision template object, ecc ...) of interest following a given standard specification.",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "description": "",
+                    "type": "string"
+                },
+                "specification": {
+                    "description": "",
+                    "type": "string"
+                },
+                "version": {
+                    "description": "",
+                    "type": "string"
+                },
+                "definition": {
+                   "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                },
+                "externalDocs": {
+                    "$ref": "#/$defs/externalResource"
+                }
+            },
+            "required": ["specification","definition"],
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "expectatctionsOrReference": {
+            "oneOf": [
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/expectatctions"
+                }
+            ]
+        },      
+        "expectatctions": {
+            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#expectationsObject",
+            "title": "Expectations Object",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#expectationsObject\" target=\"_parent\">Expectations Object</a> describes the data product's <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#definitionsDataProductPortsExpectations\" target=\"_parent\">expectations</a> declared over a given port.",
+            "type": "object",
+            "properties": {
+                "audience": {
+                    "$ref": "#/$defs/specificationExtensionPoint"
+                },
+                "usage": {
+                    "$ref": "#/$defs/specificationExtensionPoint"
+                }
+            },
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "contractsOrReference": {
+            "oneOf": [
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/contracts"
+                }
+            ]
+        },
+        "contracts": {
+            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#contractsObject",
+            "title": "Expectations Object",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#contractsObject\" target=\"_parent\">Contracts Object</a> describes the data product's <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#definitionsDataProductPortsContracts\" target=\"_parent\">contracts</a> declared over a given port.",
+            "type": "object",
+            "properties": {
+                "termsAndConditions": {
+                    "$ref": "#/$defs/specificationExtensionPoint"
+                },
+                "billingPolicy": {
+                    "$ref": "#/$defs/specificationExtensionPoint"
+                },
+                "sla": {
+                    "$ref": "#/$defs/specificationExtensionPoint"
+                }
+            },
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        
+        "internalComponents": {
+            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#internalComponentsObject",
+            "title": "Internal Components Object",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#internalComponentsObject\" target=\"_parent\">Internal Components Object</a> it's a collection of all internal entities that compose a data product.",
+            "type": "object",
+            "properties": {
+                "applicationComponents": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/applicationComponent"
+                    }
+                },
+                "infrastructuralComponents": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/infrastructuralComponent"
+                    }
+                }
+            }
+        },
+        "applicationComponent": {
+            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#applicationComponent",
+            "title": "Application Component",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#applicationComponent\" target=\"_parent\">Application Component</a> describes an internal application component used by the data product to provide services through its ports.",
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/entity"
+                },
+                {
+                    "title": "applicationComponent",
+                    "properties": {
+                        "platform": {
+                            "description": "",
+                            "type": "string"
+                        },
+                        "applicationType": {
+                            "description": "",
+                            "type": "string"
+                        },
+                        "buildInfo":{
+
+                        },
+                        "deployInfo":{
+
+                        },
+                        "consumesFrom": {
+                            "description": "",
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                              }
+                        },
+                        "providesTo": {
+                            "description": "",
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                              }
+                        },
+                        "dependsOn": {
+                            "description": "",
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                              }
+                        }
+                    }
+                }
+            ],
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "buildInfo": {
+            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#buildInfoObject",
+            "title": "Build Info",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#buildInfoObject\" target=\"_parent\">Build Info Object</a> contains all the informations required to build an <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#applicationComponent\" target=\"_parent\">Application Component</a>",
+            "type": "object",
+            "properties": {
+                "service": {
+                    "$ref": "#/$defs/stringOrExternalResource"
+                },
+                "template": {
+                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                },
+                "configurations": {
+                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                }
+            }
+        },
+        "deployInfo": {
+            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#deployInfoObject",
+            "title": "Build Info",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#deployInfoObject\" target=\"_parent\">Deploy Info Object</a> contains all the informations required to deploy an <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#applicationComponent\" target=\"_parent\">Application Component</a>",
+            "type": "object",
+            "properties": {
+                "service": {
+                    "$ref": "#/$defs/stringOrExternalResource"
+                },
+                "template": {
+                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                },
+                "configurations": {
+                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                }
+            }
+        },
+        "infrastructuralComponent": {
+            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#infrastructuralComponent",
+            "title": "Infrastructural Component",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#infrastructuralComponent\" target=\"_parent\">Infrastructural Component</a> describes an internal infrastructural component used by the data product to run its applications and store its data.",
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/entity"
+                },
+                {
+                    "title": "infrastructuralComponent",
+                    "properties": {
+                        "platform": {
+                            "description": "",
+                            "type": "string"
+                        },
+                        "infrastructureType": {
+                            "description": "",
+                            "type": "string"
+                        },
+                        "provisioningService": {
+                            "$ref": "#/$defs/stringOrExternalResource"
+                        },
+                        "provisioningTemplate": {
+                            "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                        },
+                        "provisioningConfigurations": {
+                            "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                        },
+                        "dependsOn": {
+                            "description": "",
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                              }
+                        }
+                    }
+                }
+            ]
+        },
+        "provisionInfo": {
+            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#provisionInfoObject",
+            "title": "Build Info",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#provisionInfoObject\" target=\"_parent\">Provision Info Object</a> contains all the informations required to provision an <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#infrastructuralComponent\" target=\"_parent\">Infrastructural Component</a>",
+            "type": "object",
+            "properties": {
+                "service": {
+                    "$ref": "#/$defs/stringOrExternalResource"
+                },
+                "template": {
+                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                },
+                "configurations": {
+                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                }
+            }
+        },
+        "components": {
+            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#componentsObject",
+            "title": "Components Object",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#componentsObject\" target=\"_parent\">Components Object</a> holds a set of reusable objects for different aspects of the DPDS.",
+            "type": "object",
+            "properties": {
+                "inputPorts": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "outputPorts": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "discoveryPorts": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "observabilityPorts": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "controlPorts": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "applicationComponents": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "infrastructuralComponents": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                }
+            },
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "reference": {
+            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#referenceObject",
+            "title": "Reference Object",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#referenceObject\" target=\"_parent\">Reference Object</a> allows referencing other components in the <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#definitionsDpdsDocument\" target=\"_parent\">Data Product Descriptor Document</a>, internally and externally.",
+            "type": "object",
+            "properties": {
+                "$ref": {
+                    "description": "",
+                    "type": "string",
+                    "format": "uri-reference"
+                },
+                "description": {
+                    "description": "",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "$ref"
+            ],
+            "unevaluatedProperties": false
+        },
+        "externalResource": {
+            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#externalResourceObject",
+            "title": "External Resource Object",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#externalResourceObject\" target=\"_parent\">External Resource Object</a> allows referencing an external resource like a documentation page or a standard definition.",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "description": "",
+                    "type": "string"
+                },
+                "mediaType": {
+                    "description": "",
+                    "type": "string"
+                },
+                "$href": {
+                    "description": "",
+                    "type": "string",
+                    "format": "uri"
+                }
+            },
+            "required": [
+                "$href"
+            ],
+            "unevaluatedProperties": false
+        },
+
+        "stringOrExternalResource": {
+            "oneOf": [
+                {
+                    "title": "string",
+                    "description": "An inline String", 
+                    "type": "string"
+                },
+                {
+                    "$ref": "#/$defs/externalResource"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+
+
+        "objectOrReferenceOrExternalResource": {
+            "oneOf": [
+                {
+                    "title": "object",
+                    "description": "An inline JSON Object", 
+                    "type": "object"
+                },
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/externalResource"
+                }
+            ]
+        },
+
+        "specificationExtensionPoint": {
+            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#specificationExtensionPoint",
+            "title": "Specification Extension Point",
+            "description": "A <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#specificationExtensionPoint\" target=\"_parent\">Specification Extension Point</a> marks specific part of the <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/\" target=\"_parent\">Data Product Descriptor Specification</a> that  are left open to extensions or futher evolution of the standard.",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "description": "",
+                    "type": "string"
+                },
+                "externalDocs": {
+                    "$ref": "#/$defs/externalResource"
+                }
+            },
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+
+        "entity": {
+            "properties": {
+                "id": {
+                    "description": "",
+                    "type": "string",
+                    "format": "uuid",
+                    "readOnly": true
+                },
+                "fullyQualifiedName": {
+                    "description": "",
+                    "type": "string",
+                    "format": "fqn"
+                },
+                "entityType": {
+                    "description": "",
+                    "type": "string",
+                    "format": "alphanumeric"
+                },
+                "name": {
+                    "description": "",
+                    "type": "string",
+                    "format": "name"
+                },
+                "version": {
+                    "description": "",
+                    "type": "string",
+                    "format": "version"
+                },
+                "displayName": {
+                    "description": "",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "",
+                    "type": "string"
+                },
+                "componentGroup": {
+                    "description": "",
+                    "type": "string",
+                    "format": "name"
+                },
+                "tags": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "externalDocs": {
+                    "$ref": "#/$defs/externalResource"
+                }
+            },
+            "required": [
+                "fullyQualifiedName",
+                "name",
+                "version"
+            ]
+        }
+    }
+}
