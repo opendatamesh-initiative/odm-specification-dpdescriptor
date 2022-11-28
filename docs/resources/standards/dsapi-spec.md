@@ -12,18 +12,18 @@ This document is licensed under [The Apache License, Version 2.0](https://www.ap
 Part of this content has been taken from the great work done by the folks at the [OpenAPI Initiative](https://openapis.org) and [AsyncAPI Initiative](https://www.asyncapi.com/). We have decided to not reinvent the wheel and inspire our work to these two specifications mainly for the following reasons:
 
 - We think that the work made by OpenAPI Initiative and AsyncAPI Initiative is great  :)
-- We want to make the learning curve for the Datastore API Specification as smooth as possible, aligning its definition to the one of other two popular specifications in the software and data engineers community
+- We want to make the learning curve for the Data Store API Specification as smooth as possible, aligning its definition to the one of other two popular specifications in the software and data engineers community
 
 ## Introduction
 
-The Datastore API Specification (DSAS) defines a standard, language-agnostic interface to a Data API which allows both humans and computers to understand how to establish a connection and query a database service managing tabular data without access to source code, documentation, or through network traffic inspection. When properly defined, a consumer can understand and interact with the remote database service with a minimal amount of implementation logic.
+The Data Store API Specification (DSAS) defines a standard, language-agnostic interface to a Data API which allows both humans and computers to understand how to establish a connection and query a database service managing tabular data without access to source code, documentation, or through network traffic inspection. When properly defined, a consumer can understand and interact with the remote database service with a minimal amount of implementation logic.
 
-A Datastore API definition can then be used by documentation generation tools to display the API, code generation tools to generate servers and clients in various programming languages, testing tools, and many other use cases.  
+A Data Store API definition can then be used by documentation generation tools to display the API, code generation tools to generate servers and clients in various programming languages, testing tools, and many other use cases.  
 
 
 ## Table of Contents
 
-- [Datastore API Specification](#datastore-api-specification)
+- [Data Store API Specification](#data-store-api-specification)
       - [Version 1.0.0-DRAFT](#version-100-draft)
       - [Disclaimer](#disclaimer)
   - [Introduction](#introduction)
@@ -35,9 +35,9 @@ A Datastore API definition can then be used by documentation generation tools to
         - [Database Management System](#database-management-system)
         - [Database Service](#database-service)
         - [Database](#database)
-        - [Datastore API](#datastore-api)
-        - [Datastore API Document](#datastore-api-document)
-        - [Datastore API Specification](#datastore-api-specification-1)
+        - [Data Store API](#data-store-api)
+        - [Data Store API Document](#data-store-api-document)
+        - [Data Store API Specification](#data-store-api-specification-1)
   - [Specification](#specification)
     - [ Versions](#-versions)
     - [ Format](#-format)
@@ -47,7 +47,7 @@ A Datastore API definition can then be used by documentation generation tools to
     - [Rich Text Formatting](#rich-text-formatting)
     - [Relative References in URLs](#relative-references-in-urls)
     - [Schema](#schema)
-      - [Datastore API Entity](#datastore-api-entity)
+      - [Data Store API Entity](#data-store-api-entity)
         - [Fixed Fields](#fixed-fields)
       - [Info Object](#info-object)
         - [Fixed Fields](#fixed-fields-1)
@@ -102,7 +102,6 @@ A Datastore API definition can then be used by documentation generation tools to
     - [Specification Extensions](#specification-extensions)
   - [Appendix A: Revision History](#appendix-a-revision-history)
 
-
 ## Definitions
 
 ##### <a name="definitionsStandard"></a>Standard
@@ -123,32 +122,32 @@ An addressable running instance of a [Database Management System](#definitionsDa
 ##### <a name="definitionsDatabase"></a>Database
 A named collection of tables physically stored and exposed to consumers by a [Database Service](#definitionsDatabaseService). In some [Database Management Systems](#definitionsDatabaseManagementSystem) tables in a database are further grouped in *schemas*.
 
-##### <a name="definitionsDatastoreAPI"></a>Datastore API
-The description of the structure of a collection of tables (i.e. *datastore schema*) together with the [Database Services](#definitionsDatabaseService) (i.e. *datastore services*) that store them in the different environments that compose the application landscape (ex. dev, qa, prod, etc...). Consumers can connect to datastore services through one of the supported protocols and use the datastore schema to compose valid queries. The structure of the tables that compose a datastore API is the same in all environments so the same queries can be executed against all the services independently from the specific environment. The stored data is anyway usually not the same (i.e. dev data is usually different from prod data) so are the query results.
+##### <a name="definitionsDataStoreAPI"></a>Data Store API
+The description of the structure of a collection of tables (i.e. *data store schema*) together with the [Database Services](#definitionsDatabaseService) (i.e. *data store services*) that store them in the different environments that compose the application landscape (ex. dev, qa, prod, etc...). Consumers can connect to data store services through one of the supported protocols and use the data store schema to compose valid queries. The structure of the tables that compose a data store API is the same in all environments so the same queries can be executed against all the services independently from the specific environment. The stored data is anyway usually not the same (i.e. dev data is usually different from prod data) so are the query results.
 
-##### <a name="definitionsDatastoreAPIDocument"></a>Datastore API Document
-The document (or set of documents) that contains the standard definition of a [Datastore API](#definitionsDatastoreAPI) created using and conforming to the [Datastore API Specification](definitionsDatastoreAPISpecification).
+##### <a name="definitionsDataStoreAPIDocument"></a>Data Store API Document
+The document (or set of documents) that contains the standard definition of a [Data Store API](#definitionsDataStoreAPI) created using and conforming to the [Data Store API Specification](definitionsDataStoreAPISpecification).
 
-##### <a name="definitionsDatastoreAPISpecification"></a>Datastore API Specification
-The formal description of the rules to follow in order to create a standard-compliant [Datastore API Document](definitionsDatastoreAPIDocument). 
+##### <a name="definitionsDataStoreAPISpecification"></a>Data Store API Specification
+The formal description of the rules to follow in order to create a standard-compliant [Data Store API Document](definitionsDataStoreAPIDocument). 
 
 
 ## Specification
 
 ### <a name="versions"></a> Versions
 
-The Datastore API Specification is versioned using [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html) (semver) and follows the semver specification.
+The Data Store API Specification is versioned using [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html) (semver) and follows the semver specification.
 
 The `major`.`minor` portion of the semver (for example `1.0`) SHALL designate the dsapi feature set. Typically, *`.patch`* versions address errors in this document, not the feature set. Tooling which supports dsapi 1.0 SHOULD be compatible with all dsapi 1.0.\* versions. The patch version SHOULD NOT be considered by tooling, making no distinction between `1.0.0` and `1.0.1` for example.
 
-Each new minor version of the Datastore API Specification SHALL allow any Datastore API document that is valid against any previous minor version of the Specification, within the same major version, to be updated to the new Specification version with equivalent semantics. Such an update MUST only require changing the `datastoreapi` property to the new minor version.
+Each new minor version of the Data Store API Specification SHALL allow any Data Store API document that is valid against any previous minor version of the Specification, within the same major version, to be updated to the new Specification version with equivalent semantics. Such an update MUST only require changing the `datastoreapi` property to the new minor version.
 
-For example, a valid Datastore API 1.0.2 document, upon changing its `datastoreapi` property to `1.1.0`, SHALL be a valid Datastore API 1.1.0 document, semantically equivalent to the original Datastore API 1.0.2 document. New minor versions of the Datastore API Specification MUST be written to ensure this form of backward compatibility.
+For example, a valid Data Store API 1.0.2 document, upon changing its `datastoreapi` property to `1.1.0`, SHALL be a valid Data Store API 1.1.0 document, semantically equivalent to the original Data Store API 1.0.2 document. New minor versions of the Data Store API Specification MUST be written to ensure this form of backward compatibility.
 
 
 ### <a name="format"></a> Format
 
-A [Datastore API Document](#definitionsDatastoreAPIDocument) that conforms to the [Datastore API Specification](#definitionsDatastoreAPISpecification) is itself a JSON object, which may be represented either in JSON or YAML format.
+A [Data Store API Document](#definitionsDataStoreAPIDocument) that conforms to the [Data Store API Specification](#definitionsDataStoreAPISpecification) is itself a JSON object, which may be represented either in JSON or YAML format.
 
 For example, if a field has an array value, the JSON array representation will be used:
 
@@ -172,13 +171,13 @@ In order to preserve the ability to round-trip between YAML and JSON formats, YA
 
 ### <a name="documentStructure"></a>Document Structure
 
-A [Datastore API Document](#definitionsDatastoreAPIDocument) MAY be made up of a single document or be divided into multiple, connected parts at the discretion of the user. In the latter case, `$ref` fields MUST be used in the specification to reference those parts as follows from the [JSON Schema](https://json-schema.org) definitions.
+A [Data Store API Document](#definitionsDataStoreAPIDocument) MAY be made up of a single document or be divided into multiple, connected parts at the discretion of the user. In the latter case, `$ref` fields MUST be used in the specification to reference those parts as follows from the [JSON Schema](https://json-schema.org) definitions.
 
-It is RECOMMENDED that the root [Datastore API Document](#definitionsDatastoreAPIDocument) be named: `datastoreapi.json` or `datastoreapi.yaml`.
+It is RECOMMENDED that the root [Data Store API Document](#definitionsDataStoreAPIDocument) be named: `datastoreapi.json` or `datastoreapi.yaml`.
 
 ### <a name="objectTypes"></a>Object Types
 
-A [Datastore [API Document](#definitionsDatastoreAPIDocument) has one and only one root object. The properties of an object are described by its fields. A field type can be another object or a [primitive type](#dataTypeFormat). An addressable and versioned object is called entity. The root object of the [Datastore API Document](#definitionsDatastoreAPIDocument) is an entity object. Other entities that exist only in the scope of the root entity are called components.
+A [Data Store API Document](#definitionsDataStoreAPIDocument) has one and only one root object. The properties of an object are described by its fields. A field type can be another object or a [primitive type](#dataTypeFormat). An addressable and versioned object is called entity. The root object of the [Data Store API Document](#definitionsDataStoreAPIDocument) is an entity object. Other entities that exist only in the scope of the root entity are called components.
 
 ### <a name="dataTypes"></a>Data Types
 
@@ -229,19 +228,19 @@ Relative references used in `$ref` are processed as per [JSON Reference](https:/
 In the following description, if a field is not explicitly **REQUIRED** or described with a MUST or SHALL, it can be considered OPTIONAL.
 
 
-#### <a name="datastoreAPIEntity"></a>Datastore API Entity
+#### <a name="dataStoreAPIEntity"></a>Data Store API Entity
 
-This is the root object of the [Datastore API Document](#definitionsDatastoreAPIDocument).
+This is the root object of the [Data Store API Document](#definitionsDataStoreAPIDocument).
 
 
 ##### Fixed Fields
 
 Field Name | Type | Description
 ---|:---:|---
-<a name="dsasVersion"></a>datastoreapi | `string:version` | **(REQUIRED)** The [semantic version number](https://semver.org/spec/v2.0.0.html) of the [Datastore API Specification Version](#versions) that the [Datastore API Document](#definitionsDatastoreAPIDocument) uses. The [`datastoreapi`](#dsasVersion) field SHOULD be used by tooling specifications and clients to interpret the [Datastore API Document](#definitionsDatastoreAPIDocument). This is *not* related to the data product [`version`](#dsapiVersion) field.
+<a name="dsasVersion"></a>datastoreapi | `string:version` | **(REQUIRED)** The [semantic version number](https://semver.org/spec/v2.0.0.html) of the [Data Store API Specification Version](#versions) that the [Data Store API Document](#definitionsDataStoreAPIDocument) uses. The [`datastoreapi`](#dsasVersion) field SHOULD be used by tooling specifications and clients to interpret the [Data Store API Document](#definitionsDataStoreAPIDocument). This is *not* related to the data product [`version`](#dsapiVersion) field.
 <a name="dsasInfo"></a>info | [Info Object](#infoObject) | **(REQUIRED)** Provides metadata about the API. The metadata MAY be used by tooling as required.
-<a name="dsasDatabaseServices"></a>services | [Database Services Object](#databaseServicesObject) | **(REQUIRED)** Provides connection details of services that expose the data of this datastore in all the supported environments.
-<a name="dsasSchema"></a>schema | [Schema Object](#schemaObject) | **(REQUIRED)** Provides a description of the structure of  all the tables that compose this datastore.
+<a name="dsasDatabaseServices"></a>services | [Database Services Object](#databaseServicesObject) | **(REQUIRED)** Provides connection details of services that expose the data of this data store in all the supported environments.
+<a name="dsasSchema"></a>schema | [Schema Object](#schemaObject) | **(REQUIRED)** Provides a description of the structure of  all the tables that compose this data store.
 
 This object MAY be extended with [Specification Extensions](#specificationExtensions).
 
@@ -257,7 +256,7 @@ Field Name | Type | Description
 <a name="infoSummary"></a>summary | `string` | The short summary of the API.
 <a name="infoDescription"></a>description | `string` | The description of the API. [CommonMark syntax](https://spec.commonmark.org/) MAY be used for rich text representation.
 <a name="infoTermsOfService"></a>termsOfService | `string` | The URL to the terms of service for the API. This MUST be in the form of a URL.
-<a name="infoVersion"></a>version | `string:version` | **(REQUIRED)** The version of the [Datastore API Document](#definitionsDatastoreAPIDocument) (which is distinct from the [Datastore API Specification version](#dsasVersion) or the API implementation version).
+<a name="infoVersion"></a>version | `string:version` | **(REQUIRED)** The version of the [Data Store API Document](#definitionsDataStoreAPIDocument) (which is distinct from the [Data Store API Specification version](#dsasVersion) or the API implementation version).
 <a name="infoDatastoreName"></a>datastoreName | `string:name` | The name of the [datastore](#definitionsDatastore) exposed by this API.
 <a name="infoContact"></a>contact | [Contact Object](#contactObject) | The contact information for this API.
 <a name="infoLicense"></a>license | [License Object](#licenseObject) | The license information for this API.
@@ -268,7 +267,7 @@ This object MAY be extended with [Specification Extensions](#specificationExtens
 
 ```json
 {
-  "title": "Foodmart Sales Datastore",
+  "title": "Foodmart Sales Data Store",
   "summary": "The sales datamart",
   "description": "This fact table store all the sales of last five years together with key analysis dimensions (ex. customer, products, etc...)",
   "termsOfService": "https://foodmart.com/terms/",
@@ -375,8 +374,8 @@ The following shows an example of `Database Service Object`, including how varia
 
 ```json
 {
-  "name:": "SALES Datastore Service",
-  "description": "The service that host the `SALES` datastore in the given environment",
+  "name:": "SALES Data Store Service",
+  "description": "The service that host the `SALES` data store in the given environment",
   "serverInfo": {
       "host:": "{host}",
       "port:": "5432",
@@ -533,9 +532,9 @@ The `Schema Object` describes the structure of the tables exposed by this API.
 
 Field Name | Type | Description
 ---|:---:|---
-<a name="schemaDatabaseName"></a>databaseName | `string` | **(REQUIRED)** The name of the [Database](#definitionsDatabase) that collects the tables exposed by this Datastore API.
-<a name="schemaDatabaseSchemaName"></a>databaseSchemaName | `string` | The name of the *schema* that collects the tables exposed by this Datastore API. This field is used only for [Database Management System](#definitionsDatabaseManagementSystem) that group table within a [Database](#definitionsDatabase) in schemas. 
-<a name="schemaTables"></a>tables | \[[Table Entity](#tableEntity) \| [Reference Object](#referenceObject)\] | The tables exposed by this Datastore API.
+<a name="schemaDatabaseName"></a>databaseName | `string` | **(REQUIRED)** The name of the [Database](#definitionsDatabase) that collects the tables exposed by this Data Store API.
+<a name="schemaDatabaseSchemaName"></a>databaseSchemaName | `string` | The name of the *schema* that collects the tables exposed by this Data Store API. This field is used only for [Database Management System](#definitionsDatabaseManagementSystem) that group table within a [Database](#definitionsDatabase) in schemas. 
+<a name="schemaTables"></a>tables | \[[Table Entity](#tableEntity) \| [Reference Object](#referenceObject)\] | The tables exposed by this Data Store API.
 
 This object MAY be extended with [Specification Extensions](#specificationExtensions).
 
@@ -562,7 +561,7 @@ This object MAY be extended with [Specification Extensions](#specificationExtens
 
 #### <a name="tableEntity"></a>Table Entity
 
-The `Table Entity` describes the structure of a table. This entity's fields are a superset of the ones defined by [Table Object](https://github.com/open-metadata/OpenMetadata/blob/0.12.1-release/openmetadata-spec/src/main/resources/json/schema/entity/data/table.json) of [Open Metadata v0.12.1](https://github.com/open-metadata/OpenMetadata/tree/0.12.1-release/). By consequence, [Open Metadata](https://github.com/open-metadata/OpenMetadata/tree/0.12.1-release/) v0.12.1](https://github.com/open-metadata/OpenMetadata/tree/0.12.1-release/) tables are also valid entities usable to describe the schema of a Datastore API.
+The `Table Entity` describes the structure of a table. This entity's fields are a superset of the ones defined by [Table Object](https://github.com/open-metadata/OpenMetadata/blob/0.12.1-release/openmetadata-spec/src/main/resources/json/schema/entity/data/table.json) of [Open Metadata v0.12.1](https://github.com/open-metadata/OpenMetadata/tree/0.12.1-release/). By consequence, [Open Metadata](https://github.com/open-metadata/OpenMetadata/tree/0.12.1-release/) v0.12.1](https://github.com/open-metadata/OpenMetadata/tree/0.12.1-release/) tables are also valid entities usable to describe the schema of a Data Store API.
 
 ##### Fixed Fields
 
@@ -746,7 +745,7 @@ Field Name | Type | Description
 #### <a name="componentsObject"></a>Components Object
 
 The `Components Object` holds a set of reusable objects for different aspects of the API.
-All objects defined within the components object will have no effect on the DatastoreAPI unless they are explicitly referenced from properties outside the components object.
+All objects defined within the components object will have no effect on the Data Store API unless they are explicitly referenced from properties outside the components object.
 
 ##### Fixed Fields
 
@@ -765,7 +764,7 @@ All the fixed fields declared above are objects that MUST use keys that match th
 
 #### <a name="referenceObject"></a>Reference Object
 
-The `Reference Object` allows referencing other components in the [Datastore API Document](#definitionsDatastoreAPIDocument), internally and externally.
+The `Reference Object` allows referencing other components in the [Data Store API Document](#definitionsDataStoreAPIDocument), internally and externally.
 
 The `$ref` string value contains a URI [RFC3986](https://tools.ietf.org/html/rfc3986), which identifies the location of the value being referenced.
 
@@ -840,4 +839,4 @@ The extensions may or may not be supported by the available tooling, but those m
 
 Version   | Date       | Notes
 ---       | ---        | ---
-1.0.0     | 2023-Q1    | Release of the Datastore API Specification 1.0.0 
+1.0.0     | 2023-Q1    | Release of the Data Store API Specification 1.0.0 
