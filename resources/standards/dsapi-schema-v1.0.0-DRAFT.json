@@ -1,0 +1,641 @@
+{
+    "$id": "https://opendatamehs.org/dsapi/1.0.0-DRAFT/schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$comment": "https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#dsapiObject",
+    "title": "dataStoreAPI",
+    "description": "",
+    "type": "object",
+    "properties": {
+        "datastoreapi": {
+            "description": "",
+            "type": "string",
+            "format": "version"
+        },
+        "info": {
+            "$ref": "#/$defs/info"
+        },
+        "services": {
+            "$ref": "#/$defs/databaseServices"
+        },
+        "schema": {
+            "$ref": "#/$defs/schema"
+        }
+    },
+    "required": [
+        "datastoreapi",
+        "info",
+        "services",
+        "schema"
+    ],
+    "$defs": {
+        "info": {
+            "$comment": "https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#infoObject",
+            "title": "Info Object",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "title": {
+                    "description": "",
+                    "type": "string"
+                },
+                "summary": {
+                    "description": "",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "",
+                    "type": "string"
+                },
+                "termsOfService": {
+                    "description": "",
+                    "type": "string"
+                },
+                "version": {
+                    "description": "",
+                    "type": "string",
+                    "format": "version"
+                },
+                "datastoreName": {
+                    "description": "",
+                    "type": "string",
+                    "format": "name"
+                },
+                "contact": {
+                    "$ref": "#/$defs/contact"
+                },
+                "license": {
+                    "$ref": "#/$defs/license"
+                }
+            },
+            "required": [
+                "title",
+                "version"
+            ],
+            "unevaluatedProperties": false
+        },
+        "contact": {
+            "$comment": "https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#contactObject",
+            "title": "Contact Object",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "",
+                    "type": "string"
+                },
+                "url": {
+                    "description": "",
+                    "type": "string"
+                },
+                "email": {
+                    "description": "",
+                    "type": "string"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "license": {
+            "$comment": "https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#licenseObject",
+            "title": "License Object",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "",
+                    "type": "string"
+                },
+                "url": {
+                    "description": "",
+                    "type": "string"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "databaseServices": {
+            "$comment": "https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#databaseServicesObject",
+            "title": "Database Services Object",
+            "description": "",
+            "type": "object",
+            "additionalProperties": {
+                "$ref": "#/$defs/databaseServiceOrReference"
+            },
+            "unevaluatedProperties": false
+        },
+        "databaseServiceOrReference": {
+            "oneOf": [
+                {
+                    "$ref": "#/$defs/databaseService"
+                },
+                {
+                    "$ref": "#/$defs/reference"
+                }
+            ]
+        },
+        "databaseService": {
+            "$comment": "https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#databaseServiceObject",
+            "title": "Database Service Object",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "",
+                    "type": "string",
+                    "format": "name"
+                },
+                "description": {
+                    "description": "",
+                    "type": "string"
+                },
+                "serverInfo": {
+                    "$ref": "#/$defs/serverInfoOrReference"
+                },
+                "serverVariables": {
+                    "$ref": "#/$defs/serverVariables"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "unevaluatedProperties": false
+            
+        },
+        "serverInfoOrReference": {
+            "oneOf": [
+                {
+                    "$ref": "#/$defs/serverInfo"
+                },
+                {
+                    "$ref": "#/$defs/reference"
+                }
+            ]
+        },
+        "serverInfo": {
+            "$comment": "https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#serverInfoObject",
+            "title": "Server Info Object",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "host": {
+                    "description": "",
+                    "type": "string"
+                },
+                "port": {
+                    "description": "",
+                    "type": "string"
+                },
+                "dbmsType": {
+                    "description": "",
+                    "type": "string"
+                },
+                "dbmsVersion": {
+                    "description": "",
+                    "type": "string"
+                },
+                "connectionProtocols": {
+                    "$ref": "#/$defs/connectionProtocols"
+                }
+            },
+            "required": [
+                "host",
+                "port",
+                "connectionProtocols"
+            ],
+            "unevaluatedProperties": false
+            
+        },
+        "connectionProtocols": {
+            "$comment": "https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#connectionProtocolsObject",
+            "title": "Connection Protocols Object",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "jdbc": {
+                    "$ref": "#/$defs/jdbcConnection"
+                },
+                "odbc": {
+                    "$ref": "#/$defs/odbcConnection"
+                }
+            },
+            "unevaluatedProperties": false
+            
+        },
+        "jdbcConnection": {
+            "$comment": "https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#jdbcConnectionObject",
+            "title": "JDBC Connection Object",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "version": {
+                    "description": "",
+                    "type": "string"
+                },
+                "connectionString": {
+                    "description": "",
+                    "type": "string"
+                },
+                "driverName": {
+                    "description": "",
+                    "type": "string"
+                },
+                "driverClass": {
+                    "description": "",
+                    "type": "string"
+                },
+                "driverVersion": {
+                    "description": "",
+                    "type": "string"
+                },
+                "driverLibrary": {
+                    "$ref": "#/$defs/externalResource"
+                },
+                "driverDocs": {
+                    "$ref": "#/$defs/externalResource"
+                }
+            },
+            "required": [
+                "connectionString"
+            ],
+            "unevaluatedProperties": false  
+        },
+        "odbcConnection": {
+            "$comment": "https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#odbcConnectionObject",
+            "title": "ODBC Connection Object",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "version": {
+                    "description": "",
+                    "type": "string"
+                },
+                "connectionString": {
+                    "description": "",
+                    "type": "string"
+                },
+                "driverName": {
+                    "description": "",
+                    "type": "string"
+                },
+                "driverVersion": {
+                    "description": "",
+                    "type": "string"
+                },
+                "driverLibrary": {
+                    "$ref": "#/$defs/externalResource"
+                },
+                "driverDocs": {
+                    "$ref": "#/$defs/externalResource"
+                }
+            },
+            "required": [
+                "connectionString"
+            ],
+            "unevaluatedProperties": false  
+        },
+        "serverVariables": {
+            "$comment": "https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#serverVariableObject",
+            "title": "Server Varibles Object",
+            "description": "",
+            "type": "object",
+            "additionalProperties": {
+                "$ref": "#/$defs/serverVariable"
+            },
+            "unevaluatedProperties": false
+        },
+        "serverVariable": {
+            "$comment": "https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#serverVariablesObject",
+            "title": "Server Variables Object",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "description": "",
+                    "type": "string"
+                },
+                "enum": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                      }
+                },
+                "default": {
+                    "description": "",
+                    "type": "string"
+                },
+                "examples": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                      }
+                }
+            },
+            "unevaluatedProperties": false              
+        },
+        "schema": {
+            "$comment": "https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#schemaObject",
+            "title": "Schema Object",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "databaseName": {
+                    "description": "",
+                    "type": "string"
+                },
+                "databaseSchemaName": {
+                    "description": "",
+                    "type": "string"
+                },
+                "tables": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/tableOrReference"
+                      }
+                }
+
+            },
+            "unevaluatedProperties": false   
+
+        },
+        "tableOrReference": {
+            "oneOf": [
+                {
+                    "$ref": "#/$defs/table"
+                },
+                {
+                    "$ref": "#/$defs/reference"
+                }
+            ]
+        },
+        "table": {
+            "$comment": "https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#tableEntity",
+            "title": "Table Entity",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "",
+                    "type": "string",
+                    "format": "uuid",
+                    "readOnly": true
+
+                },
+                "fullyQualifiedName": {
+                    "description": "",
+                    "type": "string",
+                    "format": "fqn"
+
+                },
+                "entityType": {
+                    "description": "",
+                    "type": "string",
+                    "format": "alphanumeric",
+                    "readOnly": true
+                },
+                "name": {
+                    "description": "",
+                    "type": "string"
+                },
+                "version": {
+                    "description": "",
+                    "type": "string",
+                    "format": "version"
+                },
+                "displayName": {
+                    "description": "",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "",
+                    "type": "string"
+                },
+                "tableType": {
+                    "description": "",
+                    "type": "string"
+                },
+                "columns": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/column"
+                      }
+                },
+                "constraints": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/tableConstraint"
+                      }
+                },
+                "partitions": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/tablePartition"
+                      }
+                },
+                "tags": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                      }
+                },
+                "externalDocs": {
+                    "$ref": "#/$defs/externalResource"
+                }
+            },
+            "required": [
+                "fullyQualifiedName",
+                "version"
+            ],
+            "unevaluatedProperties": false   
+        },
+        "column": {
+            "$comment": "https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#columnObject",
+            "title": "Column Object",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "",
+                    "type": "string"
+                },
+                "displayName": {
+                    "description": "",
+                    "type": "string"
+                },
+                "fullyQualifiedName": {
+                    "description": "",
+                    "type": "string",
+                    "format": "fqn"
+                },
+                "description": {
+                    "description": "",
+                    "type": "string"
+                },
+                "dataType": {
+                    "description": "",
+                    "type": "string"
+                },
+                "dataLength": {
+                    "description": "",
+                    "type": "integer"
+                },
+                "precision": {
+                    "description": "",
+                    "type": "integer"
+                },
+                "scale": {
+                    "description": "",
+                    "type": "integer"
+                },
+                "jsonSchema": {
+                    "description": "",
+                    "type": "string"
+                },
+                "columnConstraint": {
+                    "description": "",
+                    "type": "string"
+                },
+                "ordinalPosition": {
+                    "description": "",
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "fullyQualifiedName"
+            ],
+            "unevaluatedProperties": false
+        },
+        "tableConstraint": {
+            "$comment": "https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#tableConstraintObject",
+            "title": "Table Constraint Object",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "constraintType": {
+                    "description": "",
+                    "type": "string"
+                },
+                "columns": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "format": "fqn"
+                      }
+                }
+            },
+            "unevaluatedProperties": false
+
+        },
+        "tablePartition": {
+            "$comment": "https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#tablePartitionObject",
+            "title": "Table Partition Object",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "columns": {
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "format": "fqn"
+                      }
+                },
+                "interval": {
+                    "description": "",
+                    "type": "string"
+                },
+                "intervalType": {
+                    "description": "",
+                    "type": "string"
+                }
+            },
+            "unevaluatedProperties": false
+
+
+        },
+        "components": {
+            "$comment": "https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#componentsObject",
+            "title": "Components Object",
+            "description": "The <a href=\"https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#componentsObject\" target=\"_parent\">Components Object</a> holds a set of reusable objects for different aspects of the Data Store API.",
+            "type": "object",
+            "properties": {
+                "serverInfo": {
+                    "description": "",
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/$defs/serverInfoOrReference"
+                    },
+                    "unevaluatedProperties": false
+                },
+                " tables": {
+                    "description": "",
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/$defs/tableOrReference"
+                    },
+                    "unevaluatedProperties": false
+                }
+            },
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "externalResource": {
+            "$comment": "https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#externalResourceObject",
+            "title": "External Resource Object",
+            "description": "The <a href=\"https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#externalResourceObject\" target=\"_parent\">External Resource Object</a> allows referencing an external resource like a documentation page or a standard definition.",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "description": "",
+                    "type": "string"
+                },
+                "mediaType": {
+                    "description": "",
+                    "type": "string"
+                },
+                "$href": {
+                    "description": "",
+                    "type": "string",
+                    "format": "uri"
+                }
+            },
+            "required": [
+                "$href"
+            ],
+            "unevaluatedProperties": false
+        },
+        "reference": {
+            "$comment": "https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#referenceObject",
+            "title": "Reference Object",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "description": "",
+                    "type": "string"
+                },
+                "$ref": {
+                    "description": "",
+                    "type": "string",
+                    "format": "uri-reference"
+                }
+            },
+            "required": [
+                "$ref"
+            ],
+            "unevaluatedProperties": false
+        }
+
+
+
+
+
+    }
+}

@@ -1363,10 +1363,75 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6_5" type="checkbox" id="__nav_6_5" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../standards/">Related Standards</a>
+          
+            <label for="__nav_6_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Related Standards" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_5">
+          <span class="md-nav__icon md-icon"></span>
+          Related Standards
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../standards/" class="md-nav__link">
-        Related Standards
+      <a href="../../standards/dsapi-spec/" class="md-nav__link">
+        Data Store API Specification
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/dsapi-schema/" class="md-nav__link">
+        Data Store API Schema
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1826,56 +1891,139 @@
 <h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">⚓︎</a></h2>
 <!-- TOC depthFrom:1 depthTo:3 withLinks:1 updateOnSave:1 orderedList:0 -->
 <ul>
-<li><a href="#definitions">Definitions</a><ul>
-<li><a href="#definitionsStandard">Standard</a></li>
-<li><a href="#definitionsSpecification">Standard Specification</a></li>
-<li><a href="#definitionsDefinition">Standard Definition</a></li>
-<li><a href="#definitionsDataProduct">Data Product</a></li>
-<li><a href="#definitionsDataProductPorts">Data Product Ports</a></li>
-<li><a href="#definitionsDataProductAppComponents">Data Product Application Components</a></li>
-<li><a href="#definitionsDataProductInfraComponents">Data Product Infrastructural Components</a></li>
-<li><a href="#definitionsDpdsDocument">Data Product Descriptor Document</a></li>
-<li><a href="#definitionsDpdsSpecification">Data Product Descriptor Specification</a></li>
-</ul>
-</li>
+<li><a href="#data-product-descriptor-specification">Data Product Descriptor Specification</a>
+            - <a href="#version-100-draft">Version 1.0.0 (DRAFT)</a>
+            - <a href="#disclaimer">Disclaimer</a><ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#definitions">Definitions</a>
+            - <a href="#standard">Standard</a>
+            - <a href="#standard-specification">Standard Specification</a>
+            - <a href="#standard-definition">Standard Definition</a>
+            - <a href="#data-product">Data Product</a>
+            - <a href="#data-product-ports">Data Product Ports</a>
+            - <a href="#data-product-application-components">Data Product Application Components</a>
+            - <a href="#data-product-infrastructural-components">Data Product Infrastructural Components</a>
+            - <a href="#data-product-descriptor-document">Data Product Descriptor Document</a>
+            - <a href="#data-product-descriptor-specification-1">Data Product Descriptor Specification</a></li>
 <li><a href="#specification">Specification</a><ul>
-<li><a href="#versions">Versions</a></li>
-<li><a href="#format">Format</a></li>
-<li><a href="#documentStructure">Document Structure</a></li>
-<li><a href="#dataTypes">Data Types</a></li>
-<li><a href="#richText">Rich Text Formatting</a></li>
-<li><a href="#relativeReferences">Relative References In URLs</a></li>
+<li><a href="#-versions"> Versions</a></li>
+<li><a href="#-format"> Format</a></li>
+<li><a href="#document-structure">Document Structure</a></li>
+<li><a href="#object-types">Object Types</a></li>
+<li><a href="#data-types">Data Types</a></li>
+<li><a href="#rich-text-formatting">Rich Text Formatting</a></li>
+<li><a href="#relative-references-in-urls">Relative References in URLs</a></li>
 <li><a href="#schema">Schema</a><ul>
-<li><a href="#dpdsObject">Data Product Descriptor Entity</a></li>
-<li><a href="#infoObject">Info Object</a></li>
-<li><a href="#ownerObject">Owner Object</a></li>
-<li><a href="#contactPointObject">Contact Point Object</a></li>
-<li><a href="#interfaceComponentsObject">Interface Components Object</a></li>
-<li><a href="#inputPortComponent">Input Port Component</a></li>
-<li><a href="#outputPortComponent">Output Port Component</a></li>
-<li><a href="#discoveryPortComponent">Discovery Port Component</a></li>
-<li><a href="#observabilityPortComponent">Observability Port Component</a></li>
-<li><a href="#controlPortComponent">Control Port Component</a></li>
-<li><a href="#promisesObject">Promises Object</a></li>
-<li><a href="#expectationsObject">Expectations Object</a></li>
-<li><a href="#contractsObject">Contracts Object</a></li>
-<li><a href="#internalComponentsObject">Internal Components Object</a></li>
-<li><a href="#applicationComponent">Application Component</a></li>
-<li><a href="#buildInfoObject">Build Info Object</a></li>
-<li><a href="#deployInfoObject">Deploy Info Object</a></li>
-<li><a href="#infrastructuralComponent">Infrastructural Component</a></li>
-<li><a href="#provisionInfoObject">Provision Info Object</a></li>
-<li><a href="#componentsObject">Components Object</a></li>
-<li><a href="#referenceObject">Reference Object</a></li>
-<li><a href="#externalResourceObject">External Resource Object</a>   </li>
-<li><a href="#standardDefinitionObject">Standard Definition Object</a></li>
+<li><a href="#data-product-descriptor-entity">Data Product Descriptor Entity</a><ul>
+<li><a href="#fixed-fields">Fixed Fields</a></li>
 </ul>
 </li>
-<li><a href="#specificationExtensionPoint">Specification Extension Point</a></li>
-<li><a href="#specificationExtensions">Specification Extensions</a></li>
+<li><a href="#info-object">Info Object</a><ul>
+<li><a href="#fixed-fields-1">Fixed Fields</a></li>
 </ul>
 </li>
-<li><a href="#revisionHistory">Appendix A: Revision History</a></li>
+<li><a href="#owner-object">Owner Object</a><ul>
+<li><a href="#fixed-fields-2">Fixed Fields</a></li>
+<li><a href="#owner-object-example">Owner Object Example:</a></li>
+</ul>
+</li>
+<li><a href="#contact-point-object">Contact Point Object</a><ul>
+<li><a href="#fixed-fields-3">Fixed Fields</a></li>
+<li><a href="#contact-point-object-example">Contact Point Object Example:</a></li>
+</ul>
+</li>
+<li><a href="#interface-components-object">Interface Components Object</a><ul>
+<li><a href="#fixed-fields-4">Fixed Fields</a></li>
+</ul>
+</li>
+<li><a href="#input-port-component">Input Port Component</a><ul>
+<li><a href="#fixed-fields-5">Fixed Fields</a></li>
+</ul>
+</li>
+<li><a href="#output-port-component">Output Port Component</a><ul>
+<li><a href="#fixed-fields-6">Fixed Fields</a></li>
+</ul>
+</li>
+<li><a href="#discovey-port-component">Discovey Port Component</a><ul>
+<li><a href="#fixed-fields-7">Fixed Fields</a></li>
+</ul>
+</li>
+<li><a href="#observability-port-component">Observability Port Component</a><ul>
+<li><a href="#fixed-fields-8">Fixed Fields</a></li>
+</ul>
+</li>
+<li><a href="#control-port-component">Control Port Component</a><ul>
+<li><a href="#fixed-fields-9">Fixed Fields</a></li>
+</ul>
+</li>
+<li><a href="#promises-object">Promises Object</a><ul>
+<li><a href="#fixed-fields-10">Fixed Fields</a></li>
+</ul>
+</li>
+<li><a href="#expectations-object">Expectations Object</a><ul>
+<li><a href="#fixed-fields-11">Fixed Fields</a></li>
+</ul>
+</li>
+<li><a href="#contracts-object">Contracts Object</a><ul>
+<li><a href="#fixed-fields-12">Fixed Fields</a></li>
+</ul>
+</li>
+<li><a href="#internal-components-object">Internal Components Object</a><ul>
+<li><a href="#fixed-fields-13">Fixed Fields</a></li>
+</ul>
+</li>
+<li><a href="#application-component">Application Component</a><ul>
+<li><a href="#fixed-fields-14">Fixed Fields</a></li>
+</ul>
+</li>
+<li><a href="#build-info-object">Build Info Object</a><ul>
+<li><a href="#fixed-fields-15">Fixed Fields</a></li>
+</ul>
+</li>
+<li><a href="#deploy-info-object">Deploy Info Object</a><ul>
+<li><a href="#fixed-fields-16">Fixed Fields</a></li>
+</ul>
+</li>
+<li><a href="#infrastructural-component">Infrastructural Component</a><ul>
+<li><a href="#fixed-fields-17">Fixed Fields</a></li>
+</ul>
+</li>
+<li><a href="#provision-info-object">Provision Info Object</a><ul>
+<li><a href="#fixed-fields-18">Fixed Fields</a></li>
+</ul>
+</li>
+<li><a href="#components-object">Components Object</a><ul>
+<li><a href="#fixed-fields-19">Fixed Fields</a></li>
+</ul>
+</li>
+<li><a href="#reference-object">Reference Object</a><ul>
+<li><a href="#fixed-fields-20">Fixed Fields</a></li>
+<li><a href="#reference-object-example">Reference Object Example</a></li>
+<li><a href="#relative-schema-document-example">Relative Schema Document Example</a></li>
+<li><a href="#relative-documents-with-embedded-schema-example">Relative Documents With Embedded Schema Example</a></li>
+</ul>
+</li>
+<li><a href="#external-resource-object">External Resource Object</a><ul>
+<li><a href="#fixed-fields-21">Fixed Fields</a></li>
+<li><a href="#external-resource-object-example">External Resource Object Example</a></li>
+</ul>
+</li>
+<li><a href="#standard-definition-object">Standard Definition Object</a><ul>
+<li><a href="#fixed-fields-22">Fixed Fields</a></li>
+<li><a href="#standard-definition-object-example">Standard Definition Object Example:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#specification-extension-point">Specification Extension Point</a>
+        - <a href="#fixed-fields-23">Fixed Fields</a></li>
+<li><a href="#specification-extensions">Specification Extensions</a></li>
+</ul>
+</li>
+<li><a href="#appendix-a-revision-history">Appendix A: Revision History</a></li>
+</ul>
+</li>
 </ul>
 <!-- /TOC -->
 
@@ -2706,7 +2854,7 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 <tr>
 <td><a name="promisesApi"></a>api</td>
 <td align="center"><a href="#standardDefinitionObject">Standard Definition Object</a></td>
-<td>The formal description of port's services API. It is RECOMMENDED to use <a href="https://github.com/OAI/OpenAPI-Specification">Open API Specification</a> for restfull services, <a href="https://github.com/asyncapi/spec">Async API Specification</a> for streaming services and <a href="https://github.com/opendatamesh-initiative/odm-specification-datastoreapi/blob/main/versions/1.0.0-DRAFT.md">DataStore API Specification</a> for data store connection based services. Other specifications MAY be used as required.</td>
+<td>The formal description of port's services API. It is RECOMMENDED to use <a href="https://github.com/OAI/OpenAPI-Specification">Open API Specification</a> for restfull services, <a href="https://github.com/asyncapi/spec">Async API Specification</a> for streaming services and <a href="../../standards/dsapi-spec/">DataStore API Specification</a> for data store connection based services. Other specifications MAY be used as required.</td>
 </tr>
 <tr>
 <td><a name="promisesDeprecationPolicy"></a>depreceationPolicy</td>
@@ -2920,12 +3068,12 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 </tr>
 <tr>
 <td><a name="buildInfoTemplate"></a>template</td>
-<td align="center">object | <a href="#referenceObject">Reference Object</a> | <a href="#externalResourceObject">External Resource Object</a></td>
+<td align="center"><code>object</code> | <a href="#referenceObject">Reference Object</a> | <a href="#externalResourceObject">External Resource Object</a></td>
 <td>Can be an inline JSON or a refernce to an external resource. It contains the definition of the pipeline to execute in order to build the application. It is passed as is to the build service specified using the <code>buildService</code> field.</td>
 </tr>
 <tr>
 <td><a name="buildInfoConfigurations"></a>configurations</td>
-<td align="center">object | <a href="#referenceObject">Reference Object</a> | <a href="#externalResourceObject">External Resource Object</a></td>
+<td align="center"><code>object</code> | <a href="#referenceObject">Reference Object</a> | <a href="#externalResourceObject">External Resource Object</a></td>
 <td>Can be an inline JSON or a refernce to an external resource. It contains the configuration properties that can be used by the build service at build time. It is passed as is to the build service specified using the <code>buildService</code> field.</td>
 </tr>
 </tbody>
@@ -2950,12 +3098,12 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 </tr>
 <tr>
 <td><a name="deployInfoTemplate"></a>template</td>
-<td align="center">object | <a href="#referenceObject">Reference Object</a> | <a href="#externalResourceObject">External Resource Object</a></td>
+<td align="center"><code>object</code> | <a href="#referenceObject">Reference Object</a> | <a href="#externalResourceObject">External Resource Object</a></td>
 <td>Can be an inline JSON or a refernce to an external resource. It contains the definition of the pipeline to execute in order to deploy the application. It is passed as is to the deployment service specified using the <code>deploymentService</code> field.</td>
 </tr>
 <tr>
 <td><a name="deployInfoConfigurations"></a>configurations</td>
-<td align="center">object | <a href="#referenceObject">Reference Object</a> | <a href="#externalResourceObject">External Resource Object</a></td>
+<td align="center"><code>object</code> | <a href="#referenceObject">Reference Object</a> | <a href="#externalResourceObject">External Resource Object</a></td>
 <td>Can be an inline JSON or a refernce to an external resource. It contains the configuration properties that can be used by the deployment service at deploy time. It is passed as is to the deployment service specified using the <code>deploymentService</code> field.</td>
 </tr>
 </tbody>
@@ -3065,12 +3213,12 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 </tr>
 <tr>
 <td><a name="provisionInfoTemplate"></a>template</td>
-<td align="center">object | <a href="#referenceObject">Reference Object</a> | <a href="#externalResourceObject">External Resource Object</a></td>
+<td align="center"><code>object</code> | <a href="#referenceObject">Reference Object</a> | <a href="#externalResourceObject">External Resource Object</a></td>
 <td>Can be an inline JSON or a refernce to an external resource. It contains the definition of the resources to provision. It is passed as is to the provisioning service specified using the <code>provisionService</code> field.</td>
 </tr>
 <tr>
 <td><a name="provisionInfoConfigurations"></a>configurations</td>
-<td align="center">object | <a href="#referenceObject">Reference Object</a> | <a href="#externalResourceObject">External Resource Object</a></td>
+<td align="center"><code>object</code> | <a href="#referenceObject">Reference Object</a> | <a href="#externalResourceObject">External Resource Object</a></td>
 <td>Can be an inline JSON or a refernce to an external resource. It contains the configuration properties that can be used by the provisioning service at provision time. It is passed as is to the provision service specified using the <code>provisioningService</code> field.</td>
 </tr>
 </tbody>
@@ -3236,7 +3384,7 @@ All objects defined within the components object will have no effect on the Data
 </tr>
 <tr>
 <td><a name="standardDefinitionDefinition"></a>definition</td>
-<td align="center">object | <a href="#referenceObject">Reference Object</a> | <a href="#externalResourceObject">External Resource Object</a></td>
+<td align="center"><code>object</code> | <a href="#referenceObject">Reference Object</a> | <a href="#externalResourceObject">External Resource Object</a></td>
 <td><strong>(REQUIRED)</strong> The formal definition built using the spcification declared in the <code>[specification](#standardDefinitionSpecification)</code> field.</td>
 </tr>
 <tr>
@@ -3330,7 +3478,7 @@ The extension properties are implemented as patterned fields that are always pre
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 27, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 28, 2022</span>
       
         <br>
         Created:

@@ -126,11 +126,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://dpds.opendatamesh.org/resources/standards/</loc>
-         <lastmod>2022-11-28</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://dpds.opendatamesh.org/resources/tools/</loc>
          <lastmod>2022-11-28</lastmod>
          <changefreq>daily</changefreq>
@@ -167,6 +162,21 @@
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/resources/specifications/last/</loc>
+         <lastmod>2022-11-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dpds.opendatamesh.org/resources/standards/</loc>
+         <lastmod>2022-11-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dpds.opendatamesh.org/resources/standards/dsapi-schema/</loc>
+         <lastmod>2022-11-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dpds.opendatamesh.org/resources/standards/dsapi-spec/</loc>
          <lastmod>2022-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
