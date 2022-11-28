@@ -491,17 +491,27 @@
                     "description": "",
                     "type": "array",
                     "items": {
-                        "$ref": "#/$defs/applicationComponent"
+                        "$ref": "#/$defs/applicationComponentOrReference"
                     }
                 },
                 "infrastructuralComponents": {
                     "description": "",
                     "type": "array",
                     "items": {
-                        "$ref": "#/$defs/infrastructuralComponent"
+                        "$ref": "#/$defs/infrastructuralComponentOrReference"
                     }
                 }
             }
+        },
+        "applicationComponentOrReference": {
+            "oneOf": [
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/applicationComponent"
+                }
+            ]
         },
         "applicationComponent": {
             "$comment": "SPEC-BASE-URL#applicationComponent",
@@ -592,6 +602,16 @@
                 }
             }
         },
+        "infrastructuralComponentOrReference": {
+            "oneOf": [
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/infrastructuralComponent"
+                }
+            ]
+        },
         "infrastructuralComponent": {
             "$comment": "SPEC-BASE-URL#infrastructuralComponent",
             "title": "Infrastructural Component",
@@ -657,51 +677,51 @@
             "properties": {
                 "inputPorts": {
                     "description": "",
-                    "type": "array",
-                    "items": {
-                        "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/$defs/inputPortOrReference"
                     }
                 },
                 "outputPorts": {
                     "description": "",
-                    "type": "array",
-                    "items": {
-                        "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/$defs/outputPortOrReference"
                     }
                 },
                 "discoveryPorts": {
                     "description": "",
-                    "type": "array",
-                    "items": {
-                        "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/$defs/discoveryPortOrReference"
                     }
                 },
                 "observabilityPorts": {
                     "description": "",
-                    "type": "array",
-                    "items": {
-                        "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/$defs/observabilityPortOrReference"
                     }
                 },
                 "controlPorts": {
                     "description": "",
-                    "type": "array",
-                    "items": {
-                        "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/$defs/controlPortOrReference"
                     }
                 },
                 "applicationComponents": {
                     "description": "",
-                    "type": "array",
-                    "items": {
-                        "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/$defs/applicationComponentOrReference"
                     }
                 },
                 "infrastructuralComponents": {
                     "description": "",
-                    "type": "array",
-                    "items": {
-                        "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/$defs/infrastructuralComponentOrReference"
                     }
                 }
             },
