@@ -343,8 +343,8 @@
                 "promises": {
                     "$ref": "#/$defs/promisesOrReference"
                 },
-                "expectatctions": {
-                    "$ref": "#/$defs/expectatctionsOrReference"
+                "expectations": {
+                    "$ref": "#/$defs/expectationsOrReference"
                 },
                 "contracts": {
                     "$ref": "#/$defs/contractsOrReference"
@@ -421,17 +421,17 @@
             },
             "unevaluatedProperties": false
         },
-        "expectatctionsOrReference": {
+        "expectationsOrReference": {
             "oneOf": [
                 {
                     "$ref": "#/$defs/reference"
                 },
                 {
-                    "$ref": "#/$defs/expectatctions"
+                    "$ref": "#/$defs/expectations"
                 }
             ]
         },      
-        "expectatctions": {
+        "expectations": {
             "$comment": "SPEC-BASE-URL#expectationsObject",
             "title": "Expectations Object",
             "description": "The <a href=\"SPEC-BASE-URL#expectationsObject\" target=\"_parent\">Expectations Object</a> describes the data product's <a href=\"SPEC-BASE-URL#definitionsDataProductPortsExpectations\" target=\"_parent\">expectations</a> declared over a given port.",
