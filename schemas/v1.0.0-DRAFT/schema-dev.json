@@ -533,11 +533,39 @@
                             "description": "",
                             "type": "string"
                         },
-                        "buildInfo":{
-
+                        "buildInfo": {
+                            "$comment": "SPEC-BASE-URL#buildInfoObject",
+                            "title": "Build Info",
+                            "description": "The <a href=\"SPEC-BASE-URL#buildInfoObject\" target=\"_parent\">Build Info Object</a> contains all the informations required to build an <a href=\"SPEC-BASE-URL#applicationComponent\" target=\"_parent\">Application Component</a>",
+                            "type": "object",
+                            "properties": {
+                                "service": {
+                                    "$ref": "#/$defs/stringOrExternalResource"
+                                },
+                                "template": {
+                                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                                },
+                                "configurations": {
+                                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                                }
+                            }
                         },
-                        "deployInfo":{
-
+                        "deployInfo": {
+                            "$comment": "SPEC-BASE-URL#deployInfoObject",
+                            "title": "Build Info",
+                            "description": "The <a href=\"SPEC-BASE-URL#deployInfoObject\" target=\"_parent\">Deploy Info Object</a> contains all the informations required to deploy an <a href=\"SPEC-BASE-URL#applicationComponent\" target=\"_parent\">Application Component</a>",
+                            "type": "object",
+                            "properties": {
+                                "service": {
+                                    "$ref": "#/$defs/stringOrExternalResource"
+                                },
+                                "template": {
+                                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                                },
+                                "configurations": {
+                                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                                }
+                            }
                         },
                         "consumesFrom": {
                             "description": "",
@@ -567,40 +595,6 @@
                 "^x-": true
             },
             "unevaluatedProperties": false
-        },
-        "buildInfo": {
-            "$comment": "SPEC-BASE-URL#buildInfoObject",
-            "title": "Build Info",
-            "description": "The <a href=\"SPEC-BASE-URL#buildInfoObject\" target=\"_parent\">Build Info Object</a> contains all the informations required to build an <a href=\"SPEC-BASE-URL#applicationComponent\" target=\"_parent\">Application Component</a>",
-            "type": "object",
-            "properties": {
-                "service": {
-                    "$ref": "#/$defs/stringOrExternalResource"
-                },
-                "template": {
-                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
-                },
-                "configurations": {
-                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
-                }
-            }
-        },
-        "deployInfo": {
-            "$comment": "SPEC-BASE-URL#deployInfoObject",
-            "title": "Build Info",
-            "description": "The <a href=\"SPEC-BASE-URL#deployInfoObject\" target=\"_parent\">Deploy Info Object</a> contains all the informations required to deploy an <a href=\"SPEC-BASE-URL#applicationComponent\" target=\"_parent\">Application Component</a>",
-            "type": "object",
-            "properties": {
-                "service": {
-                    "$ref": "#/$defs/stringOrExternalResource"
-                },
-                "template": {
-                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
-                },
-                "configurations": {
-                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
-                }
-            }
         },
         "infrastructuralComponentOrReference": {
             "oneOf": [
@@ -632,14 +626,22 @@
                             "description": "",
                             "type": "string"
                         },
-                        "provisioningService": {
-                            "$ref": "#/$defs/stringOrExternalResource"
-                        },
-                        "provisioningTemplate": {
-                            "$ref": "#/$defs/objectOrReferenceOrExternalResource"
-                        },
-                        "provisioningConfigurations": {
-                            "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                        "provisionInfo": {
+                            "$comment": "SPEC-BASE-URL#provisionInfoObject",
+                            "title": "Build Info",
+                            "description": "The <a href=\"SPEC-BASE-URL#provisionInfoObject\" target=\"_parent\">Provision Info Object</a> contains all the informations required to provision an <a href=\"SPEC-BASE-URL#infrastructuralComponent\" target=\"_parent\">Infrastructural Component</a>",
+                            "type": "object",
+                            "properties": {
+                                "service": {
+                                    "$ref": "#/$defs/stringOrExternalResource"
+                                },
+                                "template": {
+                                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                                },
+                                "configurations": {
+                                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                                }
+                            }
                         },
                         "dependsOn": {
                             "description": "",
@@ -652,23 +654,7 @@
                 }
             ]
         },
-        "provisionInfo": {
-            "$comment": "SPEC-BASE-URL#provisionInfoObject",
-            "title": "Build Info",
-            "description": "The <a href=\"SPEC-BASE-URL#provisionInfoObject\" target=\"_parent\">Provision Info Object</a> contains all the informations required to provision an <a href=\"SPEC-BASE-URL#infrastructuralComponent\" target=\"_parent\">Infrastructural Component</a>",
-            "type": "object",
-            "properties": {
-                "service": {
-                    "$ref": "#/$defs/stringOrExternalResource"
-                },
-                "template": {
-                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
-                },
-                "configurations": {
-                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
-                }
-            }
-        },
+        
         "components": {
             "$comment": "SPEC-BASE-URL#componentsObject",
             "title": "Components Object",
