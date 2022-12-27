@@ -371,7 +371,7 @@
                     "description": "",
                     "type": "string"
                 },
-                "serviceType": {
+                "servicesType": {
                     "description": "",
                     "type": "string"
                 },
