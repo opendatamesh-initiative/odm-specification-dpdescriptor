@@ -47,7 +47,7 @@
                 "$ref": "https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/infra/event-store.json"
             }, {
                 "description": "The database schema used to store the updated status of each Trip",
-                "$ref": "https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/state-store.json" 
+                "$ref": "https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/infra/state-store.json" 
             }
         ]
     }
