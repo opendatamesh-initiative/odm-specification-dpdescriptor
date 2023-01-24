@@ -343,8 +343,8 @@
                 "promises": {
                     "$ref": "#/$defs/promisesOrReference"
                 },
-                "expectatctions": {
-                    "$ref": "#/$defs/expectatctionsOrReference"
+                "expectations": {
+                    "$ref": "#/$defs/expectationsOrReference"
                 },
                 "contracts": {
                     "$ref": "#/$defs/contractsOrReference"
@@ -371,7 +371,7 @@
                     "description": "",
                     "type": "string"
                 },
-                "serviceType": {
+                "servicesType": {
                     "description": "",
                     "type": "string"
                 },
@@ -421,17 +421,17 @@
             },
             "unevaluatedProperties": false
         },
-        "expectatctionsOrReference": {
+        "expectationsOrReference": {
             "oneOf": [
                 {
                     "$ref": "#/$defs/reference"
                 },
                 {
-                    "$ref": "#/$defs/expectatctions"
+                    "$ref": "#/$defs/expectations"
                 }
             ]
         },      
-        "expectatctions": {
+        "expectations": {
             "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#expectationsObject",
             "title": "Expectations Object",
             "description": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#expectationsObject\" target=\"_parent\">Expectations Object</a> describes the data product's <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#definitionsDataProductPortsExpectations\" target=\"_parent\">expectations</a> declared over a given port.",
@@ -533,11 +533,39 @@
                             "description": "",
                             "type": "string"
                         },
-                        "buildInfo":{
-
+                        "buildInfo": {
+                            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#buildInfoObject",
+                            "title": "Build Info",
+                            "description": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#buildInfoObject\" target=\"_parent\">Build Info Object</a> contains all the informations required to build an <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#applicationComponent\" target=\"_parent\">Application Component</a>",
+                            "type": "object",
+                            "properties": {
+                                "service": {
+                                    "$ref": "#/$defs/stringOrExternalResource"
+                                },
+                                "template": {
+                                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                                },
+                                "configurations": {
+                                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                                }
+                            }
                         },
-                        "deployInfo":{
-
+                        "deployInfo": {
+                            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#deployInfoObject",
+                            "title": "Build Info",
+                            "description": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#deployInfoObject\" target=\"_parent\">Deploy Info Object</a> contains all the informations required to deploy an <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#applicationComponent\" target=\"_parent\">Application Component</a>",
+                            "type": "object",
+                            "properties": {
+                                "service": {
+                                    "$ref": "#/$defs/stringOrExternalResource"
+                                },
+                                "template": {
+                                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                                },
+                                "configurations": {
+                                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                                }
+                            }
                         },
                         "consumesFrom": {
                             "description": "",
@@ -567,40 +595,6 @@
                 "^x-": true
             },
             "unevaluatedProperties": false
-        },
-        "buildInfo": {
-            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#buildInfoObject",
-            "title": "Build Info",
-            "description": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#buildInfoObject\" target=\"_parent\">Build Info Object</a> contains all the informations required to build an <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#applicationComponent\" target=\"_parent\">Application Component</a>",
-            "type": "object",
-            "properties": {
-                "service": {
-                    "$ref": "#/$defs/stringOrExternalResource"
-                },
-                "template": {
-                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
-                },
-                "configurations": {
-                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
-                }
-            }
-        },
-        "deployInfo": {
-            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#deployInfoObject",
-            "title": "Build Info",
-            "description": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#deployInfoObject\" target=\"_parent\">Deploy Info Object</a> contains all the informations required to deploy an <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#applicationComponent\" target=\"_parent\">Application Component</a>",
-            "type": "object",
-            "properties": {
-                "service": {
-                    "$ref": "#/$defs/stringOrExternalResource"
-                },
-                "template": {
-                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
-                },
-                "configurations": {
-                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
-                }
-            }
         },
         "infrastructuralComponentOrReference": {
             "oneOf": [
@@ -632,14 +626,22 @@
                             "description": "",
                             "type": "string"
                         },
-                        "provisioningService": {
-                            "$ref": "#/$defs/stringOrExternalResource"
-                        },
-                        "provisioningTemplate": {
-                            "$ref": "#/$defs/objectOrReferenceOrExternalResource"
-                        },
-                        "provisioningConfigurations": {
-                            "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                        "provisionInfo": {
+                            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#provisionInfoObject",
+                            "title": "Build Info",
+                            "description": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#provisionInfoObject\" target=\"_parent\">Provision Info Object</a> contains all the informations required to provision an <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#infrastructuralComponent\" target=\"_parent\">Infrastructural Component</a>",
+                            "type": "object",
+                            "properties": {
+                                "service": {
+                                    "$ref": "#/$defs/stringOrExternalResource"
+                                },
+                                "template": {
+                                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                                },
+                                "configurations": {
+                                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                                }
+                            }
                         },
                         "dependsOn": {
                             "description": "",
@@ -652,23 +654,7 @@
                 }
             ]
         },
-        "provisionInfo": {
-            "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#provisionInfoObject",
-            "title": "Build Info",
-            "description": "The <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#provisionInfoObject\" target=\"_parent\">Provision Info Object</a> contains all the informations required to provision an <a href=\"https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#infrastructuralComponent\" target=\"_parent\">Infrastructural Component</a>",
-            "type": "object",
-            "properties": {
-                "service": {
-                    "$ref": "#/$defs/stringOrExternalResource"
-                },
-                "template": {
-                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
-                },
-                "configurations": {
-                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
-                }
-            }
-        },
+        
         "components": {
             "$comment": "https://dpds.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#componentsObject",
             "title": "Components Object",
