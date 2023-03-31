@@ -6,4 +6,6 @@
 - [JSON Schemas](./schemas/README.md)
 - [External Tools](./tools.md)
 - [Related Standards](./standards/README.md)
-- [Data Mesh Resources](./resources.md)
+- How to
+    - [build this site](./howto/build-site-doc.md)
+    - [manage JSON schema](./howto/build-schema-doc.md)
