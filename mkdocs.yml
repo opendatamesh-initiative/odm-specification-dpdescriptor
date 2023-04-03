@@ -112,6 +112,8 @@ extra:
       make our documentation better.
 
   social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/open-data-mesh-initiative/
     - icon: octicons/mail-16
       link: mailto:odm.info@quantyca.it
     - icon: fontawesome/brands/mailchimp
@@ -153,4 +155,4 @@ plugins:
         text: "#FFFFFF"
       
 copyright: >
-  Copyright &copy; 2022 Quantyca s.r.l. - <a href="#__consent">Change cookie settings</a>
+  Copyright &copy; 2023 Quantyca s.r.l. - <a href="#__consent">Change cookie settings</a>
