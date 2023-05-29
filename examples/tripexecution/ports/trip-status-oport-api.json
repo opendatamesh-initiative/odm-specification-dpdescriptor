@@ -3,7 +3,8 @@
     "info": {
         "title": "Trip Status",
         "summary": "This API exposes the current state of each `Trip` entity",
-        "version": "1.1.1"
+        "version": "1.1.1",
+        "datastoreName": "trip_status"
     },
     "services": {
         "development": {
@@ -24,23 +25,21 @@
         }
     },
     "schema": {
-        "databaseName": "tripdb",
+        "databaseName": "tripsdb",
         "schemaName": "tracking",
         "tables": [
             {
-                "$ref": "https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/trip-status-oport-api.json#tripStatus"
+                "$ref": "https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/trip-status-oport-schema.json"
             }
         ]
     },
     "components": {
         "serverInfo": {
             "tripStatusStoreServerInfo": {
-                "name:": "Trip Status Datastore Service",
-                "description": "The service that host the `TRIPS` datastore in the given environment",
                 "host:": "{host}",
                 "port:": "5432",
-                "serviceType:": "Postgres",
-                "serviceVersion:": "15 RC 2",
+                "dbmsType:": "Postgres",
+                "dbmsVersion:": "15 RC 2",
                 "connectionProtocols": {
                     "jdbc": {
                         "version": "1.0",
