@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package com.companyxyz.tripdb.traking.tripstatus;
+
+import "google/protobuf/descriptor.proto";
+import "schemata/protobuf/schemata.proto";
+
+option java_package = "org.protocol.schema";
+option java_outer_classname = "TripStatusBuilder";
+
+message TripStatus {
+  option(org.schemata.schema.message_core).description = "Trips status table";
+  option(org.schemata.schema.message_core).comment = "The table that store the updated status of each trip";
+  //option(org.schemata.schema.owner) = "OpenTravelData (OPTD)";
+  //option(org.schemata.schema.domain) = "Transport";
+  option(org.schemata.schema.schema_type) = ENTITY;
+
+  int32 id = 1 [
+    (org.schemata.schema.field_core).is_primary_key = true , 
+    (org.schemata.schema.field_core).description = "Trip identifier"
+  ];
+
+  string status = 2 [
+    (org.schemata.schema.field_core).description = "Trip status"
+  ];
+
+  string position = 3 [
+    (org.schemata.schema.field_core).description = "Trip last known position"
+  ];
+ 
+  string last_status_update = 4 [
+    (org.schemata.schema.field_core).description = "Timestamp of the last status update event", 
+    (org.schemata.schema.field_core).product_type = "ISO8601"
+  ];
+
+  string last_position_update = 5 [
+    (org.schemata.schema.field_core).description = "Timestamp of the last position update event",
+    (org.schemata.schema.field_core).product_type = "ISO8601"
+  ];
+
+  string planning_date = 6 [
+    (org.schemata.schema.field_core).description = "Trip planning date",
+    (org.schemata.schema.field_core).product_type = "ISO8601"
+  ];
+
+
+  
+}
