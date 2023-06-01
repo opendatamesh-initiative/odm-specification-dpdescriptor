@@ -500,7 +500,7 @@ Field Name | Type | Description
 ---|:---:|---
 <a name="schemaDatabaseName"></a>databaseName | `string` | **(REQUIRED)** The name of the [Database](#definitionsDatabase) that collects the tables exposed by this Data Store API.
 <a name="schemaDatabaseSchemaName"></a>databaseSchemaName | `string` | The name of the *schema* that collects the tables exposed by this Data Store API. This field is used only for [Database Management System](#definitionsDatabaseManagementSystem) that group table within a [Database](#definitionsDatabase) in schemas. 
-<a name="schemaTables"></a>tables | \[[Table Entity](#tableEntity)\| [Standard Definition Object](#standardDefinitionObject) \| [Reference Object](#referenceObject)\] | The tables exposed by this Data Store API.
+<a name="schemaTables"></a>tables | \[[Table Entity](#tableEntity)\| [Standard Definition Object](#standard-definition-object) \| [Reference Object](#referenceObject)\] | The tables exposed by this Data Store API.
 
 This object MAY be extended with [Specification Extensions](#specificationExtensions).
 
@@ -805,7 +805,7 @@ Field Name | Type | Description
 <a name="standardDefinitionDescription"></a>description | `string` | The standard definition descripion. [CommonMark syntax](https://spec.commonmark.org/) MAY be used for rich text representation.
 <a name="standardDefinitionSpecification"></a>specification | `string` | **(REQUIRED)** The external specification used in the `definition`.
 <a name="standardDefinitionSpecificationVersion"></a>specificationVersion | `string` | The version of the external specification used in the `definition`. If not defined the version MUST be included in the definition itself.
-<a name="standardDefinitionDefinition"></a>definition | object \| `string` \| [Reference Object](#referenceObject) | **(REQUIRED)** The formal definition built using the spcification declared in the `[specification](#standardDefinitionSpecification)` field.
+<a name="standardDefinitionDefinition"></a>definition | `object` \| `string` \| [Reference Object](#referenceObject) | **(REQUIRED)** The formal definition built using the spcification declared in the `[specification](#standardDefinitionSpecification)` field.
 <a name="standardDefinitionExternalDocs"></a>externalDocs | [External Resource Object](#externalResourceObject) | Additional external documentation for the standard definition.
 
 This object MAY be extended with [Specification Extensions](#specificationExtensions).  
