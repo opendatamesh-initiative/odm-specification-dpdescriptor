@@ -1,7 +1,5 @@
 # Data Store API Specification
 
-This specification is part of our <a href="https://github.com/opendatamesh-initiative/odm-specification-datastoreapi" target="_blank">Data Store API project:octicons-link-external-24:</a> on GitHub, consult it for any further information.
-
 #### Version 1.0.0-DRAFT
 The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [BCP 14](https://tools.ietf.org/html/bcp14) [RFC2119](https://tools.ietf.org/html/rfc2119) [RFC8174](https://tools.ietf.org/html/rfc8174) when, and only when, they appear in all capitals, as shown here.
 
@@ -48,57 +46,25 @@ A Data Store API definition can then be used by documentation generation tools t
     - [Relative References in URLs](#relative-references-in-urls)
     - [Schema](#schema)
       - [Data Store API Entity](#data-store-api-entity)
-        - [Fixed Fields](#fixed-fields)
       - [Info Object](#info-object)
-        - [Fixed Fields](#fixed-fields-1)
-        - [Info Object Example](#info-object-example)
       - [Contact Object](#contact-object)
-        - [Fixed Fields](#fixed-fields-2)
-        - [Contact Object Example:](#contact-object-example)
       - [License Object](#license-object)
-        - [Fixed Fields](#fixed-fields-3)
-        - [License Object Example:](#license-object-example)
       - [Database Services Object](#database-services-object)
-        - [Patterned Fields](#patterned-fields)
-        - [Servers Object Example](#servers-object-example)
       - [Database Service Object](#database-service-object)
-        - [Fixed Fields](#fixed-fields-4)
-        - [Database Service Object Example](#database-service-object-example)
       - [Server Info Object](#server-info-object)
-        - [Fixed Fields](#fixed-fields-5)
-        - [Server Info Object Example](#server-info-object-example)
       - [Connection Protocols Object](#connection-protocols-object)
-        - [Fixed Fields](#fixed-fields-6)
       - [JDBC Connection Protocol Object](#jdbc-connection-protocol-object)
-        - [Fixed Fields](#fixed-fields-7)
-        - [JDBC Connection Protocol Object Example](#jdbc-connection-protocol-object-example)
       - [ODBC Connection Protocol Object](#odbc-connection-protocol-object)
       - [Variable Object](#variable-object)
-        - [Fixed Fields](#fixed-fields-8)
       - [Schema Object](#schema-object)
-        - [Fixed Fields](#fixed-fields-9)
-        - [Schema Object Example](#schema-object-example)
       - [Table Entity](#table-entity)
-        - [Fixed Fields](#fixed-fields-10)
-        - [Schema Object Example](#schema-object-example-1)
       - [Table Constraint Object](#table-constraint-object)
-        - [Fixed Fields](#fixed-fields-11)
-        - [Table Constraint Object Example](#table-constraint-object-example)
       - [Table Partition Object](#table-partition-object)
-        - [Fixed Fields](#fixed-fields-12)
       - [Column Object](#column-object)
-        - [Fixed Fields](#fixed-fields-13)
-        - [Column Object Example](#column-object-example)
       - [Components Object](#components-object)
-        - [Fixed Fields](#fixed-fields-14)
       - [Reference Object](#reference-object)
-        - [Fixed Fields](#fixed-fields-15)
-        - [Reference Object Example](#reference-object-example)
-        - [Relative Schema Document Example](#relative-schema-document-example)
-        - [Relative Documents With Embedded Schema Example](#relative-documents-with-embedded-schema-example)
       - [External Resource Object](#external-resource-object)
-        - [Fixed Fields](#fixed-fields-16)
-        - [External Resource Object Example](#external-resource-object-example)
+      - [Standard Definition Object](#standard-definition-object)
     - [Specification Extensions](#specification-extensions)
   - [Appendix A: Revision History](#appendix-a-revision-history)
 
@@ -534,7 +500,7 @@ Field Name | Type | Description
 ---|:---:|---
 <a name="schemaDatabaseName"></a>databaseName | `string` | **(REQUIRED)** The name of the [Database](#definitionsDatabase) that collects the tables exposed by this Data Store API.
 <a name="schemaDatabaseSchemaName"></a>databaseSchemaName | `string` | The name of the *schema* that collects the tables exposed by this Data Store API. This field is used only for [Database Management System](#definitionsDatabaseManagementSystem) that group table within a [Database](#definitionsDatabase) in schemas. 
-<a name="schemaTables"></a>tables | \[[Table Entity](#tableEntity) \| [Reference Object](#referenceObject)\] | The tables exposed by this Data Store API.
+<a name="schemaTables"></a>tables | \[[Table Entity](#tableEntity)\| [Standard Definition Object](#standardDefinitionObject) \| [Reference Object](#referenceObject)\] | The tables exposed by this Data Store API.
 
 This object MAY be extended with [Specification Extensions](#specificationExtensions).
 
@@ -774,6 +740,7 @@ See the rules for resolving [Relative References](#relativeReferencesURI).
 Field Name | Type | Description
 ---|:---:|---
 <a name="referenceDescription"></a>description | `string` | A description which by default SHOULD override that of the referenced component. [CommonMark syntax](https://spec.commonmark.org/) MAY be used for rich text representation. If the referenced object-type does not allow a `description` field, then this field has no effect.
+<a name="referenceMediaType"></a>mediaType | `string` | The media type of referenced object. It must conform to media type format, according to [RFC6838](https://www.rfc-editor.org/rfc/rfc6838).
 <a name="referenceRef"></a>$ref | `string` | **(REQUIRED)** The reference identifier. This MUST be in the form of a URI.
 
 This object cannot be extended with additional properties and any properties added SHALL be ignored.
@@ -823,6 +790,38 @@ This object cannot be extended with additional properties and any properties add
   "$href": "https://example.com"
 }
 ```
+
+#### <a name="standardDefinitionObject"></a>Standard Definition Object
+
+The `Standard Definition Object` formally describes an object (ex. table schema, etc ...) of interest following a given standard specification.
+
+##### Fixed Fields
+
+Field Name | Type | Description
+---|:---:|---
+<a name="standardDefinitionId"></a>id | `string:uuid` | **(READONLY)** It's an UUID of the definition. It is valorized server side when the object can be reused in other context (ex. a definition of a table schema used in multiple API). It is RECOMMENDED to use an UUID version 3 ([RFC-4122](https://www.rfc-editor.org/rfc/rfc4122.html#section-4.3)) generated  as SHA-1 hash of the concatenantion of `name` and `version` separated by `:`.
+<a name="standardName"></a>name | `string:name` | The name of the defined object. It is valorized when the object can be reused in other context (ex. a definition of a table schema used in multiple API). It's RECOMMENDED to use a camel case formatted string.
+<a name="standardDefinitionVersion"></a>version | `string` | The version of the defined object. t is valorized when the object can be reused in other context (ex. a definition of a table schema used in multiple API).
+<a name="standardDefinitionDescription"></a>description | `string` | The standard definition descripion. [CommonMark syntax](https://spec.commonmark.org/) MAY be used for rich text representation.
+<a name="standardDefinitionSpecification"></a>specification | `string` | **(REQUIRED)** The external specification used in the `definition`.
+<a name="standardDefinitionSpecificationVersion"></a>specificationVersion | `string` | The version of the external specification used in the `definition`. If not defined the version MUST be included in the definition itself.
+<a name="standardDefinitionDefinition"></a>definition | object \| `string` \| [Reference Object](#referenceObject) | **(REQUIRED)** The formal definition built using the spcification declared in the `[specification](#standardDefinitionSpecification)` field.
+<a name="standardDefinitionExternalDocs"></a>externalDocs | [External Resource Object](#externalResourceObject) | Additional external documentation for the standard definition.
+
+This object MAY be extended with [Specification Extensions](#specificationExtensions).  
+
+##### Standard Definition Object Example:
+
+```json
+{
+  "specification": "schemata",
+  "specificationVersion": "1",
+  "definition": {
+    "mediaType": "application/x-protobuf",
+    "$ref": "trip-status.proto"
+  }   
+} 
+``` 
 
 ### <a name="specificationExtensions"></a>Specification Extensions
 

@@ -149,8 +149,8 @@
                 "serverInfo": {
                     "$ref": "#/$defs/serverInfoOrReference"
                 },
-                "serverVariables": {
-                    "$ref": "#/$defs/serverVariables"
+                "variables": {
+                    "$ref": "#/$defs/variables"
                 }
             },
             "required": [
@@ -291,18 +291,18 @@
             ],
             "unevaluatedProperties": false  
         },
-        "serverVariables": {
-            "$comment": "https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#serverVariableObject",
+        "variables": {
+            "$comment": "https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#variableObject",
             "title": "Server Varibles Object",
             "description": "",
             "type": "object",
             "additionalProperties": {
-                "$ref": "#/$defs/serverVariable"
+                "$ref": "#/$defs/variable"
             },
             "unevaluatedProperties": false
         },
-        "serverVariable": {
-            "$comment": "https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#serverVariablesObject",
+        "variable": {
+            "$comment": "https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#variablesObject",
             "title": "Server Variables Object",
             "description": "",
             "type": "object",
@@ -350,7 +350,7 @@
                     "description": "",
                     "type": "array",
                     "items": {
-                        "$ref": "#/$defs/tableOrReference"
+                        "$ref": "#/$defs/tableOrSpecificationOrReference"
                       }
                 }
 
@@ -358,10 +358,13 @@
             "unevaluatedProperties": false   
 
         },
-        "tableOrReference": {
+        "tableOrSpecificationOrReference": {
             "oneOf": [
                 {
                     "$ref": "#/$defs/table"
+                }, 
+                {
+                    "$ref": "#/$defs/standardDefinition"
                 },
                 {
                     "$ref": "#/$defs/reference"
@@ -576,7 +579,7 @@
                     "description": "",
                     "type": "object",
                     "additionalProperties": {
-                        "$ref": "#/$defs/tableOrReference"
+                        "$ref": "#/$defs/tableOrSpecificationOrReference"
                     },
                     "unevaluatedProperties": false
                 }
@@ -631,11 +634,66 @@
                 "$ref"
             ],
             "unevaluatedProperties": false
+        },
+        "standardDefinition": {
+            "$comment": "https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#standardDefinitionObject",
+            "title": "Standard Definition Object",
+            "description": "The <a href=\"https://dsapi.opendatamesh.org/resources/specifications/1.0.0-DRAFT/#standardDefinitionObject\" target=\"_parent\">Standard Definition Object</a> formally describes an object (ex. Table schema , ecc ...) of interest following a given standard specification.",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "",
+                    "type": "string"
+                },
+                "version": {
+                    "description": "",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "",
+                    "type": "string"
+                },
+                "specification": {
+                    "description": "",
+                    "type": "string"
+                },
+                "specificationVersion": {
+                    "description": "",
+                    "type": "string"
+                },
+                "definition": {
+                   "$ref": "#/$defs/objectOrStringOrReference"
+                },
+                "externalDocs": {
+                    "$ref": "#/$defs/externalResource"
+                }
+            },
+            "required": ["specification","definition"],
+            "patternProperties": {
+                "^x-": true
+            },
+            "unevaluatedProperties": false
+        },
+        "objectOrStringOrReference": {
+            "oneOf": [
+                {
+                    "title": "object",
+                    "description": "An inline JSON Object", 
+                    "type": "object"
+                },
+                {
+                    "title": "object",
+                    "description": "A string version of the external definition (used if format is not JSON)", 
+                    "type": "string"
+                },
+                {
+                    "$ref": "#/$defs/reference"
+                }
+            ]
         }
-
-
-
-
-
     }
 }
