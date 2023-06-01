@@ -1348,6 +1348,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#standard-definition-object" class="md-nav__link">
+    Standard Definition Object
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1748,6 +1755,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#standard-definition-object" class="md-nav__link">
+    Standard Definition Object
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1793,7 +1807,6 @@
 
 
 <h1 id="data-store-api-specification">Data Store API Specification<a class="headerlink" href="#data-store-api-specification" title="Permanent link">⚓︎</a></h1>
-<p>This specification is part of our <a href="https://github.com/opendatamesh-initiative/odm-specification-datastoreapi" target="_blank">Data Store API project<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25z"/></svg></span></a> on GitHub, consult it for any further information.</p>
 <h4 id="version-100-draft">Version 1.0.0-DRAFT<a class="headerlink" href="#version-100-draft" title="Permanent link">⚓︎</a></h4>
 <p>The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in <a href="https://tools.ietf.org/html/bcp14">BCP 14</a> <a href="https://tools.ietf.org/html/rfc2119">RFC2119</a> <a href="https://tools.ietf.org/html/rfc8174">RFC8174</a> when, and only when, they appear in all capitals, as shown here.</p>
 <p>This document is licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0.html">The Apache License, Version 2.0</a>.</p>
@@ -1834,94 +1847,26 @@
 <li><a href="#rich-text-formatting">Rich Text Formatting</a></li>
 <li><a href="#relative-references-in-urls">Relative References in URLs</a></li>
 <li><a href="#schema">Schema</a></li>
-<li><a href="#data-store-api-entity">Data Store API Entity</a><ul>
-<li><a href="#fixed-fields">Fixed Fields</a></li>
-</ul>
-</li>
-<li><a href="#info-object">Info Object</a><ul>
-<li><a href="#fixed-fields-1">Fixed Fields</a></li>
-<li><a href="#info-object-example">Info Object Example</a></li>
-</ul>
-</li>
-<li><a href="#contact-object">Contact Object</a><ul>
-<li><a href="#fixed-fields-2">Fixed Fields</a></li>
-<li><a href="#contact-object-example">Contact Object Example:</a></li>
-</ul>
-</li>
-<li><a href="#license-object">License Object</a><ul>
-<li><a href="#fixed-fields-3">Fixed Fields</a></li>
-<li><a href="#license-object-example">License Object Example:</a></li>
-</ul>
-</li>
-<li><a href="#database-services-object">Database Services Object</a><ul>
-<li><a href="#patterned-fields">Patterned Fields</a></li>
-<li><a href="#servers-object-example">Servers Object Example</a></li>
-</ul>
-</li>
-<li><a href="#database-service-object">Database Service Object</a><ul>
-<li><a href="#fixed-fields-4">Fixed Fields</a></li>
-<li><a href="#database-service-object-example">Database Service Object Example</a></li>
-</ul>
-</li>
-<li><a href="#server-info-object">Server Info Object</a><ul>
-<li><a href="#fixed-fields-5">Fixed Fields</a></li>
-<li><a href="#server-info-object-example">Server Info Object Example</a></li>
-</ul>
-</li>
-<li><a href="#connection-protocols-object">Connection Protocols Object</a><ul>
-<li><a href="#fixed-fields-6">Fixed Fields</a></li>
-</ul>
-</li>
-<li><a href="#jdbc-connection-protocol-object">JDBC Connection Protocol Object</a><ul>
-<li><a href="#fixed-fields-7">Fixed Fields</a></li>
-<li><a href="#jdbc-connection-protocol-object-example">JDBC Connection Protocol Object Example</a></li>
-</ul>
-</li>
+<li><a href="#data-store-api-entity">Data Store API Entity</a></li>
+<li><a href="#info-object">Info Object</a></li>
+<li><a href="#contact-object">Contact Object</a></li>
+<li><a href="#license-object">License Object</a></li>
+<li><a href="#database-services-object">Database Services Object</a></li>
+<li><a href="#database-service-object">Database Service Object</a></li>
+<li><a href="#server-info-object">Server Info Object</a></li>
+<li><a href="#connection-protocols-object">Connection Protocols Object</a></li>
+<li><a href="#jdbc-connection-protocol-object">JDBC Connection Protocol Object</a></li>
 <li><a href="#odbc-connection-protocol-object">ODBC Connection Protocol Object</a></li>
-<li><a href="#variable-object">Variable Object</a><ul>
-<li><a href="#fixed-fields-8">Fixed Fields</a></li>
-</ul>
-</li>
-<li><a href="#schema-object">Schema Object</a><ul>
-<li><a href="#fixed-fields-9">Fixed Fields</a></li>
-<li><a href="#schema-object-example">Schema Object Example</a></li>
-</ul>
-</li>
-<li><a href="#table-entity">Table Entity</a><ul>
-<li><a href="#fixed-fields-10">Fixed Fields</a></li>
-<li><a href="#schema-object-example-1">Schema Object Example</a></li>
-</ul>
-</li>
-<li><a href="#table-constraint-object">Table Constraint Object</a><ul>
-<li><a href="#fixed-fields-11">Fixed Fields</a></li>
-<li><a href="#table-constraint-object-example">Table Constraint Object Example</a></li>
-</ul>
-</li>
-<li><a href="#table-partition-object">Table Partition Object</a><ul>
-<li><a href="#fixed-fields-12">Fixed Fields</a></li>
-</ul>
-</li>
-<li><a href="#column-object">Column Object</a><ul>
-<li><a href="#fixed-fields-13">Fixed Fields</a></li>
-<li><a href="#column-object-example">Column Object Example</a></li>
-</ul>
-</li>
-<li><a href="#components-object">Components Object</a><ul>
-<li><a href="#fixed-fields-14">Fixed Fields</a></li>
-</ul>
-</li>
-<li><a href="#reference-object">Reference Object</a><ul>
-<li><a href="#fixed-fields-15">Fixed Fields</a></li>
-<li><a href="#reference-object-example">Reference Object Example</a></li>
-<li><a href="#relative-schema-document-example">Relative Schema Document Example</a></li>
-<li><a href="#relative-documents-with-embedded-schema-example">Relative Documents With Embedded Schema Example</a></li>
-</ul>
-</li>
-<li><a href="#external-resource-object">External Resource Object</a><ul>
-<li><a href="#fixed-fields-16">Fixed Fields</a></li>
-<li><a href="#external-resource-object-example">External Resource Object Example</a></li>
-</ul>
-</li>
+<li><a href="#variable-object">Variable Object</a></li>
+<li><a href="#schema-object">Schema Object</a></li>
+<li><a href="#table-entity">Table Entity</a></li>
+<li><a href="#table-constraint-object">Table Constraint Object</a></li>
+<li><a href="#table-partition-object">Table Partition Object</a></li>
+<li><a href="#column-object">Column Object</a></li>
+<li><a href="#components-object">Components Object</a></li>
+<li><a href="#reference-object">Reference Object</a></li>
+<li><a href="#external-resource-object">External Resource Object</a></li>
+<li><a href="#standard-definition-object">Standard Definition Object</a></li>
 <li><a href="#specification-extensions">Specification Extensions</a></li>
 </ul>
 </li>
@@ -2601,7 +2546,7 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 </tr>
 <tr>
 <td><a name="schemaTables"></a>tables</td>
-<td align="center">[<a href="#tableEntity">Table Entity</a> | <a href="#referenceObject">Reference Object</a>]</td>
+<td align="center">[<a href="#tableEntity">Table Entity</a>| <a href="#standardDefinitionObject">Standard Definition Object</a> | <a href="#referenceObject">Reference Object</a>]</td>
 <td>The tables exposed by this Data Store API.</td>
 </tr>
 </tbody>
@@ -2977,6 +2922,11 @@ All objects defined within the components object will have no effect on the Data
 <td>A description which by default SHOULD override that of the referenced component. <a href="https://spec.commonmark.org/">CommonMark syntax</a> MAY be used for rich text representation. If the referenced object-type does not allow a <code>description</code> field, then this field has no effect.</td>
 </tr>
 <tr>
+<td><a name="referenceMediaType"></a>mediaType</td>
+<td align="center"><code>string</code></td>
+<td>The media type of referenced object. It must conform to media type format, according to <a href="https://www.rfc-editor.org/rfc/rfc6838">RFC6838</a>.</td>
+</tr>
+<tr>
 <td><a name="referenceRef"></a>$ref</td>
 <td align="center"><code>string</code></td>
 <td><strong>(REQUIRED)</strong> The reference identifier. This MUST be in the form of a URI.</td>
@@ -3036,6 +2986,71 @@ All objects defined within the components object will have no effect on the Data
 <a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">  </span><span class="nt">&quot;$href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com&quot;</span><span class="w"></span>
 <a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
+<h4 id="standard-definition-object"><a name="standardDefinitionObject"></a>Standard Definition Object<a class="headerlink" href="#standard-definition-object" title="Permanent link">⚓︎</a></h4>
+<p>The <code>Standard Definition Object</code> formally describes an object (ex. table schema, etc ...) of interest following a given standard specification.</p>
+<h5 id="fixed-fields_17">Fixed Fields<a class="headerlink" href="#fixed-fields_17" title="Permanent link">⚓︎</a></h5>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a name="standardDefinitionId"></a>id</td>
+<td align="center"><code>string:uuid</code></td>
+<td><strong>(READONLY)</strong> It's an UUID of the definition. It is valorized server side when the object can be reused in other context (ex. a definition of a table schema used in multiple API). It is RECOMMENDED to use an UUID version 3 (<a href="https://www.rfc-editor.org/rfc/rfc4122.html#section-4.3">RFC-4122</a>) generated  as SHA-1 hash of the concatenantion of <code>name</code> and <code>version</code> separated by <code>:</code>.</td>
+</tr>
+<tr>
+<td><a name="standardName"></a>name</td>
+<td align="center"><code>string:name</code></td>
+<td>The name of the defined object. It is valorized when the object can be reused in other context (ex. a definition of a table schema used in multiple API). It's RECOMMENDED to use a camel case formatted string.</td>
+</tr>
+<tr>
+<td><a name="standardDefinitionVersion"></a>version</td>
+<td align="center"><code>string</code></td>
+<td>The version of the defined object. t is valorized when the object can be reused in other context (ex. a definition of a table schema used in multiple API).</td>
+</tr>
+<tr>
+<td><a name="standardDefinitionDescription"></a>description</td>
+<td align="center"><code>string</code></td>
+<td>The standard definition descripion. <a href="https://spec.commonmark.org/">CommonMark syntax</a> MAY be used for rich text representation.</td>
+</tr>
+<tr>
+<td><a name="standardDefinitionSpecification"></a>specification</td>
+<td align="center"><code>string</code></td>
+<td><strong>(REQUIRED)</strong> The external specification used in the <code>definition</code>.</td>
+</tr>
+<tr>
+<td><a name="standardDefinitionSpecificationVersion"></a>specificationVersion</td>
+<td align="center"><code>string</code></td>
+<td>The version of the external specification used in the <code>definition</code>. If not defined the version MUST be included in the definition itself.</td>
+</tr>
+<tr>
+<td><a name="standardDefinitionDefinition"></a>definition</td>
+<td align="center">object | <code>string</code> | <a href="#referenceObject">Reference Object</a></td>
+<td><strong>(REQUIRED)</strong> The formal definition built using the spcification declared in the <code>[specification](#standardDefinitionSpecification)</code> field.</td>
+</tr>
+<tr>
+<td><a name="standardDefinitionExternalDocs"></a>externalDocs</td>
+<td align="center"><a href="#externalResourceObject">External Resource Object</a></td>
+<td>Additional external documentation for the standard definition.</td>
+</tr>
+</tbody>
+</table>
+<p>This object MAY be extended with <a href="#specificationExtensions">Specification Extensions</a>.  </p>
+<h5 id="standard-definition-object-example">Standard Definition Object Example:<a class="headerlink" href="#standard-definition-object-example" title="Permanent link">⚓︎</a></h5>
+<div class="highlight"><span class="filename">JSON</span><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="nt">&quot;specification&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schemata&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span><span class="nt">&quot;specificationVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">  </span><span class="nt">&quot;definition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="nt">&quot;mediaType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;application/x-protobuf&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="nt">&quot;$ref&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;trip-status.proto&quot;</span><span class="w"></span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">  </span><span class="p">}</span><span class="w">   </span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="p">}</span><span class="w"> </span>
+</code></pre></div>
 <h3 id="specification-extensions"><a name="specificationExtensions"></a>Specification Extensions<a class="headerlink" href="#specification-extensions" title="Permanent link">⚓︎</a></h3>
 <p>While the <a href="#definitionsdsasification">Data Product Descriptor Specification</a> tries to accommodate most use cases, additional data can be added to extend the specification at certain points.
 The extension properties are implemented as patterned fields that are always prefixed by <code>x-</code>.</p>
@@ -3079,7 +3094,7 @@ The extension properties are implemented as patterned fields that are always pre
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 28, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 1, 2023</span>
       
         <br>
         Created:
