@@ -8,11 +8,13 @@
         "platform": "westeurope.azure::postgres",
         "serviceType": "datastore-services",
         "api": {
-            "specification": "datastoreapi",
+            "name": "tripStatusApi",
             "version": "1.0.0",
+            "specification": "datastoreapi",
+            "specificationVersion": "1.0.0",
             "definition": {
                 "mediaType": "text/json",
-                "$href": "https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/trip-status-oport-api.json"
+                "$ref": "https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/trip-status-oport-api.json"
             },
             "externalDocs": {
                 "description": "The OpenAPI v3.1.0 specification used to define the API of this port",
