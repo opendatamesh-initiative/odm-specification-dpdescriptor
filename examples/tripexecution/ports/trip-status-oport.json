@@ -69,7 +69,7 @@
             "description": "This port is billed by number of monthly queries",
             "x-billingUnit": "milion queries",
             "x-pricePerUnit": 0.01,
-            "x-billingPeriod": "month",
+            "x-billingPeriod": "month"
 
         },
         "sla": {
