@@ -14,7 +14,7 @@
             "specificationVersion": "2.5.0",
             "definition": {
                 "mediaType": "text/json",
-                "$ref": "https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/ports/trip-events-oport-api.json"
+                "$ref": "https://raw.githubusercontent.com/opendatamesh-initiative/odm-specification-dpdescriptor/main/examples/tripexecution/ports/trip-events-oport-api.json"
             },
             "externalDocs": {
                 "description": "The AsyncAPI v2.5.0 specification used to define the API of this port",

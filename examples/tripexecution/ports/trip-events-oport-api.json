@@ -47,7 +47,7 @@
                     "contentType": "avro/binary",
                     "schemaFormat": "application/vnd.apache.avro",
                     "payload": {
-                        "$ref": "https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/ports/trip-events-oport-status-change-schema.avsc"
+                        "$ref": "https://raw.githubusercontent.com/opendatamesh-initiative/odm-specification-dpdescriptor/main/examples/tripexecution/ports/trip-events-oport-status-change-schema.avsc"
                     },
                     "bindings": {
                         "kafka": {
@@ -81,7 +81,7 @@
                     "contentType": "avro/binary",
                     "schemaFormat": "application/vnd.apache.avro",
                     "payload": {
-                        "$ref": "https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/blob/main/examples/tripexecution/ports/trip-events-oport-position-notification-schema.avsc"
+                        "$ref": "https://raw.githubusercontent.com/opendatamesh-initiative/odm-specification-dpdescriptor/main/examples/tripexecution/ports/trip-events-oport-position-notification-schema.avsc"
                     },
                     "bindings": {
                         "kafka": {
