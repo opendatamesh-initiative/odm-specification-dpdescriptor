@@ -5,7 +5,9 @@
     "platform": "westeurope.azure:debezium",
     "applicationType":"stream-sourcing",
     "buildInfo": {
-        "service": "jenkins",
+        "service": {
+            "$href":"http://jenkins"
+        },
         "template": {
             "mediaType": "text/jenkinsfile",
             "$href": "https://github.com/opendatamesh-initiative/cd-ingestion-app/blob/main/jenkinsfile"

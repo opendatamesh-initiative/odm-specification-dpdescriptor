@@ -5,7 +5,9 @@
     "platform": "westeurope.azure:postgress",
     "infrastructureType":"storage-resource",
     "provisionInfo": {
-        "service": "terraform",
+        "service": {
+            "$href":"http://terraform"
+        },
         "template": {
             "mediaType": "text/terraformfile",
             "$href": "https://github.com/opendatamesh-initiative/state-store/blob/main/main.tf"

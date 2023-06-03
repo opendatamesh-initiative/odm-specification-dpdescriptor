@@ -5,7 +5,9 @@
     "platform": "westeurope.azure:confluent",
     "infrastructureType":"storage-resource",
     "provisionInfo": {
-        "service": "terraform",
+        "service": {
+            "$href":"http://terraform"
+        },
         "template": {
             "mediaType": "text/terraformfile",
             "$href": "https://github.com/opendatamesh-initiative/event-store/blob/main/main.tf"
