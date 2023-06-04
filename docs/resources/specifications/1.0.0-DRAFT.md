@@ -1,5 +1,5 @@
 # Data Product Descriptor Specification
-F
+
 #### Version 1.0.0 (DRAFT)
 The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in <a href="https://tools.ietf.org/html/bcp14" target="_blank">BCP 14:octicons-link-external-24:</a> <a href="https://tools.ietf.org/html/rfc2119" target="_blank">RFC2119:octicons-link-external-24:</a> <a href="https://tools.ietf.org/html/rfc8174" target="_blank">RFC8174:octicons-link-external-24:</a> when, and only when, they appear in all capitals, as shown here.
 
@@ -662,7 +662,7 @@ This object cannot be extended with additional properties and any properties add
 
 ```json
 {
-	"$ref": "#/components/schemas/Pet"
+  "$ref": "#/components/schemas/Pet"
 }
 ```
 
