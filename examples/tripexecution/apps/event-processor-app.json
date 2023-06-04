@@ -6,11 +6,11 @@
     "applicationType": "stream-transformation",
     "buildInfo": {
         "service": {
-            "$href":"http://jenkins"
+            "$ref":"http://jenkins"
         },
         "template": {
             "mediaType": "text/jenkinsfile",
-            "$href": "https://github.com/opendatamesh-initiative/event-processorn-app/blob/main/jenkinsfile"
+            "$ref": "https://github.com/opendatamesh-initiative/event-processorn-app/blob/main/jenkinsfile"
         },
         "configurations": {
             "TARGET_STAGE": "BUILD"
@@ -19,11 +19,11 @@
     "deployInfo": {
         "service": {
             "mediaType": "application",
-            "$href": "https://jenkins.company-xyz.com/api/v1/planes/utility/integration-services/builds"
+            "$ref": "https://jenkins.company-xyz.com/api/v1/planes/utility/integration-services/builds"
         },
         "template": {
             "mediaType": "text/jenkinsfile",
-            "$href": "https://github.com/opendatamesh-initiative/event-processor-app/blob/main/jenkinsfile"
+            "$ref": "https://github.com/opendatamesh-initiative/event-processor-app/blob/main/jenkinsfile"
         },
         "configurations": {
             "START_STAGE": "BUILD",

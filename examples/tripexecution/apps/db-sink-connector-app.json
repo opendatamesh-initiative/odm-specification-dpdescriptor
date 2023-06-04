@@ -6,11 +6,11 @@
     "applicationType": "stream-transformation",
     "buildInfo": {
         "service": {
-            "$href":"http://jenkins"
+            "$ref":"http://jenkins"
         },
         "template": {
             "mediaType": "text/jenkinsfile",
-            "$href": "https://github.com/opendatamesh-initiative/db-sink-connector-app/blob/main/jenkinsfile"
+            "$ref": "https://github.com/opendatamesh-initiative/db-sink-connector-app/blob/main/jenkinsfile"
         },
         "configurations": {
             "TARGET_STAGE": "BUILD"
