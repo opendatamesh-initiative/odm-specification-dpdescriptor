@@ -6,11 +6,11 @@
     "infrastructureType":"storage-resource",
     "provisionInfo": {
         "service": {
-            "$href":"http://terraform"
+            "$ref":"http://terraform"
         },
         "template": {
             "mediaType": "text/terraformfile",
-            "$href": "https://github.com/opendatamesh-initiative/event-store/blob/main/main.tf"
+            "$ref": "https://github.com/opendatamesh-initiative/event-store/blob/main/main.tf"
        },
         "configurations": {
             "PARTITIONS": 20,
