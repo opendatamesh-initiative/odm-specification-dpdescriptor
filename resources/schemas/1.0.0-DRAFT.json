@@ -409,7 +409,7 @@
                     "type": "string"
                 },
                 "definition": {
-                   "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                   "$ref": "#/$defs/objectOrStringOrReference"
                 },
                 "externalDocs": {
                     "$ref": "#/$defs/externalResource"
@@ -540,13 +540,13 @@
                             "type": "object",
                             "properties": {
                                 "service": {
-                                    "$ref": "#/$defs/stringOrExternalResource"
+                                    "$ref": "#/$defs/reference"
                                 },
                                 "template": {
-                                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                                    "$ref": "#/$defs/objectOrStringOrReference"
                                 },
                                 "configurations": {
-                                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                                    "$ref": "#/$defs/objectOrStringOrReference"
                                 }
                             }
                         },
@@ -557,13 +557,13 @@
                             "type": "object",
                             "properties": {
                                 "service": {
-                                    "$ref": "#/$defs/stringOrExternalResource"
+                                    "$ref": "#/$defs/reference"
                                 },
                                 "template": {
-                                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                                    "$ref": "#/$defs/objectOrStringOrReference"
                                 },
                                 "configurations": {
-                                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                                    "$ref": "#/$defs/objectOrStringOrReference"
                                 }
                             }
                         },
@@ -633,13 +633,13 @@
                             "type": "object",
                             "properties": {
                                 "service": {
-                                    "$ref": "#/$defs/stringOrExternalResource"
+                                    "$ref": "#/$defs/reference"
                                 },
                                 "template": {
-                                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                                    "$ref": "#/$defs/objectOrStringOrReference"
                                 },
                                 "configurations": {
-                                    "$ref": "#/$defs/objectOrReferenceOrExternalResource"
+                                    "$ref": "#/$defs/objectOrStringOrReference"
                                 }
                             }
                         },
@@ -727,6 +727,10 @@
                     "type": "string",
                     "format": "uri-reference"
                 },
+                "mediaType": {
+                    "description": "",
+                    "type": "string"
+                },
                 "description": {
                     "description": "",
                     "type": "string"
@@ -763,22 +767,8 @@
             "unevaluatedProperties": false
         },
 
-        "stringOrExternalResource": {
-            "oneOf": [
-                {
-                    "title": "string",
-                    "description": "An inline String", 
-                    "type": "string"
-                },
-                {
-                    "$ref": "#/$defs/externalResource"
-                }
-            ],
-            "unevaluatedProperties": false
-        },
-
-
-        "objectOrReferenceOrExternalResource": {
+      
+        "objectOrStringOrReference": {
             "oneOf": [
                 {
                     "title": "object",
@@ -786,10 +776,12 @@
                     "type": "object"
                 },
                 {
-                    "$ref": "#/$defs/reference"
+                    "title": "string",
+                    "description": "An inline String", 
+                    "type": "string"
                 },
                 {
-                    "$ref": "#/$defs/externalResource"
+                    "$ref": "#/$defs/reference"
                 }
             ]
         },
