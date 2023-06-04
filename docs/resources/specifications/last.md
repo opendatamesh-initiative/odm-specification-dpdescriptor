@@ -72,7 +72,7 @@ The formalization of a standard data product descriptor document through an open
 		- [Infrastructural Component](#infrastructuralComponent)
 		- [Provision Info Object](#provisionInfoObject)
 		- [Components Object](#componentsObject)
-		- [Reference Object](#referenceObject)
+		- [Reference Object](#reference-object)
 		- [External Resource Object](#externalResourceObject)	
 		- [Standard Definition Object](#standardDefinitionObject)
 	- [Specification Extension Point](#specificationExtensionPoint)
@@ -164,7 +164,7 @@ Patterned fields MUST have unique names within the containing object. To preserv
 
 ### <a name="documentStructure"></a>Document Structure
 
-A [Data Product Descriptor Document](#definitionsDpdsDocument) MAY be made up of a single document or be divided into multiple, connected parts at the discretion of the user. In the latter case, a [`Reference Object`](#referenceObject) is used.
+A [Data Product Descriptor Document](#definitionsDpdsDocument) MAY be made up of a single document or be divided into multiple, connected parts at the discretion of the user. In the latter case, a [`Reference Object`](#reference-object) is used.
 
 It is RECOMMENDED that the root [Data Product Descriptor Document](#definitionsDpdsDocument) be named: `data-product-descriptor.json` or `data-product-descriptor.yaml`.
 
@@ -213,7 +213,7 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 
 Unless specified otherwise, all properties that are URLs SHOULD be absolute references. If a property explicitly specifies in its description that allows a relative reference its value MUST be compliant with <a href="https://tools.ietf.org/html/rfc3986#section-4.2" target="_blank">RFC3986:octicons-link-external-24:</a>. Relative references MUST be resolved using the URLs defined in the property description as a Base URI.
 
-Relative references used in `$ref` are processed as per <a href="https://tools.ietf.org/html/draft-pbryan-zyp-json-ref-03" target="_blank">JSON Reference:octicons-link-external-24:</a>, using the URL of the current document as the base URI. See also the [Reference Object](#referenceObject).
+Relative references used in `$ref` are processed as per <a href="https://tools.ietf.org/html/draft-pbryan-zyp-json-ref-03" target="_blank">JSON Reference:octicons-link-external-24:</a>, using the URL of the current document as the base URI. See also the [Reference Object](#reference-object).
 
 
 ### <a name="schema"></a>Schema
@@ -329,11 +329,11 @@ The `Interface Components Object` it's a collection of all interface entities ex
 
 Field Name | Type | Description
 ---|:---:|---
-<a name="interfaceComponentInputPorts"></a>inputPorts | \[[Input Port Component](#inputPortComponent)\| [Reference Object](#referenceObject)\] | The [input ports](#definitionsDataProductPorts) exposed by the data product. 
-<a name="interfaceComponentOutputPorts"></a>outputPorts | \[[Output Port Component](#outputPortComponent)\| [Reference Object](#referenceObject)\] | **(REQUIRED)** The [output ports](#definitionsDataProductPorts) exposed by the data product. 
-<a name="interfaceComponentDiscoveryPorts"></a>discoveryPorts | \[[Discovery Port Component](#discoveryPortComponent)\| [Reference Object](#referenceObject)\] | The [discovery ports](#definitionsDataProductPorts) exposed by the data product.
-<a name="interfaceComponentObservabilityPorts"></a>observabilityPorts | \[[Observability Port Component](#observabilityPortComponent) \| [Reference Object](#referenceObject)\] | The [observability ports](#definitionsDataProductPorts) exposed by the data product.
-<a name="interfaceComponentControlPorts"></a>controlPorts | \[[Control Port Component](#controlPortComponent)\| [Reference Object](#referenceObject)\] | The [control ports](#definitionsDataProductPorts) exposed by the data product.
+<a name="interfaceComponentInputPorts"></a>inputPorts | \[[Input Port Component](#inputPortComponent)\| [Reference Object](#reference-object)\] | The [input ports](#definitionsDataProductPorts) exposed by the data product. 
+<a name="interfaceComponentOutputPorts"></a>outputPorts | \[[Output Port Component](#outputPortComponent)\| [Reference Object](#reference-object)\] | **(REQUIRED)** The [output ports](#definitionsDataProductPorts) exposed by the data product. 
+<a name="interfaceComponentDiscoveryPorts"></a>discoveryPorts | \[[Discovery Port Component](#discoveryPortComponent)\| [Reference Object](#reference-object)\] | The [discovery ports](#definitionsDataProductPorts) exposed by the data product.
+<a name="interfaceComponentObservabilityPorts"></a>observabilityPorts | \[[Observability Port Component](#observabilityPortComponent) \| [Reference Object](#reference-object)\] | The [observability ports](#definitionsDataProductPorts) exposed by the data product.
+<a name="interfaceComponentControlPorts"></a>controlPorts | \[[Control Port Component](#controlPortComponent)\| [Reference Object](#reference-object)\] | The [control ports](#definitionsDataProductPorts) exposed by the data product.
 
 This object cannot be extended with additional properties and any properties added SHALL be ignored.
 
@@ -353,9 +353,9 @@ Field Name | Type | Description
 <a name="inputPortDisplayName"></a>displayName | `string` | The human readable name of the port. It SHOULD be used by frontend tool to visualize port's name in place of the `name` property. It's RECOMMENDED to not use the same `displayName` for different input ports belonging to the same data product.
 <a name="inputPortDescription"></a>description | `string` | The port descripion. [CommonMark syntax](https://spec.commonmark.org/) MAY be used for rich text representation.
 <a name="inputPortComponentGroup"></a>componentGroup | `string:name` | The name of the group this component belongs to. Grouping different components together is useful to define sub modules withing a data product. A sub module can be used as base for creating reusable templates. 
-<a name="inputPortPromises"></a>promises | [Promises Object](#PromisesObject) \| [Reference Object](#referenceObject) | The data product's [promises](#definitionsDataProductPortsPromises) declared over the port.
-<a name="inputPortExpectations"></a>expectations | [Expectation Object](#expectationsObject) \| [Reference Object](#referenceObject) | The data product's [expectations](#definitionsDataProductPortsExpectations) declared over the port.
-<a name="inputPortContracts"></a>contracts | [Contracts Object](#contractsObject) \| [Reference Object](#referenceObject) | The data product's [contracts](#definitionsDataProductPortsContracts) declared over the port.
+<a name="inputPortPromises"></a>promises | [Promises Object](#PromisesObject) \| [Reference Object](#reference-object) | The data product's [promises](#definitionsDataProductPortsPromises) declared over the port.
+<a name="inputPortExpectations"></a>expectations | [Expectation Object](#expectationsObject) \| [Reference Object](#reference-object) | The data product's [expectations](#definitionsDataProductPortsExpectations) declared over the port.
+<a name="inputPortContracts"></a>contracts | [Contracts Object](#contractsObject) \| [Reference Object](#reference-object) | The data product's [contracts](#definitionsDataProductPortsContracts) declared over the port.
 <a name="inputPortTags"></a>tags | [`string`] | A list of tags associated to the component. Tags can be used for logical grouping of data product's components.
 <a name="inputPortExternalDocumentation"></a>externalDocs | [External Resource Object](#externalResourceObject) | Additional external documentation.
 
@@ -378,9 +378,9 @@ Field Name | Type | Description
 <a name="outputPortDisplayName"></a>displayName | `string` | The human readable name of the port. It SHOULD be used by frontend tool to visualize port's name in place of the `name` property. It's RECOMMENDED to not use the same `displayName` for different input ports belonging to the same data product.
 <a name="outputPortDescription"></a>description | `string` | The port descripion. [CommonMark syntax](https://spec.commonmark.org/) MAY be used for rich text representation.
 <a name="outputPortComponentGroup"></a>componentGroup | `string:name` | The name of the group this component belongs to. Grouping different components together is useful to define sub modules withing a data product. A sub module can be used as base for creating reusable templates. 
-<a name="outputPortPromises"></a>promises | [Promises Object](#PromisesObject) \| [Reference Object](#referenceObject) | The data product's [promises](#definitionsDataProductPortsPromises) declared over the port.
-<a name="outputPortExpectations"></a>expectations | [Expectation Object](#expectationsObject) \| [Reference Object](#referenceObject) | The data product's [expectations](#definitionsDataProductPortsExpectations) declared over the port.
-<a name="outputPortContracts"></a>contracts | [Contracts Object](#contractsObject) \| [Reference Object](#referenceObject) | The data product's [contracts](#definitionsDataProductPortsContracts) declared over the port.
+<a name="outputPortPromises"></a>promises | [Promises Object](#PromisesObject) \| [Reference Object](#reference-object) | The data product's [promises](#definitionsDataProductPortsPromises) declared over the port.
+<a name="outputPortExpectations"></a>expectations | [Expectation Object](#expectationsObject) \| [Reference Object](#reference-object) | The data product's [expectations](#definitionsDataProductPortsExpectations) declared over the port.
+<a name="outputPortContracts"></a>contracts | [Contracts Object](#contractsObject) \| [Reference Object](#reference-object) | The data product's [contracts](#definitionsDataProductPortsContracts) declared over the port.
 <a name="outputPortTags"></a>tags | [`string`] | A list of tags associated to the component. Tags can be used for logical grouping of data product's components.
 <a name="outputPortExternalDocumentation"></a>externalDocs | [External Resource Object](#externalResourceObject) | Additional external documentation.
 
@@ -403,9 +403,9 @@ Field Name | Type | Description
 <a name="discoveryPortDisplayName"></a>displayName | `string` | The human readable name of the port. It SHOULD be used by frontend tool to visualize port's name in place of the `name` property. It's RECOMMENDED to not use the same `displayName` for different input ports belonging to the same data product.
 <a name="discoveryPortDescription"></a>description | `string` | The port descripion. [CommonMark syntax](https://spec.commonmark.org/) MAY be used for rich text representation.
 <a name="discoveryPortComponentGroup"></a>componentGroup | `string:name` | The name of the group this component belongs to. Grouping different components together is useful to define sub modules withing a data product. A sub module can be used as base for creating reusable templates. 
-<a name="discoveryPortPromises"></a>promises | [Promises Object](#PromisesObject) \| [Reference Object](#referenceObject) | The data product's [promises](#definitionsDataProductPortsPromises) declared over the port.
-<a name="discoveryPortExpectations"></a>expectations | [Expectation Object](#expectationsObject) \| [Reference Object](#referenceObject) | The data product's [expectations](#definitionsDataProductPortsExpectations) declared over the port.
-<a name="discoveryPortContracts"></a>contracts | [Contracts Object](#contractsObject) \| [Reference Object](#referenceObject) | The data product's [contracts](#definitionsDataProductPortsContracts) declared over the port.
+<a name="discoveryPortPromises"></a>promises | [Promises Object](#PromisesObject) \| [Reference Object](#reference-object) | The data product's [promises](#definitionsDataProductPortsPromises) declared over the port.
+<a name="discoveryPortExpectations"></a>expectations | [Expectation Object](#expectationsObject) \| [Reference Object](#reference-object) | The data product's [expectations](#definitionsDataProductPortsExpectations) declared over the port.
+<a name="discoveryPortContracts"></a>contracts | [Contracts Object](#contractsObject) \| [Reference Object](#reference-object) | The data product's [contracts](#definitionsDataProductPortsContracts) declared over the port.
 <a name="discoveryPortTags"></a>tags | [`string`] | A list of tags associated to the component. Tags can be used for logical grouping of data product's components.
 <a name="discoveryPortExternalDocumentation"></a>externalDocs | [External Resource Object](#externalResourceObject) | Additional external documentation.
 
@@ -428,9 +428,9 @@ Field Name | Type | Description
 <a name="observabilityPortDisplayName"></a>displayName | `string` | The human readable name of the port. It SHOULD be used by frontend tool to visualize port's name in place of the `name` property. It's RECOMMENDED to not use the same `displayName` for different input ports belonging to the same data product.
 <a name="observabilityPortDescription"></a>description | `string` | The port descripion. [CommonMark syntax](https://spec.commonmark.org/) MAY be used for rich text representation.
 <a name="observabilityPortComponentGroup"></a>componentGroup | `string:name` | The name of the group this component belongs to. Grouping different components together is useful to define sub modules withing a data product. A sub module can be used as base for creating reusable templates. 
-<a name="observabilityPortPromises"></a>promises | [Promises Object](#PromisesObject) \| [Reference Object](#referenceObject) | The data product's [promises](#definitionsDataProductPortsPromises) declared over the port.
-<a name="observabilityPortExpectations"></a>expectations | [Expectation Object](#expectationsObject) \| [Reference Object](#referenceObject) | The data product's [expectations](#definitionsDataProductPortsExpectations) declared over the port.
-<a name="observabilityPortContracts"></a>contracts | [Contracts Object](#contractsObject) \| [Reference Object](#referenceObject) | The data product's [contracts](#definitionsDataProductPortsContracts) declared over the port.
+<a name="observabilityPortPromises"></a>promises | [Promises Object](#PromisesObject) \| [Reference Object](#reference-object) | The data product's [promises](#definitionsDataProductPortsPromises) declared over the port.
+<a name="observabilityPortExpectations"></a>expectations | [Expectation Object](#expectationsObject) \| [Reference Object](#reference-object) | The data product's [expectations](#definitionsDataProductPortsExpectations) declared over the port.
+<a name="observabilityPortContracts"></a>contracts | [Contracts Object](#contractsObject) \| [Reference Object](#reference-object) | The data product's [contracts](#definitionsDataProductPortsContracts) declared over the port.
 <a name="observabilityPortTags"></a>tags | [`string`] | A list of tags associated to the component. Tags can be used for logical grouping of data product's components.
 <a name="observabilityPortExternalDocumentation"></a>externalDocs | [External Resource Object](#externalResourceObject) | Additional external documentation.
 
@@ -453,9 +453,9 @@ Field Name | Type | Description
 <a name="controlPortDisplayName"></a>displayName | `string` | The human readable name of the port. It SHOULD be used by frontend tool to visualize port's name in place of the `name` property. It's RECOMMENDED to not use the same `displayName` for different input ports belonging to the same data product.
 <a name="controlPortDescription"></a>description | `string` | The port descripion. [CommonMark syntax](https://spec.commonmark.org/) MAY be used for rich text representation.
 <a name="controlPortComponentGroup"></a>componentGroup | `string:name` | The name of the group this component belongs to. Grouping different components together is useful to define sub modules withing a data product. A sub module can be used as base for creating reusable templates. 
-<a name="controlPortPromises"></a>promises | [Promises Object](#PromisesObject) \| [Reference Object](#referenceObject) | The data product's [promises](#definitionsDataProductPortsPromises) declared over the port.
-<a name="controlPortExpectations"></a>expectations | [Expectation Object](#expectationsObject) \| [Reference Object](#referenceObject) | The data product's [expectations](#definitionsDataProductPortsExpectations) declared over the port.
-<a name="controlPortContracts"></a>contracts | [Contracts Object](#contractsObject) \| [Reference Object](#referenceObject) | The data product's [contracts](#definitionsDataProductPortsContracts) declared over the port.
+<a name="controlPortPromises"></a>promises | [Promises Object](#PromisesObject) \| [Reference Object](#reference-object) | The data product's [promises](#definitionsDataProductPortsPromises) declared over the port.
+<a name="controlPortExpectations"></a>expectations | [Expectation Object](#expectationsObject) \| [Reference Object](#reference-object) | The data product's [expectations](#definitionsDataProductPortsExpectations) declared over the port.
+<a name="controlPortContracts"></a>contracts | [Contracts Object](#contractsObject) \| [Reference Object](#reference-object) | The data product's [contracts](#definitionsDataProductPortsContracts) declared over the port.
 <a name="controlPortTags"></a>tags | [`string`] | A list of tags associated to the component. Tags can be used for logical grouping of data product's components.
 <a name="controlPortExternalDocumentation"></a>externalDocs | [External Resource Object](#externalResourceObject) | Additional external documentation.
 
@@ -552,15 +552,15 @@ This object MAY be extended with [Specification Extensions](#specificationExtens
 
 #### <a name="buildInfoObject"></a>Build Info Object
 
-The `Build Info Object` contains all the informations required to build an [Application Component](#applicationComponent)
+The `Build Info Object` contains all the information required to build an [Application Component](#applicationComponent)
 
 ##### Fixed Fields
 
 Field Name | Type | Description
 ---|:---:|---
-<a name="buildInfoService"></a>service | `string` \| [External Resource Object](#externalResourceObject) | The logical name or the actual endpoint of the service to call in order to *build* the application component. If the logical name is used as field value the actual endpoint value resulution is demanded to the *data product experience plane* of the underlyng platform.
-<a name="buildInfoTemplate"></a>template | object \| [Reference Object](#referenceObject) \| [External Resource Object](#externalResourceObject) | Can be an inline JSON or a refernce to an external resource. It contains the definition of the pipeline to execute in order to build the application. It is passed as is to the build service specified using the `buildService` field.
-<a name="buildInfoConfigurations"></a>configurations | object \| [Reference Object](#referenceObject) \| [External Resource Object](#externalResourceObject) | Can be an inline JSON or a refernce to an external resource. It contains the configuration properties that can be used by the build service at build time. It is passed as is to the build service specified using the `buildService` field.
+<a name="buildInfoService"></a>service | [Reference Object](#reference-object) | The endpoint of the service to call in order to *build* the application component.
+<a name="buildInfoTemplate"></a>template |  `object` \| `string` \| [Reference Object](#reference-object) | Can be an inline JSON or a refernce to an external resource. It contains the definition of the pipeline to execute in order to build the application. It is passed as is to the build service specified using the `buildService` field.
+<a name="buildInfoConfigurations"></a>configurations |  `object` \| `string` \| [Reference Object](#reference-object) | Can be an inline JSON or a refernce to an external resource. It contains the configuration properties that can be used by the build service at build time. It is passed as is to the build service specified using the `buildService` field.
 
 This object MAY be extended with [Specification Extensions](#specificationExtensions).
 
@@ -572,9 +572,9 @@ The `Deploy Info Object` contains all the informations required to deploy an [Ap
 
 Field Name | Type | Description
 ---|:---:|---
-<a name="deployInfoService"></a>service | `string` \| [External Resource Object](#externalResourceObject) | The logical name or the actual endpoint of the service to call in order to *deploy* the application component. If the logical name is used as field value the actual endpoint value resulution is demanded to the *data product experience plane* of the underlyng platform.
-<a name="deployInfoTemplate"></a>template | object \| [Reference Object](#referenceObject) \| [External Resource Object](#externalResourceObject) | Can be an inline JSON or a refernce to an external resource. It contains the definition of the pipeline to execute in order to deploy the application. It is passed as is to the deployment service specified using the `deploymentService` field.     
-<a name="deployInfoConfigurations"></a>configurations | object \| [Reference Object](#referenceObject) \| [External Resource Object](#externalResourceObject) | Can be an inline JSON or a refernce to an external resource. It contains the configuration properties that can be used by the deployment service at deploy time. It is passed as is to the deployment service specified using the `deploymentService` field.
+<a name="deployInfoService"></a>service | [Reference Object](#reference-object) | The endpoint of the service to call in order to *deploy* the application component. 
+<a name="deployInfoTemplate"></a>template |  `object` \| `string` \| [Reference Object](#reference-object) | Can be an inline JSON or a refernce to an external resource. It contains the definition of the pipeline to execute in order to deploy the application. It is passed as is to the deployment service specified using the `deploymentService` field.     
+<a name="deployInfoConfigurations"></a>configurations |  `object` \| `string` \| [Reference Object](#reference-object) | Can be an inline JSON or a refernce to an external resource. It contains the configuration properties that can be used by the deployment service at deploy time. It is passed as is to the deployment service specified using the `deploymentService` field.
 
 This object MAY be extended with [Specification Extensions](#specificationExtensions).
 
@@ -611,9 +611,9 @@ The `Provision Info Object` contains all the informations required to provision 
 
 Field Name | Type | Description
 ---|:---:|---
-<a name="provisionInfoService"></a>service | `string:name` \| [External Resource Object](#externalResourceObject) | The logical name or the actual endpoint of the service to call in order to *provision* the infrastructural component. If the logical name is used as field value the actual endpoint value resulution is demanded to the *data product experience plane* of the underlyng platform.
-<a name="provisionInfoTemplate"></a>template |  object \| [Reference Object](#referenceObject) \| [External Resource Object](#externalResourceObject) | Can be an inline JSON or a refernce to an external resource. It contains the definition of the resources to provision. It is passed as is to the provisioning service specified using the `provisionService` field.
-<a name="provisionInfoConfigurations"></a>configurations | object \| [Reference Object](#referenceObject) \| [External Resource Object](#externalResourceObject) | Can be an inline JSON or a refernce to an external resource. It contains the configuration properties that can be used by the provisioning service at provision time. It is passed as is to the provision service specified using the `provisioningService` field.
+<a name="provisionInfoService"></a>service | [Reference Object](#reference-object) | The endpoint of the service to call in order to *provision* the infrastructural component. 
+<a name="provisionInfoTemplate"></a>template |   `object` \| `string` \| [Reference Object](#reference-object) | Can be an inline JSON or a refernce to an external resource. It contains the definition of the resources to provision. It is passed as is to the provisioning service specified using the `provisionService` field.
+<a name="provisionInfoConfigurations"></a>configurations | `object` \| `string` \| [Reference Object](#reference-object) | Can be an inline JSON or a refernce to an external resource. It contains the configuration properties that can be used by the provisioning service at provision time. It is passed as is to the provision service specified using the `provisioningService` field.
 
 This object MAY be extended with [Specification Extensions](#specificationExtensions).
 
@@ -628,13 +628,13 @@ All objects defined within the components object will have no effect on the Data
 
 Field Name | Type | Description
 ---|:---|---
-<a name="componentsInputPorts"></a> inputPorts | Map[`string`, [Input Port Component](#inputPortComponent) \| [Reference Object](#referenceObject)] | An object to hold reusable [Input Port Component](#inputPortComponent).
-<a name="componentsOutputPorts"></a> outputPorts | Map[`string`, [Output Port Component](#outputPortComponent) \| [Reference Object](#referenceObject)] | An object to hold reusable [Output Port Component](#outputPortComponent).
-<a name="componentsDiscoveryPorts"></a> discoveryPorts | Map[`string`, [Discovery Port Component](#discoveryPortComponent) \| [Reference Object](#referenceObject)] | An object to hold reusable [Discovery Port Component](#discoveryPortComponent).
-<a name="componentsObservabilityPorts"></a> observabilityPorts | Map[`string`, [Observability Port Component](#observabilityPortComponent) \| [Reference Object](#referenceObject)] | An object to hold reusable [Observability Port Component](#observabilityPortComponent).
-<a name="componentsControlPorts"></a> controlPorts | Map[`string`, [Control Port Component](#ControlPortComponent) \| [Reference Object](#referenceObject)] | An object to hold reusable [Control Port Component](#ControlPortComponent).
-<a name="componentsApplicationComponent"></a> applicationComponents | Map[`string`, [Application Component](#applicationComponent) \| [Reference Object](#referenceObject)] | An object to hold reusable [Application Component](#applicationComponent).
-<a name="componentsInfrastructuralComponent"></a> infrastructuralComponents | Map[`string`, [Infrastructural Component](#infrastructuralComponent) \| [Reference Object](#referenceObject)] | An object to hold reusable [Infrastructural Component](#infrastructuralComponent).
+<a name="componentsInputPorts"></a> inputPorts | Map[`string`, [Input Port Component](#inputPortComponent) \| [Reference Object](#reference-object)] | An object to hold reusable [Input Port Component](#inputPortComponent).
+<a name="componentsOutputPorts"></a> outputPorts | Map[`string`, [Output Port Component](#outputPortComponent) \| [Reference Object](#reference-object)] | An object to hold reusable [Output Port Component](#outputPortComponent).
+<a name="componentsDiscoveryPorts"></a> discoveryPorts | Map[`string`, [Discovery Port Component](#discoveryPortComponent) \| [Reference Object](#reference-object)] | An object to hold reusable [Discovery Port Component](#discoveryPortComponent).
+<a name="componentsObservabilityPorts"></a> observabilityPorts | Map[`string`, [Observability Port Component](#observabilityPortComponent) \| [Reference Object](#reference-object)] | An object to hold reusable [Observability Port Component](#observabilityPortComponent).
+<a name="componentsControlPorts"></a> controlPorts | Map[`string`, [Control Port Component](#ControlPortComponent) \| [Reference Object](#reference-object)] | An object to hold reusable [Control Port Component](#ControlPortComponent).
+<a name="componentsApplicationComponent"></a> applicationComponents | Map[`string`, [Application Component](#applicationComponent) \| [Reference Object](#reference-object)] | An object to hold reusable [Application Component](#applicationComponent).
+<a name="componentsInfrastructuralComponent"></a> infrastructuralComponents | Map[`string`, [Infrastructural Component](#infrastructuralComponent) \| [Reference Object](#reference-object)] | An object to hold reusable [Infrastructural Component](#infrastructuralComponent).
 
 
 This object MAY be extended with [Specification Extensions](#specificationExtensions).
@@ -662,7 +662,7 @@ This object cannot be extended with additional properties and any properties add
 
 ```json
 {
-	"$ref": "#/components/schemas/Pet"
+  "$ref": "#/components/schemas/Pet"
 }
 ```
 
@@ -682,7 +682,7 @@ This object cannot be extended with additional properties and any properties add
 
 #### <a name="externalResourceObject"></a>External Resource Object
 
-The `External Resource Object` allows referencing an external resource like a documentation page or a standard definition.
+The `External Resource Object` allows referencing an external resource like a documentation page.
 
 ##### Fixed Fields
 
@@ -715,7 +715,7 @@ Field Name | Type | Description
 <a name="standardDefinitionDescription"></a>description | `string` | The standard definition descripion. [CommonMark syntax](https://spec.commonmark.org/) MAY be used for rich text representation.
 <a name="standardDefinitionSpecification"></a>specification | `string` | **(REQUIRED)** The external specification used in the `definition`.
 <a name="standardDefinitionVersion"></a>version | `string` | The version of the external specification used in the `definition`. If not defined the version MUST be included in the definition itself.
-<a name="standardDefinitionDefinition"></a>definition | object \| [Reference Object](#referenceObject) \| [External Resource Object](#externalResourceObject) | **(REQUIRED)** The formal definition built using the spcification declared in the `[specification](#standardDefinitionSpecification)` field.
+<a name="standardDefinitionDefinition"></a>definition | `object` \| `string` \| [Reference Object](#reference-object) | **(REQUIRED)** The formal definition built using the spcification declared in the `[specification](#standardDefinitionSpecification)` field.
 <a name="standardDefinitionExternalDocs"></a>externalDocs | [External Resource Object](#externalResourceObject) | Additional external documentation for the standard definition.
 
 This object MAY be extended with [Specification Extensions](#specificationExtensions).  
