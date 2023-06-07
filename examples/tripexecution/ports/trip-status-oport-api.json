@@ -33,7 +33,7 @@
                 "specificationVersion": 1,
                 "definition": {
                     "mediaType": "application/x-protobuf",
-                    "$ref": "https://raw.githubusercontent.com/opendatamesh-initiative/odm-specification-dpdescriptor/main/examples/tripexecution/ports/trip-status-oport-schema.json"
+                    "$ref": "https://raw.githubusercontent.com/opendatamesh-initiative/odm-specification-dpdescriptor/main/examples/tripexecution/ports/trip-status-oport-schema.proto"
                 }
                
             }
