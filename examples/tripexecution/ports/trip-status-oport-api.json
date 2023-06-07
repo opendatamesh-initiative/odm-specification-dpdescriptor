@@ -29,7 +29,13 @@
         "schemaName": "tracking",
         "tables": [
             {
-                "$ref": "https://raw.githubusercontent.com/opendatamesh-initiative/odm-specification-dpdescriptor/main/examples/tripexecution/ports/trip-status-oport-schema.json"
+                "specification": "schemata",
+                "specificationVersion": 1,
+                "definition": {
+                    "mediaType": "application/x-protobuf",
+                    "$ref": "https://raw.githubusercontent.com/opendatamesh-initiative/odm-specification-dpdescriptor/main/examples/tripexecution/ports/trip-status-oport-schema.json"
+                }
+               
             }
         ]
     },
