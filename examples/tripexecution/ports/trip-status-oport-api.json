@@ -29,6 +29,7 @@
         "schemaName": "tracking",
         "tables": [
             {
+                "name": "TripStatus",
                 "specification": "schemata",
                 "specificationVersion": 1,
                 "definition": {
