@@ -26,6 +26,12 @@
                 "description": "This port expose all modifications in the status of each trip as events",
                 "$ref": "https://raw.githubusercontent.com/opendatamesh-initiative/odm-specification-dpdescriptor/main/examples/tripexecution/ports/trip-events-oport.json"
             }
+        ],
+        "observabilityPorts": [
+            {
+                "description": "This port exposes data product health metrics",
+                "$ref": "https://raw.githubusercontent.com/opendatamesh-initiative/odm-specification-dpdescriptor/main/examples/tripexecution/ports/health-obport.json"
+            }
         ]
     },
     "internalComponents": {

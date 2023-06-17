@@ -1,0 +1,79 @@
+---
+openapi: "2.0"
+info:
+  description: "This is the Observability API that all data product must implement to expose  
+    \ their basic health metrics."
+  version: "1.0.6"
+  title: "Health Metrics"
+  contact:
+    email: "platform-team@company-xyz.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+basePath: "/v1"
+tags:
+- name: "metrics"
+  description: "Basic health metrics for the data product compliant with the READS framework"
+  externalDocs:
+    description: "Find out more on READS framework"
+    url: "https://engineering.salesforce.com/reads-service-health-metrics-1bfa99033adc/"
+    
+schemes:
+- "https"
+- "http"
+paths:
+  /health:
+    get:
+      tags:
+      - "pet"
+      summary: "Check data product health metrics"
+      description: "Returns helth metrics of an output port"
+      operationId: "getPetById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "outputPortId"
+        in: "query"
+        description: "ID of the port for which the metrics are requested"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "https://raw.githubusercontent.com/opendatamesh-initiative/odm-specification-dpdescriptor/main/examples/tripexecution/ports/health-obport-api-metrics-schema.yaml"
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "Port not found"
+      security:
+      - api_key: []
+    
+securityDefinitions:
+  api_key:
+    type: "apiKey"
+    name: "api_key"
+    in: "header"
+definitions:
+  Metrics:
+    type: "object"
+    properties:
+      requestRate:
+        type: "integer"
+        format: "int64"
+      errors:
+        type: "integer"
+        format: "int64"
+      availability:
+        type: "integer"
+        format: "int64"
+      latency:
+        type: "integer"
+        format: "int64"
+      saturation:
+        type: "integer"
+        format: "int64"
+externalDocs:
+  description: "Find out more about Open Data Mesh Platform"
+  url: "https://platform.opendatamesh.org/"

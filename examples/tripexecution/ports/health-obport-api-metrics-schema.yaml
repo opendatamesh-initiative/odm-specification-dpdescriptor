@@ -1,0 +1,17 @@
+type: "object"
+properties:
+  requestRate:
+    type: "integer"
+    format: "int64"
+  errors:
+    type: "integer"
+    format: "int64"
+  availability:
+    type: "integer"
+    format: "int64"
+  latency:
+    type: "integer"
+    format: "int64"
+  saturation:
+    type: "integer"
+    format: "int64"

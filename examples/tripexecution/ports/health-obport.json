@@ -1,0 +1,26 @@
+{
+    "fullyQualifiedName": "urn:dpds:com.company-xyz:dataproducts:tripExecution:1:observabilityports:helthMetrics",
+    "name": "helthMetrics",
+    "displayName": "Helath Metrics",
+    "description": "This port exposes data product's minimal set of health metrics following the `READS` framework",
+    "version": "1.2.0",
+    "promises": {
+        "platform": "westeurope.azure:vm",
+        "serviceType": "rest-services",
+        "api": {
+            "name": "helthMetricsApi",
+            "version": "1.0.0",
+            "specification": "openapi",
+            "specificationVersion": "2.0.0",
+            "definition": {
+                "mediaType": "text/yaml",
+                "$ref": "https://raw.githubusercontent.com/opendatamesh-initiative/odm-specification-dpdescriptor/main/examples/tripexecution/ports/health-obport-api.yaml"
+            },
+            "externalDocs": {
+                "description": "More info on READS framework",
+                "mediaType": "text/html",
+                "$href": "https://engineering.salesforce.com/reads-service-health-metrics-1bfa99033adc/"
+            }
+        }
+    }
+}
