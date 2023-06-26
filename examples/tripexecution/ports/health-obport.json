@@ -14,7 +14,7 @@
             "specificationVersion": "2.0.0",
             "definition": {
                 "mediaType": "text/yaml",
-                "$ref": "https://raw.githubusercontent.com/opendatamesh-initiative/odm-specification-dpdescriptor/main/examples/tripexecution/ports/health-obport-api.yaml"
+                "$ref": "ports/health-obport-api.yaml"
             },
             "externalDocs": {
                 "description": "More info on READS framework",

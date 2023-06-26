@@ -54,6 +54,7 @@
             }, {
                 "description": "The database schema used to store the updated status of each Trip",
                 "$ref": "infra/state-store.json" 
+                        
             }
         ]
     }
