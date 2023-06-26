@@ -14,7 +14,7 @@
             "specificationVersion": "1.0.0",
             "definition": {
                 "mediaType": "text/json",
-                "$ref": "ports/trip-status-oport-api.json"
+                "$ref": "trip-status-oport-api.json"
             },
             "externalDocs": {
                 "description": "The OpenAPI v3.1.0 specification used to define the API of this port",

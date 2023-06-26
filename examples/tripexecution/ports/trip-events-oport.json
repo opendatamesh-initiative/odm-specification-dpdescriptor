@@ -14,7 +14,7 @@
             "specificationVersion": "2.5.0",
             "definition": {
                 "mediaType": "text/json",
-                "$ref": "ports/trip-events-oport-api.json"
+                "$ref": "trip-events-oport-api.json"
             },
             "externalDocs": {
                 "description": "The AsyncAPI v2.5.0 specification used to define the API of this port",

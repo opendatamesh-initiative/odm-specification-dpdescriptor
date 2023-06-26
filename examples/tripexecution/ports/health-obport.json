@@ -14,7 +14,7 @@
             "specificationVersion": "2.0.0",
             "definition": {
                 "mediaType": "text/yaml",
-                "$ref": "ports/health-obport-api.yaml"
+                "$ref": "health-obport-api.yaml"
             },
             "externalDocs": {
                 "description": "More info on READS framework",
