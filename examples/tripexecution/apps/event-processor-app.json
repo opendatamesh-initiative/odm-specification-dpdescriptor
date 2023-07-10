@@ -1,5 +1,6 @@
 {
     "fullyQualifiedName": "urn:dpds:com.company-xyz:dataproducts:tripExecution:1:applications:eventProcessor",
+    "name": "eventProcessor",
     "version": "1.1.0",
     "description": "The app that transform tecnical events in domain events",
     "platform": "westeurope.azure:confluent",
