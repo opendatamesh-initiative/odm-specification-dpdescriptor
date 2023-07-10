@@ -22,8 +22,12 @@
             "$ref": "https://jenkins.company-xyz.com/api/v1/planes/utility/integration-services/builds"
         },
         "template": {
-            "mediaType": "text/jenkinsfile",
-            "$ref": "https://github.com/opendatamesh-initiative/cd-ingestion-app/blob/main/jenkinsfile"
+            "specification": "custom-spec",
+            "specificationVersion": "1.0.0",
+            "contentMediaType": "application/json",
+            "definition": {
+              "pipeName": "cdcIngestion",
+            }
         },
         "configurations": {
             "START_STAGE": "BUILD",
