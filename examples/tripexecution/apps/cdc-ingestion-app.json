@@ -1,5 +1,6 @@
 {
     "fullyQualifiedName": "urn:dpds:com.company-xyz:dataproducts:tripExecution:1:applications:cdcIngestion",
+    "name": "cdcIngestion",
     "version": "1.0.1",
     "description": "The app that offloads the Trip aggregate from  TMS using CDC",
     "platform": "westeurope.azure:debezium",
