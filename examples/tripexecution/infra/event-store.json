@@ -6,7 +6,8 @@
     "infrastructureType":"storage-resource",
     "provisionInfo": {
         "service": {
-            "$ref":"http://terraform"
+            "contentMediaType": "application/odm-executor",
+            "$href":"azureDevOps"
         },
         "template": {
             "specification": "custom-spec",
