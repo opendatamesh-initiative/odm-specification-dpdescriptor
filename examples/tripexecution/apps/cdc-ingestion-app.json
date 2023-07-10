@@ -13,7 +13,7 @@
             "specificationVersion": "1.0.0",
             "contentMediaType": "application/json",
             "definition": {
-              "pipeName": "cdcIngestion",
+              "pipeName": "cdcIngestion"
             }
         },
         "configurations": {
@@ -30,7 +30,7 @@
             "specificationVersion": "1.0.0",
             "contentMediaType": "application/json",
             "definition": {
-              "pipeName": "cdcIngestion",
+              "pipeName": "cdcIngestion"
             }
         },
         "configurations": {
