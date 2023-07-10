@@ -11,7 +11,7 @@
         "template": {
             "specification": "custom-spec",
             "specificationVersion": "1.0.0",
-            "contentMediaType": "application/json",
+            "contentMediaType": "application/json"
             "definition": {
               "pipeName": "eventProcessor",
             }
@@ -28,7 +28,7 @@
         "template": {
             "specification": "custom-spec",
             "specificationVersion": "1.0.0",
-            "contentMediaType": "application/json",
+            "contentMediaType": "application/json"
             "definition": {
               "pipeName": "eventProcessor",
             }
