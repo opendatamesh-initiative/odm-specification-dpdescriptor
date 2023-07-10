@@ -6,7 +6,8 @@
     "applicationType":"stream-sourcing",
     "buildInfo": {
         "service": {
-            "$ref":"http://jenkins"
+            "contentMediaType": "application/odm-executor",
+            "$href":"azureDevOps"
         },
         "template": {
             "specification": "custom-spec",
@@ -22,8 +23,8 @@
     },
     "deployInfo": {
         "service": {
-            "mediaType": "application",
-            "$ref": "https://jenkins.company-xyz.com/api/v1/planes/utility/integration-services/builds"
+            "contentMediaType": "application/odm-executor",
+            "$href":"azureDevOps"
         },
         "template": {
             "specification": "custom-spec",
