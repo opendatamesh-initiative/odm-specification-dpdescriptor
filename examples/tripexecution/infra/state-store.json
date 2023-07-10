@@ -1,5 +1,6 @@
 {
     "fullyQualifiedName": "urn:dpds:com.company-xyz:dataproducts:tripExecution:1:infrastructure:stateStore",
+    "name": "stateStore",
     "version": "1.0.0",
     "description": "The database used by dbSinkConnector application to store the Trip updated state",
     "platform": "westeurope.azure:postgress",
