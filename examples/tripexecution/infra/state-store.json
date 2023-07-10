@@ -8,10 +8,16 @@
         "service": {
             "$ref":"http://terraform"
         },
-        "template": {
-            "mediaType": "text/terraformfile",
-            "$ref": "https://github.com/opendatamesh-initiative/state-store/blob/main/main.tf"
-       },
+       "template": {
+            "specification": "custom-spec",
+            "specificationVersion": "1.0.0",
+            "contentMediaType": "application/json",
+            "definition": {
+              "repository": "https://github.com/company-xyz/infra-blueprints.git",
+              "tag": "1.0.0",
+              "terraformFilePath": "sqlserver/databases/main.tf"
+            }
+        },
         "configurations": {
             "SCHEMA": "tracking"
         }
