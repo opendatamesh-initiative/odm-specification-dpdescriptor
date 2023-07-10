@@ -21,9 +21,13 @@
             "mediaType": "application",
             "$href": "https://jenkins.company-xyz.com/api/v1/planes/utility/integration-services/builds"
         },
-        "template": {
-            "mediaType": "text/jenkinsfile",
-            "$href": "https://github.com/opendatamesh-initiative/db-sink-connector-app/blob/main/jenkinsfile"
+       "template": {
+            "specification": "custom-spec",
+            "specificationVersion": "1.0.0",
+            "contentMediaType": "application/json",
+            "definition": {
+              "pipeName": "dbSinkConnector",
+            }
         },
         "configurations": {
             "START_STAGE": "BUILD",
