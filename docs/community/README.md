@@ -1,9 +1,9 @@
 # Community
 
-We love your input! That is afterall the  main reason why we decieded to relese the specification as an open standard under Apache 2.0 licence.
+We love your input! That is, after all, the  main reason why we decided to release the specification as an open standard under Apache 2.0 license.
 
 ???+ warning
-    We want to make contributing to this project as easy and transparent as possible. We do not have anyway a formal contribution process like other open standard yet (ex. <a href="https://github.com/asyncapi/spec/blob/master/CONTRIBUTING.md" target="_blank">AsyncAPI Specification Contribution Guide :material-github:</a>). We want to define a lightweight process in the upcoming months collecting also your feedbacks on the different possibilities. 
+    We want to make contributing to this project as easy and transparent as possible. We do not have anyway a formal contribution process like other open standards yet (ex. <a href="https://github.com/asyncapi/spec/blob/master/CONTRIBUTING.md" target="_blank">AsyncAPI Specification Contribution Guide :material-github:</a>). We want to define a lightweight process in the upcoming months collecting also your feedbacks on the different possibilities. 
 
 ## Contributing
 You can contribute to this project in the following ways:
@@ -14,17 +14,17 @@ You can contribute to this project in the following ways:
 
 
 ???+ note
-    The **Open Data Mesh Descriptor Specificatioon (DPDS)** project uses  <a href="https://github.com/opendatamesh-initiative/odm-specification-dpdescriptors" target="_blank">GitHub :material-github:</a> to maintain its content.
+    The **Open Data Mesh Descriptor Specification (DPDS)** project uses  <a href="https://github.com/opendatamesh-initiative/odm-specification-dpdescriptors" target="_blank">GitHub :material-github:</a> to maintain its content.
     
     This repository is publicly visible; however, if you want to contribute new content you need to create a GitHub account. This can be created from the top of the GitHub home page.
     
 ## Contributors
 
-The specification has been originally designed and released by [Quantyca](./quantyca.md) that it as at the moment its only mantainer. We hope to on-board soon other organizations that want to help in mantaining and evolving the specification.
+The specification has been originally designed and released by [Quantyca](./quantyca.md) that it at the moment its only maintainer. We hope to on-board soon other organizations that want to help in mantaining and evolving the specification.
 
 ## Open Data Mesh Initiative
 
-We would like to create an initiative around the specification to group all organizations that want to activelly partecipate in its evolution driving the key technical decisions and promoting its adoption. If your organization is intersted in joining this initiative please [drop us an email](mailto:odm.info@quantyca.it) so we can arrange a presentation call.
+We would like to create an initiative around the specification to group all organizations that want to actively partecipate in its evolution driving the key technical decisions and promoting its adoption. If your organization is interested in joining this initiative please [drop us an email](mailto:odm.info@quantyca.it) so we can arrange a presentation call.
 
 
 ## Contacts
