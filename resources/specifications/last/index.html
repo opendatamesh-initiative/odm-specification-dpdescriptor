@@ -1985,7 +1985,7 @@
 <li><a href="#controlPortComponent">Control Port Component</a></li>
 <li><a href="#promisesObject">Promises Object</a></li>
 <li><a href="#expectationsObject">Expectations Object</a></li>
-<li><a href="#contractsObject">Contracts Object</a></li>
+<li><a href="#obligationsObject">Obligations Object</a></li>
 <li><a href="#internalComponentsObject">Internal Components Object</a></li>
 <li><a href="#lifecycleTaskInfoObject">Lifecycle Task Info Object</a></li>
 <li><a href="#applicationComponent">Application Component</a></li>
@@ -2026,7 +2026,7 @@
 <ul>
 <li><strong><a name="definitionsDataProductPortsPromises"></a>Promises</strong>:<em><em> Through promises, the data product declares the intent of the port. Promises are not a guarantee of the outcome but the data product will behave accordingly to them to realize its intent. The more a data product keeps its promises over time and the more trustworthy it is. Thus, the more trustworthy a data product is the more potential consumers are likely to use it. Trust is based on the verification of how good a data product was in the past in keeping its promises. This verification should be automated by the underlying platform and synthesized in a </em>trust score</em> shared with all potential consumers. Examples of promises are descriptions of services, API, SLO, deprecation policy, etc.</li>
 <li><strong><a name="definitionsDataProductPortsExpectations"></a>Expectations</strong>:** Through expectations, the data product declares how it wants the port to be used by its consumers. Expectations are the inverse of promises. They are a way to explicitly state what promises the data product would like consumers to make regarding how they will use the port. Examples of expectations are intended usage, intended audience, etc.</li>
-<li><strong><a name="definitionsDataProductPortsContracts"></a>Contracts</strong>:** Through contracts, the data product declares promises and expectations that must be respected by the data product and its consumers. A contract is an explicit agreement between the data product and its consumers. It is used to group all the promises and expectations that if not respected can generate penalties like monetary sanctions or interruption of service. Examples of contracts are terms of conditions, SLA, billing policy, etc.</li>
+<li><strong><a name="definitionsDataProductPortsObligations"></a>Obligations</strong>:** Through obligations, the data product declares promises and expectations that must be respected by the data product and its consumers. An obligations is an explicit agreement between the data product and its consumers. It is used to group all the promises and expectations that if not respected can generate penalties like monetary sanctions or interruption of service. Examples of obligations are terms of conditions, SLA, billing policy, etc.</li>
 </ul>
 <p>The governance can use these concepts to standardize the definition of these interfaces across all data products, while the platform can use them to provide the mechanisms to implement the described services in a compliant way.</p>
 <h5 id="data-product-application-components"><a name="definitionsDataProductAppComponents"></a>Data Product Application Components<a class="headerlink" href="#data-product-application-components" title="Permanent link">⚓︎</a></h5>
@@ -2469,9 +2469,9 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 <td>The data product's <a href="#definitionsDataProductPortsExpectations">expectations</a> declared over the port.</td>
 </tr>
 <tr>
-<td><a name="inputPortContracts"></a>contracts</td>
-<td style="text-align: center;"><a href="#contractsObject">Contracts Object</a> | <a href="#reference-object">Reference Object</a></td>
-<td>The data product's <a href="#definitionsDataProductPortsContracts">contracts</a> declared over the port.</td>
+<td><a name="inputPortObligations"></a>obligations</td>
+<td style="text-align: center;"><a href="#obligationsObject">Obligations Object</a> | <a href="#reference-object">Reference Object</a></td>
+<td>The data product's <a href="#definitionsDataProductPortsObligations">obligations</a> declared over the port.</td>
 </tr>
 <tr>
 <td><a name="inputPortTags"></a>tags</td>
@@ -2549,9 +2549,9 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 <td>The data product's <a href="#definitionsDataProductPortsExpectations">expectations</a> declared over the port.</td>
 </tr>
 <tr>
-<td><a name="outputPortContracts"></a>contracts</td>
-<td style="text-align: center;"><a href="#contractsObject">Contracts Object</a> | <a href="#reference-object">Reference Object</a></td>
-<td>The data product's <a href="#definitionsDataProductPortsContracts">contracts</a> declared over the port.</td>
+<td><a name="outputPortObligations"></a>obligations</td>
+<td style="text-align: center;"><a href="#obligationsObject">Obligations Object</a> | <a href="#reference-object">Reference Object</a></td>
+<td>The data product's <a href="#definitionsDataProductPortsObligations">obligations</a> declared over the port.</td>
 </tr>
 <tr>
 <td><a name="outputPortTags"></a>tags</td>
@@ -2629,9 +2629,9 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 <td>The data product's <a href="#definitionsDataProductPortsExpectations">expectations</a> declared over the port.</td>
 </tr>
 <tr>
-<td><a name="discoveryPortContracts"></a>contracts</td>
-<td style="text-align: center;"><a href="#contractsObject">Contracts Object</a> | <a href="#reference-object">Reference Object</a></td>
-<td>The data product's <a href="#definitionsDataProductPortsContracts">contracts</a> declared over the port.</td>
+<td><a name="discoveryPortObligations"></a>obligations</td>
+<td style="text-align: center;"><a href="#obligationsObject">Obligations Object</a> | <a href="#reference-object">Reference Object</a></td>
+<td>The data product's <a href="#definitionsDataProductPortsObligations">obligations</a> declared over the port.</td>
 </tr>
 <tr>
 <td><a name="discoveryPortTags"></a>tags</td>
@@ -2709,9 +2709,9 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 <td>The data product's <a href="#definitionsDataProductPortsExpectations">expectations</a> declared over the port.</td>
 </tr>
 <tr>
-<td><a name="observabilityPortContracts"></a>contracts</td>
-<td style="text-align: center;"><a href="#contractsObject">Contracts Object</a> | <a href="#reference-object">Reference Object</a></td>
-<td>The data product's <a href="#definitionsDataProductPortsContracts">contracts</a> declared over the port.</td>
+<td><a name="observabilityPortObligations"></a>obligations</td>
+<td style="text-align: center;"><a href="#obligationsObject">Obligations Object</a> | <a href="#reference-object">Reference Object</a></td>
+<td>The data product's <a href="#definitionsDataProductPortsObligations">obligations</a> declared over the port.</td>
 </tr>
 <tr>
 <td><a name="observabilityPortTags"></a>tags</td>
@@ -2789,9 +2789,9 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 <td>The data product's <a href="#definitionsDataProductPortsExpectations">expectations</a> declared over the port.</td>
 </tr>
 <tr>
-<td><a name="controlPortContracts"></a>contracts</td>
-<td style="text-align: center;"><a href="#contractsObject">Contracts Object</a> | <a href="#reference-object">Reference Object</a></td>
-<td>The data product's <a href="#definitionsDataProductPortsContracts">contracts</a> declared over the port.</td>
+<td><a name="controlPortObligations"></a>obligations</td>
+<td style="text-align: center;"><a href="#obligationsObject">Obligations Object</a> | <a href="#reference-object">Reference Object</a></td>
+<td>The data product's <a href="#definitionsDataProductPortsObligations">obligations</a> declared over the port.</td>
 </tr>
 <tr>
 <td><a name="controlPortTags"></a>tags</td>
@@ -2871,7 +2871,7 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 </tbody>
 </table>
 <p>This object MAY be extended with <a href="#specificationExtensions">Specification Extensions</a>.</p>
-<h4 id="obligations-object"><a name="contractsObject"></a>Obligations Object<a class="headerlink" href="#obligations-object" title="Permanent link">⚓︎</a></h4>
+<h4 id="obligations-object"><a name="obligationsObject"></a>Obligations Object<a class="headerlink" href="#obligations-object" title="Permanent link">⚓︎</a></h4>
 <p>The Obligations<code>Object</code> describes the data product's <a href="#definitionsDataProductPortsObligations">obligations</a> declared over a given port.</p>
 <h5 id="fixed-fields_12">Fixed Fields<a class="headerlink" href="#fixed-fields_12" title="Permanent link">⚓︎</a></h5>
 <table>
@@ -2884,17 +2884,17 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 </thead>
 <tbody>
 <tr>
-<td><a name="contractsTermsAndConditions"></a>termsAndConditions</td>
+<td><a name="obligationsTermsAndConditions"></a>termsAndConditions</td>
 <td style="text-align: center;"><a href="#standardDefinitionComponent">Standard Definition Object</a></td>
 <td>The terms and conditions defined on the port on which consumers must agree on and respect in order to use it.</td>
 </tr>
 <tr>
-<td><a name="contractsBillingPolicy"></a>billingPolicy</td>
+<td><a name="obligationsBillingPolicy"></a>billingPolicy</td>
 <td style="text-align: center;"><a href="#standardDefinitionComponent">Standard Definition Object</a></td>
 <td>The billing policy defined on the port on which consumers must agree on and respect in order to use it.</td>
 </tr>
 <tr>
-<td><a name="contractsSla"></a>sla</td>
+<td><a name="obligationsSla"></a>sla</td>
 <td style="text-align: center;"><a href="#standardDefinitionComponent">Standard Definition Object</a></td>
 <td>The service level agreements supported by the port. It is RECOMMENDED to group SLA by category (ex. operational SLA, quality SLA, ecc ...) and specify them in an easy to compute way.</td>
 </tr>
@@ -2932,7 +2932,7 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 </table>
 <p>This object cannot be extended with additional properties and any properties added SHALL be ignored.</p>
 <h4 id="lifecycle-task-info-object"><a name="lifecycleTaskInfoObject"></a>Lifecycle Task Info Object<a class="headerlink" href="#lifecycle-task-info-object" title="Permanent link">⚓︎</a></h4>
-<p>The <code>Lifecycle Task Info Object</code> describe a task to execute to move the product to a specific stage in its lifecycle. Each stage can contains multipe tasks.</p>
+<p>The <code>Lifecycle Task Info Object</code> describes a task to execute to move the product to a specific stage in its lifecycle. Each stage can contain multipe tasks.</p>
 <h5 id="fixed-fields_14">Fixed Fields<a class="headerlink" href="#fixed-fields_14" title="Permanent link">⚓︎</a></h5>
 <table>
 <thead>
