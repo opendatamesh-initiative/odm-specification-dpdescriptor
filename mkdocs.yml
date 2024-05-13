@@ -2,6 +2,8 @@ site_name: Open Data Mesh
 site_description: An open specification that declaratively defines a data product in all its components using a JSON or YAML descriptor document.
 site_url: https://dpds.opendatamesh.org
 
+docs_dir: docs/site
+
 repo_url: https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor
 edit_uri: edit/main/docs/
 
@@ -81,7 +83,7 @@ theme:
   logo: icon.png
   icon:
     repo: fontawesome/brands/github
-  custom_dir: docs/overrides
+  custom_dir: docs/site/overrides
 
 extra:
   analytics:
