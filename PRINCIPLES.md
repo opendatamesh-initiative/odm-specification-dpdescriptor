@@ -21,15 +21,15 @@ DPDS's evolution is guided by a few principles. Suggested contributions should u
   The DPDS spec, despite describing technical behavior, is intended to be
   read by people. Use natural tone and include motivation and examples.
 
-
 * **Integrates seamlessly with other specifications**
 
- Whenever possible, leverage existing external specifications to avoid reinventing the wheel. 
- The decision to define a new part of the specification from the ground up shouldn't be taken lightly.  
+  Whenever possible, leverage existing external specifications to avoid reinventing the wheel. 
+  The decision to define a new part of the specification from the ground up shouldn't be taken lightly.  
 
 * **Simplify adoption through flexibility**
- Every decision should prioritize adoption by the data community and the supporting ecosystem of tools.
- Each part of the specification should be independent, optional, and extensible.
+
+  Every decision should prioritize adoption by the data community and the supporting ecosystem of tools.
+  Each part of the specification should be independent, optional, and extensible.
 
 ## References
 These principles were adapted from the ones guiding the evolution of the [GraphQL](https://github.com/graphql/graphql-spec/blob/main/CONTRIBUTING.md) standard.
