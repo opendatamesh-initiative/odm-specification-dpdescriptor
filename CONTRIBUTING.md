@@ -93,7 +93,7 @@ The current (May 2024) active releases are:
 
 The DPDS should be use-case driven. We can specify support for hypothetical use cases as we see fit, but specifications should be backed by realistic scenarios.
 
-## Change Criteria
+### Change Criteria
 
 The specification *will evolve over time*. Changes  may be made when any of the following criteria are met:
 
@@ -107,7 +107,7 @@ The specification *will evolve over time*. Changes  may be made when any of the 
 
 * Impact. A change will provide impact on a large number of use cases. We should not be forced to accommodate every use case. We should strive to make the *common* and *important* use cases both well supported and common in the definition of the OAI Spec. We cannot be edge-case driven.
 
-## Breaking Change vs Non Breaking Change
+### Breaking Change vs Non Breaking Change
 
 Specifications are not much different than software. Some changes provided in the spec can cause breaking changes for tools that support it. For example, if one of the properties that was `required` becomes `optional`, it is considered a breaking change because some tools might depend on that property and fail if it is not provided. 
 
@@ -121,7 +121,7 @@ _Breaking changes:_
 - Removing a property
 - Changing the type of a property in backward incompatible way
 
-## Change Process
+### Change Process
 
 We're open to changes, and these can be proposed by anyone.
 
