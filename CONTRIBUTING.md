@@ -25,6 +25,13 @@ DPDS's evolution is guided by a few principles. Suggested contributions
 should use these principles to guide the details of an RFC and decisions to
 move forward.
 
+* **Enable new capabilities motivated by real use cases**
+
+  Every change should intend on unlocking a real and reasonable use case. Real
+  examples are always more compelling than theoretical ones, and common
+  scenarios are more compelling than rare ones. RFCs should do more than offer
+  a different way to reach an already achievable outcome.
+
 * **Simplicity and consistency over expressiveness and terseness**
 
   "Possible but awkward" is often favored over more complex
@@ -40,16 +47,8 @@ move forward.
 
 * **Understandability is just as important as correctness**
 
-  The DPDS spec, despite describing technical behavior, is intended to be
+  The DPDS, despite describing technical behavior, is intended to be
   read by people. Use natural tone and include motivation and examples.
-
-
-* **Integrates seamlessly with other specifications**
-
-  Whenever possible, leverage existing external specifications to avoid reinventing the wheel. The decision to define a new part of the specification from the ground up shouldn't be taken lightly.  
-
-* **Simplify adoption through flexibility**
-  Every decision should prioritize adoption by the data community and the supporting ecosystem of tools. Each part of the specification should be independent, optional, and extensible.
 
 ## Breaking Change vs Non Breaking Change
 
