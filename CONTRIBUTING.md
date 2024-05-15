@@ -1,44 +1,21 @@
 # Data Product Descriptor Specification Contribution Guide
 
-This document intends to establish guidelines which build a transparent, open 
-mechanism for deciding how to evolve the Data Product Descriptor Specification (DPDS). 
+This document describes the Data Product Descriptor Specification (DPDS) development processes.
 
-According to the [project governance](GOVERNANCE.md), the Technical Steering Committee (TSC) 
-is the only subject entitled to approving and integrating proposed modifications into the specification. The TSC will follow these guidelines when merging changes from external 
-contributors or from the TSC itself.  
+These processes have been established to provide an open and transparent mechanism for deciding how to evolve DPDS.
+
+When contributing to the DPDS evolution consider the [Code of Conduct](https://github.com/opendatamesh-initiative/.github/blob/main/CODE_OF_CONDUCT.md)
+to better understand expected and unacceptable behavior.
+
+While participating in the specification evolution is a valuable contribution, there are also other popular ways to contribute listed [here](CONTRIBUTING.md
 
 This document will be adjusted as practicality dictate
 
 ## Guiding Principles
 
-DPDS's evolution is guided by a few principles. Suggested contributions
-should use these principles to guide the details of an RFC and decisions to
-move forward.
+DPDS's evolution is guided by a few principles. 
 
-* **Enable new capabilities motivated by real use cases**
 
-  Every change should intend on unlocking a real and reasonable use case. Real
-  examples are always more compelling than theoretical ones, and common
-  scenarios are more compelling than rare ones. RFCs should do more than offer
-  a different way to reach an already achievable outcome.
-
-* **Simplicity and consistency over expressiveness and terseness**
-
-  "Possible but awkward" is often favored over more complex
-  alternatives. Simplicity (e.g. fewer concepts) is more important than
-  expressing more sophisticated ideas or writing less.
-
-* **Preserve option value**
-
-  It's hard to know what the future brings; whenever possible, decisions should
-  be made that allow for more options in the future. Sometimes this is
-  unintuitive: spec rules often begin more strict than necessary with a future
-  option to loosen when motivated by a real use case.
-
-* **Understandability is just as important as correctness**
-
-  The DPDS, despite describing technical behavior, is intended to be
-  read by people. Use natural tone and include motivation and examples.
 
 ## Type of contributions
 
@@ -50,44 +27,27 @@ There are three main types of contribution to DPDS
   the word about DPDS through social channels, events and/or blog posts are some examples of community contributions.
 
 * **Editorial changes**
-  Contributions that do not change the interpretation of the spec but instead
-  improve legibility, fix editorial errors, clear up ambiguity and improve
-  examples are encouraged and are often merged by a spec Committer with
-  little process.
+
 
 * **Specification changes**
-  Contributions that _do_ meaningfully change the interpretation of the
-  specificatio. These type of contribution must follow an RFC (Request For Comments) 
-  process led by a *[champion](#champion-definition)* through a series of *stages* intended to improve *visibility*, allow for *discussion* to reach the best solution, and arrive 
-  at *consensus*. This process becomes even more important as DPDS's community broadens.
-
-When contributing to DPDS consider the 
-[Code of Conduct](https://github.com/opendatamesh-initiative/.github/blob/main/CODE_OF_CONDUCT.md)
-to better understand expected and unacceptable behavior.
 
 
 
-## Essential Policies
 
-If in doubt about a policy, please [ask on our Slack](http://opendatamesh.slack.com) before opening a PR.
+## Editorial Contributions
+Editorial contributions do not change the interpretation of the spec but instead
+improve legibility, fix editorial errors, clear up ambiguity, and improve
+examples 
 
-### No changes to published specifications
+Editorial contributions can be merged into the specification by a Committer without a formal process.
 
-No changes, ***no matter how trivial***, are ever made to the contents of published specifications.  The only potential changes to those documents are updates to link URLs _if and only if_ the targeted document is moved by a 3rd party.  Other changes to link URLs are not allowed.
+## Specification Contributions
+Specification contributions  _do_ meaningfully change the interpretation of the specification. 
 
-### Current branches and documents open to change
-
-The first PR for a change should be against the oldest release line to which it applies.  Changes can then be forward-ported as appropriate.
-
-The current (May 2024) active releases are:
-
-| Version | Branch | File |
-| ------- | ------ | ---- |
-| 1.0.1 | `v1.0.1-dev` | `versions/1.0.4.md` |
-| 1.1.0 | `v1.1.0-dev` | `versions/1.1.1.md` |
-| 2.0.0 | `v2.1.0-dev` | `versions/1.2.0.md` |
-
-## Specification Changes
+This type of contribution must follow a formal RFC (Request For Comments) process led by 
+a *[champion](#champion-definition)* through a series of *stages* intended to improve *visibility*, 
+allow for *discussion* to reach the best solution, and arrive at *consensus*. 
+This process becomes even more important as DPDS's community broadens.
 
 ### Driving factors
 
