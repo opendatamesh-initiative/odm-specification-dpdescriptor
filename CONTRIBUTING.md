@@ -1,13 +1,11 @@
 # Data Product Descriptor Specification Contribution Guide
 
-This document describes the Data Product Descriptor Specification (DPDS) development processes.
-
+This document describes the Data Product Descriptor Specification (DPDS) development processes. 
 These processes have been established to provide an open and transparent mechanism for deciding how to evolve DPDS.
 
 When contributing to the DPDS evolution consider the [Code of Conduct](https://github.com/opendatamesh-initiative/.github/blob/main/CODE_OF_CONDUCT.md)
 to better understand expected and unacceptable behavior.
-
-While participating in the specification evolution is a valuable contribution, there are also other popular ways to contribute listed [here](CONTRIBUTING.md
+While participating in the specification evolution is a valuable contribution, there are also other popular ways to contribute listed [here](CONTRIBUTING.md)
 
 This document will be adjusted as practicality dictate
 
@@ -15,37 +13,48 @@ This document will be adjusted as practicality dictate
 
 DPDS's evolution is guided by a few principles. 
 
+* **Simplicity and consistency over expressiveness and terseness**
 
+  "Possible but awkward" is often favored over more complex
+  alternatives. Simplicity (e.g. fewer concepts) is more important than
+  expressing more sophisticated ideas or writing less.
 
-## Type of contributions
+* **Preserve option value**
 
-There are three main types of contribution to DPDS
-* **Community supports** 
-  Contributions to the DPDS community that have no direct impact on the 
-  specification. Adopting the DPDS, participating actively in community discussions, 
-  reporting problems, writing documentation for the DPDS website, and spreading 
-  the word about DPDS through social channels, events and/or blog posts are some examples of community contributions.
+  It's hard to know what the future brings; whenever possible, decisions should
+  be made that allow for more options in the future. Sometimes this is
+  unintuitive: spec rules often begin more strict than necessary with a future
+  option to loosen when motivated by a real use case.
 
-* **Editorial changes**
+* **Understandability is just as important as correctness**
 
+  The DPDS spec, despite describing technical behavior, is intended to be
+  read by people. Use natural tone and include motivation and examples.
 
-* **Specification changes**
+* **Integrates seamlessly with other specifications**
 
+  Whenever possible, leverage existing external specifications to avoid reinventing the wheel. 
+  The decision to define a new part of the specification from the ground up shouldn't be taken lightly.  
 
+* **Simplify adoption through flexibility**
 
+  Every decision should prioritize adoption by the data community and the supporting ecosystem of tools.
+  Each part of the specification should be independent, optional, and extensible.
 
 ## Editorial Contributions
-Editorial contributions do not change the interpretation of the spec but instead
+Editorial contributions do not change the interpretation of the specification but instead
 improve legibility, fix editorial errors, clear up ambiguity, and improve
 examples 
 
-Editorial contributions can be merged into the specification by a Committer without a formal process.
+Editorial changes are welcome as PR and can be merged into the specification by a [Committer](#) without a formal process.
 
 ## Specification Contributions
 Specification contributions  _do_ meaningfully change the interpretation of the specification. 
 
-This type of contribution must follow a formal RFC (Request For Comments) process led by 
-a *[champion](#champion-definition)* through a series of *stages* intended to improve *visibility*, 
+Small specification changes are welcome as PR and can be merged into the specification by a [Committer](#) without a formal process.
+
+Bigger specification changes require a more formal process. This type of contribution must follow a formal RFC (Request For Comments) 
+process led by a *[champion](#champion-definition)* through a series of *stages* intended to improve *visibility*, 
 allow for *discussion* to reach the best solution, and arrive at *consensus*. 
 This process becomes even more important as DPDS's community broadens.
 
@@ -66,20 +75,6 @@ The specification *will evolve over time*. Changes  may be made when any of the 
 * Forward-looking designs. As usage of APIs evolves to new protocols, formats, and patterns, we should always consider what the next important functionality should be.
 
 * Impact. A change will provide impact on a large number of use cases. We should not be forced to accommodate every use case. We should strive to make the *common* and *important* use cases both well supported and common in the definition of the OAI Spec. We cannot be edge-case driven.
-
-### Breaking Change vs Non Breaking Change
-
-Specifications are not much different than software. Some changes provided in the spec can cause breaking changes for tools that support it. For example, if one of the properties that was `required` becomes `optional`, it is considered a breaking change because some tools might depend on that property and fail if it is not provided. 
-
-_Non-breaking changes:_
-- Adding a new optional property
-
-_Breaking changes:_
-- Adding a new required property
-- Making a property required
-- Making a property optional
-- Removing a property
-- Changing the type of a property in backward incompatible way
 
 ### Change Process
 
