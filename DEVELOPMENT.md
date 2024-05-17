@@ -1,4 +1,4 @@
-# Data Product Descriptor Specification Contribution Guide
+# Data Product Descriptor Specification Development Guide
 
 This document describes the Data Product Descriptor Specification (DPDS) development processes. 
 These processes have been established to provide an open and transparent mechanism for deciding how to evolve DPDS.
