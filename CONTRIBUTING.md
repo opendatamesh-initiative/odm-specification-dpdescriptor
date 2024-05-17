@@ -8,11 +8,11 @@ Thanks for taking the time to contribute! ❤️
 
 ## Participating in discussions
 
+## Adopting the Specification
+
 ## Reporting Errors
 
 ## Suggesting Enhancements
-
-## Adopting the Specification
 
 ## Proposing Changes
 
