@@ -239,8 +239,32 @@ applies due to new circumstances or new evidence.
 While governance of the specification is the role of the TSC, the evolution of the specification happens through the participation of members of the developer community at large. Any person willing to contribute to the effort is welcome, and contributions may include filing or participating in issues, creating pull requests, or helping others with such activities.
 
 ## Releases management
-TODO
 
+GitHub is the medium of record for all spec designs, use cases, and so on.
+
+The human readable document is the source of truth. If using a JSON Schema again to document the spec, it is secondary to the human documentation. The documentation should live in a *.md file, in parallel to the latest document (versions/3.0.0.md for example).
+
+At any given time, there would be at most 4 work branches. The branches would exist if work has started on them. Assuming a current version of 1.0.0:
+
+* `main` - Current stable version. No PRs would be accepted directly to modify the specification. PRs against supporting files can be accepted.
+
+* `v1.0.1-dev` - The next PATCH version of the specification. This would include non-breaking changes such as typo fixes, document fixes, wording clarifications.
+
+* `v1.1.0` - The next MINOR version.
+
+* `v2.0.0` - The next MAJOR version.
+
+The `main` branch shall remain the current, released DPDS. We will describe and link the work branch(es) on the default README.md on the `main` branch.
+
+Examples of how something is described currently vs. the proposed solution should accompany any change proposal.
+
+New features should be done in feature branches/forks which, upon approval, are merged into the proper work branch.
+
+An issue will be opened for each feature change. 
+
+Each feature branch must be linked with an issue.
+
+A new version of DPDS is released by merging a work branch into the `main` branch. 
 
 ## References
 This document was adapted from the [GraphQL Specification Contribution Guide](https://github.com/graphql/graphql-spec/blob/main/CONTRIBUTING.md).
