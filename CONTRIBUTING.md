@@ -1,6 +1,8 @@
-# Open Data Contract Standard
+# Data Product Descriptor Contributing Guidelines
 
 Thanks for taking the time to contribute! ❤️
+
+## Spreading the Word
 
 ## Making questions
 
@@ -12,8 +14,12 @@ Thanks for taking the time to contribute! ❤️
 
 ## Adopting the Specification
 
-## Spreading the Word
-
 ## Proposing Changes
+
+## Joining Contributors
+
+## Becoming a Maintainer
+
+## Joining the Technical Steering Committee
 
 
