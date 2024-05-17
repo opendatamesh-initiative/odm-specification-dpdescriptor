@@ -1,4 +1,4 @@
-# Data Product Descriptor Contributing Guidelines
+# Data Product Descriptor Specification Contributing Guidelines
 
 Thanks for taking the time to contribute! ❤️
 
