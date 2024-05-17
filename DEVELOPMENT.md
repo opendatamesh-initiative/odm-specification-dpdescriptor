@@ -121,7 +121,7 @@ Every RFC must have a dedicated issue used to track its evolution through stages
 
 All RFCs start as either a *strawman* or *proposal*.
 
-#### Stage 0: *Strawman*
+##### Stage 0: *Strawman*
 
 An RFC at the *strawman* stage captures a described problem or
 partially-considered solutions. A *strawman* does not need to meet any entrance
@@ -140,7 +140,7 @@ Once determined that the *strawman* is compelling, it should seek the entrance
 criteria for *proposal*.
 
 
-#### Stage 1: *Proposal*
+##### Stage 1: *Proposal*
 
 An RFC at the *proposal* stage is a solution to a problem with enough fidelity
 to be discussed in detail. It must be backed by a willing *champion*. A
@@ -167,7 +167,7 @@ tools *may* implement *proposals*, though are encouraged to not enable the
 *proposed* feature without explicit opt-in.
 
 
-#### Stage 2: *Draft*
+##### Stage 2: *Draft*
 
 An RFC at the *draft* stage is a fully formed solution. There is
 consensus the problem identified should be solved, and this particular solution
@@ -193,7 +193,7 @@ provide valuable feedback, though are encouraged not to enable the *draft*
 feature without explicit opt-in when possible.
 
 
-#### Stage 3: *Accepted*
+##### Stage 3: *Accepted*
 
 An RFC at the *accepted* stage is a completed solution. It's the TSC that MUST accept or reject an RFC through a vote
 of its members.
@@ -215,7 +215,7 @@ An *accepted* RFC is merged into the DPDS's master branch by a Committer
 and will be included in the next released revision.
 
 
-#### Stage X: *Rejected*
+##### Stage X: *Rejected*
 
 An RFC may be *rejected* at any point and for any reason. It's the TSC that MUST accept or reject an RFC through a vote
 of its members.
@@ -234,9 +234,12 @@ Once *rejected*, an RFC will typically not be reconsidered. Reconsideration is
 possible if a *champion* believes the original reason for rejection no longer
 applies due to new circumstances or new evidence.
 
-### Participation
+## Participation
 
 While governance of the specification is the role of the TSC, the evolution of the specification happens through the participation of members of the developer community at large. Any person willing to contribute to the effort is welcome, and contributions may include filing or participating in issues, creating pull requests, or helping others with such activities.
+
+## Releases management
+TODO
 
 
 ## References
