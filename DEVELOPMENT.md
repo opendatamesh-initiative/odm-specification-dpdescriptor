@@ -41,30 +41,11 @@ DPDS's evolution is guided by a few principles.
   Every decision should prioritize adoption by the data community and the supporting ecosystem of tools.
   Each part of the specification should be independent, optional, and extensible.
 
-## Editorial Contributions
-Editorial contributions do not change the interpretation of the specification but instead
-improve legibility, fix editorial errors, clear up ambiguity, and improve
-examples 
+## Change Criteria
 
-Editorial changes are welcome as PR and can be merged into the specification by a [Committer](#) without a formal process.
-
-## Specification Contributions
-Specification contributions  _do_ meaningfully change the interpretation of the specification. 
-
-Small specification changes are welcome as PR and can be merged into the specification by a [Committer](#) without a formal process.
-
-Bigger specification changes require a more formal process. This type of contribution must follow a formal RFC (Request For Comments) 
-process led by a *[champion](#champion-definition)* through a series of *stages* intended to improve *visibility*, 
-allow for *discussion* to reach the best solution, and arrive at *consensus*. 
-This process becomes even more important as DPDS's community broadens.
-
-### Driving factors
-
-The DPDS should be use-case driven. We can specify support for hypothetical use cases as we see fit, but specifications should be backed by realistic scenarios.
-
-### Change Criteria
-
-The specification *will evolve over time*. Changes  may be made when any of the following criteria are met:
+DPDS evolves through a series of atomic changes. 
+We're open to changes, and these can be proposed by anyone.
+Changes  may be made when any of the following criteria are met:
 
 * Clarity. The current "way" something is done doesn't make sense, is complicated, or not clear.
 
@@ -74,27 +55,41 @@ The specification *will evolve over time*. Changes  may be made when any of the 
 
 * Forward-looking designs. As usage of APIs evolves to new protocols, formats, and patterns, we should always consider what the next important functionality should be.
 
-* Impact. A change will provide impact on a large number of use cases. We should not be forced to accommodate every use case. We should strive to make the *common* and *important* use cases both well supported and common in the definition of the OAI Spec. We cannot be edge-case driven.
-
-### Change Process
-
-We're open to changes, and these can be proposed by anyone.
-
-Small changes are welcome as pull requests.
-
-Bigger changes require a more formal process.
-
-1. Start a [discussion](https://github.com/OAI/OpenAPI-Specification/discussions) of type     "Brainstorm".  The discussion entry must describe at least the problem it wants to solve and why it matters. At this stage, a description of the possible solution is not required. If there is engagement and support for the proposal over time, then it can be considered as a candidate to move to the next stage.
-
-2. If the suggested change has good support, you will be asked to create a formal RFC.
-Use the [template in the proposals directory](https://github.com/OAI/OpenAPI-Specification/tree/main/proposals).
-
-3. The RFC will be more closely reviewed and commented on or amended until it is either rejected or accepted. At that point, the proposal is merged to the appropriate version of the specification.
-
-Questions are welcome on the process and at any time. Use the discussions feature or find us in Slack.
+* Impact. A change will provide impact on a large number of real use cases. We should not be forced to accommodate every use case. We should strive to make the *common* and *important* use cases both well supported and common in the definition of the DPDS. We cannot be edge-case driven.
 
 
-### RFC Champions
+## Editorial Changes
+Editorial changes do not change the interpretation of the specification but instead
+improve legibility, fix editorial errors, clear up ambiguity, and improve
+examples 
+
+Editorial changes are welcome as PR and can be merged into the specification by a [Committer](#) without a formal process.
+
+
+## Specification Changes
+Specification changes  _do_ meaningfully change the interpretation of the specification. 
+
+Small specification changes are welcome as PR and can be merged into the specification by a [Committer](#) without a formal process.
+
+Bigger specification changes require a more formal process. This type of contribution must follow a formal RFC (Request For Comments) 
+process led by a *[champion](#champion-definition)* through a series of *stages* intended to improve *visibility*, 
+allow for *discussion* to reach the best solution, and arrive at *consensus*. 
+This process becomes even more important as DPDS's community broadens.
+
+### RFC Change Process
+
+
+1. Start a [discussion](https://github.com/OAI/OpenAPI-Specification/discussions) of type "Brainstorm".  The discussion entry must describe at least the problem it wants to solve and why it matters. At this stage, a description of the possible solution is not required. If there is engagement and support for the proposal over time, then it can be considered as a candidate to move to the next stage.
+
+2. If the suggested change has good support, you will be asked to create a formal RFC issue using the specific template.
+
+3. The RFC will be more closely reviewed and commented on or amended through a series of *stages* until it is either rejected or accepted.
+4. At that point, the proposal is merged to the appropriate version of the specification.
+
+Questions are welcome on the process and at any time. Use the discussions feature or find us in [Slack].
+
+
+#### RFC Champions
 
 Contributing to DPDS requires a lot of dedicated work. To set clear
 expectations and provide accountability, each proposed RFC (request for
@@ -111,10 +106,10 @@ A champion is anyone who leads the work on an RFC. It doesn't
 mean it has to be the only person working on it though. They
 are a "person of reference" for a given RFC implementation and
 may or may not know about JS, relying on the help of other
-community members to implement the RFC on the [AsyncAPI JSON Schema](https://github.com/asyncapi/spec-json-schemas).
+community members to implement the RFC on the [DPDS JSON Schema](#).
 
 
-### RFC Contribution Stages
+#### RFC Contribution Stages
 
 RFCs are guided by a *champion* through a series of stages: *strawman*,
 *proposal*, *draft*, and *accepted* (or *rejected*), each of which has suggested
@@ -122,9 +117,7 @@ entrance criteria and next steps detailed below. RFCs typically advance one
 stage at a time, but may advance multiple stages at a time. Stage
 advancements occur on GitHub.
 
-In general, it's preferable to start with a pull request so that we can best
-evaluate the RFC in detail. However, starting with an issue is also permitted if
-the full details are not worked out.
+Every RFC must have a dedicated issue used to track its evolution through stages.
 
 All RFCs start as either a *strawman* or *proposal*.
 
@@ -133,8 +126,7 @@ All RFCs start as either a *strawman* or *proposal*.
 An RFC at the *strawman* stage captures a described problem or
 partially-considered solutions. A *strawman* does not need to meet any entrance
 criteria. A *strawman's* goal is to prove or disprove a problem and guide
-discussion towards either rejection or a preferred solution. A *strawman* may
-be an issue or a pull request (though an illustrative pull request is preferrable).
+discussion towards either rejection or a preferred solution.
 
 *There is no entrance criteria for a Strawman*
 
@@ -153,15 +145,14 @@ criteria for *proposal*.
 An RFC at the *proposal* stage is a solution to a problem with enough fidelity
 to be discussed in detail. It must be backed by a willing *champion*. A
 *proposal*'s goal is to make a compelling case for acceptance by describing
-both the problem and the solution via examples and spec edits. A *proposal*
-should be a pull request.
+both the problem and the solution via examples. 
 
 *Entrance criteria:*
 
 * Identified *champion*
 * Clear explanation of problem and solution
 * Illustrative examples
-* Incomplete spec edits
+* Incomplete spec edits in a feature branch linked with the issue
 * Identification of potential concerns, challenges, and drawbacks
 
 A *proposal* is subject to the same discussion as a *strawman*: ensuring that it
@@ -181,15 +172,14 @@ tools *may* implement *proposals*, though are encouraged to not enable the
 An RFC at the *draft* stage is a fully formed solution. There is
 consensus the problem identified should be solved, and this particular solution
 is preferred. A *draft's* goal is to precisely and completely describe the
-solution and resolve any concerns. A *draft*
-must be a pull request.
+solution and resolve any concerns. 
 
 *Entrance criteria:*
 
-* Consensus the solution is preferred
+* Consensus on the solution is preferred
 * Resolution of identified concerns and challenges
-* Precisely described with spec edits
-* Compliant implementation in [DPDS JSON Schema](https://github.com/asyncapi/spec-json-schemas) (might not be merged)
+* Complete spec edits, including examples and prose in a feature branch linked with the issue
+* Compliant implementation in [DPDS JSON Schema](#) 
 
 A *proposal* becomes a *draft* when the set of problems or drawbacks have been
 fully considered and accepted or resolved, and the solution is deemed
@@ -205,9 +195,8 @@ feature without explicit opt-in when possible.
 
 #### Stage 3: *Accepted*
 
-An RFC at the *accepted* stage is a completed solution. According to a spec
-Committer it is ready to be merged as-is into the spec document. An *accepted* RFC must be
-implemented in the [AsyncAPI JSON Schema](https://github.com/asyncapi/spec-json-schemas).
+An RFC at the *accepted* stage is a completed solution. It's the TSC that MUST accept or reject an RFC through a vote
+of its members.
 
 *Entrance criteria:*
 
@@ -228,8 +217,10 @@ and will be included in the next released revision.
 
 #### Stage X: *Rejected*
 
-An RFC may be *rejected* at any point and for any reason. Most rejections occur
-when a *strawman* is proven to be unnecessary, is misaligned with the *guiding
+An RFC may be *rejected* at any point and for any reason. It's the TSC that MUST accept or reject an RFC through a vote
+of its members.
+
+Most rejections occur when a *strawman* is proven to be unnecessary, is misaligned with the *guiding
 principles*, or fails to meet the entrance criteria to become a *proposal*.
 A *proposal* may become *rejected* for similar reasons as well as if it fails to
 reach consensus or loses the confidence of its *champion*. Likewise a *draft*
@@ -242,10 +233,6 @@ become *rejected* if they fail to attract a new *champion*.
 Once *rejected*, an RFC will typically not be reconsidered. Reconsideration is
 possible if a *champion* believes the original reason for rejection no longer
 applies due to new circumstances or new evidence.
-
-### Transparency
-
-The process should be as transparent as possible. Sometimes there will be discussions that use customer names, sensitive use cases, and so on. These must be anonymized, discussed in a private repository, or conducted offline. General discussions should happen on the GitHub issues for this project.
 
 ### Participation
 
