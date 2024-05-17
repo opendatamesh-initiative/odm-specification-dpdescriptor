@@ -1,3 +1,19 @@
 # Open Data Contract Standard
 
-First off, thanks for taking the time to contribute! ❤️
+Thanks for taking the time to contribute! ❤️
+
+## Making questions
+
+## Participating in discussions
+
+## Reporting Errors
+
+## Suggesting Enhancements
+
+## Adopting the Specification
+
+## Spreading the Word
+
+## Proposing Changes
+
+
