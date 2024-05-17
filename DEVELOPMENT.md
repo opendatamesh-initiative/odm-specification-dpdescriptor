@@ -250,9 +250,9 @@ At any given time, there would be at most 4 work branches. The branches would ex
 
 * `v1.0.1-dev` - The next PATCH version of the specification. This would include non-breaking changes such as typo fixes, document fixes, wording clarifications.
 
-* `v1.1.0` - The next MINOR version.
+* `v1.1.0-dev` - The next MINOR version.
 
-* `v2.0.0` - The next MAJOR version.
+* `v2.0.0-dev` - The next MAJOR version.
 
 The `main` branch shall remain the current, released DPDS. We will describe and link the work branch(es) on the default README.md on the `main` branch.
 
