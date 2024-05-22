@@ -75,8 +75,10 @@ Just send an email to [odm.info@quantyca.it](mailto:odm.info@quantyca.it) with y
 ## Becoming a Maintainer
 A [maintainer](#) is anyone who has commit rights on the specification repository.
 
-All contributors who have significantly participated in the development of the specification can request to become maintainers. The procedure for submitting a request to become a maintainer and the process by which the maintainer role is assigned and revoked is described in the [GOVERNANCE](GOVERNANCE.md) Document.
+The [GOVERNANCE](GOVERNANCE.md) Document details how to apply for mantainer role and outlines the responsibilities that come with it.
 
 ## Joining the Technical Steering Committee
+A [TSC member](#) is anyone who has the right to vote to approve or reject changes to specifications or its governance model.
 
+The [GOVERNANCE](GOVERNANCE.md) Document details how to apply for TSC member role and outlines the responsibilities that come with it.
 
