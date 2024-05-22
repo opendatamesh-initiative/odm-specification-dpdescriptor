@@ -6,7 +6,7 @@ The Data Product Descriptor Specification (DPDS) is a project of the Open Data M
 
 # Roles and Responsibilities
 
-## Technical Steering Committee (TSC)
+## Technical Steering Committee
 purpose and main responsibilities
 
 ### Responsibilities
