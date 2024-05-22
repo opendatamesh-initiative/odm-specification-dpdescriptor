@@ -1,4 +1,4 @@
-The current Maintainers Group for the Data Product Descriptor Specification consists of:
+The current maintainers for the Data Product Descriptor Specification are:
 
 | Name | Employer | Responsibilities |
 | ---- | -------- | ---------------- |
