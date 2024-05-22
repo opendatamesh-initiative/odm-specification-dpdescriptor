@@ -1,4 +1,4 @@
-The current Maintainers Group for the Data Product Descriptor Specification consists of:
+The current TSC Members for the Data Product Descriptor Specification consists of:
 
 | Name | Employer | Responsibilities |
 | ---- | -------- | ---------------- |
