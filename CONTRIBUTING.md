@@ -1,5 +1,6 @@
 # Data Product Descriptor Specification Contributing Guidelines
-
+The DPDS community thrives on active participation. We welcome any contributions you can make!
+This document describes the most popular ways to contribute to the DPDS community.
 Thanks for taking the time to contribute! ❤️
 
 ## Spreading the Word
@@ -18,7 +19,7 @@ ask questions:
 * Search for existing discussions and issues before creating a new question
 * Post your question as a new discussion thread
 * Clearly articulate your question and provide context if needed
-* Use descriptive titles easier searchability
+* Use descriptive titles for easier searchability
 
 ## Sharing your knowledge
 The spirit of sharing is at the heart of the DPDS community. By actively participating and sharing your knowledge and experience, 
@@ -66,12 +67,15 @@ Follow these steps to report an error:
 The specification is under continuous evolution. The process for making changes is outlined in the [DEVELOPMENT](./DEVELOPMENT.md) document.
 
 ## Joining Contributors
-The DPDS community thrives on active participation, and anyone who contributes in the ways outlined here is considered a [contributor](#).
+A [contributor](#) is anyone participating in the DPDS community in one of the ways described in this document.
 
-If you've made significant contributions to the development of the DPDS specification, you have the option to be recognized in the [CONTRIBUTORS](#) document. 
-Just send an email to [CONTRIBUTORS] with your information and a brief description of your work to be added to this document.
+If you've made significant contributions to the development of the DPDS specification, you have the option to be credited in the [CONTRIBUTORS](#) document. 
+Just send an email to [mailto:odm.info@quantyca.it] with your information and a brief description of your work to be added to the list of contributors.
 
 ## Becoming a Maintainer
+A [maintainer](#) is anyone who has commit rights on the specification repository.
+
+All contributors who have significantly participated in the development of the specification can request to become maintainers. The procedure for submitting a request to become a maintainer and the process by which the maintainer role is assigned and revoked is described in the [GOVERNANCE](GOVERNANCE.md) document.
 
 ## Joining the Technical Steering Committee
 
