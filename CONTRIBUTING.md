@@ -8,7 +8,7 @@ Here are some ways you can help:
 
 * Share your experience using the specification on social media, forums, or relevant communities
 * Mention the specification in talks, articles, or blog posts you create and let us know on Slack
-* Use the specification [logo](https://dpds.opendatamesh.org/images/logos/opendatamesh.png) or [link](https://dpds.opendatamesh.org/) on your website or documentation
+* Use the specification [logo](https://dpds.opendatamesh.org/images/logos/opendatamesh.png) or [website link](https://dpds.opendatamesh.org/) on your website or documentation
 
 ## Asking questions
 We wholeheartedly welcome your questions!  They're not just accepted, they're vital for fostering knowledge exchange within our community. 
@@ -30,9 +30,14 @@ Here are some ways to get involved:
 
 ## Joining discussions on Slack
 Slack is our go-to platform for informal communication and collaboration within the community. 
-Joining ongoing conversations here is a fantastic way to connect with other community members, stay in the loop on 
+Joining ongoing conversations on Slack channels is a fantastic way to connect with other community members, stay in the loop on 
 community happenings, and gain insights into the latest developments. 
 To join the DPDS Slack workspace follow these steps: 
+
+* Send an email to [mailto:] with subject _Access to the DPDS Slack_ to request access to DPDS Slack Workspace
+* Introduce yoursel in `#introduce-yourself` channel
+* Check last updates in `#announcements` channel
+* Join ongoing discussions in `#dpds` channel
 
 ## Adopting the Specification
 
