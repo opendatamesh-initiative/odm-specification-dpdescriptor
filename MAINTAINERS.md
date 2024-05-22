@@ -2,6 +2,7 @@ The current Maintainers Group for the Data Product Descriptor Specification cons
 
 | Name | Employer | Responsibilities |
 | ---- | -------- | ---------------- |
-|      |          |                  |
+| Andrea Gioia    | Quantyca         |                  |
+| Jacopo Aliprandi    | Blindata         |                  |
 
 See [the project Governance](GOVERNANCE.md) for how maintainers are selected and replaced.
