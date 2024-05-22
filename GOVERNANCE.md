@@ -1,4 +1,4 @@
-# Governance
+# Data Product Descriptor Governance Guide
 
 *Work in progress*
 
