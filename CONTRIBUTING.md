@@ -21,7 +21,7 @@ ask questions:
 * Clearly articulate your question and provide context if needed
 * Use descriptive titles for easier searchability
 
-## Sharing your knowledge
+## Sharing your knowledge on GitHub
 The spirit of sharing is at the heart of the DPDS community. By actively participating and sharing your knowledge and experience, 
 you play a vital role in supporting and empowering other community members. 
 Here are some ways to get involved:
@@ -35,7 +35,7 @@ Joining ongoing conversations on Slack channels is a fantastic way to connect wi
 DPDS community happenings, and gain insights into the latest developments. 
 To join the DPDS Slack workspace follow these steps: 
 
-* Send an email to [mailto:odm.info@quantyca.it] with subject _Access to the DPDS Slack_ to request access to DPDS Slack Workspace
+* Send an email to [odm.info@quantyca.it](mailto:odm.info@quantyca.it) with subject _Access to the DPDS Slack_ to request access to DPDS Slack Workspace
 * Introduce yourself in `#introduce-yourself` channel
 * Check the last updates in `#announcements` channel
 * Join ongoing discussions in `#dpds` channel
