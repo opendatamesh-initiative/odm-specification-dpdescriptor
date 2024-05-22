@@ -18,7 +18,7 @@ Candidate Eligibility
 ### Removing a member
 Candidate Eligibility
 
-### Technical Steering Committee Chairman
+## Technical Steering Committee Chairman
 
 ### Responsibilities
 
