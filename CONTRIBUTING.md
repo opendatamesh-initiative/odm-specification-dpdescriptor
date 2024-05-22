@@ -3,6 +3,9 @@ The DPDS community thrives on active participation. We welcome any contributions
 
 This document describes the most popular ways to contribute to the DPDS community.
 
+When contributing to the DPDS community consider the [Code of Conduct](https://github.com/opendatamesh-initiative/.github/blob/main/CODE_OF_CONDUCT.md) 
+to better understand expected and unacceptable behavior.
+
 ## Spreading the Word
 Spreading the word about the specification is a great way to help the DPDS community grow and ensure that more people are aware of its benefits. 
 Here are some ways you can help:
