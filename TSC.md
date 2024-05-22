@@ -5,4 +5,4 @@ The current TSC Members for the Data Product Descriptor Specification consists o
 | Andrea Gioia    | Quantyca         |  Chairman                |
 | Jacopo Aliprandi    | Blindata         | Member                  |
 
-See [the project Governance](GOVERNANCE.md) for how maintainers are selected and replaced.
+See [the project Governance](GOVERNANCE.md) for how TSC members are selected and replaced.
