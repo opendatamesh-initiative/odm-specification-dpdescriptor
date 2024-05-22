@@ -5,4 +5,4 @@ The current Maintainers Group for the Data Product Descriptor Specification cons
 | Andrea Gioia    | Quantyca         |                  |
 | Jacopo Aliprandi    | Blindata         |                  |
 
-See [the project Governance](GOVERNANCE.md) for how maintainers are selected and replaced.
+See the [Specification Governance Guide](GOVERNANCE.md) for more information on how maintainers are selected and replaced.
