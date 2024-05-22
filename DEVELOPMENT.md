@@ -72,7 +72,7 @@ Specification changes  _do_ meaningfully change the interpretation of the specif
 Small specification changes are welcome as PR and can be merged into the specification by a [Committer](#) without a formal process.
 
 Bigger specification changes require a more formal process. This type of contribution must follow a formal RFC (Request For Comments) 
-process led by a *[champion](#champion-definition)* through a series of *stages* intended to improve *visibility*, 
+process led by a *[champion](#RFC-Champions)* through a series of *stages* intended to improve *visibility*, 
 allow for *discussion* to reach the best solution, and arrive at *consensus*. 
 This process becomes even more important as DPDS's community broadens.
 
@@ -202,13 +202,13 @@ of its members.
 
 * Consensus the solution is complete
 * Complete spec edits, including examples and prose
-* Compliant implementation in the [AsyncAPI JS Parser](https://www.github.com/asyncapi/parser-js) and the [AsyncAPI JSON Schema](https://github.com/asyncapi/spec-json-schemas) (fully tested and merged or ready to merge)
+* Compliant implementation in the [DPDS JSON Schema](#) (fully tested and merged or ready to merge)
 
 A *draft* is *accepted* when the Committers have been convinced that it appropriately handles all edge cases; that the
 spec changes not only precisely describe the new syntax and semantics but
 include sufficient motivating prose and examples; and that the RFC includes
 edits to any other affected areas of the spec. Once *accepted*, its *champion*
-should encourage adoption of the RFC by opening issues or pull requests on other
+should encourage the adoption of the RFC by opening issues or pull requests on other
 popular DPDS-compliant tools.
 
 An *accepted* RFC is merged into the DPDS's master branch by a Committer
@@ -236,19 +236,19 @@ applies due to new circumstances or new evidence.
 
 ## Participation
 
-While governance of the specification is the role of the TSC, the evolution of the specification happens through the participation of members of the developer community at large. Any person willing to contribute to the effort is welcome, and contributions may include filing or participating in issues, creating pull requests, or helping others with such activities.
+While the governance of the specification is the role of the TSC, the evolution of the specification happens through the participation of members of the community at large. Any person willing to contribute to the effort is welcome, and contributions may include filing or participating in issues, creating pull requests, or helping others with such activities.
 
 ## Releases management
 
 GitHub is the medium of record for all spec designs, use cases, and so on.
 
-The human readable document is the source of truth. If using a JSON Schema again to document the spec, it is secondary to the human documentation. The documentation should live in a *.md file, in parallel to the latest document (versions/3.0.0.md for example).
+The human readable document is the source of truth. If using a JSON Schema again to document the spec, it is secondary to the human documentation. The documentation should live in a *.md file, in parallel to the latest document (versions/2.0.0.md for example).
 
 At any given time, there would be at most 4 work branches. The branches would exist if work has started on them. Assuming a current version of 1.0.0:
 
 * `main` - Current stable version. No PRs would be accepted directly to modify the specification. PRs against supporting files can be accepted.
 
-* `v1.0.1-dev` - The next PATCH version of the specification. This would include non-breaking changes such as typo fixes, document fixes, wording clarifications.
+* `v1.0.1-dev` - The next PATCH version of the specification. This would include non-breaking changes such as typo fixes, document fixes, and wording clarifications.
 
 * `v1.1.0-dev` - The next MINOR version.
 
