@@ -5,4 +5,4 @@ The main external contributors for the Data Product Descriptor Specification are
 | Michele Launi    | Quantyca         |  Contributed to the first draft of the spec                |
 | Pietro La Torre    | Quantyca         | Contributed to the first draft of the spec                  |
 
-See [the Contribution Guide](CONTRIBUTING.md) for more information on how to become a contributor
+See the [Contribution Guide](CONTRIBUTING.md) for more information on how to become a contributor
