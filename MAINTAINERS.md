@@ -1,6 +1,6 @@
 The current maintainers for the Data Product Descriptor Specification (DPDS) are:
 
-| Name | Employer | Timezone | Time
+| Name | Employer | Timezone | 
 | ---- | -------- | ---------------- |
 | Andrea Gioia    | Quantyca         | Central European Time |
 | Jacopo Aliprandi    | Blindata         | Central European Time |
