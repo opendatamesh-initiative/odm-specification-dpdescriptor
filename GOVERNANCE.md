@@ -25,7 +25,7 @@ The TSC is responsable of:
 ### Adding a member
 Anyone can propose their candidacy to become a member of the TSC by writing to [odm.info@quantyca.it](mailto:odm.info@quantyca.it). The TSC is responsible for evaluating all applications and accepting or rejecting them. Although applications are individual, it is not possible to have more than two members of TSC belonging to the same company. 
 
-The TSC can have a maximum of 15 members, including the Chairman. Once the maximum number of 15 members has been reached, to add a new member it is necessary to remove an existing one or modify the governance rules described here. 
+The TSC can have a maximum of 15 members, including the Chairman. Once this capacity is reached, adding new members requires either removing a current member or revising this governance rule.
 
 If the number of TSC Members falls below  5, it is the responsibility of the TSC itself to mobilize to identify new members.
 
@@ -67,6 +67,8 @@ The DPDS Maintainers are responsible for:
 * merging their patches or patches from others
 * triaging issues
 * moderating discussions
+
+ The current development process followed by Mantainers can be found in [DEVELOPMENT.md](./DEVELOPMENT.md).
 
 ### Adding a maintainer
 Everyone can ask to become a DPDS Manatiner by writing to [odm.info@quantyca.it](mailto:odm.info@quantyca.it)  This privilege is granted anyway by the TSC with some expectation of responsibility. Maintainers should be people who care about the DPDS project and want to help it grow and improve. A maintainer is not just someone who can make changes, but someone who has demonstrated their ability to collaborate with the DPDS community, get the most knowledgeable people to review spec and docs, champion RFCs, and follow through to fix issues (in spec or docs).
