@@ -11,13 +11,13 @@ Governance rules described hereafter will continue to evolve as the community an
 The Technical Steering Committee (TSC) is the sole entity authorized to make decisions regarding changes to the specification or its governance.
 
 ### Responsibilities
-The TSC is responsable of:
+The TSC is responsable for:
 
-* Evaluating and approving or rejecting proposed changes to the specification
-* Evaluating and approving or rejecting proposed changes to the governance
-* Evaluating and approving or rejecting proposals for TSC membership additions or removals
-* Evaluating and approving or rejecting proposals for assignments or removals of the Maintainer role
-* Appointing the TSC Chair
+* evaluating and approving or rejecting proposed changes to the specification
+* evaluating and approving or rejecting proposed changes to the governance
+* evaluating and approving or rejecting proposals for TSC Member additions or removals
+* evaluating and approving or rejecting proposals for DPDS Mantainer additions or removals
+* appointing the TSC Chair
 
 ### Adding a member
 Everyone can ask to become a TSC Member by writing to [odm.info@quantyca.it](mailto:odm.info@quantyca.it). 
