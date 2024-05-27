@@ -1,9 +1,9 @@
 # Data Product Descriptor Governance Guide
-The Data Product Descriptor Specification (DPDS) is a project of the [Open Data Mesh Initiative (ODMI)](https://initiative.opendatamesh.org/). 
+This document describes the Data Product Descriptor Specification (DPDS) governance rules. 
 
-This document explains how the DPDS Project is run. 
+These rules have been established to provide an open and transparent mechanism for governing DPDS Project.
 
-Governance rules described hereafter will continue to evolve as the community and DPDS Project change.
+This document will be adjusted as practicality dictate
 
 # Roles and Responsibilities
 
