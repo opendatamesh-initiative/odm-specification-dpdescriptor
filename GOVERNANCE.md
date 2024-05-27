@@ -1,17 +1,14 @@
 # Data Product Descriptor Governance Guide
-
-*Work in progress*
-
 The Data Product Descriptor Specification (DPDS) is a project of the [Open Data Mesh Initiative (ODMI)](https://initiative.opendatamesh.org/). 
 
-This document explains how the project is run. 
+This document explains how the DPDS Project is run. 
 
-Governance rules described hereafter will continue to evolve as the community and project change.
+Governance rules described hereafter will continue to evolve as the community and DPDS Project change.
 
 # Roles and Responsibilities
 
 ## Technical Steering Committee
-The Technical Steering Committee (TSC) is the sole entity authorized to make decisions regarding changes to the specification or governance rules outlined in this document.
+The Technical Steering Committee (TSC) is the sole entity authorized to make decisions regarding changes to the specification or its governance.
 
 ### Responsibilities
 The TSC is responsable of:
@@ -23,9 +20,13 @@ The TSC is responsable of:
 * Appointing the TSC Chair
 
 ### Adding a member
-Anyone can propose their candidacy to become a member of the TSC by writing to [odm.info@quantyca.it](mailto:odm.info@quantyca.it). The TSC is responsible for evaluating all applications and accepting or rejecting them. Although applications are individual, it is not possible to have more than two members of TSC belonging to the same company. 
+Everyone can ask to become a TSC Member by writing to [odm.info@quantyca.it](mailto:odm.info@quantyca.it). 
 
-The TSC can have a maximum of 15 members, including the Chairman. Once this capacity is reached, adding new members requires either removing a current member or revising this governance rule.
+The TSC is responsible for evaluating all applications and accepting or rejecting them. 
+
+Although applications are individual, it is not possible to have more than two members of TSC belonging to the same company. 
+
+The TSC can have a maximum of 15 members, including the TSC Chair. Once this capacity is reached, adding new members requires either removing a current member or revising this governance rule.
 
 If the number of TSC Members falls below  5, it is the responsibility of the TSC itself to mobilize to identify new members.
 
@@ -41,19 +42,25 @@ TSC Member removal is possible under the following circumstances:
 The request to remove a member can be initiated by the member or by another TSC Member. The TSC is responsible for accepting or rejecting the removal proposals.
   
 ### TSC Meetings
-At least once a year to elect the chair. Preferably not less than once a quarter. Every TSC Member can propose a new meeting. Once the data is scheduled and the agenda defined the meeting must be announced in the discussion session and pinned. Modifications to the agenda can be proposed in the associated discussion thread. All DPDS Community Members can participate in the TSC meeting. Meetings should be recorded.
+TSC meetings must be organized at least once a year to elect the TSC Chair. TSC meetings should be organized preferably not less than once a quarter. 
+
+Every TSC Member can propose a new meeting. Once the data is scheduled and the agenda defined the meeting must be announced in the discussion session and pinned. 
+
+Modifications to the agenda can be proposed in the associated discussion thread. 
+
+All DPDS Community Members can participate in the TSC meeting. Meetings should be recorded.
 
 ## TSC Chair
-The TSC chair presides over the TSC and is responsible for maintaining relationships with other projects both within and outside the Open Data Mesh initiative.
+The TSC chair presides over the TSC and is responsible for maintaining relationships with other projects both within and outside the [Open Data Mesh Initiative (ODMI)](https://initiative.opendatamesh.org/). 
 
 ### Responsibilities
-The TSC chairman is responsible for:
+The TSC Chair is responsible for:
 
 * maintaining relationships with external projects and organizations
 * ensuring that the activities of the TSC are conducted following the governance rules described in this document
   
 ### Election
-The TSC chairman is elected annually. The chairman is selected by the TSC among its members.
+The TSC Chair is elected annually. The TSC Chair is selected by the TSC among its members.
 
 ## Maintainers
 DPDS Maintainers have write access to the [project GitHub repository](https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor).
