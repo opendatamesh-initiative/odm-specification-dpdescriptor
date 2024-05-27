@@ -1,10 +1,12 @@
 # Data Product Descriptor Specification Development Guide
 
 This document describes the Data Product Descriptor Specification (DPDS) development processes. 
-These processes have been established to provide an open and transparent mechanism for deciding how to evolve DPDS.
+
+These processes have been established to provide an open and transparent mechanism for evolving DPDS.
 
 When contributing to the DPDS evolution consider the [Code of Conduct](https://github.com/opendatamesh-initiative/.github/blob/main/CODE_OF_CONDUCT.md)
 to better understand expected and unacceptable behavior.
+
 While participating in the specification evolution is a valuable contribution, there are also other popular ways to contribute listed [here](CONTRIBUTING.md)
 
 This document will be adjusted as practicality dictate
@@ -63,13 +65,13 @@ Editorial changes do not change the interpretation of the specification but inst
 improve legibility, fix editorial errors, clear up ambiguity, and improve
 examples 
 
-Editorial changes are welcome as PR and can be merged into the specification by a [Committer](#) without a formal process.
+Editorial changes are welcome as PR and can be merged into the specification by a [DPDS Maintainer](GOVERNANCE.md#maintainers) without a formal process.
 
 
 ## Specification Changes
 Specification changes  _do_ meaningfully change the interpretation of the specification. 
 
-Small specification changes are welcome as PR and can be merged into the specification by a [Committer](#) without a formal process.
+Small specification changes are welcome as PR and can be merged into the specification by a [DPDS Maintainer](GOVERNANCE.md#maintainers) without a formal process.
 
 Bigger specification changes require a more formal process. This type of contribution must follow a formal RFC (Request For Comments) 
 process led by a *[champion](#RFC-Champions)* through a series of *stages* intended to improve *visibility*, 
@@ -94,9 +96,9 @@ Questions are welcome on the process and at any time. Use the discussions featur
 Contributing to DPDS requires a lot of dedicated work. To set clear
 expectations and provide accountability, each proposed RFC (request for
 comments) must have a *champion* who is responsible for addressing feedback and
-completing next steps. An RFC may have multiple *champions*. The spec Committers
+completing next steps. An RFC may have multiple *champions*. [DPDS Maintainers](GOVERNANCE.md#maintainers)
 are not responsible for completing RFCs which lack a *champion* (though a
-Committer may be a *champion* for an RFC).
+[DPDS Maintainer](GOVERNANCE.md#maintainers) may be a *champion* for an RFC).
 
 An RFC which does not have a *champion* may not progress through stages, and can
 become stale. Stale proposals may be picked up by a new *champion* or may
@@ -106,7 +108,7 @@ A champion is anyone who leads the work on an RFC. It doesn't
 mean it has to be the only person working on it though. They
 are a "person of reference" for a given RFC implementation and
 may or may not know about JS, relying on the help of other
-community members to implement the RFC on the [DPDS JSON Schema](#).
+community members to implement the RFC on the [DPDS JSON Schema](schemas/latest/schema.json).
 
 
 #### RFC Contribution Stages
@@ -179,7 +181,7 @@ solution and resolve any concerns.
 * Consensus on the solution is preferred
 * Resolution of identified concerns and challenges
 * Complete spec edits, including examples and prose in a feature branch linked with the issue
-* Compliant implementation in [DPDS JSON Schema](#) 
+* Compliant implementation in [DPDS JSON Schema](schemas/latest/schema.json) 
 
 A *proposal* becomes a *draft* when the set of problems or drawbacks have been
 fully considered and accepted or resolved, and the solution is deemed
@@ -202,22 +204,22 @@ of its members.
 
 * Consensus the solution is complete
 * Complete spec edits, including examples and prose
-* Compliant implementation in the [DPDS JSON Schema](#) (fully tested and merged or ready to merge)
+* Compliant implementation in the [DPDS JSON Schema](schemas/latest/schema.json) (fully tested and merged or ready to merge)
 
-A *draft* is *accepted* when the Committers have been convinced that it appropriately handles all edge cases; that the
+A *draft* is *accepted* when the [DPDS Maintainers](GOVERNANCE.md#maintainers) have been convinced that it appropriately handles all edge cases; that the
 spec changes not only precisely describe the new syntax and semantics but
 include sufficient motivating prose and examples; and that the RFC includes
 edits to any other affected areas of the spec. Once *accepted*, its *champion*
 should encourage the adoption of the RFC by opening issues or pull requests on other
 popular DPDS-compliant tools.
 
-An *accepted* RFC is merged into the DPDS's master branch by a Committer
+An *accepted* RFC is merged into the DPDS's master branch by a [DPDS Maintainer](GOVERNANCE.md#maintainers)
 and will be included in the next released revision.
 
 
 ##### Stage X: *Rejected*
 
-An RFC may be *rejected* at any point and for any reason. It's the TSC that MUST accept or reject an RFC through a vote
+An RFC may be *rejected* at any point and for any reason. It's the [TSC](GOVERNANCE.md#technical-steering-committee) that MUST accept or reject an RFC through a vote
 of its members.
 
 Most rejections occur when a *strawman* is proven to be unnecessary, is misaligned with the *guiding
@@ -236,7 +238,7 @@ applies due to new circumstances or new evidence.
 
 ## Participation
 
-While the governance of the specification is the role of the TSC, the evolution of the specification happens through the participation of members of the community at large. Any person willing to contribute to the effort is welcome, and contributions may include filing or participating in issues, creating pull requests, or helping others with such activities.
+While the governance of the specification is the role of the [TSC](GOVERNANCE.md#technical-steering-committee), the evolution of the specification happens through the participation of members of the community at large. Any person willing to contribute to the effort is welcome, and contributions may include filing or participating in issues, creating pull requests, or helping others with such activities.
 
 ## Releases management
 
@@ -254,7 +256,7 @@ At any given time, there would be at most 4 work branches. The branches would ex
 
 * `v2.0.0-dev` - The next MAJOR version.
 
-The `main` branch shall remain the current, released DPDS. We will describe and link the work branch(es) on the default README.md on the `main` branch.
+The `main` branch shall remain the current, released DPDS. We will describe and link the work branch(es) on the default [README.md](README.md) on the `main` branch.
 
 Examples of how something is described currently vs. the proposed solution should accompany any change proposal.
 
