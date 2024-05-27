@@ -1,6 +1,7 @@
 # Change the type of externalDocs attribute to an array of External Resource Object
 
 Champion: @andrea-gioia 
+
 Issue: [#65](https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/issues/65)
 
 ## Summary
