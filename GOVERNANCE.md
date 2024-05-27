@@ -37,7 +37,7 @@ TSC Member removal is possible under the following circumstances:
 
 * Direct request from the member
 * absence from more than three consecutive TSC meetings
-* violation of the Code of Conduct
+* violation of the [Code of Conduct](https://github.com/opendatamesh-initiative/.github/blob/main/CODE_OF_CONDUCT.md)
 
 The request to remove a member can be initiated by the member or by another TSC Member. The TSC is responsible for accepting or rejecting the removal proposals.
   
@@ -66,7 +66,7 @@ The TSC Chair is elected annually. The TSC Chair is selected by the TSC among it
 DPDS Maintainers have write access to the [project GitHub repository](https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor).
 Maintainers collectively manage the project's resources and contributors.
 
-The current Maintainers can be found in [MAINTAINERS.md](./MAINTAINERS.md).
+The current DPDS Maintainers can be found in [MAINTAINERS.md](./MAINTAINERS.md).
 
 ### Responsibilities
 The DPDS Maintainers are responsible for:
@@ -75,17 +75,21 @@ The DPDS Maintainers are responsible for:
 * triaging issues
 * moderating discussions
 
- The current development process followed by Mantainers can be found in [DEVELOPMENT.md](./DEVELOPMENT.md).
+ The current development process followed by DPS Mantainers can be found in [DEVELOPMENT.md](./DEVELOPMENT.md).
 
 ### Adding a maintainer
-Everyone can ask to become a DPDS Manatiner by writing to [odm.info@quantyca.it](mailto:odm.info@quantyca.it)  This privilege is granted anyway by the TSC with some expectation of responsibility. Maintainers should be people who care about the DPDS project and want to help it grow and improve. A maintainer is not just someone who can make changes, but someone who has demonstrated their ability to collaborate with the DPDS community, get the most knowledgeable people to review spec and docs, champion RFCs, and follow through to fix issues (in spec or docs).
+Everyone can ask to become a DPDS Manatiner by writing to [odm.info@quantyca.it](mailto:odm.info@quantyca.it)  
+
+The TSC is responsible for evaluating all applications and accepting or rejecting them. 
+
+Maintainers should be people who care about the DPDS project and want to help it grow and improve. A maintainer is not just someone who can make changes, but someone who has demonstrated their ability to collaborate with the DPDS community, get the most knowledgeable people to review spec and docs, champion RFCs, and follow through to fix issues (in spec or docs).
 
 ### Removing a maintainer
 DPDS Mantainer removal is possible under the following circumstances:
 
 * direct request from the maintainer
 * unavailability or prolonged inactivity
-* violation of the Code of Conduct
+* violation of the [Code of Conduct](https://github.com/opendatamesh-initiative/.github/blob/main/CODE_OF_CONDUCT.md)
 
 # Decision process
 While the DPDS Project aims to operate as a consensus-based community, if any TSC
