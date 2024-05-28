@@ -29,7 +29,7 @@ DPDS's core values are:
 * **Meritocracy:** We value ideas and contributions based on their quality and usefulness, regardless of the source
 
 ## Design Principles
-The following principles are adopted in the design and evolution of the specification:
+DPDS is designed and evolves based on the following principles:
 
 * **Simplicity and consistency over expressiveness and terseness**
 
@@ -62,12 +62,11 @@ All contributors must respect the [Code of Conduct](https://github.com/opendatam
 The process to propose a change to the specification is described in [DEVELOPMENT.md](DEVELOPMENT.md)
 
 ## History
-The first draft of the DPDS was created by Quantyca. 
-Quantyca uses it in its projects, together with a custom implementation of a _data product experience plan_ and _infrastructure utility plane_ named *Open Data Mesh Platform*, to manage the data product
-lifecycle from creation till its retirement. The Open Data Mesh Platform standardizes and automates all the data product operational activities. It's a *DataOps* lightweight platform 
-designed for data mesh or if you prefer, a DataMeshOps platform. 
+DPDS was originally created by [Quantyca](https://www.quantyca.it/). 
 
-Quantyca decided to publicly release the DPDS as an open standard under <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache 2.0 license for the following reasons:
+Quantyca uses DPDS in its projects, together with a custom implementation of a _data product experience plan_ and _infrastructure utility plane_ named *Open Data Mesh Platform*, to manage the data product lifecycle from creation till its retirement. The Open Data Mesh Platform standardizes and automates all the data product operational activities. It's a *DataOps* lightweight platform designed for data mesh or if you prefer, a DataMeshOps platform. 
+
+Quantyca decided to publicly release the DPDS as an open standard under <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache 2.0</a> license for the following reasons:
 
 1. Get feedback from the data mesh community and practitioners on the proposed content and structure of the data product descriptor to improve it over time
 1. Foster discussion about what a data product is, what are its components, and how its lifecycle should be managed 
@@ -75,7 +74,7 @@ Quantyca decided to publicly release the DPDS as an open standard under <a href=
 1. Try to gather and collaborate with the mesh community members that are interested in defining a base standard to describe data products on which we can then create the next generation of interoperable mesh tools.
 
 ## Disclaimer
-Part of the specification and related documentation has been taken from the great work done by the folks at the [OpenAPI Initiative](href="https://openapis.org) and [AsyncAPI Initiative](https://www.asyncapi.com/). 
+Part of DPDS and related documentation has been taken from the great work done by the folks at the [OpenAPI Initiative](href="https://openapis.org) and [AsyncAPI Initiative](https://www.asyncapi.com/). 
 We have decided to not reinvent the wheel and inspire our work to these two specifications mainly for the following reasons:
 - We think that the work made by OpenAPI Initiative and AsyncAPI Initiative is great  :)
 - We want to make the learning curve for the Data Product Descriptor Specification as smooth as possible, aligning its definition to the one of other two popular specifications in the software and data engineers community
