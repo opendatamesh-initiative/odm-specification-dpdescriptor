@@ -4,16 +4,14 @@
 The Data Product Descriptor Specification (DPDS) is a declarative and technology-independent *open specification* that can be used to describe a data product in all its components 
 through a JSON or YAML document. 
 
-It allows human agents (e.g. analysts, data scientists, etc..) and digital agents (e.g. other data products, BI tools, planes of the underlying mesh platform, etc..) to operate, 
-discover and access a data product. When properly defined, external agents can understand and interact with the data product with a minimal amount of cognitive load and implementation logic.
+By promoting clear and universal data product definitions, DPDS minimizes cognitive load and streamlines implementation logic for external consumers. This fosters a world where data products can be readily understood and interacted with, unlocking their full potential.
 
 ## Scope
-The formalization of a data product descriptor document through an open specification is useful to enable the implementation of an ecosystem 
-of interoperable data mesh tools. The following is a non-exhaustive list of tools that can benefit from this specification:
+DPDS aims to foster a thriving ecosystem of interoperable tools to support data product lifecycle management. The following is a non-exhaustive list of tools that the specification wants to support:
 
 - **catalogs** (search, document and collaborate)
 - **design tools** (create new products by the composition of reusable templates)
-- **lifecycle management tools** (deploy and operate)
+- **DevOps management tools** (deploy and operate)
 - **access management tools** (assign/track access grants and generate client code in different languages)
 - **policies checking tools** (enforce standard compliance and audit security)
 - **observability tools** (monitor and detect)
@@ -54,10 +52,17 @@ The following principles are adopted in the design and evolution of the specific
 * **Integrates seamlessly with other specifications**
 
   Whenever possible, leverage existing external specifications to avoid reinventing the wheel. 
-  The decision to define a new part of the specification from the ground up shouldn't be taken lightly.  
+  The decision to define a new part of the specification from the ground up shouldn't be taken lightly.
+
+## Contributions
+The specification is under continuous evolution. The main ways to contribute are described in [CONTRIBUTING.md](CONTRIBUTING.md). 
+
+All contributors must respect the [code of conduct]() and be familiar with the project's [governance rules](GOVERNANCE.md). 
+
+The process to propose a change to the specification is described in [DEVELOPMENT.md](DEVELOPMENT.md)
 
 ## History
-The first draft of the data product descriptor specification was created by Quantyca. 
+The first draft of the DPDS was created by Quantyca. 
 Quantyca uses it in its projects, together with a custom implementation of a _data product experience plan_ and _infrastructure utility plane_ named *Open Data Mesh Platform*, to manage the data product
 lifecycle from creation till its retirement. The Open Data Mesh Platform standardizes and automates all the data product operational activities. It's a *DataOps* lightweight platform 
 designed for data mesh or if you prefer, a DataMeshOps platform. 
@@ -68,7 +73,7 @@ Quantyca decided to publicly release the DPDS as an open standard under <a href=
 1. Foster discussion about what a data product is, what are its components, and how its lifecycle should be managed 
 1. Provide a reference specification that can be used as is, extended, or customized by the ones that need a data product descriptor for their mesh implementation
 1. Try to gather and collaborate with the mesh community members that are interested in defining a base standard to describe data products on which we can then create the next generation of interoperable mesh tools.
-   
+
 ## Disclaimer
 Part of the specification and related documentation has been taken from the great work done by the folks at the [OpenAPI Initiative](href="https://openapis.org) and [AsyncAPI Initiative](https://www.asyncapi.com/). 
 We have decided to not reinvent the wheel and inspire our work to these two specifications mainly for the following reasons:
