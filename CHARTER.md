@@ -11,7 +11,7 @@ DPDS aims to foster a thriving ecosystem of interoperable tools to support data 
 
 - **catalogs** (search, document and collaborate)
 - **design tools** (create new products by the composition of reusable templates)
-- **DevOps management tools** (deploy and operate)
+- **devops management tools** (deploy and operate)
 - **access management tools** (assign/track access grants and generate client code in different languages)
 - **policies checking tools** (enforce standard compliance and audit security)
 - **observability tools** (monitor and detect)
