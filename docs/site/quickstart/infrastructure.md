@@ -50,32 +50,6 @@ The following example shows two infrastructural components that respectively des
 
 The information provided so far are useful to track the infrastructural assets related to a specific data product. There is not anyway sufficient information to allow an external agent to provision the infrastructure autonomously. To this end in the [Infrastructural Component](../resources/specifications/1.0.0-DRAFT.md#infrastructure-component) there is the `provisioningService` filed that is described in much detail in the next sections.
 
-## Provisioning Service Object
-
-The [Build Info Object](todo) contains the information required to build an application component. DPDS uses *integration pipelines as code* to guarantee the possibility to automatize the build process in a reproducible way. Anyway, to maintain technological independence the DPDS does not enforce the usage of any specific CICD tool.
-
-### Fields
-A [Provisioning Info Object](todo) has the following three mandatory fields:
-
-- `service` ( `string:name`  or [External Resource Object](#externalResourceObject)): This is the logical name or the actual endpoint of the service to call to build the infrastructural component. If the logical name (ex. `terraform`, `cloudformation`, `cdk`, ecc...) is used as field value the actual endpoint value resolution is demanded to the *data product experience plane* of the underlying platform.
-- `template` (`object` or [External Resource Object](#externalResourceObject)):  This is the definition as code of the infrastructure to provision. It is passed as is to the *provisioning service* implementation specified in the `service` field.
-- `configurations` (`object` or [External Resource Object](#externalResourceObject)): This is the map of all configuration properties that must be used by the *provisioning service* at provisioning time. It is passed as is to the *provisioning service* implementation specified in the `service` field.
-
-### Example
-The following example shows an application that could be built using a terraform-backed *provisioning service*. The *terraform file* that contains the description of the infrastructure is available on an external *bitbucket repository*. The only configuration parameter passed into the *provision service* at runtime is the name of the schema to create on the target Postgres DB.
-
-```json
-{
-    "service": "terraform",
-    "template": {
-        "mediaType": "text/terraformfile",
-        "$href": "https://bitbucket.org/company-xyz/trip-execution-infra-eventstore/src/master/main.tf"
-    },
-    "configurations": {
-        "SCHEMA": "shipments",
-    }
-}
-```
 ## Trip Execution Data Product Descriptor
 The [Trip Execution Data Product](./example.md) is composed of two infrastructural components.
 

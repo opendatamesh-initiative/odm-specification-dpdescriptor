@@ -53,62 +53,6 @@ All three applications are deployed in `eu-south-1` region of *AWS Cloud*.
 
 The information provided so far are useful to track the application assets related to a specific data product. There is not anyway sufficient information to allow an external agent to build and deploy the application autonomously. To this end in the [Application Component](../resources/specifications/1.0.0-DRAFT.md#applicationComponent), there are the `buildService` and `deploymentService` fields that are described in much detail in the next sections.
 
-## Build Service Object
-
-The [Build Info Object](../resources/specifications/last.md#build-info-object) contains the information required to build an application component. DPDS uses *integration pipelines as code* to guarantee the possibility to automatize the build process in a reproducible way. Anyway, to maintain technological independence the DPDS does not enforce the usage of any specific CICD tool.
-
-### Fileds
-A [Build Info Object](../resources/specifications/last.md#build-info-object) has the following three mandatory fields:
-
-- `service` ( **string:name** or [External Resource Object](../resources/specifications/last.md#external-resource-object)): This is the logical name or the actual endpoint of the service to call to build the application component. If the logical name (ex. `jenkins`, `aws-pipelines`, `azure-devops`, etc...) is used as field value the actual endpoint value resolution is demanded by the _data_ product experience plane* of the underlying platform.
-- `template` (**object** or [External Resource Object](../resources/specifications/last.md#external-resource-object)):  This is the definition of the pipeline to execute to build the application. It is passed as is to the *build service* implementation specified in the `service` field.
-- `configurations` (**object** or [External Resource Object](../resources/specifications/last.md#external-resource-object)): This is the map of all configuration properties that must be used by the *build service* at build time. It is passed as is to the *build service* implementation specified in the `service` field.
-
-### Example
-The following example shows an application that could be built using a Jenkins-backed _build service_*. The *jenkinsfile* that contains the description of the pipeline is available on an external *bitbucket repository*. The only configuration parameter passed into the *build service* at runtime is the target stage.
-
-```json
-{
-    "service": "jenkins",
-    "template": {
-        "mediaType": "text/jenkinsfile",
-        "$href": "https://bitbucket.org/company-xyz/trip-execution-app-sourcing/src/master/jenkinsfile"
-    },
-    "configurations": {
-        "TARGET_STAGE": "BUILD",
-    }
-}
-```
-
-## Deployment Service Object
-The [Deployment Info Object](../resources/specifications/last.md#deploy-info-object) contains the information required to deploy an application component. DPDS uses *integration pipelines as code* to guarantee the possibility to automatize the deployment process in a reproducible way. Anyway, to maintain technological independence the DPDS does not enforce the usage of any specific CICD tool.
-
-### Fileds
-A [Deployment Info Object](../resources/specifications/last.md#deploy-info-object) has the following three mandatory fields:
-
-- `service` ( **string:name** or [External Resource Object](../resources/specifications/last.md#external-resource-object)): This is the logical name or the actual endpoint of the service to call to deploy the application component. If the logical name (ex. `jenkins`, `aws-pipelines`, `azure-devops`, etc...) is used as field value the actual endpoint value resolution is demanded by the _data_ product experience plane* of the underlying platform.
-- `template` (**object** or [External Resource Object](../resources/specifications/last.md#external-resource-object)):  This is the definition of the pipeline to execute to deploy the application. It is passed as is to the *deployment service* implementation specified in the `service` field.
-- `configurations` (**object** or [External Resource Object](../resources/specifications/last.md#external-resource-object)): This is the map of all configuration properties that must be used by the *build service* at deployment time. It is passed as is to the *deployment service* implementation specified in the `service` field.
-
-### Example
-The following example shows an application that could be deployed using a Jenkins-backed *deployment service*. The *jenkinsfile* that contains the description of the pipeline is available on an external *bitbucket repository*. The only configuration parameters passed into the _deployment_ service* at runtime are the initial stage and the end state that identify the portion of the pipeline that must be executed.
-
-```json
-{
-    "service": {
-        "mediaType": "application",
-        "$href": "https://jenkins.company-xyz.com/api/v1/planes/utility/integration-services/builds"
-    },
-    "template": {
-        "mediaType": "text/jenkinsfile",
-        "$href": "https://bitbucket.org/company-xyz/trip-execution-app-sourcing/src/master/jenkinsfile"
-    },
-    "configurations": {
-        "START_STAGE": "BUILD",
-        "TARGET_STAGE": "DEPLOY",
-    }
-}
-```
 ## Trip Execution Data Product Descriptor
 The [Trip Execution Data Product](./example.md) is composed of three application components.
 
