@@ -41,9 +41,11 @@ nav:
     - './resources/README.md'
     - 'Specifications': 
       - 'Versions': './resources/specifications/README.md'
+      - '1.0.0': './resources/specifications/1.0.0.md'
       - '1.0.0-DRAFT': './resources/specifications/1.0.0-DRAFT.md'
     - 'JSON Schema': 
       - 'Versions': './resources/schemas/README.md'
+      - '1.0.0': './resources/schemas/1.0.0.md'
       - '1.0.0-DRAFT': './resources/schemas/1.0.0-DRAFT.md'
     - 'External Tools': './resources/tools.md'
     - 'Related Standards': 
