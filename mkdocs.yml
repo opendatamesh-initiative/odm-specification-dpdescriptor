@@ -34,6 +34,16 @@ nav:
     - 'Providing documentation': './quickstart/docs.md'
     - 'Extending the specification': './quickstart/extensions.md'
     - 'Putting all together': './quickstart/summary.md'
+  - Specifications: 
+    - './specifications/README.md'
+    - 'Data Product Descriptor': 
+      - './specifications/dpds/README.md'
+      - 'Specifiction': './specifications/dpds/1.0.0.md'
+      - 'JSON Schema': './specifications/dpds/1.0.0/schema.md'
+    - 'DatastoreAPI': 
+      - './specifications/dsas/README.md'
+      - 'Specifiction': './specifications/dsas/1.0.0.md'
+      - 'JSON Schema': './specifications/dsas/1.0.0/schema.md'
   - Community: 
     - './community/README.md'
     - Quantyca: './community/quantyca.md'
