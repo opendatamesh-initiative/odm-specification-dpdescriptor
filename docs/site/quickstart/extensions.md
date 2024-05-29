@@ -50,14 +50,3 @@ The following example shows an output port component that exposes streaming serv
 
 ## Adding custom fields
 Almost all components of a data product descriptor document can be extended with other fields with **"x-" prefix** as needed. The prefix is required to avoid possible conflict with future versions of the specification. Tools compliant with the specification CAN or CANNOT properly manage a custom field.
-
-## Extending a specification extension point
-A `Specification Extension Point` (../resources/specifications/last.md#standard-definition-object) marks specific parts of the [Data Product Descriptor Specification (DPDS)](../overview/README.md) that are left open to extensions or further evolution of the standard. 
-
-While a [Standard Definition Object](../resources/specifications/last.md#standard-definition-object) it's a formal declaration that the description of a part of the DPDS will be demanded to an external standard in this version of the specification and also in future ones, the same assumption it's not true for `Specification Extension Points`. 
-
-Even if a `Specification Extension Point` can be extended at will it is RECOMMENDED to use for all added properties a field name prefixed by **"x-"** to avoid potential conflicts with future versions of the DPDS.
-
-
-
-
