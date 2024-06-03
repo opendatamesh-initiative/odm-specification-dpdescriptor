@@ -12,7 +12,8 @@ Whenever possible the description of a component or one of its sub-parts is dele
 ### Data Store API Specification⚓︎
 The DatastoreAPI Specification (DSAPI) is a specification for describing, producing, consuming and visualizing connection based service that expose a tabular datastore.
 
-:bulb: DPDS RECOMMEND to use this standard to define the [API](../../quickstart/interface.md#fields) of ports that expose tabular data stored in database accessible with a connection based protocol.
+???+ tip
+    DPDS RECOMMEND to use this specification to define the [API](../../quickstart/interface.md#fields) of ports that expose tabular data stored in database accessible with a connection based protocol.
 
 Check out <a href="https://github.com/opendatamesh-initiative/odm-specification-datastoreapi" target="_blank">DatastoreAPI repository:octicons-link-external-24:</a> on GitHub for further information.
 
@@ -23,8 +24,12 @@ Check out <a href="https://github.com/opendatamesh-initiative/odm-specification-
 
 Name | Description
 ---|---
-<a href="https://www.openapis.org/" target="_blank">OpenAPI:octicons-link-external-24:</a> | The OpenAPI Specification, previously known as the Swagger Specification, is a specification for machine-readable interface files for describing, producing, consuming and visualizing RESTful web services.<br/><br/>:bulb: *DPDS RECOMMEND to use this standard to define the [API](../../quickstart/interface.md#fields) of ports that expose RESTful servics.*
-<a href="https://www.asyncapi.com/" target="_blank">AsyncAPI:octicons-link-external-24:</a> | The AsyncAPI Specification is a specification for describing, producing, consuming and visualizing asynchronous services.<br/><br/>:bulb: *DPDS RECOMMEND to use this standard to define the [API](../../quickstart/interface.md#fields) of ports that expose streaming data.*
+<a href="https://www.openapis.org/" target="_blank">OpenAPI:octicons-link-external-24:</a> | The OpenAPI Specification, previously known as the Swagger Specification, is a specification for machine-readable interface files for describing, producing, consuming and visualizing RESTful web services.
+<a href="https://www.asyncapi.com/" target="_blank">AsyncAPI:octicons-link-external-24:</a> | The AsyncAPI Specification is a specification for describing, producing, consuming and visualizing asynchronous services.
+
+???+ tip
+    DPDS RECOMMEND to use OpenAPI Specification to define the [API](../../quickstart/interface.md#fields) of ports that expose RESTful services and 
+    AsyncAPI Specification to define the [API](../../quickstart/interface.md#fields) of ports that expose streaming services
 
 
 ### Schemas

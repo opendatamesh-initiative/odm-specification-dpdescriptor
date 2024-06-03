@@ -1,16 +1,16 @@
-# Data Product Descriptor Specification Governance Guide
+# Governance Guide
 This document describes the Data Product Descriptor Specification (DPDS) governance rules. 
 
 These rules have been established to provide an open and transparent mechanism for governing DPDS Project.
 
 This document will be adjusted as practicality dictate
 
-# Roles and Responsibilities
+## Roles and Responsibilities
 
-## Technical Steering Committee
+### Technical Steering Committee
 The Technical Steering Committee (TSC) is the sole entity authorized to make decisions regarding changes to the specification or its governance.
 
-### Responsibilities
+#### Responsibilities
 The TSC is responsable for:
 
 * evaluating and approving or rejecting proposed changes to the specification
@@ -19,7 +19,7 @@ The TSC is responsable for:
 * evaluating and approving or rejecting proposals for DPDS Mantainer additions or removals
 * appointing the TSC Chair
 
-### Adding a member
+#### Adding a member
 Everyone can ask to become a TSC Member by writing to [odm.info@quantyca.it](mailto:odm.info@quantyca.it). 
 
 The TSC is responsible for evaluating all applications and accepting or rejecting them. 
@@ -32,7 +32,7 @@ If the number of TSC Members falls below  5, it is the responsibility of the TSC
 
 The current TSC Members can be found in [TSC.md](./TSC.md).
 
-### Removing a member
+#### Removing a member
 TSC Member removal is possible under the following circumstances:
 
 * Direct request from the member
@@ -41,7 +41,7 @@ TSC Member removal is possible under the following circumstances:
 
 The request to remove a member can be initiated by the member or by another TSC Member. The TSC is responsible for accepting or rejecting the removal proposals.
   
-### TSC Meetings
+#### TSC Meetings
 TSC meetings must be organized at least once a year to elect the TSC Chair. TSC meetings should be organized preferably not less than once a quarter. 
 
 Every TSC Member can propose a new meeting. Once the data is scheduled and the agenda defined the meeting must be announced in the discussion session and pinned. 
@@ -50,25 +50,25 @@ Modifications to the agenda can be proposed in the associated discussion thread.
 
 All DPDS Community Members can participate in the TSC meeting. Meetings should be recorded.
 
-## TSC Chair
+### TSC Chair
 The TSC chair presides over the TSC and is responsible for maintaining relationships with other projects both within and outside the [Open Data Mesh Initiative (ODMI)](https://initiative.opendatamesh.org/). 
 
-### Responsibilities
+#### Responsibilities
 The TSC Chair is responsible for:
 
 * maintaining relationships with external projects and organizations
 * ensuring that the activities of the TSC are conducted following the governance rules described in this document
   
-### Election
+#### Election
 The TSC Chair is elected annually. The TSC Chair is selected by the TSC among its members.
 
-## Maintainers
+### Maintainers
 DPDS Maintainers have write access to the [project GitHub repository](https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor).
 Maintainers collectively manage the project's resources and contributors.
 
 The current DPDS Maintainers can be found in [MAINTAINERS.md](./MAINTAINERS.md).
 
-### Responsibilities
+#### Responsibilities
 The DPDS Maintainers are responsible for:
 
 * merging their patches or patches from others
@@ -77,21 +77,21 @@ The DPDS Maintainers are responsible for:
 
  The current development process followed by DPS Mantainers can be found in [DEVELOPMENT.md](./DEVELOPMENT.md).
 
-### Adding a maintainer
+#### Adding a maintainer
 Everyone can ask to become a DPDS Manatiner by writing to [odm.info@quantyca.it](mailto:odm.info@quantyca.it)  
 
 The TSC is responsible for evaluating all applications and accepting or rejecting them. 
 
 Maintainers should be people who care about the DPDS project and want to help it grow and improve. A maintainer is not just someone who can make changes, but someone who has demonstrated their ability to collaborate with the DPDS community, get the most knowledgeable people to review spec and docs, champion RFCs, and follow through to fix issues (in spec or docs).
 
-### Removing a maintainer
+#### Removing a maintainer
 DPDS Mantainer removal is possible under the following circumstances:
 
 * direct request from the maintainer
 * unavailability or prolonged inactivity
 * violation of the [Code of Conduct](https://github.com/opendatamesh-initiative/.github/blob/main/CODE_OF_CONDUCT.md)
 
-# Decision process
+## Decision process
 While the DPDS Project aims to operate as a consensus-based community, if any TSC
 decision requires a vote to move the DPDS Project forward, the voting members of the
 TSC will vote on a one-vote per voting member basis.

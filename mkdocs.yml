@@ -46,26 +46,20 @@ nav:
       - 'JSON Schema': './specifications/dsas/1.0.0/schema.md'
   - Community: 
     - './community/README.md'
-    - Quantyca: './community/quantyca.md'
+    - Contributing guidelines: './community/contributing.md'
+    - Code of conduct: './community/coc.md'
+    - Project governance: './community/governance.md'
+    - Development process: './community/development.md'
+    - Contacts: './community/contacts.md'
+    
   - Resources: 
     - './resources/README.md'
-    - 'Specifications': 
-      - 'Versions': './resources/specifications/README.md'
-      - '1.0.0': './resources/specifications/1.0.0.md'
-      - '1.0.0-DRAFT': './resources/specifications/1.0.0-DRAFT.md'
-    - 'JSON Schema': 
-      - 'Versions': './resources/schemas/README.md'
-      - '1.0.0': './resources/schemas/1.0.0.md'
-      - '1.0.0-DRAFT': './resources/schemas/1.0.0-DRAFT.md'
     - 'External Tools': './resources/tools.md'
-    - 'Related Standards': 
-      - 'Related Standards': './resources/standards/README.md'
-      - 'Data Store API Specification': './resources/standards/dsapi-spec.md'
-      - 'Data Store API Schema': './resources/standards/dsapi-schema.md'
-    - 'Data Mesh Resources': './resources/resources.md'
+    - 'DPDS Resources': './resources/dpdsresources.md'
+    - 'Data Mesh Resources': './resources/meshresources.md'
     - 'How to': 
-      - 'manage JSON schemas': './resources/howto/build-schema-doc.md'
-
+      - 'build this site': './resources/howto/build-site-doc.md'
+      - 'build JSON Schema documentation': './resources/howto/build-schema-doc.md'
 
 ##theme: readthedocs
 theme:
@@ -134,7 +128,7 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor
     - icon: fontawesome/brands/slack
-      link: https://join.slack.com/t/opendatamesh/shared_invite/zt-1jrqfghls-68AxK_QzypaOeNyOkOwuog
+      link: https://dpds.opendatamesh.org/community/contributing/#joining-the-conversation-on-slack
 
 extra_css:
   - stylesheets/extra.css
