@@ -3,7 +3,8 @@
 # Learn more about .gitignore:
 #     https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 
-site/
+
+./site/
 .cache
 
 # Node artifact files
