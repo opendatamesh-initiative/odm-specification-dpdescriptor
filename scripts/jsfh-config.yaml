@@ -3,3 +3,4 @@ show_breadcrumbs: false
 link_to_reused_ref: false
 footer_show_time: false
 copy_css: false
+description_is_markdown: true

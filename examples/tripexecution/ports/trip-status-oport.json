@@ -23,65 +23,98 @@
             }
         },
         "deprecationPolicy": {
+            "name": "policy",
+            "version": "1.0.0",
+            "specification": "custom",
             "description": "When a new major version become available the previous one is kept online for 3 months",
-            "x-deprecation-period": "3M"
+            "definition": {
+                "x-deprecation-period": "3M"
+            }
         },
         "slo": {
+            "name": "slo",
+            "version": "1.0.0",
+            "specification": "custom",
             "description": "The slo are hight for all base service indicators because this service is business critical",
-            "x-operationalSlo": {
-                "availability": "0.99999",
-                "responsetime": "1s"
-            },
-            "x-qualitySlo": {
-                "freshness": "5m"
+            "definition": {
+                "x-operationalSlo": {
+                    "availability": "0.99999",
+                    "responsetime": "1s"
+                },
+                "x-qualitySlo": {
+                    "freshness": "5m"
+                }
             }
         }
     },
     "expectatctions": {
         "audience": {
+            "name": "audience",
+            "version": "1.0.0",
+            "specification": "custom",
             "description": "This port is designed to help operations departments. It is not for customer care and finance departments",
-            "x-includes": [
-                "operations"
-            ],
-            "x-excludes": [
-                "customer-care",
-                "finance"
-            ]
+            "definition": {
+                "x-includes": [
+                    "operations"
+                ],
+                "x-excludes": [
+                    "customer-care",
+                    "finance"
+                ]
+            }
         },
         "usage": {
+            "name": "usage",
+            "version": "1.0.0",
+            "specification": "custom",
             "description": "This port is designed to operational access not for analysis",
-            "x-filterOn": [
-                "id"
-            ],
-            "x-forbiddenOperations": [
-                "group-by",
-                "unfiltered-selections"
-            ]
+            "definition": {
+                "x-filterOn": [
+                    "id"
+                ],
+                "x-forbiddenOperations": [
+                    "group-by",
+                    "unfiltered-selections"
+                ]
+            }
         }
     },
-    "contracts": {
+    "obligations": {
         "termsAndConditions": {
+            "name": "termsAndConditions",
+            "version": "1.0.0",
+            "specification": "custom",
             "description": "A detailed description of the data product, that include also the target audience",
+            "definition": {},
             "externalDocs": {
                 "mediaType": "text/html",
                 "$href": "https://wiki.example-xyz.com/corporate-mesh/dp/trip-execution.html#terms-and-conditions"
             }
         },
         "billingPolicy": {
+            "name": "billingPolicy",
+            "version": "1.0.0",
+            "specification": "custom",
             "description": "This port is billed by number of monthly queries",
-            "x-billingUnit": "milion queries",
-            "x-pricePerUnit": 0.01,
-            "x-billingPeriod": "month"
-
+            "definition": {
+                "x-billingUnit": "milion queries",
+                "x-pricePerUnit": 0.01,
+                "x-billingPeriod": "month"
+            }
         },
         "sla": {
+            "name": "sla",
+            "version": "1.0.0",
+            "specification": "custom",
             "description": "The sla are hight for all base service indicators because this service is business critical",
-            "x-operationalSla": {
-                "availability": "0.999",
-                "responsetime": "5s"
-            },
-            "x-qualitySla": {
-                "freshness": "10m"
+            "definition": {
+                "x-operationalSla": {
+                    "availability": "0.999",
+                    "responsetime": "5s"
+                },
+                "x-qualitySla": {
+                    "freshness": "10m"
+                }
             }
         }
     }

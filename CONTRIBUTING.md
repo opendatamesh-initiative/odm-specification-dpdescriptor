@@ -1,235 +1,87 @@
-# Data Product Descriptor Specification Contribution Guide
+# Data Product Descriptor Specification Contributing Guidelines
+The DPDS community thrives on active participation. We welcome any contributions you can make! ❤️
 
-Data Product Descriptor Specification (DPDS) is an evolving specification. This repository contains the
-specification text as well as Pull Requests with suggested improvements and
-contributions.
+This document describes the most popular ways to contribute to the DPDS community.
 
-Contributions that do not change the interpretation of the spec but instead
-improve legibility, fix editorial errors, clear up ambiguity and improve
-examples are encouraged and are often merged by a spec Committer with
-little process.
-
-However, contributions that _do_ meaningfully change the interpretation of the
-spec must follow an RFC (Request For Comments) process led by a *[champion](#champion-definition)*
-through a series of *stages* intended to improve *visibility*, allow for
-*discussion* to reach the best solution, and arrive at *consensus*. This process
-becomes even more important as DPDS's community broadens.
-
-When proposing or weighing-in on any issue or pull request, consider the
-[Code of Conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md)
+When contributing to the DPDS community consider the [Code of Conduct](https://github.com/opendatamesh-initiative/.github/blob/main/CODE_OF_CONDUCT.md) 
 to better understand expected and unacceptable behavior.
 
-## Guiding Principles
+## Spreading the Word
+Spreading the word about the specification is a great way to help the DPDS community grow and ensure that more people are aware of the specification. 
+Here are some ways you can help:
 
-DPDS's evolution is guided by a few principles. Suggested contributions
-should use these principles to guide the details of an RFC and decisions to
-move forward.
+* Share your experience using the specification on social media, forums, or relevant communities
+* Mention the specification in talks, articles, or blog posts you create and let us know on [Slack](#joining-the-conversation-on-slack)
+* Use the specification [logo](https://dpds.opendatamesh.org/images/logos/opendatamesh.png) or [website link](https://dpds.opendatamesh.org/) on your website or documentation
 
-* **Enable new capabilities motivated by real use cases**
+## Asking questions
+We wholeheartedly welcome your questions!  They're not just accepted, they're vital for fostering knowledge exchange within DPDS community. 
+It's through these inquiries that the specification evolves, becoming progressively clearer and more user-friendly. Follow these steps to
+ask questions:
 
-  Every change should intend on unlocking a real and reasonable use case. Real
-  examples are always more compelling than theoretical ones, and common
-  scenarios are more compelling than rare ones. RFCs should do more than offer
-  a different way to reach an already achievable outcome.
+* Search for existing [discussions](https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/discussions) and [issues](https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/issues) before creating a new question
+* Post your question as a new [discussion](https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/discussions) thread
+* Clearly articulate your question and provide context if needed
+* Use descriptive titles for easier searchability
 
-* **Simplicity and consistency over expressiveness and terseness**
+## Sharing your knowledge on GitHub
+The spirit of sharing is at the heart of the DPDS community. By actively participating and sharing your knowledge and experience, 
+you play a vital role in supporting and empowering other community members. 
+Here are some ways to get involved:
 
-  "Possible but awkward" is often favored over more complex
-  alternatives. Simplicity (e.g. fewer concepts) is more important than
-  expressing more sophisticated ideas or writing less.
+* Answer questions in the [discussion section](https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/discussions)
+* Provide feedback on an open [issue](https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/issues)
 
-* **Preserve option value**
+## Joining the conversation on Slack
+Slack is our go-to platform for informal communication and collaboration within the DPDS community. 
+Joining ongoing conversations on Slack channels is a fantastic way to connect with other community members, stay in the loop on 
+DPDS community happenings, and gain insights into the latest developments. 
+To join the DPDS Slack workspace follow these steps: 
 
-  It's hard to know what the future brings; whenever possible, decisions should
-  be made that allow for more options in the future. Sometimes this is
-  unintuitive: spec rules often begin more strict than necessary with a future
-  option to loosen when motivated by a real use case.
+* Send an email to [odm.info@quantyca.it](mailto:odm.info@quantyca.it) with subject _Access to the DPDS Slack_ to request access to DPDS Slack Workspace
+* Introduce yourself in `#introduce-yourself` channel
+* Check the last updates in `#announcements` channel
+* Join ongoing discussions in `#dpds` channel
 
-* **Understandability is just as important as correctness**
+## Adopting the Specification
+The success of the specification is tied to its adoption. One of the most effective ways to contribute to its success 
+is therefore to use it and share your experiences. These are some examples of how you can use the specification:
 
-  The DPDS, despite describing technical behavior, is intended to be
-  read by people. Use natural tone and include motivation and examples.
+* Adopt the specification in your data management projects
+* Make your data management tool compliant with the specification
+* Implement an adapter tool to use a DPDS document together with third-party tool (ex. importers/exporters)
+* Implement a utility tool to support the  development of a DPDS document (es. linter, validator, diff, composer, etc ...)
+  
+## Reporting Errors
+Effectively reporting errors like typos, imprecision, ambiguity, and contradictions is a critical contribution to the success of the specification. 
+Follow these steps to report an error:
 
-## Breaking Change vs Non Breaking Change
+* Check open issues and pull requests to ensure the error hasn't already been reported
+* If you are unsure if what you have found is an actual error or not ask in the [discussion section](https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/discussions) here on GitHub or in the `#dpds` channel on [Slack](#joining-the-conversation-on-slack)
+* Report the error
+    * Open a new [issue](https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/issues)
+    * Set a clear title that describes the error and facilitates search (e.g., "Typo in `Expectations Object` Description").
+    * Explain what you found, including a reference to the part of the specification that contains the potential error
+    * Suggest a change (if possible) to fix the error:
+    * Specify if the proposed change is only editorial or has impacts on the specification
+    * If the change to fix the error is just editorial you can also submit directly a pull request without opening an issue before
 
-Specifications are not much different than software. Some changes provided in the spec can cause breaking changes for tools that support it. For example, if one of the properties that was `required` becomes `optional`, it is considered a breaking change because some tools might depend on that property and fail if it is not provided. 
+## Proposing Changes
+The specification is under continuous evolution. The process for making changes is outlined in the [DEVELOPMENT](./DEVELOPMENT.md) Document.
 
-_Non-breaking changes:_
-- Adding a new optional property
+## Joining Contributors
+A [contributor](#) is anyone participating in the DPDS community in one of the ways described in this document.
 
-_Breaking changes:_
-- Adding a new required property
-- Making a property required
-- Making a property optional
-- Removing a property
-- Changing the type of a property in backward incompatible way
+If you've made significant contributions to the development of the DPDS specification, you have the option to be credited in the [CONTRIBUTORS](#) Document. 
+Just send an email to [odm.info@quantyca.it](mailto:odm.info@quantyca.it) with your information and a brief description of your work to be added to the list of contributors.
 
-## RFC Contribution Champions
+## Becoming a Maintainer
+A [maintainer](#) is anyone who has commit rights on the specification repository.
 
-Contributing to DPDS requires a lot of dedicated work. To set clear
-expectations and provide accountability, each proposed RFC (request for
-comments) must have a *champion* who is responsible for addressing feedback and
-completing next steps. An RFC may have multiple *champions*. The spec Committers
-are not responsible for completing RFCs which lack a *champion* (though a
-Committer may be a *champion* for an RFC).
+The [GOVERNANCE](GOVERNANCE.md) Document details how to apply for mantainer role and outlines the responsibilities that come with it.
 
-An RFC which does not have a *champion* may not progress through stages, and can
-become stale. Stale proposals may be picked up by a new *champion* or may
-be *rejected*.
+## Joining the Technical Steering Committee
+A [TSC member](#) is anyone who has the right to vote to approve or reject changes to specifications or its governance model.
 
+The [GOVERNANCE](GOVERNANCE.md) Document details how to apply for TSC member role and outlines the responsibilities that come with it.
 
-## RFC Contribution Stages
-
-RFCs are guided by a *champion* through a series of stages: *strawman*,
-*proposal*, *draft*, and *accepted* (or *rejected*), each of which has suggested
-entrance criteria and next steps detailed below. RFCs typically advance one
-stage at a time, but may advance multiple stages at a time. Stage
-advancements occur on GitHub.
-
-In general, it's preferable to start with a pull request so that we can best
-evaluate the RFC in detail. However, starting with an issue is also permitted if
-the full details are not worked out.
-
-All RFCs start as either a *strawman* or *proposal*.
-
-## Stage 0: *Strawman*
-
-An RFC at the *strawman* stage captures a described problem or
-partially-considered solutions. A *strawman* does not need to meet any entrance
-criteria. A *strawman's* goal is to prove or disprove a problem and guide
-discussion towards either rejection or a preferred solution. A *strawman* may
-be an issue or a pull request (though an illustrative pull request is preferrable).
-
-*There is no entrance criteria for a Strawman*
-
-As implied by the name [strawman](https://en.wikipedia.org/wiki/Straw_man_proposal),
-the goal at this stage is to knock it down (*reject*) by considering other
-possible related solutions, showing that the motivating problem can be solved
-with no change to the specification, or that it is not aligned with the
-*guiding principles*.
-
-Once determined that the *strawman* is compelling, it should seek the entrance
-criteria for *proposal*.
-
-
-## Stage 1: *Proposal*
-
-An RFC at the *proposal* stage is a solution to a problem with enough fidelity
-to be discussed in detail. It must be backed by a willing *champion*. A
-*proposal*'s goal is to make a compelling case for acceptance by describing
-both the problem and the solution via examples and spec edits. A *proposal*
-should be a pull request.
-
-*Entrance criteria:*
-
-* Identified *champion*
-* Clear explanation of problem and solution
-* Illustrative examples
-* Incomplete spec edits
-* Identification of potential concerns, challenges, and drawbacks
-
-A *proposal* is subject to the same discussion as a *strawman*: ensuring that it
-is well aligned with the *guiding principles*, is a problem worth solving, and
-is the preferred solution to that problem. A *champion* is not expected to have
-confidence in every detail at this stage and should instead focus on identifying
-and resolving issues and edge-cases. 
-
-Most *proposals* are expected to evolve or change and may be rejected. Therefore,
-it is unwise to rely on a *proposal* in a production environment. DPDS-compliant
-tools *may* implement *proposals*, though are encouraged to not enable the
-*proposed* feature without explicit opt-in.
-
-
-## Stage 2: *Draft*
-
-An RFC at the *draft* stage is a fully formed solution. There is
-consensus the problem identified should be solved, and this particular solution
-is preferred. A *draft's* goal is to precisely and completely describe the
-solution and resolve any concerns. A *draft*
-must be a pull request.
-
-*Entrance criteria:*
-
-* Consensus the solution is preferred
-* Resolution of identified concerns and challenges
-* Precisely described with spec edits
-* Compliant implementation in [DPDS JSON Schema](https://github.com/asyncapi/spec-json-schemas) (might not be merged)
-
-A *proposal* becomes a *draft* when the set of problems or drawbacks have been
-fully considered and accepted or resolved, and the solution is deemed
-desirable. A *draft*'s goal is to complete final spec edits that are ready to
-be merged.
-
-*Drafts* may continue to evolve and change, occasionally dramatically, and are
-not guaranteed to be accepted. Therefore, it is unwise to rely on a *draft* in a
-production environment. DPDS-compliant tools *should* implement *drafts* to
-provide valuable feedback, though are encouraged not to enable the *draft*
-feature without explicit opt-in when possible.
-
-
-## Stage 3: *Accepted*
-
-An RFC at the *accepted* stage is a completed solution. According to a spec
-Committer it is ready to be merged as-is into the spec document. An *accepted* RFC must be
-implemented in the [AsyncAPI JSON Schema](https://github.com/asyncapi/spec-json-schemas).
-
-*Entrance criteria:*
-
-* Consensus the solution is complete
-* Complete spec edits, including examples and prose
-* Compliant implementation in the [AsyncAPI JS Parser](https://www.github.com/asyncapi/parser-js) and the [AsyncAPI JSON Schema](https://github.com/asyncapi/spec-json-schemas) (fully tested and merged or ready to merge)
-
-A *draft* is *accepted* when the Committers have been convinced that it appropriately handles all edge cases; that the
-spec changes not only precisely describe the new syntax and semantics but
-include sufficient motivating prose and examples; and that the RFC includes
-edits to any other affected areas of the spec. Once *accepted*, its *champion*
-should encourage adoption of the RFC by opening issues or pull requests on other
-popular DPDS-compliant tools.
-
-An *accepted* RFC is merged into the DPDS's master branch by a Committer
-and will be included in the next released revision.
-
-
-## Stage X: *Rejected*
-
-An RFC may be *rejected* at any point and for any reason. Most rejections occur
-when a *strawman* is proven to be unnecessary, is misaligned with the *guiding
-principles*, or fails to meet the entrance criteria to become a *proposal*.
-A *proposal* may become *rejected* for similar reasons as well as if it fails to
-reach consensus or loses the confidence of its *champion*. Likewise a *draft*
-may encounter unforeseen issues during implementations which cause it to lose
-consensus or the confidence of its *champion*.
-
-RFCs which have lost a *champion* will not be *rejected* immediately, but may
-become *rejected* if they fail to attract a new *champion*.
-
-Once *rejected*, an RFC will typically not be reconsidered. Reconsideration is
-possible if a *champion* believes the original reason for rejection no longer
-applies due to new circumstances or new evidence.
-
-## Champion definition
-
-A champion is anyone who leads the work on an RFC. It doesn't
-mean it has to be the only person working on it though. They
-are a "person of reference" for a given RFC implementation and
-may or may not know about JS, relying on the help of other
-community members to implement the RFC on the [AsyncAPI JSON Schema](https://github.com/asyncapi/spec-json-schemas).
-
-## Merging pull requests
-
-A pull request can be merged if all the following conditions are met:
-
-* There is, at least, a mininum of 3 approvals from the [repository code owners](./CODEOWNERS).
-* Sufficient time has passed to let all code owners review the pull request. As of now, it should be a minimum of 1 week. If all code owners have already approved a pull request, it's ok not to wait for this period of time.
-
-## Linting specification document
-
-Always make sure that the specification markdown file has no markdown-related errors.
-
-Instead of waiting for GitHub Actions workflow to check markdown file, you can do it locally by calling the following docker command:
-```bash
-docker run -v $PWD:/workdir ghcr.io/igorshubovych/markdownlint-cli:v0.35.0 "spec/asyncapi.md"
-```
-
-## References
-This document was adapted from the [GraphQL Specification Contribution Guide](https://github.com/graphql/graphql-spec/blob/main/CONTRIBUTING.md).
