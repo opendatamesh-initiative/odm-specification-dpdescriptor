@@ -1,77 +1,82 @@
 {
-    "fullyQualifiedName": "urn:dpds:com.company-xyz:dataproducts:tripExecution:1:outputports:tripEvents",
-    "name": "tripEvents",
-    "displayName": "Trip Events",
-    "description": "This port exposes a *stream of events* related to the `Trip` entity",
-    "version": "1.2.0",
-    "promises": {
-        "platform": "westeurope.azure:confluent",
-        "serviceType": "streaming-services",
-        "api": {
-            "name": "tripEventsApi",
-            "version": "1.0.0",
-            "specification": "asyncapi",
-            "specificationVersion": "2.5.0",
-            "definition": {
-                "mediaType": "text/json",
-                "$ref": "trip-events-oport-api.json"
-            },
-            "externalDocs": {
-                "description": "The AsyncAPI v2.5.0 specification used to define the API of this port",
-                "mediaType": "text/html",
-                "$href": "https://www.asyncapi.com/docs/reference/specification/v2.5.0"
-            }
-        },
-        "deprecationPolicy": {
-            "description": "When a new major version become available the previous one is kept online for 3 months",
-            "x-deprecation-period": "3M"
-        },
-        "slo": {
-            "description": "The SLO are hight for all base service indicators because this service is business critical",
-            "x-operationalSlo": {
-                "availability": "0.99999",
-                "responsetime": "1s"
-            },
-            "x-qualitySlo": {
-                "freshness": "5m"
-            }
+    "dataProductDescriptor": "1.0.0",
+    "info": {
+        "fullyQualifiedName": "urn:dpds:com.company-xyz:dataproducts:tripExecution:1",
+        "name": "tripExecution",
+        "version": "1.2.3",
+        "domain": "Transport Management",
+        "owner": {
+            "id": "john.doe@company-xyz.com",
+            "name": "John Doe"
         }
     },
-    "expectatctions": {
-        "audience": {
-            "description": "This port is designed to help operations departments. It is not for customer care and finance departments",
-            "x-includes": [
-                "operations"
-            ],
-            "x-excludes": [
-                "customer-care",
-                "finance"
-            ]
-        }
-    },
-    "contracts": {
-        "termsAndConditions": {
-            "description": "A detailed description of the data product, that include also the target audience",
-            "externalDocs": {
-                "mediaType": "text/html",
-                "$href": "https://wiki.example-xyz.com/corporate-mesh/dp/trip-execution.html#terms-and-conditions"
+    "interfaceComponents": {
+        "outputPorts": [
+            {
+                "fullyQualifiedName": "urn:dpds:com.company-xyz:dataproducts:tripExecution:1:outputports:tripEvents",
+                "name": "tripEvents",
+                "displayName": "Trip Events",
+                "description": "This port exposes a *stream of events* related to the `Trip` entity",
+                "version": "1.2.0",
+                "promises": {
+                    "platform": "westeurope.azure:confluent",
+                    "serviceType": "streaming-services",
+                    "api": {
+                        "name": "tripEventsApi",
+                        "version": "1.0.0",
+                        "specification": "asyncapi",
+                        "specificationVersion": "2.5.0",
+                        "definition": {
+                            "mediaType": "text/json",
+                            "$ref": "trip-events-oport-api.json"
+                        },
+                        "externalDocs": {
+                            "mediaType": "text/html",
+                            "$href": "https://www.asyncapi.com/docs/reference/specification/v2.5.0"
+                        }
+                    },
+                    "deprecationPolicy": {
+                        "name": "policy",
+                        "version": "1.0.0",
+                        "specification": "custom",
+                        "definition": {
+                            "x-deprecation-period": "3M"
+                        }
+                    },
+                    "slo": {
+                        "name": "slo",
+                        "version": "1.0.0",
+                        "specification": "custom",
+                        "description": "The SLO are hight for all base service indicators because this service is business critical",
+                        "definition": {
+                            "x-operationalSlo": {
+                                "availability": "0.99999",
+                                "responsetime": "1s"
+                            },
+                            "x-qualitySlo": {
+                                "freshness": "5m"
+                            }
+                        }
+                    }
+                },
+                "expectatctions": {
+                    "audience": {
+                        "name": "audience",
+                        "version": "1.0.0",
+                        "specification": "custom",
+                        "description": "This port is designed to help operations departments. It is not for customer care and finance departments",
+                        "definition": {
+                            "x-includes": [
+                                "operations"
+                            ],
+                            "x-excludes": [
+                                "customer-care",
+                                "finance"
+                            ]
+                        }
+                    }
+                }
             }
-        },
-        "billingPolicy": {
-            "description": "This port is billed by outbound throughput",
-            "x-billingUnit": "MB",
-            "x-pricePerUnit": 0.005,
-            "x-billingPeriod": "month"
-        },
-        "sla": {
-            "description": "The sla are hight for all base service indicators because this service is business critical",
-            "x-operationalSla": {
-                "availability": "0.999",
-                "responsetime": "5s"
-            },
-            "x-qualitySla": {
-                "freshness": "10m"
-            }
-        }
+        ]
     }
 }
