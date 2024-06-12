@@ -236,5 +236,5 @@ Each feature branch must be linked with an issue.
 
 A new version of DPDS is released by merging a work branch into the `main` branch. 
 
-## References
+## Attribution
 This document was adapted from the [GraphQL Specification Contribution Guide](https://github.com/graphql/graphql-spec/blob/main/CONTRIBUTING.md).

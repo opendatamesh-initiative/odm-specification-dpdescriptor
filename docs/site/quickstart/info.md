@@ -27,6 +27,7 @@ The following example shows a minimal data product descriptor document:
 	"dataProductDescriptor": "1.0.0",
 	"info": {
 		"fullyQualifiedName": "urn:dpds:com.company-xyz:dataproducts:tripExecution:1",
+		"name": "tripExecution",
 		"version": "1.2.3",
 		"domain": "Transport Management",
 		"owner": {

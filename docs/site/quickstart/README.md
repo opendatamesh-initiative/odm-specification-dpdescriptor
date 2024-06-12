@@ -8,7 +8,7 @@ The following pages introduce the syntax and structure of a data product descrip
 - [Trip Execution Data Product Overview](./example.md): architecture and purpose of the example data product
 - [Data Product Descriptor Document Overview](./overview.md): JSON, YAML
 - [Minimal Descriptor Document](./overview.md): `dataProductDescriptor` and `info`
-- [Interface Components](./interface.md): `interfaceComponents`, `promises`, `expectations` and `contracts`
+- [Interface Components](./interface.md): `interfaceComponents`, `promises`, `expectations` and `obligations`
 - [Application Components](./application.md): `applicationComponents`, `buildService` and `deploymentService`
 - [Infrastructural Components](./infrastructure.md): `infrastructuralComponents` and  `provisioningService`
 - [Reusing descriptions](./components.md): `components` and `$ref`.
