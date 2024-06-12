@@ -9,7 +9,7 @@ Data product interface components are called **ports** in the DPDS. The [Interfa
 ![open-data-mesh descriptor components](../images/dpds-interface-components.svg)
 
 ### Fileds
-The [Interface Components Object](../resources/specifications/last.md#interfaceComponentsObject) has five fields, one for each port type: `inputPorts`, `outputPorts`, `discoveryPorts`, `observabilityPorts` and `controlPorts`. Because a data product can expose multiple ports of the same type all these fields are an  **Array of Objects**. The type of these objects depends on the specific port type: [Input Port Component](../resources/specifications/last.md#input-port-component), [Output Port Component](../resources/specifications/last.md#output-port-component), [Discovery Port Component](../resources/specifications/last.md#discovery-port-component), [Observability Port Component](../resources/specifications/last.md#observability-port-component) and [Control Port Component](../resources/specifications/last.md#control-port-component). Anyway, all these objects share a common subset of fields, no matter what it is the type of port to which they are associated with. The most important of these shared fields are:
+The [Interface Components Object](../resources/specifications/last.md#interfaceComponentsObject) has five fields, one for each port type: `inputPorts`, `outputPorts`, `discoveryPorts`, `observabilityPorts` and `controlPorts`. Because a data product can expose multiple ports of the same type all these fields are an  **Array of Objects**. The type of these objects depends on the specific port type: [Input Port Component](../resources/specifications/last.md#input-port-component), [Output Port Component](../resources/specifications/last.md#output-port-component), [Discovery Port Component](../resources/specifications/last.md#discovery-port-component), [Observability Port Component](../resources/specifications/last.md#observability-port-component) and [Control Port Component](../resources/specifications/last.md#control-port-component). Anyway, all these objects share a common subset of fields, no matter what it is the type of port to which they are associated. The most important of these shared fields are:
 
 - `fullyQualifiedName` (**string:fqn**): The unique universal identifier of the port. It MUST be a URN of the form `urn:dpds:{mesh-namespace}:dataproducts:{product-name}:{product-major-version}:{port-type}:{port-name}`
 - `version`: (**string:version**): This is the <a href="https://semver.org/spec/v2.0.0.html" target="_blank">semantic version number</a> of the data product's port. Every time the *major version* of port changes also the *major version* of the product MUST be incremented.
@@ -42,86 +42,60 @@ A [Promises Object](../resources/specifications/last.md#promises-object) is comp
 - `servicesType` (**string**): This is the type of service associated with the given port. Examples: `soap-services`, `rest-services`, `odata-services`,`streaming-services`, `datastore-services`.
 - `api` ([Standard Definition Object](../resources/specifications/last.md#standardDefinitionObject)): this is the formal description of services API. A good API standard specification should describe how to define the following elements of the service interface: addressable endpoints, available authentication methods and schema of data object exchanged.
 	- `specification` (**string**): This is the name of the specification used to define the service API. It is RECOMMENDED to use [Open API Specification](https://github.com/OAI/OpenAPI-Specification) for restful services, [Async API Specification](https://github.com/asyncapi/spec) for streaming services and *DataStore API Specification* for data store connection-based services. Other specifications MAY be used as required.
-	- `version` (**string**): This is the version of the specification used to define the service API.
+	- `specificationVersion` (**string**): This is the version of the specification used to define the service API.
 	- `definition` (**Object**): This is the definition of the service API built using the specification reported in the fields above
-- `depreceationPolicy` ([Specification Extension Point](../resources/specifications/last.md#specificationExtensionPoint)): This is the deprecation policy adopted for the given set of services. A policy description and a pointer to external documentation can be provided. Moreover, other fields with **"x-" prefix** can be added to provide further informations as needed (ex. `x-deprecation-period`).
-	- `description` (**string**): This is a general description of the deprecation policy.
-	- `externalDocs` ([External Resource Object](../resources/specifications/last.md#externalResourceObject)): This is a pointer to external documentation that describe in more detail the deprecation policy.
-- `slo`: ([Specification Extension Point](../resources/specifications/last.md#specificationExtensionPoint)): These are the _service_ level objectives (SLO)* supported by the given set of services. An SLO description and a pointer to external documentation can be provided. Moreover, other fields with **"x-" prefix** can be added to provide further information as needed (ex. `x-availability`, `x-responsetime`, etc...).
-	- `description` (**string**): This is a general description of the supported SLO
-	- `externalDocs` ([External Resource Object](../resources/specifications/last.md#externalResourceObject)): This is a pointer to external documentation that describes in more detail the supported SLO.
+- `depreceationPolicy` ([Standard Definition Object](../resources/specifications/last.md#standardDefinitionObject)): This is the deprecation policy adopted for the given set of services. 
+- `slo`: ([Standard Definition Object](../resources/specifications/last.md#standardDefinitionObject)): These are the _service_ level objectives (SLO)* supported by the given set of services. 
 
 The [Promises Object](../resources/specifications/last.md#promises-object) can be extended with other fields with **"x-" prefix** as needed.
 
 ### Example
-The promises of the following example describe a datastore service that exposes one table (i.e. `trip_status`) composed of two columns (i.e. `id` and `status`) stored on a *Postgress DB* hosted in *AWS Cloud*. The description of the API is provided using a custom standard that is a simplified version of the *DataStore API Specification*. Both `depreceationPolicy` and `slo` fields use custom properties to provide more info respectively on the deprecation period duration (i.e. `x-deprecation-period`) and the service level indicators supported (i.e. `x-operationalSlo`  and `x-qualitySlo`)
+The promises of the following example describe a datastore service that exposes one table (i.e. `trip_status`) composed of two columns (i.e. `id` and `status`) stored on a *Postgress DB* hosted in *AWS Cloud*. The description of the API is provided using a custom standard that is a simplified version of the *DataStore API Specification*. Both `depreceationPolicy` and `slo` fields use a custom specification to provide more info respectively on the deprecation period duration (i.e. `x-deprecation-period`) and the service level indicators supported (i.e. `x-operationalSlo`  and `x-qualitySlo`)
 
 ```json
 {
 	"platform": "aws:eu-south-1:postgres",
 	"serviceType": "datastore-services",
 	"api": {
-		"specification": "custom-datastore-api",
-		"definition": {
-			"endpoints": [{
-				"env": "DEV",
-				"endpointType": "jdbc",
-				"host": "ip-10-24-32-0.ec2.internal",
-				"port": "5432",
-				"db": "tms",
-				"schema": "shipments"
-			}],
-			"auth-methods": ["jdbc-base-authentication"],
-			"schema": {
-				"tables": [{
-					"name": "trip_status",
-					"displayName": "Trip Status",
-					"tableType": "LOCAL",
-					"columns": [
-						{
-							"name": "id",
-							"displayName": "Trip ID",
-							"dataType": "INTEGER",
-							"columnConstraint": "PRIMARY_KEY",
-							"ordinalPosition": 1
-						}, {
-							"name": "status",
-							"displayName": "Trip Status",
-							"dataType": "VARCHAR",
-							"dataLength": "30",
-							"columnConstraint": "NOT_NULL",
-							"ordinalPosition": 2
-						},
-					]
-				}]
-			}
-		}
-	},
-	"deprecationPolicy": {
-		"description": "When a new major version become available the previous one is kept online for 3 months",
-		"x-deprecation-period": "3M",
-		"externalDocs": {
-			"description": "A detailed description of the deprecation process",
-			"mediaType": "text/html",
-			"$href": "https://wiki.example-xyz.com/corporate-mesh/dp-deprecation-workflow.html"
-		}
-	},
-	"slo": {
-		"description": "The slo are hight for all base service indicators because this service is business critical",
-        "x-operationalSlo": {
-            "availability": "0.99999",
-		    "responsetime": "1s"
+            "name": "tripStatusApi",
+            "version": "1.0.0",
+            "specification": "datastoreapi",
+            "specificationVersion": "1.0.0",
+            "definition": {
+                "mediaType": "text/json",
+                "$ref": "trip-status-oport-api.json"
+            },
+            "externalDocs": {
+                "description": "The OpenAPI v3.1.0 specification used to define the API of this port",
+                "mediaType": "text/html",
+                "$href": "https://spec.openapis.org/oas/v3.1.0"
+            }
         },
-		"x-qualitySlo": {
-            "freshness": "5m"
-        },		
-		"externalDocs": {
-			"description": "A detailed description of the base service indicators that all data products must support",
-			"mediaType": "text/html",
-			"$href": "https://wiki.example-xyz.com/corporate-mesh/dp-base-service-indicators.html"
-		}
-	},
-}
+        "deprecationPolicy": {
+            "name": "policy",
+            "version": "1.0.0",
+            "specification": "custom",
+            "description": "When a new major version become available the previous one is kept online for 3 months",
+            "definition": {
+                "x-deprecation-period": "3M"
+            }
+        },
+        "slo": {
+            "name": "slo",
+            "version": "1.0.0",
+            "specification": "custom",
+            "description": "The slo are hight for all base service indicators because this service is business critical",
+            "definition": {
+                "x-operationalSlo": {
+                    "availability": "0.99999",
+                    "responsetime": "1s"
+                },
+                "x-qualitySlo": {
+                    "freshness": "5m"
+                }
+            }
+        }
+    }
 ```
 
 ## Expectations Object
@@ -130,12 +104,8 @@ Through expectations, the data product declares how it wants the port to be used
 ### Fields
 An [Expectations Object](../resources/specifications/last.md#expectations-object) is composed of the following fields:
 
-- `audience` ([Specification Extension Point](../resources/specifications/last.md#specificationExtensionPoint)): This is the audience of consumers for whom the port has been designed. An audience description and a pointer to external documentation can be provided. Moreover, other fields with **"x-" prefix** can be added to provide further informations as needed (ex. `x-includes`, `x-exclude`, etc...).
-    - `description` (**string**): This is a general description of the target service audience.
-	- `externalDocs` ([External Resource Object](../resources/specifications/last.md#externalResourceObject)): This is a pointer to external documentation that describe in more detail the target service audience
-- `usage` ([Specification Extension Point](../resources/specifications/last.md#specificationExtensionPoint)): These are the usage patterns for which the port has been designed. A usage patterns description and a pointer to external documentation can be provided. Moreover, other fields with **"x-" prefix** can be added to provide further information as needed (ex. `x-filterOn`, `x-forbiddenOperations`, etc...).
-    - `description` (**string**): This is a general description of the intended usage patterns.
-	- `externalDocs` ([External Resource Object](../resources/specifications/last.md#externalResourceObject)): This is a pointer to external documentation that describe in more details the intended usage patterns.
+- `audience` ([Standard Definition Object](../resources/specifications/last.md#standardDefinitionObject)): This is the audience of consumers for whom the port has been designed. 
+- `usage` ([Standard Definition Object](../resources/specifications/last.md#standardDefinitionObject)): These are the usage patterns for which the port has been designed. 
 
 The [Expectations Object](../resources/specifications/last.md#expectations-object) can be extended with other fields with **"x**-" prefix** as needed.
 
@@ -144,27 +114,38 @@ The expectations of the following example describe a data store service that has
 
 ```json
 {
-    "audience": {
-        "description": "This port is designed to help operations departments. It is not for customer care and finance departments",
-		"x-includes": ["operations"],
-		"x-excludes": ["customer-care", "finance"],
-		"externalDocs": {
-			"description": "A detailed description of the data product, that include also the target audience",
-			"mediaType": "text/html",
-			"$href": "https://wiki.example-xyz.com/corporate-mesh/dp/trip-execution.html"
-		}
-    },
-    "usage": {
-        "description": "This port is designed to operational access not for analysis",
-		"x-filterOn": ["id"],
-		"x-forbiddenOperations": ["group-by", "unfiltered-selections"],
-		"externalDocs": {
-			"description": "A detailed description of the data product, that include also the expected way to use it",
-			"mediaType": "text/html",
-			"$href": "https://wiki.example-xyz.com/corporate-mesh/dp/trip-execution.html"
-		}
+    {
+        "audience": {
+            "name": "audience",
+            "version": "1.0.0",
+            "specification": "custom",
+            "description": "This port is designed to help operations departments. It is not for customer care and finance departments",
+            "definition": {
+                "x-includes": [
+                    "operations"
+                ],
+                "x-excludes": [
+                    "customer-care",
+                    "finance"
+                ]
+            }
+        },
+        "usage": {
+            "name": "usage",
+            "version": "1.0.0",
+            "specification": "custom",
+            "description": "This port is designed to operational access not for analysis",
+            "definition": {
+                "x-filterOn": [
+                    "id"
+                ],
+                "x-forbiddenOperations": [
+                    "group-by",
+                    "unfiltered-selections"
+                ]
+            }
+        }
     }
-}
 ```
 
 ## Obligations Object
@@ -173,15 +154,9 @@ Through obligations, the data product declares promises and expectations that mu
 ### Fields
 A [Obligations Object](../resources/specifications/last.md#obligations-object) is composed of the following fields:
 
-- `termsAndConditions` ([Standard Definition Component](../resources/specifications/last.md#standard-definition-component)): These are the terms and conditions defined on the port on which consumers must agree to use it. A short description of terms and conditions together with a pointer to a more detailed external documentation can be provided. Moreover, other fields with **"x-" prefix** can be added to provide further information as needed.
-    - `description` (**string**): This is a short description of applied terms and conditions.
-	- `externalDocs` ([Standard Definition Component](../resources/specifications/last.md#standard-definition-component)): This is a pointer to more detailed external documentation on applied terms and conditions.
-- `billingPolicy` ([Standard Definition Component](../resources/specifications/last.md#standard-definition-component)): This is the billing policy defined on the port on which consumers must agree to use it. A short description of the billing policy together with a pointer to more detailed external documentation can be provided. Moreover, other fields with **"x-" prefix** can be added to provide further information as needed.
-    - `description` (**string**): This is a short description of applied terms and conditions.
-	- `externalDocs` ([Standard Definition Component](../resources/specifications/last.md#externalResourceObject)): This is a pointer to more detailed external documentation on applied terms and conditions.
-- `sla`	([Standard Definition Component](../resources/specifications/last.md#standard-definition-component)): These are the *service level agreements (SLA)* supported by the port. A short description of the supported SLA together with a pointer to more detailed external documentation can be provided. Moreover, other fields with **"x-" prefix** can be added to provide further information as needed.
-    - `description` (**string**): This is a short description of the supported SLA.
-	- `externalDocs` ([External Resource Object](../resources/specifications/last.md#standard-definition-component)): This is a pointer to a more detailed external documentation of supported SLA.
+- `termsAndConditions` ([Standard Definition Component](../resources/specifications/last.md#standard-definition-component)): These are the terms and conditions defined on the port on which consumers must agree to use it. 
+- `billingPolicy` ([Standard Definition Component](../resources/specifications/last.md#standard-definition-component)): This is the billing policy defined on the port on which consumers must agree to use it. 
+- `sla`	([Standard Definition Component](../resources/specifications/last.md#standard-definition-component)): These are the *service level agreements (SLA)* supported by the port. 
 
 The [Obligations Object](../resources/specifications/last.md#obligations-object) can be extended with other fields with **"x-" prefix** as needed.
 
@@ -190,41 +165,44 @@ The obligations of the following example describe a datastore service billed mon
 
 ```json
 {
-    
-    "termsAndConditions": {
-        "description": "A detailed description of the data product, that include also the target audience",
-        "externalDocs": {
-        	"mediaType": "text/html",
-            "$href": "https://wiki.example-xyz.com/corporate-mesh/dp/trip-execution.html#terms-and-conditions"
-                        }
-    },
-    "billingPolicy": {
-        "description": "This port is billed by number of monthly queries",
-        "x-billingUnit": "milion queries",
-        "x-pricePerUnit": 0.01,
-        "x-billingPeriod": "month",
-        "externalDocs": {
-            "description": "A detailed description of the data product, that include also the billing policy",
-            "mediaType": "text/html",
-            "$href": "https://wiki.example-xyz.com/corporate-mesh/dp/trip-execution.html#billing"
+        "termsAndConditions": {
+            "name": "termsAndConditions",
+            "version": "1.0.0",
+            "specification": "custom",
+            "description": "A detailed description of the data product, that include also the target audience",
+            "definition": {},
+            "externalDocs": {
+                "mediaType": "text/html",
+                "$href": "https://wiki.example-xyz.com/corporate-mesh/dp/trip-execution.html#terms-and-conditions"
+            }
+        },
+        "billingPolicy": {
+            "name": "billingPolicy",
+            "version": "1.0.0",
+            "specification": "custom",
+            "description": "This port is billed by number of monthly queries",
+            "definition": {
+                "x-billingUnit": "milion queries",
+                "x-pricePerUnit": 0.01,
+                "x-billingPeriod": "month"
+            }
+        },
+        "sla": {
+            "name": "sla",
+            "version": "1.0.0",
+            "specification": "custom",
+            "description": "The sla are hight for all base service indicators because this service is business critical",
+            "definition": {
+                "x-operationalSla": {
+                    "availability": "0.999",
+                    "responsetime": "5s"
+                },
+                "x-qualitySla": {
+                    "freshness": "10m"
+                }
+            }
         }
-    },
-    "sla": {
-		"description": "The sla are hight for all base service indicators because this service is business critical",
-        "x-operationalSla": {
-            "availability": "0.999",
-            "responsetime": "5s"
-        },
-        "x-qualitySla": {
-            "freshness": "10m"
-        },
-		"externalDocs": {
-			"description": "A detailed description of the base service indicators that all data products must support",
-			"mediaType": "text/html",
-			"$href": "https://wiki.example-xyz.com/corporate-mesh/dp-base-service-indicators.html"
-		}
-	},
-}
+    }
 ```
 
 ## Trip Execution Data Product Descriptor
