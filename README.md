@@ -1,7 +1,7 @@
 # Data Product Descriptor Specification
 
 <p align="center">
-  <img src ="./docs/site/images/logos/opendatamesh-small.png" />
+  <img height="160px" src ="./docs/site/images/logos/opendatamesh-small.png" />
 </p>
 
 <p align="center">
