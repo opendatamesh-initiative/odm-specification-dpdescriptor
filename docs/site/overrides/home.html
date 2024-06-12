@@ -1,0 +1,330 @@
+<!-- SPDX-License-Identifier: CC-BY-4.0 -->
+<!-- Copyright Contributors to the Egeria project. -->
+
+<!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+{% extends "main.html" %}
+
+{% block tabs %}
+{{ super() }}
+<style>
+    .md-header {
+        position: initial;
+    }
+
+    .md-main__inner {
+        margin: 0;
+    }
+
+    .md-content {
+        display: none;
+    }
+
+    .tx-container {
+        background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1123 258'><path d='M0,147L80,155.2C160,163,320,180,480,163.3C640,147,800,98,960,65.3C1120,33,1280,16,1440,57.2C1600,98,1760,196,1920,196C2080,196,2240,98,2400,49C2560,0,2720,0,2880,32.7C3040,65,3200,131,3360,138.8C3520,147,3680,98,3840,73.5C4000,49,4160,49,4320,89.8C4480,131,4640,212,4800,212.3C4960,212,5120,131,5280,122.5C5440,114,5600,180,5760,196C5920,212,6080,180,6240,212.3C6400,245,6560,343,6720,359.3C6880,376,7040,310,7200,294C7360,278,7520,310,7680,318.5C7840,327,8000,310,8160,261.3C8320,212,8480,131,8640,98C8800,65,8960,82,9120,106.2C9280,131,9440,163,9600,179.7C9760,196,9920,196,10080,163.3C10240,131,10400,65,10560,40.8C10720,16,10880,33,11040,57.2C11200,82,11360,114,11440,130.7L11520,147L11520,490L11440,490C11360,490,11200,490,11040,490C10880,490,10720,490,10560,490C10400,490,10240,490,10080,490C9920,490,9760,490,9600,490C9440,490,9280,490,9120,490C8960,490,8800,490,8640,490C8480,490,8320,490,8160,490C8000,490,7840,490,7680,490C7520,490,7360,490,7200,490C7040,490,6880,490,6720,490C6560,490,6400,490,6240,490C6080,490,5920,490,5760,490C5600,490,5440,490,5280,490C5120,490,4960,490,4800,490C4640,490,4480,490,4320,490C4160,490,4000,490,3840,490C3680,490,3520,490,3360,490C3200,490,3040,490,2880,490C2720,490,2560,490,2400,490C2240,490,2080,490,1920,490C1760,490,1600,490,1440,490C1280,490,1120,490,960,490C800,490,640,490,480,490C320,490,160,490,80,490L0,490Z' style='fill: white' /></svg>") no-repeat bottom, linear-gradient(to bottom, var(--md-primary-fg-color), var(--wave-darker-color) 99%, #fff 99%);
+        margin-left: -1px;
+    }
+
+    /*background fill color to fit the dark mode */
+    body[data-md-color-scheme="slate"] .tx-container {
+        padding-top: 1rem;
+        background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1123 258'><path d='M0,147L80,155.2C160,163,320,180,480,163.3C640,147,800,98,960,65.3C1120,33,1280,16,1440,57.2C1600,98,1760,196,1920,196C2080,196,2240,98,2400,49C2560,0,2720,0,2880,32.7C3040,65,3200,131,3360,138.8C3520,147,3680,98,3840,73.5C4000,49,4160,49,4320,89.8C4480,131,4640,212,4800,212.3C4960,212,5120,131,5280,122.5C5440,114,5600,180,5760,196C5920,212,6080,180,6240,212.3C6400,245,6560,343,6720,359.3C6880,376,7040,310,7200,294C7360,278,7520,310,7680,318.5C7840,327,8000,310,8160,261.3C8320,212,8480,131,8640,98C8800,65,8960,82,9120,106.2C9280,131,9440,163,9600,179.7C9760,196,9920,196,10080,163.3C10240,131,10400,65,10560,40.8C10720,16,10880,33,11040,57.2C11200,82,11360,114,11440,130.7L11520,147L11520,490L11440,490C11360,490,11200,490,11040,490C10880,490,10720,490,10560,490C10400,490,10240,490,10080,490C9920,490,9760,490,9600,490C9440,490,9280,490,9120,490C8960,490,8800,490,8640,490C8480,490,8320,490,8160,490C8000,490,7840,490,7680,490C7520,490,7360,490,7200,490C7040,490,6880,490,6720,490C6560,490,6400,490,6240,490C6080,490,5920,490,5760,490C5600,490,5440,490,5280,490C5120,490,4960,490,4800,490C4640,490,4480,490,4320,490C4160,490,4000,490,3840,490C3680,490,3520,490,3360,490C3200,490,3040,490,2880,490C2720,490,2560,490,2400,490C2240,490,2080,490,1920,490C1760,490,1600,490,1440,490C1280,490,1120,490,960,490C800,490,640,490,480,490C320,490,160,490,80,490L0,490Z' style='fill: rgb(46 48 62)' /></svg>") no-repeat bottom, linear-gradient(to bottom, var(--md-primary-fg-color), var(--wave-darker-color) 99%, #fff 99%)
+    }
+    .tx-hero {
+        margin: 0 .8rem;
+        color: var(--md-primary-bg-color)
+    }
+
+    .tx-hero h1 {
+        margin-bottom: 1rem;
+        color: currentColor;
+        font-weight: 700;
+        font-size: 2.5rem;
+    }
+
+    .tx-hero h2 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        color: currentColor;
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+
+    .tx-hero h3 {
+        margin-bottom: 1rem;
+        color: currentColor;
+        font-weight: 500
+    }
+
+    .tx-hero__content {
+        padding-bottom: 6rem
+    }
+
+    .tx-hero .md-button {
+        margin-top: .5rem;
+        margin-right: .5rem;
+        color: var(--md-primary-bg-color)
+    }
+
+    .tx-hero .md-button--primary {
+        background-color: var(--md-primary-bg-color);
+        color: var(--md-primary-fg-color--dark);
+        border-color: var(--md-primary-bg-color)
+    }
+
+    .tx-hero .md-button:focus,
+    .tx-hero .md-button:hover {
+        background-color: var(--md-accent-fg-color);
+        color: var(--md-default-bg-color);
+        border-color: var(--md-accent-fg-color)
+    }
+
+    .feature-item h2 svg {
+        height: 40px;
+        float: left;
+        margin-right: 10px;
+        transform: translateY(10%);
+    }
+
+    .top-hr {
+        margin-top: -5rem;
+    }
+
+    .topic-item {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 150;
+        box-sizing: border-box;
+        padding: 0 15px;
+        word-break: break-word
+
+    }
+    .feature-item {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        box-sizing: border-box;
+        padding: 0 15px;
+        word-break: break-word
+    }
+
+    .feature-item h2 {
+        color: var(--md-typeset-color);
+        font-weight: 300;
+        font-size: 35px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: normal;
+        margin-bottom: 10px;
+        font-family: inherit;
+    }
+
+    .feature-item p {
+        font-size: 16px;
+        line-height: 1.8em;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        color: var(--md-typeset-color);
+        margin: 0 0 10px;
+        display: block;
+    }
+
+    .feature-item-link {
+        font-family: 'Lato', sans-serif;
+        font-weight: 300;
+        box-sizing: border-box;
+        padding: 0 15px;
+        word-break: break-word
+    }
+
+    .feature-item-link p {
+        font-size: 16px;
+        line-height: 1.8em;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        color: var(--md-typeset-color);
+        margin: 0 0 10px;
+        display: block;
+    }
+
+
+    @media screen and (max-width:70em) {
+        .tx-hero h1 {
+            font-size: 1.4rem
+        }
+        .tx-hero__image {
+            text-align: center;
+        }
+        .tx-hero__image img {
+            margin-top: 1.5rem;
+            max-width: 10rem;
+            width: 8rem;
+        }
+        .top-hr {
+        margin-top: 0;
+        }
+        .tx-hero__content {
+            margin-top: 1.5rem;
+        }
+    }
+
+    @media screen and (min-width:70em) {
+        .md-sidebar--secondary {
+            display: none
+        }
+        .tx-hero {
+            display: flex;
+            align-items: stretch
+        }
+        .tx-hero__content {
+            max-width: 30rem;
+            margin-top: 3.5rem;
+            padding-bottom: 14vw
+        }
+        .tx-hero__image {
+            order: 1;
+            margin-left: auto;
+            margin-top: 3.5rem;
+        }
+        .tx-hero__image img {
+            width: 200px;
+            margin-right: 5rem;
+        }
+
+        .tx-hero h1 {
+            width: 150%;
+    }
+    }
+
+    @media screen and (min-width:76.25em) {
+        .md-sidebar--primary {
+            display: none
+        }
+        .tx-hero__image {
+            margin-left: auto;
+        }
+        .tx-hero__image img {
+            width: 200px;
+        }
+
+        .top-hr {
+            width: 100%;
+            display: flex;
+            max-width: 88%;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 0 .2rem;
+        }
+
+        .bottom-hr {
+            margin-top: 10px;
+            width: 100%;
+            display: flex;
+            max-width: 61rem;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 0 .2rem;
+        }
+
+        .feature-item {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .feature-item-link {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .feature-item-link:hover {
+            background-color: #76b3f4;
+            border-radius: 3px;
+        }
+
+    }
+</style>
+
+<section class="tx-container">
+    <div class="md-grid md-typeset">
+        <div class="tx-hero">
+            <div class="tx-hero__image">
+                <img src="./images/logos/opendatamesh.png" style="height: auto;">
+            </div>
+            <div class="tx-hero__content">
+                <h1>Data Product Descriptor Specification</h1>
+                <h3>An open specification that declaratively defines a data product in all its components using a JSON or YAML descriptor document. It is released under Apache 2.0 license. Contributions from the data mesh community are welcomed!</h3>
+                <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | striptags }}" class="md-button md-button--primary">
+                    Get started
+                </a>
+                <!-- <a href="{{ config.repo_url }}" title="{{ lang.t('source.link.title') }}" class="md-button"> -->
+                <a href="./specifications/dpds/1.0.0/" title="DPDS v1.0.0-DRAFT" class="md-button">      
+                    Review the Spec
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="top-hr">
+    <div class="feature-item">
+        <h2>
+            <svg viewBox="-4.8 -4.8 33.60 33.60" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(1.1999999999999993,1.1999999999999993), scale(0.9)"><rect x="-4.8" y="-4.8" width="33.60" height="33.60" rx="16.8" fill="var(--md-accent-fg-color--light)" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M3 6.1519V19.3095C3.99197 18.8639 5.40415 18.4 7 18.4C8.58915 18.4 9.9999 18.8602 11 19.3094V6.1519C10.7827 6.02653 10.4894 5.8706 10.1366 5.71427C9.31147 5.34869 8.20352 5 7 5C5.26385 5 3.74016 5.72499 3 6.1519ZM13 6.1519V19.3578C13.9977 18.9353 15.41 18.5 17 18.5C18.596 18.5 20.0095 18.9383 21 19.3578V6.1519C20.2598 5.72499 18.7362 5 17 5C15.7965 5 14.6885 5.34869 13.8634 5.71427C13.5106 5.8706 13.2173 6.02653 13 6.1519ZM12 4.41985C11.7302 4.26422 11.3734 4.07477 10.9468 3.88572C9.96631 3.45131 8.57426 3 7 3C4.69187 3 2.76233 3.97065 1.92377 4.46427C1.30779 4.82687 1 5.47706 1 6.11223V20.0239C1 20.6482 1.36945 21.1206 1.79531 21.3588C2.21653 21.5943 2.78587 21.6568 3.30241 21.3855C4.12462 20.9535 5.48348 20.4 7 20.4C8.90549 20.4 10.5523 21.273 11.1848 21.6619C11.6757 21.9637 12.2968 21.9725 12.7959 21.6853C13.4311 21.32 15.0831 20.5 17 20.5C18.5413 20.5 19.9168 21.0305 20.7371 21.4366C21.6885 21.9075 23 21.2807 23 20.0593V6.11223C23 5.47706 22.6922 4.82687 22.0762 4.46427C21.2377 3.97065 19.3081 3 17 3C15.4257 3 14.0337 3.45131 13.0532 3.88572C12.6266 4.07477 12.2698 4.26422 12 4.41985Z" fill="#ffffff"></path> </g></svg>
+            Open
+        </h2>
+        <p>
+            DPDS is released under Apache 2.0 license. You can use the specification as it is or  
+            extend it according to your needs. You can also join our community 
+            and actively participate in its evolution providing feedback or even becoming a committer.
+        </p>
+    </div>
+    <div class="feature-item">
+        <h2>
+            <svg fill="#ffffff" height="200px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-102.4 -102.4 716.80 716.80" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(25.599999999999994,25.599999999999994), scale(0.9)"><rect x="-102.4" y="-102.4" width="716.80" height="716.80" rx="358.4" fill="var(--md-accent-fg-color--light)" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M505.752,304.915c-8.331-8.331-21.839-8.331-30.17,0L448,332.497v-225.83C448,47.759,400.241,0,341.333,0 c-58.907,0-106.667,47.759-106.667,106.667v298.667c0,35.343-28.657,64-64,64s-64-28.657-64-64v-225.83l27.582,27.582 c8.331,8.331,21.839,8.331,30.17,0s8.331-21.839,0-30.17l-64-64c-0.004-0.004-0.008-0.007-0.012-0.011 c-0.493-0.492-1.012-0.959-1.551-1.402c-0.247-0.203-0.508-0.379-0.762-0.57c-0.303-0.227-0.6-0.462-0.915-0.673 c-0.304-0.203-0.619-0.379-0.931-0.565c-0.286-0.171-0.565-0.35-0.859-0.507c-0.318-0.17-0.645-0.314-0.97-0.467 c-0.306-0.145-0.608-0.298-0.922-0.428c-0.315-0.13-0.637-0.236-0.957-0.35c-0.337-0.121-0.669-0.25-1.013-0.354 c-0.32-0.097-0.646-0.168-0.969-0.249c-0.351-0.089-0.698-0.187-1.055-0.258c-0.375-0.074-0.753-0.118-1.13-0.173 c-0.311-0.044-0.617-0.104-0.932-0.135c-1.4-0.138-2.811-0.138-4.211,0c-0.316,0.031-0.622,0.09-0.933,0.135 c-0.377,0.054-0.755,0.098-1.13,0.172c-0.358,0.071-0.705,0.169-1.056,0.258c-0.323,0.081-0.648,0.152-0.968,0.249 c-0.345,0.104-0.678,0.234-1.015,0.355c-0.319,0.115-0.641,0.22-0.956,0.35c-0.315,0.13-0.616,0.284-0.923,0.428 c-0.324,0.153-0.651,0.297-0.969,0.467c-0.294,0.158-0.574,0.337-0.86,0.508c-0.311,0.186-0.626,0.362-0.93,0.565 c-0.316,0.211-0.613,0.447-0.917,0.674c-0.253,0.19-0.513,0.366-0.76,0.568c-0.539,0.443-1.058,0.909-1.551,1.402 c-0.004,0.004-0.008,0.007-0.012,0.011l-64,64c-8.331,8.331-8.331,21.839,0,30.17c8.331,8.331,21.839,8.331,30.17,0L64,179.503 v225.83C64,464.241,111.759,512,170.667,512s106.667-47.759,106.667-106.667V106.667c0-35.343,28.657-64,64-64 c35.343,0,64,28.657,64,64v225.83l-27.582-27.582c-8.331-8.331-21.839-8.331-30.17,0c-8.331,8.331-8.331,21.839,0,30.17l64,64 c0.004,0.004,0.008,0.006,0.011,0.01c0.494,0.493,1.012,0.96,1.552,1.403c0.247,0.203,0.507,0.379,0.761,0.569 c0.303,0.227,0.6,0.462,0.915,0.673c0.304,0.203,0.619,0.379,0.93,0.565c0.286,0.171,0.565,0.35,0.86,0.508 c0.317,0.17,0.643,0.313,0.967,0.466c0.308,0.145,0.61,0.299,0.925,0.43c0.314,0.13,0.635,0.235,0.953,0.349 c0.338,0.122,0.672,0.251,1.018,0.356c0.318,0.096,0.642,0.167,0.964,0.248c0.353,0.089,0.701,0.188,1.061,0.259 c0.372,0.074,0.748,0.117,1.122,0.171c0.314,0.045,0.622,0.105,0.941,0.136c0.693,0.068,1.388,0.105,2.083,0.105 c0.007,0,0.015,0.001,0.022,0.001s0.015-0.001,0.022-0.001c0.695-0.001,1.39-0.037,2.083-0.105 c0.318-0.031,0.627-0.091,0.941-0.136c0.375-0.054,0.75-0.097,1.122-0.171c0.359-0.071,0.708-0.17,1.061-0.259 c0.322-0.081,0.645-0.152,0.964-0.248c0.346-0.105,0.68-0.234,1.018-0.356c0.318-0.114,0.639-0.219,0.953-0.349 c0.315-0.131,0.618-0.284,0.925-0.43c0.324-0.153,0.65-0.296,0.967-0.466c0.294-0.158,0.574-0.337,0.86-0.508 c0.311-0.186,0.627-0.362,0.93-0.565c0.315-0.211,0.612-0.446,0.915-0.673c0.254-0.19,0.514-0.366,0.761-0.569 c0.54-0.443,1.059-0.91,1.552-1.403c0.004-0.004,0.008-0.006,0.011-0.01l64-64C514.083,326.754,514.083,313.246,505.752,304.915z"></path> </g> </g> </g></svg>
+            Flexible
+        </h2>
+        <p>
+            DPDS is technology agnostic. You can bring your preferred tools for provisioning, CICD, 
+            policy enforcement, metadata management, etc. DPDS doesn't care. It adapts to your 
+            preferences flexibly, allowing you to leverage your previous investments. 
+        </p>
+    </div>
+    <div class="feature-item">
+        <h2>
+            <svg fill="#000000" viewBox="-8.96 -8.96 49.92 49.92" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(1.5999999999999996,1.5999999999999996), scale(0.9)"><rect x="-8.96" y="-8.96" width="49.92" height="49.92" rx="24.96" fill="var(--md-accent-fg-color--light)" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.512"></g><g id="SVGRepo_iconCarrier"> <title>puzzle</title> <path d="M23.994 18.252h-2.711c-0.014-0.001-0.025-0.008-0.039-0.008-0.414 0-0.75 0.336-0.75 0.75v0c0 0.002 0 0.004 0 0.006 0 1.104-0.895 2-2 2s-2-0.895-2-2c0-0.002 0-0.004 0-0.007v0c-0-0.414-0.336-0.75-0.75-0.75v0c-0.014 0-0.025 0.007-0.039 0.008h-1.957v-1.33c1.584-0.354 2.75-1.748 2.75-3.415s-1.166-3.060-2.727-3.41l-0.023-0.004v-2.095c-0-0.414-0.336-0.75-0.75-0.75h-10.999c-0.414 0-0.75 0.336-0.75 0.75v0 10.976l-0.005 0.024v11c0 0.414 0.336 0.75 0.75 0.75l21.999 0.004c0.414-0 0.75-0.336 0.75-0.75v0-11c-0-0.414-0.336-0.75-0.75-0.75v0zM2.75 8.748h9.499v2.010c0 0.414 0.336 0.75 0.75 0.75v0c1.105 0 2 0.895 2 2s-0.895 2-2 2v0c-0.414 0-0.75 0.336-0.75 0.75v0 1.99h-1.331c-0.351-1.588-1.746-2.758-3.415-2.758s-3.064 1.17-3.411 2.734l-0.004 0.023h-1.338zM2.745 19.748h1.957c0.017 0.001 0.031 0.010 0.048 0.010 0.416-0.006 0.751-0.343 0.754-0.759v-0c0.003-1.101 0.896-1.993 1.998-1.993 1.103 0 1.998 0.894 1.998 1.998 0 0.002 0 0.003 0 0.005v-0c0 0.414 0.336 0.75 0.75 0.75v0c0.017 0 0.031-0.009 0.048-0.010h1.948v1.332c-1.584 0.355-2.75 1.75-2.75 3.416 0 1.442 0.873 2.681 2.12 3.215l0.023 0.009c0.171 0.074 0.374 0.139 0.584 0.186l0.023 0.004v1.338h-9.5zM23.244 29.252h-9.499v-1.96c0.001-0.015 0.009-0.028 0.009-0.043-0.006-0.416-0.343-0.751-0.758-0.754h-0c-1.102-0.003-1.994-0.896-1.994-1.998 0-1.104 0.895-1.998 1.998-1.998 0.002 0 0.003 0 0.005 0h-0c0.414-0 0.75-0.336 0.75-0.75v0c0-0.015-0.008-0.028-0.009-0.043v-1.953h1.338c0.357 1.58 1.749 2.742 3.412 2.742s3.055-1.162 3.407-2.719l0.004-0.023h1.338zM29.994 1.25h-10.998c-0.414 0-0.75 0.336-0.75 0.75v0 2.702c-0.001 0.017-0.010 0.031-0.010 0.048 0 0.414 0.336 0.75 0.75 0.75v0c1.105 0 2 0.895 2 2s-0.895 2-2 2v0c-0.414 0-0.75 0.336-0.75 0.75v0c0 0.017 0.009 0.031 0.010 0.048v2.702c0 0.414 0.336 0.75 0.75 0.75h2.076c0.354 1.584 1.748 2.75 3.415 2.75s3.060-1.166 3.41-2.727l0.004-0.023h2.093c0.414-0 0.75-0.336 0.75-0.75v0-11c-0-0.414-0.336-0.75-0.75-0.75h-0zM29.244 12.25h-2.008c-0.414 0-0.75 0.336-0.75 0.75v0c0 1.105-0.895 2-2 2s-2-0.895-2-2v0c-0-0.414-0.336-0.75-0.75-0.75h-1.99v-1.338c1.579-0.358 2.74-1.749 2.74-3.412s-1.161-3.054-2.717-3.407l-0.023-0.004v-1.338h9.498z" fill="#ffffff"></path> </g></svg>
+            Composable
+        </h2>
+        <p>
+            DPDS collects the description of all the components used to build a data product, 
+            from infrastructure up to its interfaces. These definitions can be saved as a parametrized 
+            template and then reused to compose multiple data product descriptors.  </p>
+    </div>
+    <div class="feature-item">
+        <h2>
+            <svg viewBox="-4.8 -4.8 33.60 33.60" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(1.1999999999999993,1.1999999999999993), scale(0.9)"><rect x="-4.8" y="-4.8" width="33.60" height="33.60" rx="16.8" fill="var(--md-accent-fg-color--light)" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20 10.5V6.8C20 5.11984 20 4.27976 19.673 3.63803C19.3854 3.07354 18.9265 2.6146 18.362 2.32698C17.7202 2 16.8802 2 15.2 2H8.8C7.11984 2 6.27976 2 5.63803 2.32698C5.07354 2.6146 4.6146 3.07354 4.32698 3.63803C4 4.27976 4 5.11984 4 6.8V17.2C4 18.8802 4 19.7202 4.32698 20.362C4.6146 20.9265 5.07354 21.3854 5.63803 21.673C6.27976 22 7.11984 22 8.8 22H12M14 11H8M10 15H8M16 7H8M18 21V15M15 18H21" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+            Extensible
+        </h2>
+        <p>
+            DPDS has been designed to be easy to extend. You can add custom properties 
+            to almost all components of the descriptor documents. It is also possible to 
+            use external standards like OpenAPI, AsyncAPI, Open SLO etc.. to define 
+            some components.
+        </p>
+    </div>
+</div>
+
+{% endblock %}
