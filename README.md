@@ -15,8 +15,10 @@ The **Data Product Descriptor Specification (DPDS)** is a community-driven open 
 This GitHub project is the starting point for DPDS. Here you will find the information you need about the Data Product Descriptor Specification, simple examples of what it looks like, and some general information regarding the project.
 
 ## Status
-The current version of the DPDS  is [Data Product Descriptor Specification v1.0.0](./versions/1.0.0.md) A reader-friendly version of the specification can be found on our [project site](https://dpds.opendatamesh.org/specifications/dpds/1.0.0/).
+The current version of the DPDS  is [Data Product Descriptor Specification v1.0.0](./versions/1.0.0.md).
+A reader-friendly version of the specification can be found on our [project site](https://dpds.opendatamesh.org/specifications/dpds/1.0.0/).
 
+## Previous versions
 This repository also contains all [previous versions](./versions).
 
 Each folder in this repository, such as examples and schemas, contains folders pertaining to the current and previous versions of the specification.
