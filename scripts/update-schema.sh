@@ -59,7 +59,7 @@ then
 fi
 
 cd ../schemas/v$Version
-sed "s,SPEC-BASE-URL,https://dpds.opendatamesh.org/resources/specifications/$Version/,g" $StartingFile > schema.json
+sed "s,SPEC-BASE-URL,https://dpds.opendatamesh.org/specifications/dpds/$Version/,g" $StartingFile > schema.json
 
 if $Latest;
 then

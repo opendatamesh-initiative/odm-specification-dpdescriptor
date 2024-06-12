@@ -55,16 +55,16 @@ then
     exit;
 fi
 
-if [ ! -f ../docs/resources/schemas/html/$Version.html ];
+if [ ! -f ../docs/specifications/dpds/$Version/html ];
 then
     echo "IMPORTANT: This seems to be the first pubblication of this version, remember to edit docs/resources/schemas/README.md and to create a specific md for this version!"
 fi
 
-cp ../schemas/v$Version/docs/html/schema.html ../docs/resources/schemas/html/$Version.html
-cp ../schemas/v$Version/schema.json ../docs/resources/schemas/$Version.json
+cp ../schemas/v$Version/docs/html/schema.html ../docs/site/specifications/dpds/$Version/html/schema.html
+cp ../schemas/v$Version/schema.json ../docs/site/specifications/dpds/$Version/schema.json
 
 if $Latest;
 then
-    cp ../schemas/latest/docs/html/schema.html ../docs/resources/schemas/html/latest.html;
-    cp ../schemas/latest/schema.json ../docs/resources/schemas/latest.json
+    cp ../schemas/latest/docs/html/schema.html ../docs/site/specifications/dpds/latest/html/schema.html
+    cp ../schemas/latest/schema.json ../docs/site/specifications/dpds/latest/schema.json
 fi
