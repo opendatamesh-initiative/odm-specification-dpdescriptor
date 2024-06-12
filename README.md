@@ -12,13 +12,18 @@
 
 The **Data Product Descriptor Specification (DPDS)** is a community-driven open specification that declaratively defines a data product in all its components using a JSON or YAML descriptor document. It is released under [Apache 2.0 license](./LICENSE). Contributions from the data community are welcomed!
 
+This GitHub project is the starting point for DPDS. Here you will find the information you need about the Data Product Descriptor Specification, simple examples of what it looks like, and some general information regarding the project.
+
 ## Status
-There is not yet a generally available version of the specification. Version 1.0.0 is in a DRAFT state. We plan to collect community feedback and contributions over the following months to finalize and release it in the GA state. There is not yet a planned date for the release of version 1.0.0 in GA but ideally, we would like to release it by the end of Q1 of 2023.
+The current version of the DPDS  is [Data Product Descriptor Specification v1.0.0](./versions/1.0.0.md) A reader-friendly version of the specification can be found on our [project site](https://dpds.opendatamesh.org/specifications/dpds/1.0.0/).
 
-This is the **current working draft** of the specification:
+This repository also contains all [previous versions](./versions).
 
-- [Data Product Descriptor Specification v1.0.0-DRAFT](./versions/1.0.0-DRAFT.md)
+Each folder in this repository, such as examples and schemas, contains folders pertaining to the current and previous versions of the specification.
 
 ## Documentation
+For a more detailed introduction to the specification check out our [project site](https://dpds.opendatamesh.org/).
 
-For a more detailed introduction to the specification check out our [documentation pages](https://dpds.opendatamesh.org/).
+## Contributing to the project
+Take a look at the [CONTRIBUTING](CONTRIBUTING.md) file to learn all the ways you can contribute to the project.
+
