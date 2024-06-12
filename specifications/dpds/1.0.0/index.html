@@ -2751,7 +2751,7 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 <tr>
 <td><a name="infoId"></a>id</td>
 <td style="text-align: center;"><code>string:uuid</code></td>
-<td><strong>(READONLY)</strong> It's an UUID version 3 (<a href="https://www.rfc-editor.org/rfc/rfc4122.html#section-4.3">RFC-4122</a>) generated server side during data product creation as SHA-1 hash of the <a href="#dpdsFullyQualifiedName"><code>fullyQualifiedName</code></a>. It MAY be used  when calling the API exposed by the data product experience plane to referentiate the data product. Because the <a href="#dpdsFullyQualifiedName"><code>fullyQualifiedName</code></a> is globally unique also the <code>id</code> is globally unique, anyway to referentiate the data product when calling an API different from the ones exposed by the data product experience plane the <a href="#dpdsFullyQualifiedName"><code>fullyQualifiedName</code></a></td>
+<td><strong>(READONLY)</strong> It's an UUID version 5 (<a href="https://www.rfc-editor.org/rfc/rfc4122.html#section-4.3">RFC-4122</a>) generated server side during data product creation as SHA-1 hash of the <a href="#dpdsFullyQualifiedName"><code>fullyQualifiedName</code></a>. It MAY be used  when calling the API exposed by the data product experience plane to referentiate the data product. Because the <a href="#dpdsFullyQualifiedName"><code>fullyQualifiedName</code></a> is globally unique also the <code>id</code> is globally unique, anyway to referentiate the data product when calling an API different from the ones exposed by the data product experience plane the <a href="#dpdsFullyQualifiedName"><code>fullyQualifiedName</code></a></td>
 </tr>
 <tr>
 <td>Example: <code>"id: "2b172838-73b1-5d6c-be45-cc75aee180a0"</code></td>
@@ -2942,7 +2942,7 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 <tr>
 <td><a name="inputPortId"></a>id</td>
 <td style="text-align: center;"><code>string:uuid</code></td>
-<td><strong>(READONLY)</strong> It's an UUID version 3 (see <a href="https://www.rfc-editor.org/rfc/rfc4122.html#section-4.3">RFC-4122</a>) generated server side during data product creation as SHA-1 hash of the port's <code>fullyQualifiedName</code>. It MAY be used  when calling the API exposed by the <code>data product experience plane</code> to referentiate the port. Because the <code>fullyQualifiedName</code> is globally unique also the <code>id</code> is globally unique, any way to referentiate the data product when calling API different from the ones exposed by the <code>data product experience plane</code> the port's <code>fullyQualifiedName</code> MUST be always used. Example: <code>"id": "3235744b-8d2e-57b5-afba-f66862cc6a21"</code></td>
+<td><strong>(READONLY)</strong> It's an UUID version 5 (see <a href="https://www.rfc-editor.org/rfc/rfc4122.html#section-4.3">RFC-4122</a>) generated server side during data product creation as SHA-1 hash of the port's <code>fullyQualifiedName</code>. It MAY be used  when calling the API exposed by the <code>data product experience plane</code> to referentiate the port. Because the <code>fullyQualifiedName</code> is globally unique also the <code>id</code> is globally unique, any way to referentiate the data product when calling API different from the ones exposed by the <code>data product experience plane</code> the port's <code>fullyQualifiedName</code> MUST be always used. Example: <code>"id": "3235744b-8d2e-57b5-afba-f66862cc6a21"</code></td>
 </tr>
 <tr>
 <td><a name="inputPortFullyQualifiedName"></a>fullyQualifiedName</td>
@@ -3022,7 +3022,7 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 <tr>
 <td><a name="outputPortId"></a>id</td>
 <td style="text-align: center;"><code>string:uuid</code></td>
-<td><strong>(READONLY)</strong> It's an UUID version 3 (see <a href="https://www.rfc-editor.org/rfc/rfc4122.html#section-4.3">RFC-4122</a>) generated server side during data product creation as SHA-1 hash of the port's <code>fullyQualifiedName</code>. It MAY be used  when calling the API exposed by the <code>data product experience plane</code> to referentiate the port. Because the <code>fullyQualifiedName</code> is globally unique, also the <code>id</code> is globally unique, any way to referentiate the data product when calling API different from the ones exposed by the <code>data product experience plane</code> the port's <code>fullyQualifiedName</code> MUST always be  used. Example: <code>"id": "3235744b-8d2e-57b5-afba-f66862cc6a21"</code></td>
+<td><strong>(READONLY)</strong> It's an UUID version 5 (see <a href="https://www.rfc-editor.org/rfc/rfc4122.html#section-4.3">RFC-4122</a>) generated server side during data product creation as SHA-1 hash of the port's <code>fullyQualifiedName</code>. It MAY be used  when calling the API exposed by the <code>data product experience plane</code> to referentiate the port. Because the <code>fullyQualifiedName</code> is globally unique, also the <code>id</code> is globally unique, any way to referentiate the data product when calling API different from the ones exposed by the <code>data product experience plane</code> the port's <code>fullyQualifiedName</code> MUST always be  used. Example: <code>"id": "3235744b-8d2e-57b5-afba-f66862cc6a21"</code></td>
 </tr>
 <tr>
 <td><a name="outputPortFullyQualifiedName"></a>fullyQualifiedName</td>
@@ -3102,7 +3102,7 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 <tr>
 <td><a name="discoveryPortId"></a>id</td>
 <td style="text-align: center;"><code>string:uuid</code></td>
-<td><strong>(READONLY)</strong> It's an UUID version 3 (see <a href="https://www.rfc-editor.org/rfc/rfc4122.html#section-4.3">RFC-4122</a>) generated server side during data product creation as SHA-1 hash of the port's <code>fullyQualifiedName</code>. It MAY be used  when calling the API exposed by the data product experience plane to referentiate the port. Because the <code>fullyQualifiedName</code> is globally unique also the <code>id</code> is globally unique, any way to referentiate the data product when calling API different from the ones exposed by the data product experience plane the port's <code>fullyQualified</code> name MUST always be used. <code>"id: "3235744b-8d2e-57b5-afba-f66862cc6a21"</code></td>
+<td><strong>(READONLY)</strong> It's an UUID version 5 (see <a href="https://www.rfc-editor.org/rfc/rfc4122.html#section-4.3">RFC-4122</a>) generated server side during data product creation as SHA-1 hash of the port's <code>fullyQualifiedName</code>. It MAY be used  when calling the API exposed by the data product experience plane to referentiate the port. Because the <code>fullyQualifiedName</code> is globally unique also the <code>id</code> is globally unique, any way to referentiate the data product when calling API different from the ones exposed by the data product experience plane the port's <code>fullyQualified</code> name MUST always be used. <code>"id: "3235744b-8d2e-57b5-afba-f66862cc6a21"</code></td>
 </tr>
 <tr>
 <td><a name="discoveryPortFullyQualifiedName"></a>fullyQualifiedName</td>
@@ -3182,7 +3182,7 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 <tr>
 <td><a name="observabilityPortId"></a>id</td>
 <td style="text-align: center;"><code>string:uuid</code></td>
-<td><strong>(READONLY)</strong> It's an UUID version 3 (see <a href="https://www.rfc-editor.org/rfc/rfc4122.html#section-4.3">RFC-4122</a>) generated server side during data product creation as SHA-1 hash of the port's <code>fullyQualifiedName</code>. It MAY be used  when calling the API exposed by the data product experience plane to referentiate the port. Because the <code>fullyQualifiedName</code> is globally unique also the <code>id</code> is globally unique, any way to referentiate the data product when calling API different from the ones exposed by the data product experience plane the port's <code>fullyQualified</code> name MUST always be used. <code>"id: "3235744b-8d2e-57b5-afba-f66862cc6a21"</code></td>
+<td><strong>(READONLY)</strong> It's an UUID version 5 (see <a href="https://www.rfc-editor.org/rfc/rfc4122.html#section-4.3">RFC-4122</a>) generated server side during data product creation as SHA-1 hash of the port's <code>fullyQualifiedName</code>. It MAY be used  when calling the API exposed by the data product experience plane to referentiate the port. Because the <code>fullyQualifiedName</code> is globally unique also the <code>id</code> is globally unique, any way to referentiate the data product when calling API different from the ones exposed by the data product experience plane the port's <code>fullyQualified</code> name MUST always be used. <code>"id: "3235744b-8d2e-57b5-afba-f66862cc6a21"</code></td>
 </tr>
 <tr>
 <td><a name="observabilityPortFullyQualifiedName"></a>fullyQualifiedName</td>
@@ -3262,7 +3262,7 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 <tr>
 <td><a name="controlPortId"></a>id</td>
 <td style="text-align: center;"><code>string:uuid</code></td>
-<td><strong>(READONLY)</strong> It's an UUID version 3 (see <a href="https://www.rfc-editor.org/rfc/rfc4122.html#section-4.3">RFC-4122</a>) generated server side during data product creation as SHA-1 hash of the port's <code>fullyQualifiedName</code>. It MAY be used  when calling the API exposed by the data product experience plane to referentiate the port. Because the <code>fullyQualifiedName</code> is globally unique also the <code>id</code> is globally unique, any way to referentiate the data product when calling API different from the ones exposed by the data product experience plane the port's <code>fullyQualified</code> name MUST always be used. <code>"id: "3235744b-8d2e-57b5-afba-f66862cc6a21"</code></td>
+<td><strong>(READONLY)</strong> It's an UUID version 5 (see <a href="https://www.rfc-editor.org/rfc/rfc4122.html#section-4.3">RFC-4122</a>) generated server side during data product creation as SHA-1 hash of the port's <code>fullyQualifiedName</code>. It MAY be used  when calling the API exposed by the data product experience plane to referentiate the port. Because the <code>fullyQualifiedName</code> is globally unique also the <code>id</code> is globally unique, any way to referentiate the data product when calling API different from the ones exposed by the data product experience plane the port's <code>fullyQualified</code> name MUST always be used. <code>"id: "3235744b-8d2e-57b5-afba-f66862cc6a21"</code></td>
 </tr>
 <tr>
 <td><a name="controlPortFullyQualifiedName"></a>fullyQualifiedName</td>
@@ -3552,7 +3552,7 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 <tr>
 <td><a name="appId"></a>id</td>
 <td style="text-align: center;"><code>string:uuid</code></td>
-<td><strong>(READONLY)</strong> It's an UUID version 3 (see <a href="https://www.rfc-editor.org/rfc/rfc4122.html#section-4.3">RFC-4122</a>) generated server side during data product creation as SHA-1 hash of the component's <code>fullyQualifiedName</code>. It MAY be used  when calling the API exposed by the <em>data product experience plane</em> to address the component. Because the <code>fullyQualifiedName</code> is globally unique also the <code>id</code> is globally unique, anyway to address the component when calling API different from the ones exposed by the <em>data product experience plane</em> the component's <code>fullyQualifiedName</code> MUST always be used. Examples: <code>"id: "3235744b-8d2e-57b5-afba-f66862cc6a21"</code></td>
+<td><strong>(READONLY)</strong> It's an UUID version 5 (see <a href="https://www.rfc-editor.org/rfc/rfc4122.html#section-4.3">RFC-4122</a>) generated server side during data product creation as SHA-1 hash of the component's <code>fullyQualifiedName</code>. It MAY be used  when calling the API exposed by the <em>data product experience plane</em> to address the component. Because the <code>fullyQualifiedName</code> is globally unique also the <code>id</code> is globally unique, anyway to address the component when calling API different from the ones exposed by the <em>data product experience plane</em> the component's <code>fullyQualifiedName</code> MUST always be used. Examples: <code>"id: "3235744b-8d2e-57b5-afba-f66862cc6a21"</code></td>
 </tr>
 <tr>
 <td><a name="appFullyQualifiedName"></a>fullyQualifiedName</td>
@@ -3642,7 +3642,7 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 <tr>
 <td><a name="infraId"></a>id</td>
 <td style="text-align: center;"><code>string:uuid</code></td>
-<td><strong>(READONLY)</strong> It's an UUID version 3 (see <a href="https://www.rfc-editor.org/rfc/rfc4122.html#section-4.3">RFC-4122</a>) generated server side during data product creation as SHA-1 hash of the component's <code>fullyQualifiedName</code>. It MAY be used  when calling the API exposed by the <em>data product experience plane</em> to address the component. Because the <code>fullyQualifiedName</code> is globally unique also the <code>id</code> is globally unique, anyway to address the component when calling API different from the ones exposed by the <em>data product experience plane</em> the component's <code>fullyQualifiedName</code> MUST always be used. Examples: <code>"id: "3235744b-8d2e-57b5-afba-f66862cc6a21"</code></td>
+<td><strong>(READONLY)</strong> It's an UUID version 5 (see <a href="https://www.rfc-editor.org/rfc/rfc4122.html#section-4.3">RFC-4122</a>) generated server side during data product creation as SHA-1 hash of the component's <code>fullyQualifiedName</code>. It MAY be used  when calling the API exposed by the <em>data product experience plane</em> to address the component. Because the <code>fullyQualifiedName</code> is globally unique also the <code>id</code> is globally unique, anyway to address the component when calling API different from the ones exposed by the <em>data product experience plane</em> the component's <code>fullyQualifiedName</code> MUST always be used. Examples: <code>"id: "3235744b-8d2e-57b5-afba-f66862cc6a21"</code></td>
 </tr>
 <tr>
 <td><a name="infraFullyQualifiedName"></a>fullyQualifiedName</td>
@@ -3722,7 +3722,7 @@ Where Data Product Descriptor tooling renders rich text it MUST support, at a mi
 <tr>
 <td><a name="standardDefinitionId"></a>id</td>
 <td style="text-align: center;"><code>string:uuid</code></td>
-<td><strong>(READONLY)</strong> It's an UUID version 3 (see <a href="https://www.rfc-editor.org/rfc/rfc4122.html#section-4.3">RFC-4122</a>) generated server side during data product creation as SHA-1 hash of the port's <code>fullyQualifiedName</code>. It MAY be used  when calling the API exposed by the <code>data product experience plane</code> to referentiate the component. Because the <code>fullyQualifiedName</code> is globally unique also the <code>id</code> is globally unique, anyway to referentiate the data product when calling API different from the ones exposed by the <code>data product experience plane</code> the component's <code>fullyQualifiedName</code> MUST always be used. Example: <code>"id": "3235744b-8d2e-57b5-afba-f66862cc6a21"</code></td>
+<td><strong>(READONLY)</strong> It's an UUID version 5 (see <a href="https://www.rfc-editor.org/rfc/rfc4122.html#section-4.3">RFC-4122</a>) generated server side during data product creation as SHA-1 hash of the port's <code>fullyQualifiedName</code>. It MAY be used  when calling the API exposed by the <code>data product experience plane</code> to referentiate the component. Because the <code>fullyQualifiedName</code> is globally unique also the <code>id</code> is globally unique, anyway to referentiate the data product when calling API different from the ones exposed by the <code>data product experience plane</code> the component's <code>fullyQualifiedName</code> MUST always be used. Example: <code>"id": "3235744b-8d2e-57b5-afba-f66862cc6a21"</code></td>
 </tr>
 <tr>
 <td><a name="standardDefinitionFullyQualifiedName"></a>fullyQualifiedName</td>
