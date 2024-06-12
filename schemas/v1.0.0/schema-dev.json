@@ -105,8 +105,7 @@
             ],
             "patternProperties": {
                 "^x-": true
-            },
-            "unevaluatedProperties": false
+            }
         },
         "owner": {
             "$comment": "SPEC-BASE-URL#ownerObject",
@@ -126,8 +125,7 @@
             "required": ["id"],
             "patternProperties": {
                 "^x-": true
-            },
-            "unevaluatedProperties": false
+            }
         },
         "contactPoint": {
             "$comment": "SPEC-BASE-URL#contactPointObject",
@@ -155,8 +153,7 @@
             },
             "patternProperties": {
                 "^x-": true
-            },
-            "unevaluatedProperties": false
+            }
         },
         "interfaceComponents": {
             "$comment": "SPEC-BASE-URL#interfaceComponentsObject",
@@ -195,8 +192,7 @@
                     }
                 }
             },
-            "required": ["outputPorts"],
-            "unevaluatedProperties": false
+            "required": ["outputPorts"]
         },
         "inputPortOrReference": {
             "oneOf": [
@@ -223,8 +219,7 @@
             ],
             "patternProperties": {
                 "^x-": true
-            },
-            "unevaluatedProperties": false
+            }
         },
         "outputPortOrReference": {
             "oneOf": [
@@ -251,8 +246,7 @@
             ],
             "patternProperties": {
                 "^x-": true
-            },
-            "unevaluatedProperties": false
+            }
         },
         "discoveryPortOrReference": {
             "oneOf": [
@@ -279,8 +273,7 @@
             ],
             "patternProperties": {
                 "^x-": true
-            },
-            "unevaluatedProperties": false
+            }
         },
         "observabilityPortOrReference": {
             "oneOf": [
@@ -307,8 +300,7 @@
             ],
             "patternProperties": {
                 "^x-": true
-            },
-            "unevaluatedProperties": false
+            }
         },
         "controlPortOrReference": {
             "oneOf": [
@@ -335,8 +327,7 @@
             ],
             "patternProperties": {
                 "^x-": true
-            },
-            "unevaluatedProperties": false
+            }
         },
         "port": {
             "properties": {
@@ -346,8 +337,8 @@
                 "expectations": {
                     "$ref": "#/$defs/expectationsOrReference"
                 },
-                "contracts": {
-                    "$ref": "#/$defs/contractsOrReference"
+                "obligations": {
+                    "$ref": "#/$defs/obligationsOrReference"
                 }
             }
         },
@@ -379,47 +370,52 @@
                     "$ref": "#/$defs/standardDefinition"
                 },
                 "deprecationPolicy": {
-                    "$ref": "#/$defs/specificationExtensionPoint"
+                    "$ref": "#/$defs/standardDefinition"
                 },
                 "slo": {
-                    "$ref": "#/$defs/specificationExtensionPoint"
+                    "$ref": "#/$defs/standardDefinition"
                 }
             },
             "patternProperties": {
                 "^x-": true
-            },
-            "unevaluatedProperties": false
+            }
         },
-        "standardDefinition": {
-            "$comment": "SPEC-BASE-URL#standardDefinitionObject",
-            "title": "Standard Definition Object",
-            "description": "The <a href=\"SPEC-BASE-URL#standardDefinitionObject\" target=\"_parent\">Standard Definition Object</a> formally describes an object (ex. API object, provision template object, ecc ...) of interest following a given standard specification.",
-            "type": "object",
+
+        "definition": {
             "properties": {
-                "description": {
-                    "description": "",
-                    "type": "string"
-                },
                 "specification": {
-                    "description": "",
                     "type": "string"
                 },
-                "version": {
+                "specificationVersion": {
                     "description": "",
                     "type": "string"
                 },
                 "definition": {
                    "$ref": "#/$defs/objectOrStringOrReference"
-                },
-                "externalDocs": {
-                    "$ref": "#/$defs/externalResource"
                 }
             },
             "required": ["specification","definition"],
             "patternProperties": {
                 "^x-": true
-            },
-            "unevaluatedProperties": false
+            }
+        },
+
+        "standardDefinition": {
+            "$comment": "SPEC-BASE-URL#standardDefinitionObject",
+            "title": "Standard Definition Object",
+            "description": "The <a href=\"SPEC-BASE-URL#standardDefinitionObject\" target=\"_parent\">Standard Definition Object</a> formally describes an object (ex. API object, provision template object, ecc ...) of interest following a given standard specification.",
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/entity"
+                },
+                {
+                    "$ref": "#/$defs/definition"
+                }
+            ],
+            "patternProperties": {
+                "^x-": true
+            }
         },
         "expectationsOrReference": {
             "oneOf": [
@@ -438,47 +434,45 @@
             "type": "object",
             "properties": {
                 "audience": {
-                    "$ref": "#/$defs/specificationExtensionPoint"
+                    "$ref": "#/$defs/standardDefinition"
                 },
                 "usage": {
-                    "$ref": "#/$defs/specificationExtensionPoint"
+                    "$ref": "#/$defs/standardDefinition"
                 }
             },
             "patternProperties": {
                 "^x-": true
-            },
-            "unevaluatedProperties": false
+            }
         },
-        "contractsOrReference": {
+        "obligationsOrReference": {
             "oneOf": [
                 {
                     "$ref": "#/$defs/reference"
                 },
                 {
-                    "$ref": "#/$defs/contracts"
+                    "$ref": "#/$defs/obligations"
                 }
             ]
         },
-        "contracts": {
-            "$comment": "SPEC-BASE-URL#contractsObject",
-            "title": "Expectations Object",
-            "description": "The <a href=\"SPEC-BASE-URL#contractsObject\" target=\"_parent\">Contracts Object</a> describes the data product's <a href=\"SPEC-BASE-URL#definitionsDataProductPortsContracts\" target=\"_parent\">contracts</a> declared over a given port.",
+        "obligations": {
+            "$comment": "SPEC-BASE-URL#obligationsObject",
+            "title": "Obligations Object",
+            "description": "The <a href=\"SPEC-BASE-URL#obligationsObject\" target=\"_parent\">Obligations Object</a> describes the data product's <a href=\"SPEC-BASE-URL#definitionsDataProductPortsObligations\" target=\"_parent\">obligations</a> declared over a given port.",
             "type": "object",
             "properties": {
                 "termsAndConditions": {
-                    "$ref": "#/$defs/specificationExtensionPoint"
+                    "$ref": "#/$defs/standardDefinition"
                 },
                 "billingPolicy": {
-                    "$ref": "#/$defs/specificationExtensionPoint"
+                    "$ref": "#/$defs/standardDefinition"
                 },
                 "sla": {
-                    "$ref": "#/$defs/specificationExtensionPoint"
+                    "$ref": "#/$defs/standardDefinition"
                 }
             },
             "patternProperties": {
                 "^x-": true
-            },
-            "unevaluatedProperties": false
+            }
         },
         
         "internalComponents": {
@@ -488,25 +482,15 @@
             "type": "object",
             "properties": {
 
-                "provisionInfo": {
-                    "$comment": "SPEC-BASE-URL#provisionInfoObject",
-                    "title": "Build Info",
-                    "description": "The <a href=\"SPEC-BASE-URL#provisionInfoObject\" target=\"_parent\">Provision Info Object</a> contains all the informations required to provision an <a href=\"SPEC-BASE-URL#infrastructuralComponent\" target=\"_parent\">Infrastructural Component</a>",
+                "lifecycleInfo": {
                     "type": "object",
-                    "properties": {
-                        "service": {
-                            "$ref": "#/$defs/reference"
-                        },
-                        "template": {
-                            "$ref": "#/$defs/objectOrStringOrReference"
-                        },
-                        "configurations": {
-                            "$ref": "#/$defs/objectOrStringOrReference"
+                    "additionalProperties": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/$defs/lifecycleTaskInfo"
                         }
                     }
                 },
-
-
 
                 "applicationComponents": {
                     "description": "",
@@ -524,6 +508,45 @@
                 }
             }
         },
+
+        "lifecycleTaskInfo": {
+            "$comment": "SPEC-BASE-URL#lifecycleTaskInfoObject",
+            "title": "Owner Object",
+            "description": "The <a href=\"SPEC-BASE-URL#lifecycleTaskInfoObject\" target=\"_parent\">Lifecycle Task Info Object</a> describes a task to execute to move the product to a specific stage in its lifecycle.",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "order": {
+                    "type": "number"
+                },
+                "service": {
+                    "$ref": "#/$defs/externalResource"
+                },
+                "template": {
+                    "$ref": "#/$defs/standardDefinitionOrReference"
+                },
+                "configurations": {
+                    "$ref": "#/$defs/objectOrReference"
+                }
+            },
+            "required": [],
+            "patternProperties": {
+                "^x-": true
+            }
+        },
+        "standardDefinitionOrReference": {
+            "oneOf": [
+                {
+                    "$ref": "#/$defs/reference"
+                },
+                {
+                    "$ref": "#/$defs/standardDefinition"
+                }
+            ]
+        },
+
         "applicationComponentOrReference": {
             "oneOf": [
                 {
@@ -580,8 +603,7 @@
             ],
             "patternProperties": {
                 "^x-": true
-            },
-            "unevaluatedProperties": false
+            }
         },
         "infrastructuralComponentOrReference": {
             "oneOf": [
@@ -683,8 +705,7 @@
             },
             "patternProperties": {
                 "^x-": true
-            },
-            "unevaluatedProperties": false
+            }
         },
         "reference": {
             "$comment": "SPEC-BASE-URL#referenceObject",
@@ -708,8 +729,7 @@
             },
             "required": [
                 "$ref"
-            ],
-            "unevaluatedProperties": false
+            ]
         },
         "externalResource": {
             "$comment": "SPEC-BASE-URL#externalResourceObject",
@@ -733,11 +753,21 @@
             },
             "required": [
                 "$href"
-            ],
-            "unevaluatedProperties": false
+            ]
         },
 
-      
+        "objectOrReference": {
+            "oneOf": [
+                {
+                    "title": "object",
+                    "description": "An inline JSON Object", 
+                    "type": "object"
+                },
+                {
+                    "$ref": "#/$defs/reference"
+                }
+            ]
+        },
         "objectOrStringOrReference": {
             "oneOf": [
                 {
@@ -749,31 +779,8 @@
                     "title": "string",
                     "description": "An inline String", 
                     "type": "string"
-                },
-                {
-                    "$ref": "#/$defs/reference"
                 }
             ]
-        },
-
-        "specificationExtensionPoint": {
-            "$comment": "SPEC-BASE-URL#specificationExtensionPoint",
-            "title": "Specification Extension Point",
-            "description": "A <a href=\"SPEC-BASE-URL#specificationExtensionPoint\" target=\"_parent\">Specification Extension Point</a> marks specific part of the <a href=\"SPEC-BASE-URL\" target=\"_parent\">Data Product Descriptor Specification</a> that  are left open to extensions or futher evolution of the standard.",
-            "type": "object",
-            "properties": {
-                "description": {
-                    "description": "",
-                    "type": "string"
-                },
-                "externalDocs": {
-                    "$ref": "#/$defs/externalResource"
-                }
-            },
-            "patternProperties": {
-                "^x-": true
-            },
-            "unevaluatedProperties": false
         },
 
         "entity": {
@@ -829,7 +836,6 @@
                 }
             },
             "required": [
-                "fullyQualifiedName",
                 "name",
                 "version"
             ]
