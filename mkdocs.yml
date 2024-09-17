@@ -11,61 +11,61 @@ dev_addr: '127.0.0.1:1234'
 
 nav:
   - Home: './index.md'
-  - Overview: 
-    - './overview/README.md'
-    - 'Charter': './overview/charter.md'
-    - 'Site Map': './overview/sitemap.md'
-  - Concepts: 
-    - './concepts/README.md'
-    - 'Data Product': './concepts/data-product.md'
-    - 'Data Product Descriptor': './concepts/data-product-descriptor.md'
-    - 'Data Contract': './concepts/data-contract.md'
-    - 'DataMeshOps Platform': './concepts/meshops-platform.md'
+  - Overview:
+      - './overview/README.md'
+      - 'Charter': './overview/charter.md'
+      - 'Site Map': './overview/sitemap.md'
+  - Concepts:
+      - './concepts/README.md'
+      - 'Data Product': './concepts/data-product.md'
+      - 'Data Product Descriptor': './concepts/data-product-descriptor.md'
+      - 'Data Contract': './concepts/data-contract.md'
+      - 'DataMeshOps Platform': './concepts/meshops-platform.md'
   - Quickstart:
-    - './quickstart/README.md'
-    - 'Trip Execution Data Product Overview': './quickstart/example.md'
-    - 'Descriptor Document Overview': './quickstart/overview.md'
-    - 'Minimal Descriptor Document': './quickstart/info.md'
-    - 'Interface Components': './quickstart/interface.md'
-    - 'Application Components': './quickstart/application.md'
-    - 'Infrastructural Components': './quickstart/infrastructure.md'
-    - 'Reusing Descriptions': './quickstart/components.md'
-    - 'External Resources': './quickstart/resources.md'
-    - 'Providing documentation': './quickstart/docs.md'
-    - 'Extending the specification': './quickstart/extensions.md'
-    - 'Putting all together': './quickstart/summary.md'
-  - Specifications: 
-    - './specifications/README.md'
-    - 'Data Product Descriptor': 
-      - './specifications/dpds/README.md'
-      - 'Specifiction': './specifications/dpds/1.0.0.md'
-      - 'JSON Schema': './specifications/dpds/1.0.0/schema.md'
-    - 'DatastoreAPI': 
-      - './specifications/dsas/README.md'
-      - 'Specifiction': './specifications/dsas/1.0.0.md'
-      - 'JSON Schema': './specifications/dsas/1.0.0/schema.md'
-  - Community: 
-    - './community/README.md'
-    - Contributing guidelines: './community/contributing.md'
-    - Code of conduct: './community/coc.md'
-    - Project governance: './community/governance.md'
-    - Development process: './community/development.md'
-    - Contacts: './community/contacts.md'
-    
-  - Resources: 
-    - './resources/README.md'
-    - 'External Tools': './resources/tools.md'
-    - 'DPDS Resources': './resources/dpdsresources.md'
-    - 'Data Mesh Resources': './resources/meshresources.md'
-    - 'How to': 
-      - 'build this site': './resources/howto/build-site-doc.md'
-      - 'build JSON Schema documentation': './resources/howto/build-schema-doc.md'
+      - './quickstart/README.md'
+      - 'Trip Execution Data Product Overview': './quickstart/example.md'
+      - 'Descriptor Document Overview': './quickstart/overview.md'
+      - 'Minimal Descriptor Document': './quickstart/info.md'
+      - 'Interface Components': './quickstart/interface.md'
+      - 'Application Components': './quickstart/application.md'
+      - 'Infrastructural Components': './quickstart/infrastructure.md'
+      - 'Reusing Descriptions': './quickstart/components.md'
+      - 'External Resources': './quickstart/resources.md'
+      - 'Providing documentation': './quickstart/docs.md'
+      - 'Extending the specification': './quickstart/extensions.md'
+      - 'Putting all together': './quickstart/summary.md'
+  - Specifications:
+      - './specifications/README.md'
+      - 'Data Product Descriptor':
+          - './specifications/dpds/README.md'
+          - 'Specification': './specifications/dpds/1.0.0.md'
+          - 'JSON Schema': './specifications/dpds/1.0.0/schema.md'
+      - 'DatastoreAPI':
+          - './specifications/dsas/README.md'
+          - 'Specification': './specifications/dsas/1.0.0.md'
+          - 'JSON Schema': './specifications/dsas/1.0.0/schema.md'
+  - Community:
+      - './community/README.md'
+      - Contributing guidelines: './community/contributing.md'
+      - Code of conduct: './community/coc.md'
+      - Project governance: './community/governance.md'
+      - Development process: './community/development.md'
+      - Contacts: './community/contacts.md'
+
+  - Resources:
+      - './resources/README.md'
+      - 'External Tools': './resources/tools.md'
+      - 'DPDS Resources': './resources/dpdsresources.md'
+      - 'Data Mesh Resources': './resources/meshresources.md'
+      - 'How to':
+          - 'build this site': './resources/howto/build-site-doc.md'
+          - 'build JSON Schema documentation': './resources/howto/build-schema-doc.md'
 
 ##theme: readthedocs
 theme:
   name: material
   features:
-    - navigation.tabs  
+    - navigation.tabs
     #- navigation.tabs.sticky
     - navigation.top
     - toc.follow
@@ -79,7 +79,7 @@ theme:
     # Palette toggle for light mode
     - scheme: default
       toggle:
-        icon: material/brightness-7 
+        icon: material/brightness-7
         name: Switch to dark mode
     # Palette toggle for dark mode
     - scheme: slate
@@ -112,7 +112,7 @@ extra:
             <br><a href="https://github.com/opendatamesh-initiative/odm-specification-dpdescriptor/issues" target="_blank">Consider opening an issue on GitHub</a>
   consent:
     title: Cookie consent
-    description: >- 
+    description: >-
       We use cookies to recognize your repeated visits and preferences, as well
       as to measure the effectiveness of our documentation and whether users
       find what they're searching for. With your consent, you're helping us to
@@ -132,7 +132,7 @@ extra:
 
 extra_css:
   - stylesheets/extra.css
-  
+
 markdown_extensions:
   - toc:
       toc_depth: 4
@@ -158,8 +158,8 @@ plugins:
       enable_creation_date: true
   # social:
   #cards_color:
-  # fill: "#ff8f00" 
+  # fill: "#ff8f00"
   # text: "#FFFFFF"
-      
+
 copyright: >
   Copyright &copy; 2023 Quantyca s.r.l. - <a href="#__consent">Change cookie settings</a>
