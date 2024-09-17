@@ -2,227 +2,182 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://dpds.opendatamesh.org/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/community/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/community/coc/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/community/contacts/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/community/contributing/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/community/development/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/community/governance/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/community/quantyca/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/concepts/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/concepts/data-contract/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/concepts/data-product-descriptor/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/concepts/data-product/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/concepts/meshops-platform/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/overview/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/overview/charter/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/overview/sitemap/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/quickstart/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/quickstart/application/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/quickstart/components/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/quickstart/docs/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/quickstart/example/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/quickstart/extensions/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/quickstart/info/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/quickstart/infrastructure/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/quickstart/interface/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/quickstart/overview/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/quickstart/resources/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/quickstart/summary/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/resources/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/resources/dpdsresources/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/resources/meshresources/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/resources/tools/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/resources/howto/build-schema-doc/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/resources/howto/build-site-doc/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/specifications/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/specifications/dpds/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/specifications/dpds/1.0.0-DRAFT/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/specifications/dpds/1.0.0/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/specifications/dpds/1.0.0/schema/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/specifications/dpds/1.0.0-DRAFT/schema/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/specifications/dsas/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/specifications/dsas/1.0.0-DRAFT/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/specifications/dsas/1.0.0/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/specifications/dsas/1.0.0/schema/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
     <url>
          <loc>https://dpds.opendatamesh.org/specifications/dsas/1.0.0-DRAFT/schema/</loc>
-         <lastmod>2024-06-12</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-17</lastmod>
     </url>
 </urlset>
