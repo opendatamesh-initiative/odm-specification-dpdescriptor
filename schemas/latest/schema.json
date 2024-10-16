@@ -260,8 +260,8 @@
         },
         "discoveryPort": {
             "$comment": "https://dpds.opendatamesh.org/specifications/dpds/1.0.0/#discoveryPortComponent",
-            "title": "The <a href=\"https://dpds.opendatamesh.org/specifications/dpds/1.0.0/#discoveryPortComponent\" target=\"_parent\">Discovey Port Component</a> describes a <a href=\"https://dpds.opendatamesh.org/specifications/dpds/1.0.0/#definitionsDataProductPorts\" target=\"_parent\">discovery port</a> of a data product.t",
-            "description": "",
+            "title: "Discovey Port Component",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/specifications/dpds/1.0.0/#discoveryPortComponent\" target=\"_parent\">Discovey Port Component</a> describes a <a href=\"https://dpds.opendatamesh.org/specifications/dpds/1.0.0/#definitionsDataProductPorts\" target=\"_parent\">discovery port</a> of a data product.t",
             "type": "object",
             "allOf": [
                 {
@@ -287,8 +287,8 @@
         },
         "observabilityPort": {
             "$comment": "https://dpds.opendatamesh.org/specifications/dpds/1.0.0/#observabilityPortComponent",
-            "title": "The <a href=\"https://dpds.opendatamesh.org/specifications/dpds/1.0.0/#observabilityPortComponent\" target=\"_parent\">Observability Port Component</a> describes an <a href=\"https://dpds.opendatamesh.org/specifications/dpds/1.0.0/#definitionsDataProductPorts\" target=\"_parent\">observability port</a> of a data product.",
-            "description": "",
+            "title": "Observability Port Component",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/specifications/dpds/1.0.0/#observabilityPortComponent\" target=\"_parent\">Observability Port Component</a> describes an <a href=\"https://dpds.opendatamesh.org/specifications/dpds/1.0.0/#definitionsDataProductPorts\" target=\"_parent\">observability port</a> of a data product.",
             "type": "object",
             "allOf": [
                 {
@@ -314,8 +314,8 @@
         },
         "controlPort": {
             "$comment": "https://dpds.opendatamesh.org/specifications/dpds/1.0.0/#controlPortComponent",
-            "title": "The <a href=\"https://dpds.opendatamesh.org/specifications/dpds/1.0.0/#controlPortComponent\" target=\"_parent\">Control Port Component</a> describes a <a href=\"https://dpds.opendatamesh.org/specifications/dpds/1.0.0/#definitionsDataProductPorts\" target=\"_parent\">control port</a> of a data product.",
-            "description": "",
+            "title": "Control Port Component",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/specifications/dpds/1.0.0/#controlPortComponent\" target=\"_parent\">Control Port Component</a> describes a <a href=\"https://dpds.opendatamesh.org/specifications/dpds/1.0.0/#definitionsDataProductPorts\" target=\"_parent\">control port</a> of a data product.",
             "type": "object",
             "allOf": [
                 {
@@ -354,8 +354,8 @@
         },
         "promises": {
             "$comment": "https://dpds.opendatamesh.org/specifications/dpds/1.0.0/#promisesObject",
-            "title": "The <a href=\"https://dpds.opendatamesh.org/specifications/dpds/1.0.0/#promisesObject\" target=\"_parent\">Promises Object</a> describes the data product's <a href=\"https://dpds.opendatamesh.org/specifications/dpds/1.0.0/#definitionsDataProductPortsPromises\" target=\"_parent\">promises</a> declared over a given port.",
-            "description": "",
+            "title": "Promises Object",
+            "description": "The <a href=\"https://dpds.opendatamesh.org/specifications/dpds/1.0.0/#promisesObject\" target=\"_parent\">Promises Object</a> describes the data product's <a href=\"https://dpds.opendatamesh.org/specifications/dpds/1.0.0/#definitionsDataProductPortsPromises\" target=\"_parent\">promises</a> declared over a given port.",
             "type": "object",
             "properties": {
                 "platform": {
