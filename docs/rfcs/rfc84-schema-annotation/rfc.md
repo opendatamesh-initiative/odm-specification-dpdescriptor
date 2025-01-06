@@ -1,7 +1,5 @@
 # Title
 
-> The champion is the person who is primarily supporting the RFC.
-
 Champion: @andrea-gioia 
 
 ## Summary
@@ -68,7 +66,7 @@ Describing the schema of a dataset using standard schema definition format and a
 
 ## Alternatives
 
-> Define custom wat to define metadata searated from schema definition.
+Define custom way to define metadata separated from schema definition.
 
 ## Decision
 
