@@ -70,7 +70,7 @@ Define custom way to define metadata separated from schema definition.
 
 ## Decision
 
-We decided to create a dedicate sub-specification named [Schema Annotation Spedification](https://github.com/opendatamesh-initiative/odm-specification-schema-annotations/tree/main).
+We decided to create a dedicate sub-specification named [Schema Annotation Specification](https://github.com/opendatamesh-initiative/odm-specification-schema-annotations/tree/main).
 
 ## Consequences
 
@@ -78,4 +78,4 @@ The Schema Annotation Spedification SHOULD be used to specify all dataset metada
 
 ## References
 
-[Schema Annotation Spedification](https://github.com/opendatamesh-initiative/odm-specification-schema-annotations/tree/main)
+[Schema Annotation Specification](https://github.com/opendatamesh-initiative/odm-specification-schema-annotations/tree/main)
