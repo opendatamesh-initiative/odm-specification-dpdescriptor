@@ -17,6 +17,15 @@ The DatastoreAPI Specification (DSAPI) is a specification for describing, produc
 
 Check out <a href="https://github.com/opendatamesh-initiative/odm-specification-datastoreapi" target="_blank">DatastoreAPI repository:octicons-link-external-24:</a> on GitHub for further information.
 
+### Schema Annotation Specification⚓︎
+The Schema Annotation Specification (SAS) is a specification that defines how to annotate structural elements within a schema describing a data model with metadata. SAS is independent of the Schema Definition Language (SDL) used, meaning it can be applied alongside any SDL (e.g., JSON Schema, Avro, Protobuf, XSD, etc.).
+
+???+ tip
+    DPDS RECOMMEND to use this specification to annotate schema within port's API definition to provide all required metadata.
+
+Check out <a href="https://github.com/opendatamesh-initiative/odm-specification-schema-annotations" target="_blank">Schema Annotation Specification repository:octicons-link-external-24:</a> on GitHub for further information.
+
+
 
 ## External specifications
 
@@ -56,8 +65,6 @@ Standard | Description
 <a href="https://www.openpolicyagent.org/" target="_blank">Open Policy Agent :octicons-link-external-24:</a> | Policy-based control for cloud native environments
 <a href="https://greatexpectations.io/" target="_blank">Great Expectations :octicons-link-external-24:</a> | A platform to test data quality
 <a href="https://www.soda.io/" target="_blank">Soda :octicons-link-external-24:</a> | A platform to test data quality
-
-
 
 
 ## Overlapping specifications

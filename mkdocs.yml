@@ -44,6 +44,10 @@ nav:
           - './specifications/dsas/README.md'
           - 'Specification': './specifications/dsas/1.0.0.md'
           - 'JSON Schema': './specifications/dsas/1.0.0/schema.md'
+      - 'Schema Annotation':
+          - './specifications/sas/README.md'
+          - 'Quickstart': './specifications/sas/quickstart.md'
+          - 'Specification': './specifications/sas/1.0.0-DRAFT.md'
   - Community:
       - './community/README.md'
       - Contributing guidelines: './community/contributing.md'

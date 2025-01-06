@@ -1,6 +1,6 @@
 # DatastoreAPI Specification
 
-This page contains links to all [specification](../../overview/README.md) versions. 
+This page contains links to all specification versions. 
 
 ## Current Version
 The current version of the specification is:
