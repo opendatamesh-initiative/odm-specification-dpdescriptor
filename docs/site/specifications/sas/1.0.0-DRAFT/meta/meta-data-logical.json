@@ -11,7 +11,7 @@
             "type": "string"
         },
         "modelRole": {
-            "type": "string",
+            "type": "string"
         },
         "tags": {
             "type": "array",
