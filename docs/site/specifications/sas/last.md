@@ -174,7 +174,7 @@ A dataset is a structured collection of data. Each entry within the dataset adhe
 
 A **meta model** provides the framework for defining the data model of a dataset. In SAS, the meta model describes the structure of a dataset entry as an `object` (i.e. root object or schema) consisting of an unordered list of named properties. 
 
-![SAS Meta Model](1.0.0-DRAFT/images/sas-meta-model.png)
+![SAS Meta Model](./1.0.0-DRAFT/sas-meta-model.png)
 
 Each property represents a portion of the data within a dataset entry and can take one of two forms:
 
@@ -624,8 +624,9 @@ If `sasDialect` is absent, the consumer MAY assume that all annotation keywords 
 	  "https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/constraints": {"required":false},
 	  "https://json-schema.org/draft/2020-12/vocab/content": {"required":false},
 	  "https://json-schema.org/draft/2020-12/vocab/format-annotation": {"required":false},
+	  "https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/constraints": {"required":false},
 	  "https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/context-syntactic": {"required":false},
-	  "https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/context-semantic": {"required":false},
+	  "https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/context-syntactic": {"required":false},
     "https://bitol-io.github.io/open-data-contract-standard/v3.0.0/#quality": {"required":false},
   }
 }
@@ -752,9 +753,9 @@ For example, `writeOnly` MAY be used to mark a property whose value is a passwor
 
 The Logical Meta-Data Annotations Vacabulary, defined as an extension of the SAS, provides commonly used metadata for annotating schemas at a logical level. The keywords in this vocabulary do not include, and will not include in the future, any information about the underlying datastore or details for schema or data validation.
 
-The current URI for this vocabulary, known as the Logical Meta-Data Annotations Vacabulary, is: [<https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/meta-data-logical>](./1.0.0-DRAFT/vocab/meta-data-logical.md).
+The current URI for this vocabulary, known as the Logical Meta-Data Annotations Vacabulary, is: [<https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/meta-data-logical>](https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/meta-data-logical).
 
-The current URI for the corresponding meta-schema is: [https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/meta-data-logical.json](./1.0.0-DRAFT/meta/meta-data-logical.json).
+The current URI for the corresponding meta-schema is: [https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/meta-data-logical](https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/meta-data-logical).
 
 
 ### <a name="vocab-meta-data-logical-element-kws"></a>Keywords applicable to schema or properties
@@ -1181,9 +1182,9 @@ The default value is `true` if keywords [`lastUpdateTime`](lastUpdateTime) set t
 
 The Physical Metadata Annotation Vocabulary, defined as an extension of the SAS, provides commonly used metadata for annotating schemas at a physical level. Sometime is necessary to enable the consumption of data from the underlying datastore to expose these information. If this is not the case this information SHOULD not be exposed in order to hide to the consumer internal implementation details.
 
-The current URI for this vocabulary, known as the Physical Metadata Annotation Vocabulary, is: [<https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/meta-data-physical>](1.0.0-DRAFT/vocab/meta-data-physical.md).
+The current URI for this vocabulary, known as the Physical Metadata Annotation Vocabulary, is: [<https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/meta-data-physical>](https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/meta-data-physical).
 
-The current URI for the corresponding meta-schema is: [https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/meta-data-physical](1.0.0-DRAFT/meta/meta-data-physical.md)
+The current URI for the corresponding meta-schema is: [https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/meta-data-physical](https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/meta-data-physical)
 
 ### <a name="vocab-meta-data-physical-kws"></a>Keywords applicable to schema or properties
 
@@ -1270,9 +1271,9 @@ This keyword is equivalent to:
 
 The Constraint Annotations Vacabulary, defined as an extension of the SAS, provides commonly used metadata for annotating schemas at a physical level. Sometime is necessary to enable the consumption of data from the underlying datastore to expose these information. If this is not the case this information SHOULD not be exposed in order to hide to the consumer internal implementation details.
 
-The current URI for this vocabulary, known as the Constraint Annotations Vacabulary, is: [<https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/constraints>](1.0.0-DRAFT/vocab/constraints.md).
+The current URI for this vocabulary, known as the Constraint Annotations Vacabulary, is: [<https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/constraints>](https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/constraint).
 
-The current URI for the corresponding meta-schema is: [https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/constraint](1.0.0-DRAFT/meta/constraints.md).
+The current URI for the corresponding meta-schema is: [https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/constraint](https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/constraint).
 
 ### <a name="vocab-validation-kw-p"></a>Keywords applicable to any properties
 
@@ -2009,9 +2010,9 @@ To convey syntactic information for a fixed subset of values which are accuratel
 
 The Syntactic Context Annotations Vacabulary, defined as an extension of the SAS, provides commonly used metadata to syntactly contextualize schema element.
 
-The current URI for this vocabulary, known as the Syntactic Context Annotations Vacabulary, is: [<https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/context-syntactic>](1.0.0-DRAFT/vocab/context-syntactic.md).
+The current URI for this vocabulary, known as the Syntactic Context Annotations Vacabulary, is: [<https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/context-syntactic>](https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/context-syntactic).
 
-The current URI for the corresponding meta-schema is: [https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/context-syntactic](1.0.0-DRAFT/meta/context-syntactic.md).
+The current URI for the corresponding meta-schema is: [https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/context-syntactic](https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/context-syntactic).
 
 ### <a name="vocab-context-syntactic-kwp"></a>Keywords applicable only to properties
 
@@ -2049,9 +2050,9 @@ This keyword is equivalent to:
 ## <a name="vocab-semantic-link"></a>Semantic Context Annotations Vacabulary  
 The Semantic Context Annotations Vacabulary, defined as an extension of the SAS, provides commonly used metadata to syntactly contextualize schema element.
 
-The current URI for this vocabulary, known as the Semantic Context Annotations Vacabulary, is: [<https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/context-semantic>](./1.0.0-DRAFT/vocab/context-semantic.md).
+The current URI for this vocabulary, known as the Semantic Context Annotations Vacabulary, is: [<https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/context-semantic>](https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/context-semantic).
 
-The current URI for the corresponding meta-schema is: [https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/context-semantic](1.0.0-DRAFT/meta/context-semantic.md).
+The current URI for the corresponding meta-schema is: [https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/context-semantic](https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/context-semantic).
 
 ### <a name="vocab-context-semantic-kws"></a>Keywords applicable only to schema
 

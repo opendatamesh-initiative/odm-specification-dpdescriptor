@@ -6,7 +6,7 @@ This guide provides a concise overview of the Annotation Schema Specification (S
 
 ## What is SAS?
 
-SAS (Standard Annotation Schema) defines a framework for annotating schemas using a shared set of keywords. These annotations enrich schema definitions, enabling enhanced interoperability, validation, and clarity for datasets described in different Schema Definition Languages (SDLs).
+Standard Annotation Schema (SAS) defines a framework for annotating schemas using a shared set of keywords. These annotations enrich schema definitions, enabling enhanced interoperability, validation, and clarity for datasets described in different Schema Definition Languages (SDLs).
 
 ---
 

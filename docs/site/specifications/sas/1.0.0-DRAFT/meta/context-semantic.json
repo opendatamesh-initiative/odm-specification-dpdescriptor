@@ -1,0 +1,14 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://json-schema.org/draft/2020-12/meta/meta-data",
+    "$dynamicAnchor": "meta",
+
+    "title": "TODO vacabulary meta-schema",
+
+    "type": ["object", "boolean"],
+    "properties": {
+        "todo": {
+            "type": "string"
+        }
+    }
+}
