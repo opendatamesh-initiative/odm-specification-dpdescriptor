@@ -1,0 +1,84 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://json-schema.org/draft/2020-12/meta/meta-data",
+    "$dynamicAnchor": "meta",
+
+    "title": "Logical Meta-Data Annotations vacabulary meta-schema",
+
+    "type": ["object", "boolean"],
+    "properties": {
+        "summary": {
+            "type": "string"
+        },
+        "modelRole": {
+            "type": "string"
+        },
+        "tags": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "externalDocs": {
+            "type": "object"
+        },
+         "owner": {
+            "type": "string"
+        },
+        "domain": {
+            "type": "string"
+        },
+        "schemaType": {
+            "type": "string"
+        },
+        "modellingStyle": {
+            "type": "string"
+        },
+        "contactPoints": {
+            "type": "array",
+            "items": {
+                "type": "object"
+            }
+        },
+        "status": {
+            "type": "string"
+        },
+
+        "primaryKey": {
+            "type": "boolean"
+        },
+        "primaryKeyPosition": {
+            "type": "integer"
+        },
+        "unique": {
+            "type": "boolean"
+        },
+        "nullable": {
+            "type": "boolean"
+        },
+        "nullValuesEnum": {
+            "type": "array"
+        },   
+        "nullValuesPattern": {
+            "type": "string"
+        },
+        "validityTime": {
+            "type": "boolean"
+        },
+        "creationTime": {
+            "type": "boolean"
+        },
+        "lastUpdateTime": {
+            "type": "boolean"
+        },
+        "deletionTime": {
+            "type": "boolean"
+        },
+        "sequenceKey": {
+            "type": "boolean"
+        },
+        "watermarkKey": {
+            "type": "boolean"
+        }
+    }
+}

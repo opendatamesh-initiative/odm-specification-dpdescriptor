@@ -10,13 +10,9 @@
       
       
       
-        <link rel="canonical" href="https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/">
+        <link rel="canonical" href="https://dpds.opendatamesh.org/specifications/sas/last/">
       
       
-        <link rel="prev" href="../quickstart/">
-      
-      
-        <link rel="next" href="../../../community/">
       
       
       <link rel="icon" href="../../../favicon.ico">
@@ -24,7 +20,7 @@
     
     
       
-        <title>Specification - Open Data Mesh</title>
+        <title>Schema Annotations Specification - Open Data Mesh</title>
       
     
     
@@ -121,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Specification
+              Schema Annotations Specification
             
           </span>
         </div>
@@ -266,12 +262,10 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../../" class="md-tabs__link">
           
   
@@ -973,8 +967,6 @@
       
   
   
-    
-  
   
   
     
@@ -993,17 +985,16 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
         
           
           
@@ -1019,13 +1010,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Specifications
@@ -1258,8 +1249,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1279,11 +1268,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4" >
         
           
           
@@ -1305,7 +1296,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_4">
             <span class="md-nav__icon md-icon"></span>
             Schema Annotation
@@ -1339,30 +1330,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Specification
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../1.0.0-DRAFT/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1371,1142 +1342,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conventions-and-terminology" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conventions and Terminology
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#versions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Versions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#license" class="md-nav__link">
-    <span class="md-ellipsis">
-      License
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#table-of-contents" class="md-nav__link">
-    <span class="md-ellipsis">
-      Table of Contents
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#definitions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Definitions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Definitions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#standard" class="md-nav__link">
-    <span class="md-ellipsis">
-      Standard
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#standard-specification" class="md-nav__link">
-    <span class="md-ellipsis">
-      Standard Specification
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#standard-definition" class="md-nav__link">
-    <span class="md-ellipsis">
-      Standard Definition
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#schema" class="md-nav__link">
-    <span class="md-ellipsis">
-      Schema
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#schema-definition-language" class="md-nav__link">
-    <span class="md-ellipsis">
-      Schema Definition Language
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#schema-annotation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Schema Annotation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#schema-document" class="md-nav__link">
-    <span class="md-ellipsis">
-      Schema Document
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sas-specification" class="md-nav__link">
-    <span class="md-ellipsis">
-      SAS Specification
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#specification" class="md-nav__link">
-    <span class="md-ellipsis">
-      Specification
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Specification">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#meta-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      Meta Model
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#schema-definition-language_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Schema Definition Language
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Schema Definition Language">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#json-schema" class="md-nav__link">
-    <span class="md-ellipsis">
-      JSON Schema
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#avro" class="md-nav__link">
-    <span class="md-ellipsis">
-      Avro
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#protobuf" class="md-nav__link">
-    <span class="md-ellipsis">
-      Protobuf
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#xsd" class="md-nav__link">
-    <span class="md-ellipsis">
-      XSD
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#keywords" class="md-nav__link">
-    <span class="md-ellipsis">
-      Keywords
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vocabularies" class="md-nav__link">
-    <span class="md-ellipsis">
-      Vocabularies
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-sas-keyword" class="md-nav__link">
-    <span class="md-ellipsis">
-      The "sas" Keyword
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-sasschemaid-keyword" class="md-nav__link">
-    <span class="md-ellipsis">
-      The "sasSchemaId" Keyword
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-sasdialect-keyword" class="md-nav__link">
-    <span class="md-ellipsis">
-      The "sasDialect" Keyword
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#default-sas-dialect" class="md-nav__link">
-    <span class="md-ellipsis">
-      Default SAS Dialect
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#basic-meta-data-annotations-vocabulary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Basic Meta-Data Annotations Vocabulary
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Basic Meta-Data Annotations Vocabulary">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#keywords-applicable-to-schema-or-properties" class="md-nav__link">
-    <span class="md-ellipsis">
-      Keywords applicable to schema or properties
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Keywords applicable to schema or properties">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#title" class="md-nav__link">
-    <span class="md-ellipsis">
-      title
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    <span class="md-ellipsis">
-      description
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#default" class="md-nav__link">
-    <span class="md-ellipsis">
-      default
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deprecated" class="md-nav__link">
-    <span class="md-ellipsis">
-      deprecated
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#keywords-applicable-only-to-properties" class="md-nav__link">
-    <span class="md-ellipsis">
-      Keywords applicable only to properties
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Keywords applicable only to properties">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#writeonly" class="md-nav__link">
-    <span class="md-ellipsis">
-      writeOnly
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#writeonly_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      writeOnly
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#logical-meta-data-annotations-vocabulary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Logical Meta-Data Annotations Vocabulary
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Logical Meta-Data Annotations Vocabulary">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#keywords-applicable-to-schema-or-properties_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Keywords applicable to schema or properties
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Keywords applicable to schema or properties">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      summary
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#modelrole" class="md-nav__link">
-    <span class="md-ellipsis">
-      modelRole
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tags" class="md-nav__link">
-    <span class="md-ellipsis">
-      tags
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#externaldocs" class="md-nav__link">
-    <span class="md-ellipsis">
-      externalDocs
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#keywords-applicable-only-to-schema" class="md-nav__link">
-    <span class="md-ellipsis">
-      Keywords applicable only to schema
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Keywords applicable only to schema">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#owner" class="md-nav__link">
-    <span class="md-ellipsis">
-      owner
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#domain" class="md-nav__link">
-    <span class="md-ellipsis">
-      domain
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#schematype" class="md-nav__link">
-    <span class="md-ellipsis">
-      schemaType
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#modellingstyle" class="md-nav__link">
-    <span class="md-ellipsis">
-      modellingStyle
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#contactpoints" class="md-nav__link">
-    <span class="md-ellipsis">
-      contactPoints
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#status" class="md-nav__link">
-    <span class="md-ellipsis">
-      status
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#keywords-applicable-only-to-properties_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Keywords applicable only to properties
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Keywords applicable only to properties">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#primarykey" class="md-nav__link">
-    <span class="md-ellipsis">
-      primaryKey
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#primarykeyposition" class="md-nav__link">
-    <span class="md-ellipsis">
-      primaryKeyPosition
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#unique" class="md-nav__link">
-    <span class="md-ellipsis">
-      unique
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nullable" class="md-nav__link">
-    <span class="md-ellipsis">
-      nullable
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nullvaluesenum" class="md-nav__link">
-    <span class="md-ellipsis">
-      nullValuesEnum
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nullvaluespattern" class="md-nav__link">
-    <span class="md-ellipsis">
-      nullValuesPattern
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validitytime" class="md-nav__link">
-    <span class="md-ellipsis">
-      validityTime
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#creationtime" class="md-nav__link">
-    <span class="md-ellipsis">
-      creationTime
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lastupdatetime" class="md-nav__link">
-    <span class="md-ellipsis">
-      lastUpdateTime
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deletiontime" class="md-nav__link">
-    <span class="md-ellipsis">
-      deletionTime
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sequencekey" class="md-nav__link">
-    <span class="md-ellipsis">
-      sequenceKey
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#watermarkkey" class="md-nav__link">
-    <span class="md-ellipsis">
-      watermarkKey
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#physical-meta-data-annotations-vocabulary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Physical Meta-Data Annotations Vocabulary
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Physical Meta-Data Annotations Vocabulary">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#keywords-applicable-to-schema-or-properties_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Keywords applicable to schema or properties
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Keywords applicable to schema or properties">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#physicalname" class="md-nav__link">
-    <span class="md-ellipsis">
-      physicalName
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#physicaltype" class="md-nav__link">
-    <span class="md-ellipsis">
-      physicalType
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#keywords-applicable-only-to-properties_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Keywords applicable only to properties
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Keywords applicable only to properties">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#partitionkey" class="md-nav__link">
-    <span class="md-ellipsis">
-      partitionKey
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#partitionkeyposition" class="md-nav__link">
-    <span class="md-ellipsis">
-      partitionKeyPosition
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#constraint-annotations-vocabulary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Constraint Annotations Vocabulary
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Constraint Annotations Vocabulary">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#keywords-applicable-to-any-properties" class="md-nav__link">
-    <span class="md-ellipsis">
-      Keywords applicable to any properties
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Keywords applicable to any properties">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#enum" class="md-nav__link">
-    <span class="md-ellipsis">
-      enum
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#const" class="md-nav__link">
-    <span class="md-ellipsis">
-      const
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#keywords-applicable-to-numeric-properties" class="md-nav__link">
-    <span class="md-ellipsis">
-      Keywords applicable to numeric properties
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Keywords applicable to numeric properties">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#multipleof" class="md-nav__link">
-    <span class="md-ellipsis">
-      multipleOf
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#maximum" class="md-nav__link">
-    <span class="md-ellipsis">
-      maximum
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exclusivemaximum" class="md-nav__link">
-    <span class="md-ellipsis">
-      exclusiveMaximum
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#minimum" class="md-nav__link">
-    <span class="md-ellipsis">
-      minimum
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exclusiveminimum" class="md-nav__link">
-    <span class="md-ellipsis">
-      exclusiveMinimum
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#keywords-applicable-to-string-properties" class="md-nav__link">
-    <span class="md-ellipsis">
-      Keywords applicable to string properties
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Keywords applicable to string properties">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#maxlength" class="md-nav__link">
-    <span class="md-ellipsis">
-      maxLength
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#minlength" class="md-nav__link">
-    <span class="md-ellipsis">
-      minLength
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pattern" class="md-nav__link">
-    <span class="md-ellipsis">
-      pattern
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#keywords-applicable-to-array-properties" class="md-nav__link">
-    <span class="md-ellipsis">
-      Keywords applicable to array properties
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Keywords applicable to array properties">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#maxitems" class="md-nav__link">
-    <span class="md-ellipsis">
-      maxItems
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#minitems" class="md-nav__link">
-    <span class="md-ellipsis">
-      minItems
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#keywords-applicable-to-object-properties" class="md-nav__link">
-    <span class="md-ellipsis">
-      Keywords applicable to object properties
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Keywords applicable to object properties">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#maxproperties" class="md-nav__link">
-    <span class="md-ellipsis">
-      maxProperties
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#minproperties" class="md-nav__link">
-    <span class="md-ellipsis">
-      minProperties
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#required" class="md-nav__link">
-    <span class="md-ellipsis">
-      required
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dependentrequired" class="md-nav__link">
-    <span class="md-ellipsis">
-      dependentRequired
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#string-encoded-content-vocabulary" class="md-nav__link">
-    <span class="md-ellipsis">
-      String-encoded Content Vocabulary
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="String-encoded Content Vocabulary">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#keywords-applicable-to-string-properties_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Keywords applicable to string properties
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Keywords applicable to string properties">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#contentencoding" class="md-nav__link">
-    <span class="md-ellipsis">
-      contentEncoding
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#contentmediatype" class="md-nav__link">
-    <span class="md-ellipsis">
-      contentMediaType
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#contentschema" class="md-nav__link">
-    <span class="md-ellipsis">
-      contentSchema
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#format-annotation-vocabulary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Format Annotation Vocabulary
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Format Annotation Vocabulary">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#keywords-applicable-to-properties" class="md-nav__link">
-    <span class="md-ellipsis">
-      Keywords applicable to properties
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Keywords applicable to properties">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#format" class="md-nav__link">
-    <span class="md-ellipsis">
-      format
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#syntactic-context-annotations-vocabulary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Syntactic Context Annotations Vocabulary
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Syntactic Context Annotations Vocabulary">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#keywords-applicable-only-to-properties_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      Keywords applicable only to properties
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Keywords applicable only to properties">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#conformsto" class="md-nav__link">
-    <span class="md-ellipsis">
-      conformsTo
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#semantic-context-annotations-vocabulary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Semantic Context Annotations Vocabulary
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Semantic Context Annotations Vocabulary">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#keywords-applicable-only-to-schema_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Keywords applicable only to schema
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Keywords applicable only to schema">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#semanticcontext" class="md-nav__link">
-    <span class="md-ellipsis">
-      semanticContext
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-quality-annotation-vocabulary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Quality Annotation Vocabulary
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3223,13 +2058,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#basic-meta-data-annotations-vocabulary" class="md-nav__link">
+  <a href="#basic-meta-data-annotations-vacabulary" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic Meta-Data Annotations Vocabulary
+      Basic Meta-Data Annotations Vacabulary
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Basic Meta-Data Annotations Vocabulary">
+    <nav class="md-nav" aria-label="Basic Meta-Data Annotations Vacabulary">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3322,13 +2157,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#logical-meta-data-annotations-vocabulary" class="md-nav__link">
+  <a href="#logical-meta-data-annotations-vacabulary" class="md-nav__link">
     <span class="md-ellipsis">
-      Logical Meta-Data Annotations Vocabulary
+      Logical Meta-Data Annotations Vacabulary
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Logical Meta-Data Annotations Vocabulary">
+    <nav class="md-nav" aria-label="Logical Meta-Data Annotations Vacabulary">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3580,13 +2415,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#physical-meta-data-annotations-vocabulary" class="md-nav__link">
+  <a href="#physical-meta-data-annotations-vacabulary" class="md-nav__link">
     <span class="md-ellipsis">
-      Physical Meta-Data Annotations Vocabulary
+      Physical Meta-Data Annotations Vacabulary
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Physical Meta-Data Annotations Vocabulary">
+    <nav class="md-nav" aria-label="Physical Meta-Data Annotations Vacabulary">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3661,13 +2496,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#constraint-annotations-vocabulary" class="md-nav__link">
+  <a href="#constraint-annotations-vacabulary" class="md-nav__link">
     <span class="md-ellipsis">
-      Constraint Annotations Vocabulary
+      Constraint Annotations Vacabulary
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Constraint Annotations Vocabulary">
+    <nav class="md-nav" aria-label="Constraint Annotations Vacabulary">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3895,13 +2730,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#string-encoded-content-vocabulary" class="md-nav__link">
+  <a href="#string-encoded-content-vacabulary" class="md-nav__link">
     <span class="md-ellipsis">
-      String-encoded Content Vocabulary
+      String-encoded Content Vacabulary
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="String-encoded Content Vocabulary">
+    <nav class="md-nav" aria-label="String-encoded Content Vacabulary">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3952,13 +2787,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#format-annotation-vocabulary" class="md-nav__link">
+  <a href="#format-annotation-vacabulary" class="md-nav__link">
     <span class="md-ellipsis">
-      Format Annotation Vocabulary
+      Format Annotation Vacabulary
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Format Annotation Vocabulary">
+    <nav class="md-nav" aria-label="Format Annotation Vacabulary">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3991,13 +2826,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#syntactic-context-annotations-vocabulary" class="md-nav__link">
+  <a href="#syntactic-context-annotations-vacabulary" class="md-nav__link">
     <span class="md-ellipsis">
-      Syntactic Context Annotations Vocabulary
+      Syntactic Context Annotations Vacabulary
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Syntactic Context Annotations Vocabulary">
+    <nav class="md-nav" aria-label="Syntactic Context Annotations Vacabulary">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4030,13 +2865,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#semantic-context-annotations-vocabulary" class="md-nav__link">
+  <a href="#semantic-context-annotations-vacabulary" class="md-nav__link">
     <span class="md-ellipsis">
-      Semantic Context Annotations Vocabulary
+      Semantic Context Annotations Vacabulary
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Semantic Context Annotations Vocabulary">
+    <nav class="md-nav" aria-label="Semantic Context Annotations Vacabulary">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4069,9 +2904,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-quality-annotation-vocabulary" class="md-nav__link">
+  <a href="#data-quality-annotation-vacabulary" class="md-nav__link">
     <span class="md-ellipsis">
-      Data Quality Annotation Vocabulary
+      Data Quality Annotation Vacabulary
     </span>
   </a>
   
@@ -4106,7 +2941,7 @@
 <li>Enabling tools that extract metadata from the schema to leverage standardized semantics, interpreting their meaning and using them appropriately</li>
 </ul>
 <h2 id="conventions-and-terminology">Conventions and Terminology<a class="headerlink" href="#conventions-and-terminology" title="Permanent link">⚓︎</a></h2>
-<p>The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in <a href="https://tools.ietf.org/html/bcp14" target="_blank">BCP 14<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75z"/></svg></span></a>, <a href="https://tools.ietf.org/html/rfc2119" target="_blank">RFC2119<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75z"/></svg></span></a> and <a href="https://tools.ietf.org/html/rfc8174" target="_blank">RFC8174<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75z"/></svg></span></a>, when, and only when, they appear in all capitals, as shown here.</p>
+<p>The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in <a href="https://tools.ietf.org/html/bcp14" target="_blank">BCP 14<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75z"/></svg></span></a> <a href="https://tools.ietf.org/html/rfc2119" target="_blank">RFC2119<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75z"/></svg></span></a> <a href="https://tools.ietf.org/html/rfc8174" target="_blank">RFC8174<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75z"/></svg></span></a> when, and only when, they appear in all capitals, as shown here.</p>
 <h2 id="versions"><a name="versions"></a>Versions<a class="headerlink" href="#versions" title="Permanent link">⚓︎</a></h2>
 <p>The SAS is versioned using <a href="https://semver.org/spec/v2.0.0.html)" target="_blank">Semantic Versioning 2.0.0<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75z"/></svg></span></a> (semver) and follows the semver specification.</p>
 <p>The <code>major</code>.<code>minor</code> portion of the semver (for example <code>1.0</code>) SHALL designate the SAS feature set. Typically, <em><code>.patch</code></em> versions address errors in this document, not the feature set. Tooling which supports SAS 1.0 SHOULD be compatible with all SAS 1.0.* versions. The patch version SHOULD NOT be considered by tooling, making any distinction between <code>1.0.0</code> and <code>1.0.1</code> for example.</p>
@@ -4148,7 +2983,7 @@
 <li><a href="#default-sas-dialect">Default SAS Dialect</a></li>
 </ul>
 </li>
-<li><a href="#basic-meta-data-annotations-vocabulary">Basic Meta-Data Annotations Vocabulary</a><ul>
+<li><a href="#basic-meta-data-annotations-vacabulary">Basic Meta-Data Annotations Vacabulary</a><ul>
 <li><a href="#keywords-applicable-to-schema-or-properties">Keywords applicable to schema or properties</a></li>
 <li><a href="#title">title</a></li>
 <li><a href="#description">description</a></li>
@@ -4159,7 +2994,7 @@
 <li><a href="#writeonly-1">writeOnly</a></li>
 </ul>
 </li>
-<li><a href="#logical-meta-data-annotations-vocabulary">Logical Meta-Data Annotations Vocabulary</a><ul>
+<li><a href="#logical-meta-data-annotations-vacabulary">Logical Meta-Data Annotations Vacabulary</a><ul>
 <li><a href="#keywords-applicable-to-schema-or-properties-1">Keywords applicable to schema or properties</a></li>
 <li><a href="#summary">summary</a></li>
 <li><a href="#modelrole">modelRole</a></li>
@@ -4187,7 +3022,7 @@
 <li><a href="#watermarkkey">watermarkKey</a></li>
 </ul>
 </li>
-<li><a href="#physical-meta-data-annotations-vocabulary">Physical Meta-Data Annotations Vocabulary</a><ul>
+<li><a href="#physical-meta-data-annotations-vacabulary">Physical Meta-Data Annotations Vacabulary</a><ul>
 <li><a href="#keywords-applicable-to-schema-or-properties-2">Keywords applicable to schema or properties</a></li>
 <li><a href="#physicalname">physicalName</a></li>
 <li><a href="#physicaltype">physicalType</a></li>
@@ -4196,7 +3031,7 @@
 <li><a href="#partitionkeyposition">partitionKeyPosition</a></li>
 </ul>
 </li>
-<li><a href="#constraint-annotations-vocabulary">Constraint Annotations Vocabulary</a><ul>
+<li><a href="#constraint-annotations-vacabulary">Constraint Annotations Vacabulary</a><ul>
 <li><a href="#keywords-applicable-to-any-properties">Keywords applicable to any properties</a></li>
 <li><a href="#enum">enum</a></li>
 <li><a href="#const">const</a></li>
@@ -4220,29 +3055,29 @@
 <li><a href="#dependentrequired">dependentRequired</a></li>
 </ul>
 </li>
-<li><a href="#string-encoded-content-vocabulary">String-encoded Content Vocabulary</a><ul>
+<li><a href="#string-encoded-content-vacabulary">String-encoded Content Vacabulary</a><ul>
 <li><a href="#keywords-applicable-to-string-properties-1">Keywords applicable to string properties</a></li>
 <li><a href="#contentencoding">contentEncoding</a></li>
 <li><a href="#contentmediatype">contentMediaType</a></li>
 <li><a href="#contentschema">contentSchema</a></li>
 </ul>
 </li>
-<li><a href="#format-annotation-vocabulary">Format Annotation Vocabulary</a><ul>
+<li><a href="#format-annotation-vacabulary">Format Annotation Vacabulary</a><ul>
 <li><a href="#keywords-applicable-to-properties">Keywords applicable to properties</a></li>
 <li><a href="#format">format</a></li>
 </ul>
 </li>
-<li><a href="#syntactic-context-annotations-vocabulary">Syntactic Context Annotations Vocabulary</a><ul>
+<li><a href="#syntactic-context-annotations-vacabulary">Syntactic Context Annotations Vacabulary</a><ul>
 <li><a href="#keywords-applicable-only-to-properties-3">Keywords applicable only to properties</a></li>
 <li><a href="#conformsto">conformsTo</a></li>
 </ul>
 </li>
-<li><a href="#semantic-context-annotations-vocabulary">Semantic Context Annotations Vocabulary</a><ul>
+<li><a href="#semantic-context-annotations-vacabulary">Semantic Context Annotations Vacabulary</a><ul>
 <li><a href="#keywords-applicable-only-to-schema-1">Keywords applicable only to schema</a></li>
 <li><a href="#semanticcontext">semanticContext</a></li>
 </ul>
 </li>
-<li><a href="#data-quality-annotation-vocabulary">Data Quality Annotation Vocabulary</a></li>
+<li><a href="#data-quality-annotation-vacabulary">Data Quality Annotation Vacabulary</a></li>
 <li><a href="#appendix-a-revision-history">Appendix A: Revision History</a></li>
 </ul>
 <h2 id="definitions"><a name="definitions"></a>Definitions<a class="headerlink" href="#definitions" title="Permanent link">⚓︎</a></h2>
@@ -4266,7 +3101,7 @@
 <h3 id="meta-model"><a name="metaModel"></a>Meta Model<a class="headerlink" href="#meta-model" title="Permanent link">⚓︎</a></h3>
 <p>A dataset is a structured collection of data. Each entry within the dataset adheres to the same structure, which is referred to as its <strong>data model</strong>. The data model defines how data within each entry are arranged and related. </p>
 <p>A <strong>meta model</strong> provides the framework for defining the data model of a dataset. In SAS, the meta model describes the structure of a dataset entry as an <code>object</code> (i.e. root object or schema) consisting of an unordered list of named properties. </p>
-<p><img alt="SAS Meta Model" src="images/sas-meta-model.png" /></p>
+<p><img alt="SAS Meta Model" src="./1.0.0-DRAFT/sas-meta-model.png" /></p>
 <p>Each property represents a portion of the data within a dataset entry and can take one of two forms:</p>
 <ul>
 <li>
@@ -4681,24 +3516,25 @@
 <a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="nt">&quot;https://json-schema.org/draft/2020-12/vocab/meta-data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">},</span>
 <a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="nt">&quot;https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/meta-data-logical&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">},</span>
 <a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="nt">&quot;https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/meta-data-physical&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">},</span>
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">    </span><span class="nt">&quot;https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/constraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">},</span>
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">    </span><span class="nt">&quot;https://json-schema.org/draft/2020-12/vocab/content&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">},</span>
-<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">    </span><span class="nt">&quot;https://json-schema.org/draft/2020-12/vocab/format-annotation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">},</span>
-<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">    </span><span class="nt">&quot;https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/context-syntactic&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">},</span>
-<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">    </span><span class="nt">&quot;https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/context-semantic&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">},</span>
-<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">    </span><span class="nt">&quot;https://bitol-io.github.io/open-data-contract-standard/v3.0.0/#quality&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">},</span>
-<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="p">}</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">      </span><span class="nt">&quot;https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/constraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">},</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">      </span><span class="nt">&quot;https://json-schema.org/draft/2020-12/vocab/content&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">},</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">      </span><span class="nt">&quot;https://json-schema.org/draft/2020-12/vocab/format-annotation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">},</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">      </span><span class="nt">&quot;https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/constraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">},</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">      </span><span class="nt">&quot;https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/context-syntactic&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">},</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">      </span><span class="nt">&quot;https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/context-syntactic&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">},</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="w">    </span><span class="nt">&quot;https://bitol-io.github.io/open-data-contract-standard/v3.0.0/#quality&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">},</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="p">}</span>
 </code></pre></div>
 <p>The vocabularies included in the <strong>default SAS Dialect</strong> are described in the following sections.</p>
 <!-- ============================================================================ -->
-<!-- Basic Meta-Data Annotations Vocabulary                     -->
+<!-- Basic Meta-Data Annotations Vacabulary                     -->
 <!-- ============================================================================ -->
-<h2 id="basic-meta-data-annotations-vocabulary"><a name="vocab-meta-data"></a>Basic Meta-Data Annotations Vocabulary<a class="headerlink" href="#basic-meta-data-annotations-vocabulary" title="Permanent link">⚓︎</a></h2>
+<h2 id="basic-meta-data-annotations-vacabulary"><a name="vocab-meta-data"></a>Basic Meta-Data Annotations Vacabulary<a class="headerlink" href="#basic-meta-data-annotations-vacabulary" title="Permanent link">⚓︎</a></h2>
 <p>These general-purpose annotation vocabulary defided in <a href="https://json-schema.org/draft/2020-12/json-schema-validation">JSON Schema Validation</a> extension provide commonly used information for documentation and user interface display purposes. They are not intended to form a comprehensive set of features. Rather, additional vocabularies can be defined for more complex annotation-based applications.</p>
-<p>The current URI for this vocabulary, known as the Meta-Data Vocabulary, is: <a href="https://json-schema.org/draft/2020-12/vocab/meta-data" target="_blank">https://json-schema.org/draft/2020-12/vocab/meta-data</a></p>
-<p>The current URI for the corresponding meta-schema is: <a href="https://json-schema.org/draft/2020-12/meta/meta-data" target="_blank">https://json-schema.org/draft/2020-12/meta/meta-data</a></p>
-<p><em>Hereafter are reported all keywords that compose this vocabulary with a short description for convenience. However the normative definition is contained in the <a href="https://json-schema.org/draft/2020-12/json-schema-validation" target="_blank">JSON Schema Validation</a> extension.</em></p>
+<p>The current URI for this vocabulary, known as the Meta-Data Vocabulary, is: <a href="https://json-schema.org/draft/2020-12/vocab/meta-data"><a href="https://json-schema.org/draft/2020-12/vocab/meta-data">https://json-schema.org/draft/2020-12/vocab/meta-data</a></a>.</p>
+<p>The current URI for the corresponding meta-schema is: https://json-schema.org/draft/2020-12/meta/meta-data.</p>
+<p><em>Hereafter are reported all keywords that compose this vocabulary with a short description for convenience. However the normative definition is contained in the <a href="https://json-schema.org/draft/2020-12/json-schema-validation">JSON Schema Validation</a> extension.</em></p>
 <h3 id="keywords-applicable-to-schema-or-properties"><a name="vocab-meta-data-element-kws"></a>Keywords applicable to schema or properties<a class="headerlink" href="#keywords-applicable-to-schema-or-properties" title="Permanent link">⚓︎</a></h3>
 <!-- title -->
 <h4 id="title"><a name="vocab-meta-data-kw-title"></a>title<a class="headerlink" href="#title" title="Permanent link">⚓︎</a></h4>
@@ -4769,10 +3605,10 @@
 <a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="logical-meta-data-annotations-vocabulary"><a name="vocab-meta-data-logical"></a>Logical Meta-Data Annotations Vocabulary<a class="headerlink" href="#logical-meta-data-annotations-vocabulary" title="Permanent link">⚓︎</a></h2>
-<p>The Logical Meta-Data Annotations Vocabulary, defined as an extension of the SAS, provides commonly used metadata for annotating schemas at a logical level. The keywords in this vocabulary do not include, and will not include in the future, any information about the underlying datastore or details for schema or data validation.</p>
-<p>The current URI for this vocabulary, known as the Logical Meta-Data Annotations Vocabulary, is: <a href="vocab/meta-data-logical/"><a href="https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/meta-data-logical">https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/meta-data-logical</a></a>.</p>
-<p>The current URI for the corresponding meta-schema is: <a href="meta/meta-data-logical.json">https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/meta-data-logical.json</a>.</p>
+<h2 id="logical-meta-data-annotations-vacabulary"><a name="vocab-meta-data-logical"></a>Logical Meta-Data Annotations Vacabulary<a class="headerlink" href="#logical-meta-data-annotations-vacabulary" title="Permanent link">⚓︎</a></h2>
+<p>The Logical Meta-Data Annotations Vacabulary, defined as an extension of the SAS, provides commonly used metadata for annotating schemas at a logical level. The keywords in this vocabulary do not include, and will not include in the future, any information about the underlying datastore or details for schema or data validation.</p>
+<p>The current URI for this vocabulary, known as the Logical Meta-Data Annotations Vacabulary, is: <a href="https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/meta-data-logical"><a href="https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/meta-data-logical">https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/meta-data-logical</a></a>.</p>
+<p>The current URI for the corresponding meta-schema is: <a href="https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/meta-data-logical">https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/meta-data-logical</a>.</p>
 <h3 id="keywords-applicable-to-schema-or-properties_1"><a name="vocab-meta-data-logical-element-kws"></a>Keywords applicable to schema or properties<a class="headerlink" href="#keywords-applicable-to-schema-or-properties_1" title="Permanent link">⚓︎</a></h3>
 <!-- summary -->
 <h4 id="summary"><a name="vocab-meta-data-logical-kw-summary"></a>summary<a class="headerlink" href="#summary" title="Permanent link">⚓︎</a></h4>
@@ -4877,7 +3713,7 @@
 </table>
 <p><em>Example-1</em></p>
 <div class="highlight"><span class="filename">JSON</span><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="p">{</span>
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;transportOrder&quot;</span><span class="p">,</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;transportOrder&quot;</span><span class="p">,</span>
 <a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">  </span><span class="nt">&quot;schemaType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tabular&quot;</span><span class="p">,</span>
 <a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
 <a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">    </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -5138,13 +3974,13 @@ Given the table <code>TRIP</code> with a composite primary key defined as follow
 <p>When set to <code>true</code>, the <code>watermarkKey</code> keyword indicates that this property can be used to order the dataset's entries from the oldest to the most recent, based on the last update transaction time. The property is updated with each entry's change and is typically a timestamp or an incremental key.</p>
 <p>The default value is <code>true</code> if keywords <a href="lastUpdateTime"><code>lastUpdateTime</code></a> set to <code>true</code> for this property, <code>false</code> otherwise.</p>
 <!-- ============================================================================ -->
-<!-- Physical Meta-Data Annotations Vocabulary                                    -->
+<!-- Physical Meta-Data Annotations Vacabulary                     -->
 <!-- ============================================================================ -->
 
-<h2 id="physical-meta-data-annotations-vocabulary"><a name="vocab-meta-data-physical"></a>Physical Meta-Data Annotations Vocabulary<a class="headerlink" href="#physical-meta-data-annotations-vocabulary" title="Permanent link">⚓︎</a></h2>
+<h2 id="physical-meta-data-annotations-vacabulary"><a name="vocab-meta-data-physical"></a>Physical Meta-Data Annotations Vacabulary<a class="headerlink" href="#physical-meta-data-annotations-vacabulary" title="Permanent link">⚓︎</a></h2>
 <p>The Physical Metadata Annotation Vocabulary, defined as an extension of the SAS, provides commonly used metadata for annotating schemas at a physical level. Sometime is necessary to enable the consumption of data from the underlying datastore to expose these information. If this is not the case this information SHOULD not be exposed in order to hide to the consumer internal implementation details.</p>
-<p>The current URI for this vocabulary, known as the Physical Metadata Annotation Vocabulary, is: <a href="vocab/meta-data-physical/"><a href="https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/meta-data-physical">https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/meta-data-physical</a></a>.</p>
-<p>The current URI for the corresponding meta-schema is: <a href="1.0.0-DRAFT/meta/meta-data-physical.md">https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/meta-data-physical</a></p>
+<p>The current URI for this vocabulary, known as the Physical Metadata Annotation Vocabulary, is: <a href="https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/meta-data-physical"><a href="https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/meta-data-physical">https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/meta-data-physical</a></a>.</p>
+<p>The current URI for the corresponding meta-schema is: <a href="https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/meta-data-physical">https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/meta-data-physical</a></p>
 <h3 id="keywords-applicable-to-schema-or-properties_2"><a name="vocab-meta-data-physical-kws"></a>Keywords applicable to schema or properties<a class="headerlink" href="#keywords-applicable-to-schema-or-properties_2" title="Permanent link">⚓︎</a></h3>
 <!-- physicalName -->
 <h4 id="physicalname"><a name="vocab-meta-data-physical-kw-physicalName"></a>physicalName<a class="headerlink" href="#physicalname" title="Permanent link">⚓︎</a></h4>
@@ -5204,13 +4040,13 @@ This keyword is equivalent to:</p>
 <li><a href="https://bitol-io.github.io/open-data-contract-standard/v3.0.0/#schema"><code>bitol.schema.partitionKeyPosition</code></a></li>
 </ul>
 <!-- ============================================================================ -->
-<!-- Constraint Annotations Vocabulary                                            -->
+<!-- Constraint Annotations Vacabulary                                            -->
 <!-- ============================================================================ -->
 
-<h2 id="constraint-annotations-vocabulary"><a name="vocab-validation"></a>Constraint Annotations Vocabulary<a class="headerlink" href="#constraint-annotations-vocabulary" title="Permanent link">⚓︎</a></h2>
-<p>The Constraint Annotations Vocabulary, defined as an extension of the SAS, provides commonly used metadata for annotating schemas at a physical level. Sometime is necessary to enable the consumption of data from the underlying datastore to expose these information. If this is not the case this information SHOULD not be exposed in order to hide to the consumer internal implementation details.</p>
-<p>The current URI for this vocabulary, known as the Constraint Annotations Vocabulary, is: <a href="vocab/constraints/"><a href="https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/constraints">https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/constraints</a></a>.</p>
-<p>The current URI for the corresponding meta-schema is: <a href="1.0.0-DRAFT/meta/constraints.md">https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/constraint</a>.</p>
+<h2 id="constraint-annotations-vacabulary"><a name="vocab-validation"></a>Constraint Annotations Vacabulary<a class="headerlink" href="#constraint-annotations-vacabulary" title="Permanent link">⚓︎</a></h2>
+<p>The Constraint Annotations Vacabulary, defined as an extension of the SAS, provides commonly used metadata for annotating schemas at a physical level. Sometime is necessary to enable the consumption of data from the underlying datastore to expose these information. If this is not the case this information SHOULD not be exposed in order to hide to the consumer internal implementation details.</p>
+<p>The current URI for this vocabulary, known as the Constraint Annotations Vacabulary, is: <a href="https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/constraint"><a href="https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/constraints">https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/constraints</a></a>.</p>
+<p>The current URI for the corresponding meta-schema is: <a href="https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/constraint">https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/constraint</a>.</p>
 <h3 id="keywords-applicable-to-any-properties"><a name="vocab-validation-kw-p"></a>Keywords applicable to any properties<a class="headerlink" href="#keywords-applicable-to-any-properties" title="Permanent link">⚓︎</a></h3>
 <!-- enum -->
 <h4 id="enum"><a name="vocab-validation-kw-enum"></a>enum<a class="headerlink" href="#enum" title="Permanent link">⚓︎</a></h4>
@@ -5564,13 +4400,13 @@ This keyword is equivalent to:</p>
 <li><a href="https://json-schema.org/draft/2020-12/json-schema-validation#name-dependentrequired"><code>json-schema-validation.required</code></a></li>
 </ul>
 <!-- ============================================================================ -->
-<!-- String-encoded Content Vocabulary                                            -->
+<!-- String-encoded Content Vacabulary                                            -->
 <!-- ============================================================================ -->
 
-<h2 id="string-encoded-content-vocabulary"><a name="vocab-validation"></a>String-encoded Content Vocabulary<a class="headerlink" href="#string-encoded-content-vocabulary" title="Permanent link">⚓︎</a></h2>
+<h2 id="string-encoded-content-vacabulary"><a name="vocab-validation"></a>String-encoded Content Vacabulary<a class="headerlink" href="#string-encoded-content-vacabulary" title="Permanent link">⚓︎</a></h2>
 <p>This vocabulary defided in <a href="https://json-schema.org/draft/2020-12/json-schema-validation">JSON Schema Validation</a> extension provide keywords to  describe the type of content of a string property, how it is encoded, and/or how it may be validated. They do not function as validation assertions. </p>
-<p>The current URI for this vocabulary, known as the Structural Validation Vocabulary, is: <a href="https://json-schema.org/draft/2020-12/vocab/content" target="_blank">https://json-schema.org/draft/2020-12/vocab/content</a></p>
-<p>The current URI for the corresponding meta-schema is: <a href="https://json-schema.org/draft/2020-12/meta/content" target="_blank">https://json-schema.org/draft/2020-12/meta/content</a></p>
+<p>The current URI for this vocabulary, known as the Structural Validation Vacabulary, is: <a href="https://json-schema.org/draft/2020-12/vocab/content"><a href="https://json-schema.org/draft/2020-12/vocab/content">https://json-schema.org/draft/2020-12/vocab/content</a></a>.</p>
+<p>The current URI for the corresponding meta-schema is: <a href="https://json-schema.org/draft/2020-12/meta/content.">https://json-schema.org/draft/2020-12/meta/content</a>.</p>
 <h3 id="keywords-applicable-to-string-properties_1"><a name="vocab-content-kw-p"></a>Keywords applicable to string properties<a class="headerlink" href="#keywords-applicable-to-string-properties_1" title="Permanent link">⚓︎</a></h3>
 <!-- contentEncoding -->
 <h4 id="contentencoding"><a name="vocab-validation-kw-contentEncoding"></a>contentEncoding<a class="headerlink" href="#contentencoding" title="Permanent link">⚓︎</a></h4>
@@ -5704,13 +4540,13 @@ This example describes a JWT that is MACed using the HMAC SHA-256 algorithm, and
 <a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a><span class="p">}</span>
 </code></pre></div>
 <!-- ============================================================================ -->
-<!-- Format Annotation Vocabulary                                                 -->
+<!-- Format Annotation Vacabulary                                                 -->
 <!-- ============================================================================ -->
 
-<h2 id="format-annotation-vocabulary"><a name="vocab-format"></a>Format Annotation Vocabulary<a class="headerlink" href="#format-annotation-vocabulary" title="Permanent link">⚓︎</a></h2>
+<h2 id="format-annotation-vacabulary"><a name="vocab-format"></a>Format Annotation Vacabulary<a class="headerlink" href="#format-annotation-vacabulary" title="Permanent link">⚓︎</a></h2>
 <p>This vocabulary defided in <a href="https://json-schema.org/draft/2020-12/json-schema-validation">JSON Schema Validation</a> extension describe the format keyword defined to allow schema authors to convey syntactic information for a fixed subset of values which are accurately described by authoritative resources, be they RFCs or other external specifications</p>
-<p>The current URI for this vocabulary, known as the Format-Annotation vocabulary, is:<a href="https://json-schema.org/draft/2020-12/vocab/format-annotation" target="_blank">https://json-schema.org/draft/2020-12/vocab/format-annotation</a></p>
-<p>The current URI for the corresponding meta-schema is: <a href="https://json-schema.org/draft/2020-12/meta/format-annotation" target="_blank">https://json-schema.org/draft/2020-12/meta/format-annotation</a></p>
+<p>The current URI for this vocabulary, known as the Format-Annotation vocabulary, is: <a href="https://json-schema.org/draft/2020-12/vocab/format-annotation"><a href="https://json-schema.org/draft/2020-12/vocab/format-annotation">https://json-schema.org/draft/2020-12/vocab/format-annotation</a></a>.</p>
+<p>The current URI for the corresponding meta-schema is: <a href="https://json-schema.org/draft/2020-12/meta/format-annotation">https://json-schema.org/draft/2020-12/meta/format-annotation</a>.</p>
 <h3 id="keywords-applicable-to-properties"><a name="vocab-format-kw-ps"></a>Keywords applicable to properties<a class="headerlink" href="#keywords-applicable-to-properties" title="Permanent link">⚓︎</a></h3>
 <h4 id="format"><a name="vocab-validation-kw-format"></a>format<a class="headerlink" href="#format" title="Permanent link">⚓︎</a></h4>
 <p><em>This description is provided here for convenience, but it is not normative. The normative description is defined in the original vocabulary and can be found <a href="https://json-schema.org/draft/2020-12/json-schema-validation#name-vocabularies-for-semantic-c">here</a></em></p>
@@ -5922,13 +4758,13 @@ This example describes a JWT that is MACed using the HMAC SHA-256 algorithm, and
 </blockquote>
 <p>To convey syntactic information for a fixed subset of values which are accurately described by authoritative resources, be they RFCs or other external specifications, the keyword <a href="#conformsTo"><code>conformsTo</code></a> SHOULD be used in place of extending the value sets for the <code>format</code> keyword.</p>
 <!-- ============================================================================ -->
-<!-- Syntactic Context Annotations Vocabulary                                     -->
+<!-- Syntactic Context Annotations Vacabulary                                     -->
 <!-- ============================================================================ -->
 
-<h2 id="syntactic-context-annotations-vocabulary"><a name="vocab-syntactic-link"></a>Syntactic Context Annotations Vocabulary<a class="headerlink" href="#syntactic-context-annotations-vocabulary" title="Permanent link">⚓︎</a></h2>
-<p>The Syntactic Context Annotations Vocabulary, defined as an extension of the SAS, provides commonly used metadata to syntactly contextualize schema element.</p>
-<p>The current URI for this vocabulary, known as the Syntactic Context Annotations Vocabulary, is: <a href="vocab/context-syntactic/"><a href="https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/context-syntactic">https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/context-syntactic</a></a>.</p>
-<p>The current URI for the corresponding meta-schema is: <a href="1.0.0-DRAFT/meta/context-syntactic.md">https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/context-syntactic</a>.</p>
+<h2 id="syntactic-context-annotations-vacabulary"><a name="vocab-syntactic-link"></a>Syntactic Context Annotations Vacabulary<a class="headerlink" href="#syntactic-context-annotations-vacabulary" title="Permanent link">⚓︎</a></h2>
+<p>The Syntactic Context Annotations Vacabulary, defined as an extension of the SAS, provides commonly used metadata to syntactly contextualize schema element.</p>
+<p>The current URI for this vocabulary, known as the Syntactic Context Annotations Vacabulary, is: <a href="https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/context-syntactic"><a href="https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/context-syntactic">https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/context-syntactic</a></a>.</p>
+<p>The current URI for the corresponding meta-schema is: <a href="https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/context-syntactic">https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/context-syntactic</a>.</p>
 <h3 id="keywords-applicable-only-to-properties_3"><a name="vocab-context-syntactic-kwp"></a>Keywords applicable only to properties<a class="headerlink" href="#keywords-applicable-only-to-properties_3" title="Permanent link">⚓︎</a></h3>
 <!-- conformsTo   -->
 <h4 id="conformsto"><a name="vocab-context-syntactic-kw-contentEncoding"></a>conformsTo<a class="headerlink" href="#conformsto" title="Permanent link">⚓︎</a></h4>
@@ -5951,13 +4787,13 @@ This example describes a JWT that is MACed using the HMAC SHA-256 algorithm, and
 <a id="__codelineno-52-10" name="__codelineno-52-10" href="#__codelineno-52-10"></a><span class="p">}</span>
 </code></pre></div>
 <!-- ============================================================================ -->
-<!-- Semantic Link Annotations Vocabulary                                         -->
+<!-- Semantic Link Annotations Vacabulary                                         -->
 <!-- ============================================================================ -->
 
-<h2 id="semantic-context-annotations-vocabulary"><a name="vocab-semantic-link"></a>Semantic Context Annotations Vocabulary<a class="headerlink" href="#semantic-context-annotations-vocabulary" title="Permanent link">⚓︎</a></h2>
-<p>The Semantic Context Annotations Vocabulary, defined as an extension of the SAS, provides commonly used metadata to syntactly contextualize schema element.</p>
-<p>The current URI for this vocabulary, known as the Semantic Context Annotations Vocabulary, is: <a href="vocab/context-semantic/"><a href="https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/context-semantic">https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/context-semantic</a></a>.</p>
-<p>The current URI for the corresponding meta-schema is: <a href="1.0.0-DRAFT/meta/context-semantic.md">https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/context-semantic</a>.</p>
+<h2 id="semantic-context-annotations-vacabulary"><a name="vocab-semantic-link"></a>Semantic Context Annotations Vacabulary<a class="headerlink" href="#semantic-context-annotations-vacabulary" title="Permanent link">⚓︎</a></h2>
+<p>The Semantic Context Annotations Vacabulary, defined as an extension of the SAS, provides commonly used metadata to syntactly contextualize schema element.</p>
+<p>The current URI for this vocabulary, known as the Semantic Context Annotations Vacabulary, is: <a href="https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/context-semantic"><a href="https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/context-semantic">https://dpds.opendatamesh.org/specifications/sas/1.0.0-DRAFT/vocab/context-semantic</a></a>.</p>
+<p>The current URI for the corresponding meta-schema is: <a href="https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/context-semantic">https://dpds.opendatamesh.org/specifications/sas/1.0.0/meta/context-semantic</a>.</p>
 <h3 id="keywords-applicable-only-to-schema_1"><a name="vocab-context-semantic-kws"></a>Keywords applicable only to schema<a class="headerlink" href="#keywords-applicable-only-to-schema_1" title="Permanent link">⚓︎</a></h3>
 <!-- semanticContext   -->
 <h4 id="semanticcontext"><a name="vocab-context-semantic-kw-contentEncoding"></a>semanticContext<a class="headerlink" href="#semanticcontext" title="Permanent link">⚓︎</a></h4>
@@ -6036,13 +4872,13 @@ This example describes a JWT that is MACed using the HMAC SHA-256 algorithm, and
 <li>"actors": "actor[Person].name : the property actors in the schema is linked to the property name of the Person who acts in the - Movie. Because actors in the schema is an array the values are the names of the actors.</li>
 </ul>
 <!-- ============================================================================ -->
-<!-- Quality Vocabulary                                                           -->
+<!-- Quality Vacabulary                                                           -->
 <!-- ============================================================================ -->
 
-<h2 id="data-quality-annotation-vocabulary"><a name="vocab-dq"></a>Data Quality Annotation Vocabulary<a class="headerlink" href="#data-quality-annotation-vocabulary" title="Permanent link">⚓︎</a></h2>
-<p>The Data Quality Annotation Vocabulary, defined as an extension of the ODCS, provides commonly used metadata to describe data quality rules &amp; parameters.</p>
-<p>The current URI for this vocabulary, known as the Data Quality Annotation Vocabulary, is: <a href="https://bitol-io.github.io/open-data-contract-standard/v3.0.0/#data-quality" target="_blank">https://bitol-io.github.io/open-data-contract-standard/v3.0.0/#data-quality</a></p>
-<p>For a comprehensive definition of all supported keywords, along with their syntax and semantics, please refer to the <a href="(https://bitol-io.github.io/open-data-contract-standard/v3.0.0/#definitions_2" target="_blank">ODBC Specification</a> available on the Bitol website.</p>
+<h2 id="data-quality-annotation-vacabulary"><a name="vocab-dq"></a>Data Quality Annotation Vacabulary<a class="headerlink" href="#data-quality-annotation-vacabulary" title="Permanent link">⚓︎</a></h2>
+<p>The Data Quality Annotation Vacabulary, defined as an extension of the ODCS, provides commonly used metadata to describe data quality rules &amp; parameters.</p>
+<p>The current URI for this vocabulary, known as the Semantic Context Annotations Vacabulary, is: <a href="https://bitol-io.github.io/open-data-contract-standard/v3.0.0/#data-quality"><a href="https://bitol-io.github.io/open-data-contract-standard/v3.0.0/#data-quality">https://bitol-io.github.io/open-data-contract-standard/v3.0.0/#data-quality</a></a>.</p>
+<p>For a comprehensive definition of all supported keywords, along with their syntax and semantics, please refer to the <a href="https://bitol-io.github.io/open-data-contract-standard/v3.0.0/#definitions_2">ODBC Specification</a> available on the Bitol website.</p>
 <h1 id="appendix-a-revision-history"><a name="revisionHistory"></a>Appendix A: Revision History<a class="headerlink" href="#appendix-a-revision-history" title="Permanent link">⚓︎</a></h1>
 <table>
 <thead>
